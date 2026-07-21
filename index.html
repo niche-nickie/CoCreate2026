@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CoCreate 2026 — Project Hub</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-logo">
+    <div class="event-tag">Project Hub</div>
+    <h2>CoCreate<br>2026</h2>
+    <div class="date-badge">Sep 9–10, 2026 · LACC</div>
+  </div>
+
+  <div class="nav-section-label">Overview</div>
+  <a class="nav-item" href="#dashboard"><span class="nav-icon">◈</span> Dashboard</a>
+  <a class="nav-item" href="#schedule"><span class="nav-icon">◷</span> Schedule</a>
+  <a class="nav-item" href="#phases"><span class="nav-icon">▤</span> Phases</a>
+
+  <div class="nav-section-label">Project</div>
+  <a class="nav-item" href="#open-items"><span class="nav-icon">✓</span> Open Items <span class="nav-badge" id="nav-badge-items"></span></a>
+  <a class="nav-item" href="#risk"><span class="nav-icon">⚑</span> Risk <span class="nav-badge" id="nav-badge-risk"></span></a>
+  <a class="nav-item" href="#zones"><span class="nav-icon">⬡</span> Zones</a>
+
+  <div class="nav-section-label">Log</div>
+  <a class="nav-item" href="#updates"><span class="nav-icon">🕓</span> Updates</a>
+
+  <div class="sidebar-footer">
+    <div class="user-chip" id="sidebar-user-chip">
+      <div class="avatar" id="sidebar-avatar">?</div>
+      <div class="user-info">
+        <div class="name" id="sidebar-name">Sign in</div>
+        <div class="role" id="sidebar-role">via Report / Ask</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="page-header">
+    <div class="page-title">
+      <h1>Dashboard</h1>
+      <p>Alibaba CoCreate 2026 · Los Angeles Convention Center · AMG General Service Contractor</p>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-ghost edit-only" id="btn-reset-content" title="Reset all content back to defaults">↺ Reset</button>
+      <button class="btn btn-ghost" id="btn-edit-toggle">✎ Edit Page</button>
+      <button class="btn btn-ghost" id="btn-add-update">+ Add Update</button>
+      <button class="btn btn-primary" id="btn-view-tasks">+ View Tasks</button>
+    </div>
+  </div>
+
+  <section id="dashboard">
+    <div class="stats-row" id="stat-cards"></div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Project Timeline</div>
+          <a class="card-action" href="#schedule">Full schedule →</a>
+        </div>
+        <div class="card-body" id="timeline-preview"></div>
+      </div>
+
+      <div class="col-stack">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">⚑ Upcoming Deadlines</div>
+            <a class="card-action" href="#risk">View all</a>
+          </div>
+          <div class="card-body" id="deadlines-widget" style="padding-top:8px;padding-bottom:8px;"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><div class="card-title">Overall Progress</div></div>
+          <div class="card-body" id="progress-widget"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="three-col">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">✓ Open Tasks</div>
+          <a class="card-action" href="#open-items">All tasks →</a>
+        </div>
+        <div class="card-body" id="tasks-preview" style="padding-top:4px;padding-bottom:4px;"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">⬡ Design Zones</div>
+          <a class="card-action" href="#zones">View all →</a>
+        </div>
+        <div class="card-body"><div class="zone-grid" id="zones-preview"></div></div>
+      </div>
+
+      <div class="col-stack">
+        <div class="card">
+          <div class="card-header"><div class="card-title">◉ Team</div></div>
+          <div class="card-body" id="team-widget" style="padding-top:6px;padding-bottom:6px;"></div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Recent Activity</div>
+            <a class="card-action" href="#updates">View log</a>
+          </div>
+          <div class="card-body" id="activity-preview" style="padding-top:4px;padding-bottom:4px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <div class="section-heading">Schedule</div>
+    <p class="section-sub">Revised Jul 20, 2026 — full design scope was only confirmed Jul 19, so AMG's engineering/quote/fabrication window starts now, compressed into the weeks before the fixed Sep 7 install. Amber = unconfirmed, owned by Youngs/LACC/third parties. Red = hard deadline or critical blocker.</p>
+    <div class="gantt-wrap">
+      <div class="gantt" id="gantt"></div>
+      <div class="legend">
+        <span class="item"><span class="sw red"></span>Hard deadline / critical</span>
+        <span class="item"><span class="sw amber"></span>Unconfirmed — client/3rd party</span>
+        <span class="item"><span class="sw blue"></span>AMG owned — confirmed</span>
+        <span class="item"><span class="sw green"></span>On-site execution</span>
+        <span class="item"><span class="sw grey"></span>Buffer / post-show</span>
+        <span class="item"><span class="sw orange"></span>Milestone — the show</span>
+      </div>
+    </div>
+    <div id="gantt-add-row"></div>
+  </section>
+
+  <section id="phases">
+    <div class="section-heading">Phases</div>
+    <table class="phases">
+      <thead><tr><th>Phase</th><th>Dates</th><th>Duration</th><th>Status</th><th>Notes</th><th class="edit-only"></th></tr></thead>
+      <tbody id="phases-body"></tbody>
+    </table>
+    <div id="phases-add-row"></div>
+  </section>
+
+  <section id="open-items">
+    <div class="section-heading">Open Items</div>
+    <p class="section-sub">Who owes what. Bold / red priority = most urgent.</p>
+    <div class="card"><div class="card-body open-items-full" id="open-items-list"></div></div>
+  </section>
+
+  <section id="risk">
+    <div class="section-heading">Risk</div>
+    <div class="risk-group">
+      <h3>🔴 High Risk</h3>
+      <div id="risk-high"></div>
+    </div>
+    <div class="risk-group">
+      <h3>🟡 Medium Risk</h3>
+      <div id="risk-medium"></div>
+    </div>
+  </section>
+
+  <section id="zones">
+    <div class="section-heading">Zones</div>
+    <p class="section-sub">20 zones across the floor. Status: TBD (no design received) / In Review / Approved.</p>
+    <a href="assets/floor-plan-lacc.jpg" target="_blank" class="floor-plan-link">
+      <div class="card floor-plan-card">
+        <img src="assets/floor-plan-lacc.jpg" alt="Floor Plan — LACC, numbered zone overview">
+        <div class="floor-plan-caption">Floor Plan — LACC · click to view full size</div>
+      </div>
+    </a>
+    <div class="zone-grid full" id="zone-grid"></div>
+    <div id="zones-add-row"></div>
+  </section>
+
+  <section id="updates">
+    <div class="section-heading">Updates</div>
+    <p class="section-sub">Live log · reverse chronological. Post via the ✎ Report / Ask button.</p>
+    <div class="card"><div class="card-body" id="updates-list"></div></div>
+  </section>
+
+</div>
+
+<button class="fab" id="fab-btn">✎ Report / Ask</button>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="close-x" id="modal-close">&times;</button>
+    <div id="modal-step-email">
+      <h3>Sign in to report or ask</h3>
+      <label for="email-input">Work email</label>
+      <input type="email" id="email-input" placeholder="you@artsolutemediagroup.com" autocomplete="email">
+      <div class="error" id="email-error">Email not recognized. Use your AMG or Youngs work email.</div>
+      <div class="row"><button class="primary" id="email-continue">Continue</button></div>
+    </div>
+    <div id="modal-step-post" style="display:none;">
+      <h3>Post an update</h3>
+      <div class="who" id="modal-who"></div>
+      <label for="post-type">Type</label>
+      <select id="post-type">
+        <option value="Report">Report status</option>
+        <option value="Ask">Ask a question</option>
+      </select>
+      <label for="post-text">Message</label>
+      <textarea id="post-text" placeholder="What's the update or question?"></textarea>
+      <div class="row">
+        <button id="post-cancel">Cancel</button>
+        <button class="primary" id="post-submit">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="zone-modal-overlay">
+  <div class="modal zone-modal">
+    <button class="close-x" id="zone-modal-close">&times;</button>
+    <h3 id="zone-modal-title"></h3>
+    <span class="pill" id="zone-modal-status"></span>
+    <div class="zone-modal-viewer">
+      <button class="zone-modal-nav prev" id="zone-modal-prev" aria-label="Previous photo">‹</button>
+      <img id="zone-modal-img" alt="">
+      <button class="zone-modal-nav next" id="zone-modal-next" aria-label="Next photo">›</button>
+      <span class="zone-modal-counter" id="zone-modal-counter"></span>
+    </div>
+    <div class="zone-modal-thumbs" id="zone-modal-thumbs"></div>
+    <div class="zone-modal-checklist" id="zone-modal-checklist"></div>
+    <div class="zone-modal-additem">
+      <input type="text" id="zone-modal-new-item" placeholder="Add a requirement...">
+      <button id="zone-modal-add-btn">+ Add</button>
+    </div>
+    <div class="zone-flag" id="zone-modal-flag"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
