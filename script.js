@@ -8,10 +8,11 @@ const SHOW_START = new Date('2026-09-09');
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
   'nickie.w@artsolutemediagroup.com': 'Nickie Wang',
-  'calvin@artsolutemediagroup.com': 'Calvin Yee',
-  'ariana@artsolutemediagroup.com': 'Ariana',
-  'iris@artsolutemediagroup.com': 'Iris',
-  'jose@artsolutemediagroup.com': 'Jose',
+  'calviny@artsolutemediagroup.com': 'Calvin Yee',
+  'ariana.h@artsolutemediagroup.com': 'Ariana',
+  'iris.x@artsolutemediagroup.com': 'Iris',
+  'jose.m@artsolutemediagroup.com': 'Jose',
+  'jin.c@artsolutemediagroup.com': 'Jin',
 };
 
 const RANGE_START = new Date('2026-06-01');
