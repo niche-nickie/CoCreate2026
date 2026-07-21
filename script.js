@@ -7,6 +7,7 @@ const SHOW_START = new Date('2026-09-09');
 
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
+  'nickie.w@artsolutemediagroup.com': 'Nickie Wang',
   'calvin@artsolutemediagroup.com': 'Calvin Yee',
   'ariana@artsolutemediagroup.com': 'Ariana',
   'iris@artsolutemediagroup.com': 'Iris',
