@@ -385,18 +385,18 @@ function renderProgressWidget(){
 
 function renderTasksPreview(){
   const el = document.getElementById('tasks-preview');
-  const doneHtml = DATA.DONE_ITEMS.map(d => `
+  const doneHtml = DATA.DONE_ITEMS.map((d, i) => `
     <div class="task-item">
-      <div class="task-check done">✓</div>
+      <div class="task-check done" onclick="markItemOpen(${i})" title="Mark as open">✓</div>
       <div class="task-info">
         <div class="task-title done">${escapeHtml(d.text)}</div>
         <div class="task-meta"><span class="task-assign" style="color:var(--green)">${escapeHtml(d.owner)}</span></div>
       </div>
     </div>
   `).join('');
-  const openHtml = DATA.OPEN_ITEMS.slice(0, 3).map(i => `
+  const openHtml = DATA.OPEN_ITEMS.slice(0, 3).map((i, idx) => `
     <div class="task-item">
-      <div class="task-check"></div>
+      <div class="task-check" onclick="markItemDone(${idx})" title="Mark as done"></div>
       <div class="task-info">
         <div class="task-title">${escapeHtml(i.text.split('.')[0])}</div>
         <div class="task-meta">${priorityDot(i.urgent)}<span class="task-assign">${escapeHtml(i.owner)} · ${i.urgent ? 'Critical' : 'Open'}</span></div>
@@ -542,10 +542,37 @@ function renderPhases(){
   document.getElementById('phases-add-row').innerHTML = addBtn('Phase', `addRow('PHASES',{phase:'New phase',dates:'TBD',duration:'—',status:'notstarted',statusLabel:'Not started',notes:''})`);
 }
 
+function markItemDone(idx){
+  const item = DATA.OPEN_ITEMS[idx];
+  DATA.OPEN_ITEMS.splice(idx, 1);
+  DATA.DONE_ITEMS.push({ owner: item.owner + ' · Done', text: item.text });
+  saveSiteData();
+  renderAll();
+}
+function markItemOpen(idx){
+  const item = DATA.DONE_ITEMS[idx];
+  DATA.DONE_ITEMS.splice(idx, 1);
+  const owner = item.owner.replace(/\s*·\s*Done$/i, '').trim();
+  DATA.OPEN_ITEMS.push({ owner: owner || 'TBD', urgent: false, text: item.text });
+  saveSiteData();
+  renderAll();
+}
+function addOpenItemQuick(){
+  const ownerInput = document.getElementById('quick-add-owner');
+  const textInput = document.getElementById('quick-add-text');
+  const text = textInput.value.trim();
+  if(!text) return;
+  DATA.OPEN_ITEMS.push({ owner: ownerInput.value.trim() || 'TBD', urgent: false, text });
+  saveSiteData();
+  renderAll();
+  const freshText = document.getElementById('quick-add-text');
+  if(freshText) freshText.focus();
+}
+
 function renderOpenItemsFull(){
   const doneHtml = DATA.DONE_ITEMS.map((d, i) => `
     <div class="task-item">
-      <div class="task-check done">✓</div>
+      <div class="task-check done" onclick="markItemOpen(${i})" title="Mark as open">✓</div>
       <div class="task-info">
         <div class="task-title done"${editAttrs('DONE_ITEMS', i, 'text')}>${escapeHtml(d.text)}</div>
         <div class="task-meta"><span class="task-assign" style="color:var(--green)"${editAttrs('DONE_ITEMS', i, 'owner')}>${escapeHtml(d.owner)}</span>${editBtns('DONE_ITEMS', i)}</div>
@@ -555,7 +582,7 @@ function renderOpenItemsFull(){
 
   const openHtml = DATA.OPEN_ITEMS.map((i, idx) => `
     <div class="task-item">
-      <div class="task-check"></div>
+      <div class="task-check" onclick="markItemDone(${idx})" title="Mark as done"></div>
       <div class="task-info">
         <div class="task-title"${editAttrs('OPEN_ITEMS', idx, 'text')}>${escapeHtml(i.text)}</div>
         <div class="task-meta">
@@ -565,9 +592,16 @@ function renderOpenItemsFull(){
         </div>
       </div>
     </div>
-  `).join('') + addBtn('Open Item', `addRow('OPEN_ITEMS',{owner:'TBD',urgent:false,text:'New open item'})`);
+  `).join('');
 
-  document.getElementById('open-items-list').innerHTML = '<div class="edit-section-label edit-only">Done</div>' + doneHtml + '<div class="edit-section-label edit-only">Open</div>' + openHtml;
+  const quickAdd = `
+    <div class="quick-add-item">
+      <input type="text" id="quick-add-owner" placeholder="Owner" class="quick-add-owner">
+      <input type="text" id="quick-add-text" placeholder="Add an open item..." class="quick-add-text" onkeydown="if(event.key==='Enter') addOpenItemQuick()">
+      <button onclick="addOpenItemQuick()">+ Add</button>
+    </div>`;
+
+  document.getElementById('open-items-list').innerHTML = '<div class="edit-section-label edit-only">Done</div>' + doneHtml + '<div class="edit-section-label edit-only">Open</div>' + openHtml + quickAdd;
 }
 
 function renderRisk(){
