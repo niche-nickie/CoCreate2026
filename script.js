@@ -83,6 +83,57 @@ function makeTieredUnits(prefix, tiers){
   return units;
 }
 
+// Tier definitions, pulled from the design brief renderings — one tier = one gallery photo,
+// so the zone modal can show the matching checklist as you flip through Category overview photos.
+const SPONSOR_TIERS = [
+  { key: 'community', name: 'Community', sqm: '6m²', count: 12, req: [
+    'Pop-up display ×1 (3000×2500mm)',
+    '2× Long-arm spotlight (LED, top of back wall)',
+    'Counter w/ storage ×1 (1000×500×1000mm, wooden joinery, matte white Formica, lockable)',
+    'Electric socket ×1',
+    'Furniture + fabric display (by Youngs)',
+  ] },
+  { key: 'associate', name: 'Associate', sqm: '9m²', count: 3, req: [
+    'Pop-up display ×1 (3500×2500mm)',
+    '4× Long-arm spotlight',
+    '42" monitor + stand ×1 set',
+    'Counter w/ storage ×1 (1000×500×1000mm)',
+    'High table + bar stools ×1 set (4 chairs)',
+    'Electric socket ×1',
+    'Furniture + fabric display (by Youngs)',
+  ] },
+  { key: 'executive', name: 'Executive', sqm: '15m²', count: 3, req: [
+    'L-shaped pop-up display ×2 units (5000×2500mm + 3000×2500mm)',
+    '6× Long-arm spotlight',
+    '42" monitor + stand ×1 set',
+    'Counter w/ storage ×1 (1000×500×1000mm)',
+    'High table + bar stools ×2 sets',
+    'Electric socket ×1',
+    'Furniture + fabric display (by Youngs)',
+  ] },
+  { key: 'premier', name: 'Premier', sqm: '20m²', count: 1, req: [
+    'L-shaped wall structure ×1 (5000×2500mm + 4000×2500mm)',
+    '2× full-height wall graphic, front only (5000×2500mm + 4000×2500mm)',
+    '7× Long-arm spotlight',
+    '42" monitor, wall-mount ×1 set',
+    'Counter w/ storage ×1 (1800×500×1000mm)',
+    'Round meeting table + chairs ×2 sets',
+    'Electric socket ×1',
+    'Furniture (by Youngs)',
+  ] },
+];
+
+const A200_TIERS = [
+  { key: 'standard', name: 'Standard', sqm: '8m²', count: 48, req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'] },
+  { key: 'premium', name: 'Premium', sqm: '14m²', count: 3, req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'] },
+];
+
+const NONA200_TIERS = [
+  { key: 'starter', name: 'Starter', sqm: '6m²', count: 11, req: ['快幕秀 quick-pop backdrop (3×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
+  { key: 'standard', name: 'Standard', sqm: '8m²', count: 8, req: ['快幕秀 quick-pop backdrop (4×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
+  { key: 'premium', name: 'Premium', sqm: '14m²', count: 3, req: ['快幕秀 quick-pop backdrop (4×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
+];
+
 // ---------- Default content (source of truth until the user edits it) ----------
 
 const DEFAULT_DATA = {
@@ -188,26 +239,16 @@ ZONES: [
     req: ['Wooden structure (w/ light strip)', 'Vinyl flooring (no carpet)', 'Wooden display stands ×4 (one per center)', 'PVC header (by AMG)', 'Fabric display ×4 centers (by Youngs)'] },
   { name: 'Sponsor Booths ×19', status: 'In Review', img: 'sponsor-booths', gallery: ['sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], scope: '4 tiers, escalating spec: Community 6m² (pop-up + counter), Associate 9m² (+42" monitor, high table), Executive 15m² (+2nd pop-up unit), Premier 20m² (L-shaped wall structure, full-height graphics, wall-mount monitor). Spotlights scale 2→7 pcs by tier', flag: '4 tiers: 6 / 9 / 15 / 20 sqm',
     req: ['Pop-up display units (by tier)', 'L-shaped wall structure (Premier tier)', 'Full-height wall graphics (Premier tier)', 'Long-arm spotlights (2→7 pcs by tier)', '42" monitor + stand (Associate/Executive/Premier)', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools (Associate/Executive)', 'Round meeting table + chairs (Premier)', 'Electric socket', 'Furniture + fabric display (by Youngs)'],
-    units: makeTieredUnits('sponsor', [
-      { key: 'community', name: 'Community', sqm: '6m²', count: 12, req: ['Pop-up display unit ×1', '2× Long-arm spotlights', 'Counter w/ storage — wooden joinery, matte white Formica', 'Electric socket', 'Furniture + fabric display (by Youngs)'] },
-      { key: 'associate', name: 'Associate', sqm: '9m²', count: 3, req: ['Pop-up display unit ×1', '4× Long-arm spotlights', '42" monitor + stand', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools', 'Electric socket', 'Furniture + fabric display (by Youngs)'] },
-      { key: 'executive', name: 'Executive', sqm: '15m²', count: 3, req: ['Pop-up display unit ×2', '5× Long-arm spotlights', '42" monitor + stand', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools', 'Electric socket', 'Furniture + fabric display (by Youngs)'] },
-      { key: 'premier', name: 'Premier', sqm: '20m²', count: 1, req: ['L-shaped wall structure', 'Full-height wall graphics', 'Wall-mount monitor', '7× Long-arm spotlights', 'Counter w/ storage — wooden joinery, matte white Formica', 'Round meeting table + chairs', 'Electric socket', 'Furniture + fabric display (by Youngs)'] },
-    ]) },
+    tiers: SPONSOR_TIERS,
+    units: makeTieredUnits('sponsor', SPONSOR_TIERS) },
   { name: 'Supplier Booths (A200)', status: 'In Review', img: 'supplier-a200', gallery: ['supplier-a200-2', 'supplier-a200-3'], scope: 'Standard 8m² + Premium 14m² — wooden backdrop 4×2.5mH, 42" TV, Std Counter, grey carpet. Furniture by Youngs, others by AMG', flag: '48× 8sqm + 3× 14sqm = 51 units ⚠ Large quantity',
     req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'],
-    units: makeTieredUnits('supplier-a200', [
-      { key: 'standard', name: 'Standard', sqm: '8m²', count: 48, req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'] },
-      { key: 'premium', name: 'Premium', sqm: '14m²', count: 3, req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'] },
-    ]) },
-  { name: 'Supplier Booths (Non-A200/GGS)', status: 'In Review', img: 'supplier-nona200', gallery: ['supplier-nona200-2', 'supplier-nona200-3', 'supplier-nona200-4'], scope: '3 tiers — Starter 6m² (快幕秀 backdrop 3×2.5mH), Standard 8m² + Premium 14m² (backdrop 4×2.5mH), all with 42" TV. Fabric display + shelving by Youngs', flag: '22 units total',
+    tiers: A200_TIERS,
+    units: makeTieredUnits('supplier-a200', A200_TIERS) },
+  { name: 'Supplier Booths (Non-A200/GGS)', status: 'In Review', img: 'supplier-nona200', gallery: ['supplier-nona200-2', 'supplier-nona200-3', 'supplier-nona200-4'], scope: '3 tiers — Starter 6m² (快幕秀 backdrop 3×2.5mH, ×11), Standard 8m² (backdrop 4×2.5mH, ×8), Premium 14m² (backdrop 4×2.5mH, ×3), all with 42" TV. Fabric display + shelving by Youngs', flag: '22 units total',
     req: ['快幕秀 quick-pop backdrop (3×2.5mH / 4×2.5mH by tier)', '42" TV', 'Fabric display + shelving (by Youngs)'],
-    // Brief gives 22 units total but not the per-tier split — this 14/6/2 breakdown is a placeholder, adjust in Edit Mode once confirmed.
-    units: makeTieredUnits('supplier-nona200', [
-      { key: 'starter', name: 'Starter', sqm: '6m²', count: 14, req: ['快幕秀 quick-pop backdrop (3×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
-      { key: 'standard', name: 'Standard', sqm: '8m²', count: 6, req: ['快幕秀 quick-pop backdrop (4×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
-      { key: 'premium', name: 'Premium', sqm: '14m²', count: 2, req: ['快幕秀 quick-pop backdrop (4×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
-    ]) },
+    tiers: NONA200_TIERS,
+    units: makeTieredUnits('supplier-nona200', NONA200_TIERS) },
   { name: 'Muse Booth', status: 'In Review', img: 'muse-booth', gallery: ['muse-booth-2', 'muse-booth-3', 'muse-booth-4', 'muse-booth-5', 'muse-booth-6', 'muse-booth-7'], scope: 'Custom Panel + Graphic, Std Panel + Fabric, wooden frame w/ support base, Ultraform acrylic letters (some hanging), wooden box display, grey carpet. Clothes rack, changing room + acrylic box display by Youngs', flag: 'Hanging cloth setup (Youngs provides)',
     req: ['Wooden structure (frame w/ support base)', 'Custom Panel', 'Graphic', 'Std Panel structure', 'Fabric graphic', 'Ultraform acrylic letters (some hanging)', 'Wooden box display', 'Grey carpet', 'Clothes rack + changing room (by Youngs)', 'Acrylic box display (by Youngs)', 'Hanging cloth setup (by Youngs)'] },
   { name: 'UED Booth', status: 'In Review', img: 'ued-booth', gallery: ['ued-booth-2', 'ued-booth-3'], scope: 'Large U-shape custom wooden counter, Std Panel + Fabric. A4 standee, all machines/laptops/stanchions by Youngs', flag: 'Machines/laptops/stanchions by Youngs',
@@ -904,8 +945,23 @@ function setupZoneModal(){
 
   let currentUnit = null; // a reference into zone.units[i], or null = viewing the shared/category checklist
 
-  function checklistKey(){ return currentUnit ? `${zone.name} :: ${currentUnit.id}` : zone.name; }
-  function checklistBase(){ return currentUnit ? currentUnit.req : zone.req; }
+  // In Category overview, each gallery photo can represent a distinct tier (Community, Associate, ...).
+  // When that's the case, the checklist below the photo should match whichever tier is on screen.
+  function currentTier(){
+    if(currentUnit) return null;
+    if(!zone.tiers || zone.tiers.length !== (zone.gallery || []).length) return null;
+    return zone.tiers[photoIndex] || null;
+  }
+  function checklistKey(){
+    if(currentUnit) return `${zone.name} :: ${currentUnit.id}`;
+    const tier = currentTier();
+    return tier ? `${zone.name} :: tier-${tier.key}` : zone.name;
+  }
+  function checklistBase(){
+    if(currentUnit) return currentUnit.req;
+    const tier = currentTier();
+    return tier ? tier.req : zone.req;
+  }
 
   function loadAllState(){
     try{ return JSON.parse(localStorage.getItem('cocreate2026_checklist') || '{}'); }
@@ -954,7 +1010,12 @@ function setupZoneModal(){
       return;
     }
     if(!currentUnit){
-      checklistLabelEl.innerHTML = `<span>Shared checklist — applies to all ${zone.units.length} booths by default</span>`;
+      const tier = currentTier();
+      if(tier){
+        checklistLabelEl.innerHTML = `<span>Viewing: ${escapeHtml(tier.name)} tier (${escapeHtml(tier.sqm)}) — ${tier.count} of ${zone.units.length} booths</span>`;
+      } else {
+        checklistLabelEl.innerHTML = `<span>Shared checklist — applies to all ${zone.units.length} booths by default</span>`;
+      }
       return;
     }
     const unitIdx = zone.units.indexOf(currentUnit);
@@ -1148,17 +1209,26 @@ function setupZoneModal(){
   closeBtn.addEventListener('click', closeZone);
   overlay.addEventListener('click', (e) => { if(e.target === overlay) closeZone(); });
 
+  function onPhotoChanged(){
+    renderPhoto();
+    // The photo may have just switched to a different tier — only relevant in Category overview.
+    if(!currentUnit && currentTier()){
+      editingItem = null;
+      renderChecklistLabel();
+      renderChecklist();
+    }
+  }
   function step(delta){
     const photos = (currentUnit && currentUnit.gallery) || zone.gallery || [];
     if(photos.length === 0) return;
     photoIndex = (photoIndex + delta + photos.length) % photos.length;
-    renderPhoto();
+    onPhotoChanged();
   }
   prevBtn.addEventListener('click', () => step(-1));
   nextBtn.addEventListener('click', () => step(1));
   thumbsEl.addEventListener('click', (e) => {
     const t = e.target.closest('img[data-i]');
-    if(t){ photoIndex = Number(t.dataset.i); renderPhoto(); }
+    if(t){ photoIndex = Number(t.dataset.i); onPhotoChanged(); }
   });
 
   document.addEventListener('keydown', (e) => {
