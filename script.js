@@ -196,10 +196,18 @@ ZONES: [
     ]) },
   { name: 'Supplier Booths (A200)', status: 'In Review', img: 'supplier-a200', gallery: ['supplier-a200-2', 'supplier-a200-3'], scope: 'Standard 8m² + Premium 14m² — wooden backdrop 4×2.5mH, 42" TV, Std Counter, grey carpet. Furniture by Youngs, others by AMG', flag: '48× 8sqm + 3× 14sqm = 51 units ⚠ Large quantity',
     req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'],
-    units: makeUnits('supplier-a200', 51, ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], n => n <= 48 ? `Booth ${n} (8sqm)` : `Booth ${n} (14sqm)`) },
+    units: makeTieredUnits('supplier-a200', [
+      { key: 'standard', name: 'Standard', sqm: '8m²', count: 48, req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'] },
+      { key: 'premium', name: 'Premium', sqm: '14m²', count: 3, req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'] },
+    ]) },
   { name: 'Supplier Booths (Non-A200/GGS)', status: 'In Review', img: 'supplier-nona200', gallery: ['supplier-nona200-2', 'supplier-nona200-3', 'supplier-nona200-4'], scope: '3 tiers — Starter 6m² (快幕秀 backdrop 3×2.5mH), Standard 8m² + Premium 14m² (backdrop 4×2.5mH), all with 42" TV. Fabric display + shelving by Youngs', flag: '22 units total',
     req: ['快幕秀 quick-pop backdrop (3×2.5mH / 4×2.5mH by tier)', '42" TV', 'Fabric display + shelving (by Youngs)'],
-    units: makeUnits('supplier-nona200', 22, ['快幕秀 quick-pop backdrop', '42" TV', 'Fabric display + shelving (by Youngs)']) },
+    // Brief gives 22 units total but not the per-tier split — this 14/6/2 breakdown is a placeholder, adjust in Edit Mode once confirmed.
+    units: makeTieredUnits('supplier-nona200', [
+      { key: 'starter', name: 'Starter', sqm: '6m²', count: 14, req: ['快幕秀 quick-pop backdrop (3×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
+      { key: 'standard', name: 'Standard', sqm: '8m²', count: 6, req: ['快幕秀 quick-pop backdrop (4×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
+      { key: 'premium', name: 'Premium', sqm: '14m²', count: 2, req: ['快幕秀 quick-pop backdrop (4×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
+    ]) },
   { name: 'Muse Booth', status: 'In Review', img: 'muse-booth', gallery: ['muse-booth-2', 'muse-booth-3', 'muse-booth-4', 'muse-booth-5', 'muse-booth-6', 'muse-booth-7'], scope: 'Custom Panel + Graphic, Std Panel + Fabric, wooden frame w/ support base, Ultraform acrylic letters (some hanging), wooden box display, grey carpet. Clothes rack, changing room + acrylic box display by Youngs', flag: 'Hanging cloth setup (Youngs provides)',
     req: ['Wooden structure (frame w/ support base)', 'Custom Panel', 'Graphic', 'Std Panel structure', 'Fabric graphic', 'Ultraform acrylic letters (some hanging)', 'Wooden box display', 'Grey carpet', 'Clothes rack + changing room (by Youngs)', 'Acrylic box display (by Youngs)', 'Hanging cloth setup (by Youngs)'] },
   { name: 'UED Booth', status: 'In Review', img: 'ued-booth', gallery: ['ued-booth-2', 'ued-booth-3'], scope: 'Large U-shape custom wooden counter, Std Panel + Fabric. A4 standee, all machines/laptops/stanchions by Youngs', flag: 'Machines/laptops/stanchions by Youngs',
