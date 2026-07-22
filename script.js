@@ -25,6 +25,10 @@ function fmtDate(d){ return d.toLocaleDateString('en-US', { month: 'short', day:
 function escapeHtml(s){
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
+// Safe to embed inside a single-quoted JS string literal that itself sits inside an HTML attribute (onclick="...").
+function jsAttrEscape(s){
+  return escapeHtml(s).replace(/'/g, '&#39;').replace(/\\/g, '\\\\');
+}
 
 function initials(name){
   const clean = name.split('(')[0].split('/').pop().trim();
@@ -48,6 +52,18 @@ const ZONE_ICONS = { 'Registration': '🏛', 'Core Display': '🔤', 'Keynote Ha
 
 function gallery(slug, count){
   return Array.from({ length: count }, (_, i) => `${slug}-${i + 1}`);
+}
+
+// Generates individual bookable units within a zone (e.g. 19 sponsor booths).
+// Each unit starts as a copy of the zone's default checklist, then diverges independently
+// once a real exhibitor is assigned — its own label/status/req, its own photo if given one.
+function makeUnits(prefix, count, reqTemplate, labelFn){
+  return Array.from({ length: count }, (_, i) => ({
+    id: `${prefix}-${i + 1}`,
+    label: labelFn ? labelFn(i + 1) : `Booth ${i + 1}`,
+    status: 'TBD',
+    req: [...reqTemplate],
+  }));
 }
 
 // ---------- Default content (source of truth until the user edits it) ----------
@@ -154,11 +170,14 @@ ZONES: [
   { name: 'Sourcing Hub', status: 'In Review', img: 'sourcing-hub', gallery: ['sourcing-hub-3', 'sourcing-hub-4', 'sourcing-hub-5', 'sourcing-hub-6', 'sourcing-hub-7'], scope: '64m² (8×8m) overall — wooden structure w/ light strip, vinyl flooring. 4 named centers (9m² each): Guangzhou beauty, Shantou toys, Zhengzhou auto parts, Yongkang home & garden — wooden display stands, PVC header by AMG, fabric by Youngs', flag: '4 sourcing centers (9m² each) inside 64m² space',
     req: ['Wooden structure (w/ light strip)', 'Vinyl flooring (no carpet)', 'Wooden display stands ×4 (one per center)', 'PVC header (by AMG)', 'Fabric display ×4 centers (by Youngs)'] },
   { name: 'Sponsor Booths ×19', status: 'In Review', img: 'sponsor-booths', gallery: ['sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], scope: '4 tiers, escalating spec: Community 6m² (pop-up + counter), Associate 9m² (+42" monitor, high table), Executive 15m² (+2nd pop-up unit), Premier 20m² (L-shaped wall structure, full-height graphics, wall-mount monitor). Spotlights scale 2→7 pcs by tier', flag: '4 tiers: 6 / 9 / 15 / 20 sqm',
-    req: ['Pop-up display units (by tier)', 'L-shaped wall structure (Premier tier)', 'Full-height wall graphics (Premier tier)', 'Long-arm spotlights (2→7 pcs by tier)', '42" monitor + stand (Associate/Executive/Premier)', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools (Associate/Executive)', 'Round meeting table + chairs (Premier)', 'Electric socket', 'Furniture + fabric display (by Youngs)'] },
+    req: ['Pop-up display units (by tier)', 'L-shaped wall structure (Premier tier)', 'Full-height wall graphics (Premier tier)', 'Long-arm spotlights (2→7 pcs by tier)', '42" monitor + stand (Associate/Executive/Premier)', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools (Associate/Executive)', 'Round meeting table + chairs (Premier)', 'Electric socket', 'Furniture + fabric display (by Youngs)'],
+    units: makeUnits('sponsor', 19, ['Pop-up display unit', 'Long-arm spotlights', '42" monitor + stand', 'Counter w/ storage', 'Electric socket', 'Furniture + fabric display (by Youngs)']) },
   { name: 'Supplier Booths (A200)', status: 'In Review', img: 'supplier-a200', gallery: ['supplier-a200-2', 'supplier-a200-3'], scope: 'Standard 8m² + Premium 14m² — wooden backdrop 4×2.5mH, 42" TV, Std Counter, grey carpet. Furniture by Youngs, others by AMG', flag: '48× 8sqm + 3× 14sqm = 51 units ⚠ Large quantity',
-    req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'] },
+    req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'],
+    units: makeUnits('supplier-a200', 51, ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], n => n <= 48 ? `Booth ${n} (8sqm)` : `Booth ${n} (14sqm)`) },
   { name: 'Supplier Booths (Non-A200/GGS)', status: 'In Review', img: 'supplier-nona200', gallery: ['supplier-nona200-2', 'supplier-nona200-3', 'supplier-nona200-4'], scope: '3 tiers — Starter 6m² (快幕秀 backdrop 3×2.5mH), Standard 8m² + Premium 14m² (backdrop 4×2.5mH), all with 42" TV. Fabric display + shelving by Youngs', flag: '22 units total',
-    req: ['快幕秀 quick-pop backdrop (3×2.5mH / 4×2.5mH by tier)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
+    req: ['快幕秀 quick-pop backdrop (3×2.5mH / 4×2.5mH by tier)', '42" TV', 'Fabric display + shelving (by Youngs)'],
+    units: makeUnits('supplier-nona200', 22, ['快幕秀 quick-pop backdrop', '42" TV', 'Fabric display + shelving (by Youngs)']) },
   { name: 'Muse Booth', status: 'In Review', img: 'muse-booth', gallery: ['muse-booth-2', 'muse-booth-3', 'muse-booth-4', 'muse-booth-5', 'muse-booth-6', 'muse-booth-7'], scope: 'Custom Panel + Graphic, Std Panel + Fabric, wooden frame w/ support base, Ultraform acrylic letters (some hanging), wooden box display, grey carpet. Clothes rack, changing room + acrylic box display by Youngs', flag: 'Hanging cloth setup (Youngs provides)',
     req: ['Wooden structure (frame w/ support base)', 'Custom Panel', 'Graphic', 'Std Panel structure', 'Fabric graphic', 'Ultraform acrylic letters (some hanging)', 'Wooden box display', 'Grey carpet', 'Clothes rack + changing room (by Youngs)', 'Acrylic box display (by Youngs)', 'Hanging cloth setup (by Youngs)'] },
   { name: 'UED Booth', status: 'In Review', img: 'ued-booth', gallery: ['ued-booth-2', 'ued-booth-3'], scope: 'Large U-shape custom wooden counter, Std Panel + Fabric. A4 standee, all machines/laptops/stanchions by Youngs', flag: 'Machines/laptops/stanchions by Youngs',
@@ -850,6 +869,13 @@ function setupZoneModal(){
 
   const newItemInput = document.getElementById('zone-modal-new-item');
   const addItemBtn = document.getElementById('zone-modal-add-btn');
+  const unitsEl = document.getElementById('zone-modal-units');
+  const checklistLabelEl = document.getElementById('zone-modal-checklist-label');
+
+  let currentUnit = null; // a reference into zone.units[i], or null = viewing the shared/category checklist
+
+  function checklistKey(){ return currentUnit ? `${zone.name} :: ${currentUnit.id}` : zone.name; }
+  function checklistBase(){ return currentUnit ? currentUnit.req : zone.req; }
 
   function loadAllState(){
     try{ return JSON.parse(localStorage.getItem('cocreate2026_checklist') || '{}'); }
@@ -871,9 +897,67 @@ function setupZoneModal(){
 
   let editingItem = null; // { type: 'base'|'custom', i: number }
 
+  function renderUnits(){
+    if(!zone.units || zone.units.length === 0){
+      unitsEl.classList.remove('show');
+      checklistLabelEl.classList.remove('show');
+      unitsEl.innerHTML = '';
+      return;
+    }
+    unitsEl.classList.add('show');
+    checklistLabelEl.classList.add('show');
+    const statusColor = (s) => s === 'TBD' ? 'var(--red)' : (s === 'Approved' ? 'var(--green)' : 'var(--yellow)');
+    unitsEl.innerHTML = `
+      <span class="unit-chip category-chip ${!currentUnit ? 'active' : ''}" data-unit="">Category overview</span>
+      ${zone.units.map((u, i) => `
+        <span class="unit-chip ${currentUnit === u ? 'active' : ''}" data-unit="${i}">
+          <span class="unit-dot" style="background:${statusColor(u.status)}"></span>${escapeHtml(u.label)}
+        </span>
+      `).join('')}
+    `;
+    renderChecklistLabel();
+  }
+
+  function renderChecklistLabel(){
+    if(!zone.units || zone.units.length === 0){
+      checklistLabelEl.innerHTML = '';
+      return;
+    }
+    if(!currentUnit){
+      checklistLabelEl.innerHTML = `<span>Shared checklist — applies to all ${zone.units.length} booths by default</span>`;
+      return;
+    }
+    const unitIdx = zone.units.indexOf(currentUnit);
+    if(EDIT_MODE){
+      checklistLabelEl.innerHTML = `
+        <span>Viewing:</span>
+        <span class="unit-edit-fields">
+          <input type="text" value="${escapeHtml(currentUnit.label)}" onblur="DATA.ZONES[${DATA.ZONES.indexOf(zone)}].units[${unitIdx}].label=this.value.trim()||'${jsAttrEscape(currentUnit.label)}';saveSiteData();document.dispatchEvent(new CustomEvent('unit-changed'));">
+          <select onchange="DATA.ZONES[${DATA.ZONES.indexOf(zone)}].units[${unitIdx}].status=this.value;saveSiteData();document.dispatchEvent(new CustomEvent('unit-changed'));">
+            ${ZONE_STATUS_OPTIONS.map(s => `<option value="${s}" ${s === currentUnit.status ? 'selected' : ''}>${s}</option>`).join('')}
+          </select>
+        </span>`;
+    } else {
+      checklistLabelEl.innerHTML = `<span>Viewing: ${escapeHtml(currentUnit.label)} (${escapeHtml(currentUnit.status)})</span>`;
+    }
+  }
+
+  unitsEl.addEventListener('click', (e) => {
+    const chip = e.target.closest('.unit-chip');
+    if(!chip) return;
+    const idx = chip.dataset.unit;
+    currentUnit = idx === '' ? null : zone.units[Number(idx)];
+    editingItem = null;
+    photoIndex = 0;
+    renderUnits();
+    renderChecklist();
+    renderPhoto();
+  });
+  document.addEventListener('unit-changed', () => renderUnits());
+
   function renderChecklist(){
-    const zs = loadZoneState(zone.name);
-    const baseItems = (zone.req || [])
+    const zs = loadZoneState(checklistKey());
+    const baseItems = (checklistBase() || [])
       .map((text, i) => ({ text: zs.edits[i] !== undefined ? zs.edits[i] : text, i, checked: !!zs.checked[i], type: 'base' }))
       .filter(it => !zs.removed.includes(it.i));
     const customItems = zs.custom.map((c, i) => ({ text: c.text, i, checked: !!c.checked, type: 'custom' }));
@@ -907,12 +991,12 @@ function setupZoneModal(){
         input.focus();
         input.setSelectionRange(input.value.length, input.value.length);
         const commit = () => {
-          const zs2 = loadZoneState(zone.name);
+          const zs2 = loadZoneState(checklistKey());
           const newText = input.value.trim();
           if(newText){
             if(editingItem.type === 'base') { zs2.edits[editingItem.i] = newText; }
             else { zs2.custom[editingItem.i].text = newText; }
-            saveZoneState(zone.name, zs2);
+            saveZoneState(checklistKey(), zs2);
           }
           editingItem = null;
           renderChecklist();
@@ -938,32 +1022,32 @@ function setupZoneModal(){
       return;
     }
     if(e.target.closest('.item-remove')){
-      const zs = loadZoneState(zone.name);
+      const zs = loadZoneState(checklistKey());
       if(type === 'base'){
         if(!zs.removed.includes(i)) zs.removed.push(i);
       } else {
         zs.custom.splice(i, 1);
       }
-      saveZoneState(zone.name, zs);
+      saveZoneState(checklistKey(), zs);
       renderChecklist();
       return;
     }
-    const zs = loadZoneState(zone.name);
+    const zs = loadZoneState(checklistKey());
     if(type === 'base'){
       zs.checked[i] = !zs.checked[i];
     } else {
       zs.custom[i].checked = !zs.custom[i].checked;
     }
-    saveZoneState(zone.name, zs);
+    saveZoneState(checklistKey(), zs);
     renderChecklist();
   });
 
   function addCustomItem(){
     const text = newItemInput.value.trim();
     if(!text || !zone) return;
-    const zs = loadZoneState(zone.name);
+    const zs = loadZoneState(checklistKey());
     zs.custom.push({ text, checked: false });
-    saveZoneState(zone.name, zs);
+    saveZoneState(checklistKey(), zs);
     newItemInput.value = '';
     renderChecklist();
   }
@@ -971,7 +1055,8 @@ function setupZoneModal(){
   newItemInput.addEventListener('keydown', (e) => { if(e.key === 'Enter') addCustomItem(); });
 
   function renderPhoto(){
-    const photos = zone.gallery || [];
+    const photos = (currentUnit && currentUnit.gallery) || zone.gallery || [];
+    const contextLabel = currentUnit ? currentUnit.label : zone.name;
     let existingEmpty = viewer.querySelector('.empty');
     if(existingEmpty) existingEmpty.remove();
 
@@ -982,12 +1067,14 @@ function setupZoneModal(){
       nextBtn.style.display = 'none';
       const empty = document.createElement('div');
       empty.className = 'empty';
-      empty.textContent = 'No renderings yet — design not received for this zone.';
+      empty.textContent = currentUnit
+        ? 'No photo for this booth yet — showing the category default above, or add one in Edit Page.'
+        : 'No renderings yet — design not received for this zone.';
       viewer.appendChild(empty);
     } else {
       imgEl.style.display = '';
       imgEl.src = `assets/zones/${photos[photoIndex]}.jpg`;
-      imgEl.alt = `${zone.name} rendering ${photoIndex + 1}`;
+      imgEl.alt = `${contextLabel} rendering ${photoIndex + 1}`;
       const multi = photos.length > 1;
       counterEl.style.display = multi ? '' : 'none';
       prevBtn.style.display = multi ? '' : 'none';
@@ -1003,12 +1090,14 @@ function setupZoneModal(){
 
   function openZone(index){
     zone = DATA.ZONES[index];
+    currentUnit = null;
     photoIndex = 0;
     titleEl.textContent = zone.name;
     statusEl.textContent = zone.status;
     statusEl.className = `pill ${zone.status === 'TBD' ? 'hard' : 'unconfirmed'}`;
     newItemInput.value = '';
     editingItem = null;
+    renderUnits();
     renderChecklist();
     flagEl.textContent = zone.flag;
     flagEl.className = `zone-flag ${zone.blocking ? 'blocking' : ''}`;
@@ -1030,7 +1119,7 @@ function setupZoneModal(){
   overlay.addEventListener('click', (e) => { if(e.target === overlay) closeZone(); });
 
   function step(delta){
-    const photos = zone.gallery || [];
+    const photos = (currentUnit && currentUnit.gallery) || zone.gallery || [];
     if(photos.length === 0) return;
     photoIndex = (photoIndex + delta + photos.length) % photos.length;
     renderPhoto();
