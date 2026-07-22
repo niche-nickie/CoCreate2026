@@ -66,6 +66,23 @@ function makeUnits(prefix, count, reqTemplate, labelFn){
   }));
 }
 
+// Like makeUnits, but for zones where different tiers of booth get different specs
+// (e.g. sponsor tiers: size, light count, furniture all differ by tier).
+function makeTieredUnits(prefix, tiers){
+  const units = [];
+  tiers.forEach(tier => {
+    for(let i = 1; i <= tier.count; i++){
+      units.push({
+        id: `${prefix}-${tier.key}-${i}`,
+        label: tier.count > 1 ? `${tier.name} ${i} (${tier.sqm})` : `${tier.name} (${tier.sqm})`,
+        status: 'TBD',
+        req: [...tier.req],
+      });
+    }
+  });
+  return units;
+}
+
 // ---------- Default content (source of truth until the user edits it) ----------
 
 const DEFAULT_DATA = {
@@ -171,7 +188,12 @@ ZONES: [
     req: ['Wooden structure (w/ light strip)', 'Vinyl flooring (no carpet)', 'Wooden display stands ×4 (one per center)', 'PVC header (by AMG)', 'Fabric display ×4 centers (by Youngs)'] },
   { name: 'Sponsor Booths ×19', status: 'In Review', img: 'sponsor-booths', gallery: ['sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], scope: '4 tiers, escalating spec: Community 6m² (pop-up + counter), Associate 9m² (+42" monitor, high table), Executive 15m² (+2nd pop-up unit), Premier 20m² (L-shaped wall structure, full-height graphics, wall-mount monitor). Spotlights scale 2→7 pcs by tier', flag: '4 tiers: 6 / 9 / 15 / 20 sqm',
     req: ['Pop-up display units (by tier)', 'L-shaped wall structure (Premier tier)', 'Full-height wall graphics (Premier tier)', 'Long-arm spotlights (2→7 pcs by tier)', '42" monitor + stand (Associate/Executive/Premier)', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools (Associate/Executive)', 'Round meeting table + chairs (Premier)', 'Electric socket', 'Furniture + fabric display (by Youngs)'],
-    units: makeUnits('sponsor', 19, ['Pop-up display unit', 'Long-arm spotlights', '42" monitor + stand', 'Counter w/ storage', 'Electric socket', 'Furniture + fabric display (by Youngs)']) },
+    units: makeTieredUnits('sponsor', [
+      { key: 'community', name: 'Community', sqm: '6m²', count: 12, req: ['Pop-up display unit ×1', '2× Long-arm spotlights', 'Counter w/ storage — wooden joinery, matte white Formica', 'Electric socket', 'Furniture + fabric display (by Youngs)'] },
+      { key: 'associate', name: 'Associate', sqm: '9m²', count: 3, req: ['Pop-up display unit ×1', '4× Long-arm spotlights', '42" monitor + stand', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools', 'Electric socket', 'Furniture + fabric display (by Youngs)'] },
+      { key: 'executive', name: 'Executive', sqm: '15m²', count: 3, req: ['Pop-up display unit ×2', '5× Long-arm spotlights', '42" monitor + stand', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools', 'Electric socket', 'Furniture + fabric display (by Youngs)'] },
+      { key: 'premier', name: 'Premier', sqm: '20m²', count: 1, req: ['L-shaped wall structure', 'Full-height wall graphics', 'Wall-mount monitor', '7× Long-arm spotlights', 'Counter w/ storage — wooden joinery, matte white Formica', 'Round meeting table + chairs', 'Electric socket', 'Furniture + fabric display (by Youngs)'] },
+    ]) },
   { name: 'Supplier Booths (A200)', status: 'In Review', img: 'supplier-a200', gallery: ['supplier-a200-2', 'supplier-a200-3'], scope: 'Standard 8m² + Premium 14m² — wooden backdrop 4×2.5mH, 42" TV, Std Counter, grey carpet. Furniture by Youngs, others by AMG', flag: '48× 8sqm + 3× 14sqm = 51 units ⚠ Large quantity',
     req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'],
     units: makeUnits('supplier-a200', 51, ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], n => n <= 48 ? `Booth ${n} (8sqm)` : `Booth ${n} (14sqm)`) },
