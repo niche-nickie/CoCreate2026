@@ -260,7 +260,7 @@ ZONES: [
 TEAM: [
   { name: 'Nickie Wang', role: 'Niche Exhibit · Client Liaison', tag: 'Lead' },
   { name: 'Calvin Yee', role: 'AMG · Quote / COI', tag: 'AMG' },
-  { name: 'Ariana', role: 'AMG · Rigger / Electrical', tag: 'AMG' },
+  { name: 'Ariana', role: 'AMG', tag: 'AMG' },
   { name: 'Iris', role: 'AMG', tag: 'AMG' },
   { name: 'Jose', role: 'AMG', tag: 'AMG' },
   { name: 'Marshal Zhu', role: 'Youngs · Client', tag: 'Client' },
