@@ -2,7 +2,7 @@
 // Static, client-side. Report/Ask uses a local access list + localStorage — no real backend.
 // All project content lives in DATA and is editable in-browser via Edit Mode (persisted to localStorage).
 
-const TODAY = new Date('2026-07-20');
+const TODAY = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
 const SHOW_START = new Date('2026-09-09');
 
 const ACCESS_LIST = {
@@ -598,6 +598,7 @@ function renderGantt(){
 
   const todayPct = pct(TODAY);
   const rowLabelWidth = 220;
+  const todayLabel = TODAY.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
   document.getElementById('gantt').innerHTML = `
     <div class="gantt-body" style="position:relative;">
       <div class="gantt-row" style="min-height:0;">
@@ -606,7 +607,7 @@ function renderGantt(){
       </div>
       ${rowsHtml}
       <div class="gantt-today" style="left:calc(${rowLabelWidth}px + (100% - ${rowLabelWidth}px) * ${todayPct / 100})">
-        <span class="tag">TODAY · JUL 20</span>
+        <span class="tag">TODAY · ${todayLabel}</span>
       </div>
     </div>
   `;
