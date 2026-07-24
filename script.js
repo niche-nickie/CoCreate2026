@@ -188,7 +188,7 @@ OPEN_ITEMS: [
   { owner: 'Calvin', urgent: false, text: 'TV quantity strategy. 70+ units of 42" TV across supplier booths alone. Confirm rental vs. purchase decision before quote is issued.' },
   { owner: 'Design team', urgent: true, text: 'Next-Gen Sourcing + AI zone. Marked "To be updated" in V1 design brief. Cannot complete engineering drawings or quote until this zone is finalized.' },
   { owner: 'Calvin', urgent: false, text: 'Quote issuance. Full scope received Jul 19. Quote to be issued to Nickie for review before presenting to Youngs/Marshal.' },
-  { owner: 'Nickie', urgent: false, text: 'UED Booth reuse. Joe asked whether the booth build can ship to San Francisco after CoCreate for reuse at a follow-up event — Plug and Play, Sunnyvale CA, Sep 13 2026, 2:30–6pm PT, same-day load-in/teardown. Confirm feasibility + shipping logistics.' },
+  { owner: 'Calvin', urgent: false, text: 'UED Booth reuse — confirmed. Booth ships to San Francisco after CoCreate for reuse at a follow-up event — Plug and Play, Sunnyvale CA, Sep 13 2026, 2:30–6pm PT, same-day load-in/teardown. Need a separate quote for the shipping + reuse.' },
 ],
 
 DONE_ITEMS: [
