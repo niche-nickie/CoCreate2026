@@ -366,6 +366,18 @@ function removeRow(arrKey, idx){
   renderAll();
 }
 
+// Reorder DATA.ZONES: pull the item out of `from`, insert it at `to`.
+function moveZone(from, to){
+  const arr = DATA.ZONES;
+  if(from === to || from < 0 || from >= arr.length) return;
+  const [item] = arr.splice(from, 1);
+  if(to > from) to--; // account for the removal shifting later indices down
+  to = Math.max(0, Math.min(to, arr.length));
+  arr.splice(to, 0, item);
+  saveSiteData();
+  renderAll();
+}
+
 function editBtns(arrKey, idx){
   if(!EDIT_MODE) return '';
   return `<button class="edit-remove-btn" onclick="event.stopPropagation();removeRow('${arrKey}',${idx})" title="Remove">&times;</button>`;
@@ -717,7 +729,8 @@ const ZONE_STATUS_OPTIONS = ['TBD', 'In Review', 'Approved'];
 
 function renderZonesFull(){
   document.getElementById('zone-grid').innerHTML = DATA.ZONES.map((z, i) => `
-    <div class="zone-card" data-zone-index="${i}">
+    <div class="zone-card${EDIT_MODE ? ' draggable-zone' : ''}" data-zone-index="${i}">
+      ${EDIT_MODE ? '<div class="zone-drag-handle" title="Drag to reorder" draggable="true" onclick="event.stopPropagation()">⠿ drag to reorder</div>' : ''}
       <div class="zone-thumb">${zoneThumbHtml(z)}</div>
       <div class="zone-name"${editAttrs('ZONES', i, 'name')}>${escapeHtml(z.name)}</div>
       ${EDIT_MODE
@@ -1241,6 +1254,57 @@ function setupZoneModal(){
   });
 }
 
+// ---------- Drag-to-reorder zones (Edit Mode only) ----------
+function setupZoneDrag(){
+  const grid = document.getElementById('zone-grid');
+  let dragSrc = null;      // source zone index
+  let dropBefore = null;   // insert-before index in the current array
+
+  function clearIndicators(){
+    grid.querySelectorAll('.zone-card').forEach(c => c.classList.remove('drop-before', 'drop-after', 'zone-dragging'));
+  }
+
+  grid.addEventListener('dragstart', (e) => {
+    const handle = e.target.closest('.zone-drag-handle');
+    if(!handle || !EDIT_MODE){ e.preventDefault(); return; }
+    const card = handle.closest('.zone-card');
+    dragSrc = Number(card.dataset.zoneIndex);
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', String(dragSrc));
+    try { e.dataTransfer.setDragImage(card, 20, 20); } catch(_){}
+    card.classList.add('zone-dragging');
+  });
+
+  grid.addEventListener('dragover', (e) => {
+    if(dragSrc === null) return;
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    const card = e.target.closest('.zone-card');
+    grid.querySelectorAll('.zone-card').forEach(c => c.classList.remove('drop-before', 'drop-after'));
+    if(!card){ dropBefore = DATA.ZONES.length; return; }
+    const idx = Number(card.dataset.zoneIndex);
+    const rect = card.getBoundingClientRect();
+    const after = e.clientX > rect.left + rect.width / 2;
+    if(after){ card.classList.add('drop-after'); dropBefore = idx + 1; }
+    else { card.classList.add('drop-before'); dropBefore = idx; }
+  });
+
+  grid.addEventListener('drop', (e) => {
+    if(dragSrc === null) return;
+    e.preventDefault();
+    const from = dragSrc;
+    const to = (dropBefore === null) ? DATA.ZONES.length : dropBefore;
+    dragSrc = null; dropBefore = null;
+    clearIndicators();
+    moveZone(from, to);
+  });
+
+  grid.addEventListener('dragend', () => {
+    dragSrc = null; dropBefore = null;
+    clearIndicators();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   loadSiteData();
   renderAll();
@@ -1248,4 +1312,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setupNav();
   setupModal();
   setupZoneModal();
+  setupZoneDrag();
 });

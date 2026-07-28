@@ -435,6 +435,19 @@ body.editing .zone-card .zone-status, body.editing .zone-card select { margin: 4
 }
 .zone-card .edit-remove-btn:hover { border-color: var(--red); }
 
+/* Drag-to-reorder (Edit Mode) */
+.zone-drag-handle {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  font-family: var(--sans); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--text-muted); background: var(--bg); border: 1px dashed var(--border); border-radius: 4px;
+  padding: 5px; margin-bottom: 8px; cursor: grab; user-select: none;
+}
+.zone-drag-handle:hover { border-color: var(--accent); color: var(--accent); }
+.zone-drag-handle:active { cursor: grabbing; }
+.zone-card.zone-dragging { opacity: 0.4; }
+.zone-card.drop-before { box-shadow: -3px 0 0 0 var(--accent); }
+.zone-card.drop-after { box-shadow: 3px 0 0 0 var(--accent); }
+
 .risk-card { position: relative; }
 .risk-card .edit-remove-btn { position: absolute; top: 8px; right: 10px; }
 
