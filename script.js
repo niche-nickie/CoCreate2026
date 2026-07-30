@@ -294,20 +294,34 @@ SEED_UPDATES: [
 // ---------- Persistence: DATA is DEFAULT_DATA, overridden by any saved edits ----------
 
 const CONTENT_KEY = 'cocreate2026_content';
+const CONTENT_VER_KEY = 'cocreate2026_content_ver';
+// Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
+// A saved snapshot from an older version is discarded so the new defaults show through.
+const CONTENT_VERSION = 3;
 let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
 
 function loadSiteData(){
   try{
+    const savedVer = Number(localStorage.getItem(CONTENT_VER_KEY) || '0');
     const saved = JSON.parse(localStorage.getItem(CONTENT_KEY));
-    if(saved) DATA = saved;
+    if(saved && savedVer === CONTENT_VERSION){
+      DATA = saved;
+    } else {
+      // No snapshot, or one from an older data version — start from the latest defaults.
+      localStorage.removeItem(CONTENT_KEY);
+      localStorage.removeItem(CONTENT_VER_KEY);
+      DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
+    }
   } catch(e){ /* ignore malformed saved data, keep defaults */ }
 }
 function saveSiteData(){
   localStorage.setItem(CONTENT_KEY, JSON.stringify(DATA));
+  localStorage.setItem(CONTENT_VER_KEY, String(CONTENT_VERSION));
 }
 function resetSiteData(){
   if(!confirm('Reset all content back to the original defaults? This cannot be undone.')) return;
   localStorage.removeItem(CONTENT_KEY);
+  localStorage.removeItem(CONTENT_VER_KEY);
   DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
   renderAll();
 }
