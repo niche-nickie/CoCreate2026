@@ -226,7 +226,7 @@ ZONES: [
   { name: 'Next-Gen Sourcing + AI', status: 'TBD', scope: 'Design not received', flag: '⚠ Blocking engineering', blocking: true, req: [] },
   { name: 'Buyer Story', status: 'In Review', img: 'buyer-story-6', gallery: ['buyer-story-6'], scope: 'Slot-together panel system — honeycomb paperboard (preferred), heavy-duty corrugated, or OSB (alternative). 2 layout options, each with TV', flag: 'New material system — confirm AMG capability',
     req: ['Slot-together panel system', 'Honeycomb paperboard (preferred material)', 'Heavy-duty corrugated (alt. material)', 'OSB panels (alt. material)', 'TV (both layout options)'] },
-  { name: 'Unboxing Live', status: 'In Review', img: 'unboxing-live', gallery: ['unboxing-live-2', 'unboxing-live-3'], scope: 'Vinyl Flooring (circular, branded) + 42" TV only', flag: 'Simple scope — Option 1 confirmed',
+  { name: 'Unboxing Live', status: 'In Review', img: 'unboxing-live-updated', gallery: ['unboxing-live-updated'], scope: 'Updated Jul 30. Vinyl Flooring (circular, branded) + 42" TV, branded counter, product display pedestals', flag: 'Simple scope — Option 1 confirmed',
     req: ['Vinyl flooring (circular, branded)', '42" TV'] },
   { name: 'Supplier Booths (A200)', status: 'In Review', img: 'supplier-a200', gallery: ['supplier-a200-2', 'supplier-a200-3'], scope: 'Standard 8m² + Premium 14m² — wooden backdrop 4×2.5mH, 42" TV, Std Counter, grey carpet. Furniture by Youngs, others by AMG', flag: '48× 8sqm + 3× 14sqm = 51 units ⚠ Large quantity',
     req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'],
@@ -297,7 +297,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 3;
+const CONTENT_VERSION = 4;
 let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
 
 function loadSiteData(){
