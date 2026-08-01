@@ -250,10 +250,8 @@ ZONES: [
     req: ['Wooden structure (w/ light strip)', 'Vinyl flooring (no carpet)', 'Wooden display stands ×4 (one per center)', 'PVC header (by AMG)', 'Fabric display ×4 centers (by Youngs)'] },
   { name: 'Podcast', owner: 'Iris', status: 'In Review', img: 'podcast', gallery: ['podcast-2', 'podcast-3'], scope: 'Vinyl on glass room walls (setup only) — glass room + furniture by Youngs', flag: 'Glass room by Youngs',
     req: ['Vinyl on glass room walls (setup only)', 'Glass room (by Youngs)', 'Furniture (by Youngs)'] },
-  { name: 'Creator Market', owner: 'Iris', status: 'In Review', img: 'creator-market', gallery: gallery('creator-market', 5), scope: 'Wooden frame backdrop (2,413mmH), multiple display columns (Museland Creation / Brand Builder / Shop Builder), large curved vinyl floor, central interactive display', flag: 'Circular floor layout 11,000mm diameter',
-    req: ['Wooden structure (frame backdrop, 2,413mmH)', 'Multiple display columns', 'Large curved vinyl floor', 'Central interactive display'] },
-  { name: 'Muse Booth', owner: 'Iris', status: 'In Review', img: 'muse-booth', gallery: ['muse-booth-2', 'muse-booth-3', 'muse-booth-4', 'muse-booth-5', 'muse-booth-6', 'muse-booth-7'], scope: 'Custom Panel + Graphic, Std Panel + Fabric, wooden frame w/ support base, Ultraform acrylic letters (some hanging), wooden box display, grey carpet. Clothes rack, changing room + acrylic box display by Youngs', flag: 'Hanging cloth setup (Youngs provides)',
-    req: ['Wooden structure (frame w/ support base)', 'Custom Panel', 'Graphic', 'Std Panel structure', 'Fabric graphic', 'Ultraform acrylic letters (some hanging)', 'Wooden box display', 'Grey carpet', 'Clothes rack + changing room (by Youngs)', 'Acrylic box display (by Youngs)', 'Hanging cloth setup (by Youngs)'] },
+  { name: 'Creator Market (Muse)', owner: 'Iris', status: 'In Review', img: 'creator-market', gallery: [...gallery('creator-market', 5), 'muse-booth-2', 'muse-booth-3', 'muse-booth-4', 'muse-booth-5', 'muse-booth-6', 'muse-booth-7'], scope: 'One area (Museland). Creator Market: wooden frame backdrop (2,413mmH), display columns (Museland Creation / Brand Builder / Shop Builder), large curved vinyl floor (11,000mm dia), central interactive display. Muse: Custom Panel + fabric, Ultraform acrylic letters (some hanging), wooden box display, grey carpet — clothes rack + changing room + acrylic box display by Youngs', flag: 'Circular floor 11,000mm dia · hanging cloth setup (Youngs)',
+    req: ['Wooden structure (frame backdrop, 2,413mmH)', 'Multiple display columns (Museland Creation / Brand Builder / Shop Builder)', 'Large curved vinyl floor', 'Central interactive display', 'Custom Panel + Graphic', 'Std Panel + Fabric', 'Ultraform acrylic letters (some hanging)', 'Wooden box display', 'Grey carpet', 'Clothes rack + changing room (by Youngs)', 'Acrylic box display (by Youngs)', 'Hanging cloth setup (by Youngs)'] },
   { name: 'UED Booth', owner: 'Jin & Chris', status: 'In Review', img: 'ued-booth', gallery: ['ued-booth-2', 'ued-booth-3'], scope: 'Large U-shape custom wooden counter, Std Panel + Fabric. A4 standee, all machines/laptops/stanchions by Youngs', flag: 'Machines/laptops/stanchions by Youngs',
     req: ['Wooden structure (large U-shape custom counter)', 'Std Panel structure', 'Fabric graphic', 'A4 standee (by Youngs)', 'Machines/laptops/stanchions (by Youngs)'] },
 ],
@@ -297,7 +295,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 5;
+const CONTENT_VERSION = 6;
 let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
 
 function loadSiteData(){
