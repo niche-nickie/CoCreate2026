@@ -146,7 +146,7 @@ GANTT_ROWS: [
   { label: 'Submit GSC Application', owner: 'AMG', start: '2026-07-20', end: '2026-08-05', color: 'blue', note: 'Blocked until venue license confirmed' },
   { label: 'HARD: Union labor docs → LACC', owner: 'AMG', point: '2026-06-08', color: 'red', note: '90-day rule — breached, escalate with LACC' },
   { label: 'AMG engineering + drawings (full scope)', owner: 'AMG', start: '2026-07-20', end: '2026-08-10', color: 'blue', note: 'Compressed — full scope only confirmed Jul 19' },
-  { label: 'AMG quote issued → Nickie review', owner: 'Calvin', start: '2026-07-21', end: '2026-07-25', color: 'blue', note: 'Imminent' },
+  { label: 'First quote sent (received zones)', owner: 'Nickie / Calvin', start: '2026-07-21', end: '2026-08-01', color: 'green', note: 'Sent Aug 1 — zones with designs in hand; TBD zones + add-ons to follow' },
   { label: 'Quote approved · 75% deposit', owner: 'Youngs', start: '2026-07-28', end: '2026-08-07', color: 'amber', note: 'Needed before fabrication ramps up' },
   { label: 'Youngs: 80% design confirm', owner: 'Youngs', point: '2026-08-07', color: 'amber', note: 'Gates stage/backdrop + custom fabrication' },
   { label: 'Fab — stage/backdrop + custom', owner: 'AMG shop', start: '2026-08-08', end: '2026-09-02', color: 'blue', note: 'AMA/Breakout/Match + Creator Market/Next-Gen — starts after 80% confirm' },
@@ -172,7 +172,7 @@ PHASES: [
   { phase: 'Union labor documentation', dates: 'Was due Jun 8', duration: '—', status: 'hard', statusLabel: 'Breached', notes: '90-day rule missed — venue license/GSC application weren\'t ready in time. Needs LACC escalation.' },
   { phase: 'GSC Application submitted', dates: 'TBD', duration: '—', status: 'notstarted', statusLabel: 'Not started', notes: 'Blocked by venue license; union labor deadline already missed' },
   { phase: 'AMG engineering + production drawings (full scope)', dates: 'Jul 20 → Aug 10', duration: '~3 weeks', status: 'progress', statusLabel: 'In progress', notes: 'Compressed — full scope only confirmed Jul 19, ~10 weeks later than originally planned' },
-  { phase: 'AMG quote issued + approved', dates: 'Jul 21 → Aug 7', duration: '~2.5 weeks', status: 'progress', statusLabel: 'Imminent', notes: 'Quote drafting now that full scope is in hand; fast client turnaround needed' },
+  { phase: 'AMG quote issued + approved', dates: 'First quote Aug 1', duration: '—', status: 'progress', statusLabel: 'First quote sent', notes: 'First quote sent Aug 1 for zones with designs received; Keynote/Match/Next-Gen + add-ons still to quote. Client approval + 75% deposit next.' },
   { phase: 'Youngs design confirmations (gate fabrication)', dates: '80% Aug 7 · booths/graphics Aug 17 · pop-ups Aug 26', duration: '—', status: 'unconfirmed', statusLabel: 'Deadlines set', notes: 'Deadlines issued to Youngs — each confirm releases its fabrication tranche' },
   { phase: 'Fabrication — staged by confirm gate', dates: 'Aug 8 → Sep 5', duration: '~4 weeks', status: 'notstarted', statusLabel: 'Not started', notes: 'Stage/backdrop+custom after Aug 7 · booths+graphics after Aug 17 · pop-ups after Aug 26 (⚠ tight vs freight Sep 4)' },
   { phase: 'Scaled floor diagrams → LACC', dates: 'By Aug 8', duration: '—', status: 'hard', statusLabel: 'Hard deadline', notes: '30 days prior to move-in — now overlaps fabrication start' },
@@ -194,7 +194,7 @@ OPEN_ITEMS: [
   { owner: 'Calvin', urgent: false, text: 'TV quantity strategy. 70+ units of 42" TV across supplier booths alone. Confirm rental vs. purchase decision before quote is issued.' },
   { owner: 'Design team', urgent: true, text: 'Next-Gen Sourcing + AI zone. Marked "To be updated" in V1 design brief. Cannot complete engineering drawings or quote until this zone is finalized.' },
   { owner: 'Youngs', urgent: true, text: 'Standard counter quantity. AMG currently has only ~30 std counters in stock. Youngs must confirm the total number needed by next week so any shortfall can be sourced in time.' },
-  { owner: 'Calvin', urgent: false, text: 'Quote issuance. Full scope received Jul 19. Quote to be issued to Nickie for review before presenting to Youngs/Marshal.' },
+  { owner: 'Calvin', urgent: false, text: 'Quote — remaining zones. First quote sent Aug 1 for zones with designs received. Still need to quote Keynote, Match Meeting, and Next-Gen once their designs land + any Youngs add-ons (pop-ups, extra counters).' },
   { owner: 'Calvin', urgent: false, text: 'UED Booth reuse — confirmed. Booth ships to San Francisco after CoCreate for reuse at a follow-up event — Plug and Play, Sunnyvale CA, Sep 13 2026, 2:30–6pm PT, same-day load-in/teardown. Need a separate quote for the shipping + reuse.' },
 ],
 
@@ -275,7 +275,7 @@ TEAM: [
 PROGRESS: [
   { label: 'GSC Application', pct: 5, color: 'var(--orange)' },
   { label: 'Design Brief', pct: 90, color: 'var(--blue)' },
-  { label: 'Quote / 成控', pct: 10, color: 'var(--green)' },
+  { label: 'Quote / 成控', pct: 40, color: 'var(--green)' },
   { label: 'Production', pct: 0, color: 'var(--accent)' },
 ],
 
@@ -290,6 +290,7 @@ HARD_DEADLINES: [
 ],
 
 SEED_UPDATES: [
+  { date: 'Aug 1, 2026', author: 'Nickie Wang', text: 'First quote sent out — covers the zones with designs already received. Keynote, Match Meeting, and Next-Gen (plus any Youngs add-ons like pop-ups / extra counters) will be quoted once their designs/quantities land.' },
   { date: 'Aug 1, 2026', author: 'Nickie Wang', text: 'Deadlines issued to Youngs: 80% design confirm by Aug 7 (priority: AMA/Breakout/Match stage+backdrop, Creator Market + Next-Gen custom, and std counter qty — AMG only has ~30); merchant booths + graphics + hanging signs by Aug 17; any add-on pop-ups by Aug 26.' },
   { date: 'Jul 20, 2026', author: 'Nickie Wang', text: 'Full 3-part design deck (73 pages) reviewed and implanted into the hub. Zone specs refined across 17 of 20 zones with renderings; Keynote Hall, Match Meeting, and Next-Gen Sourcing + AI still have no design received.' },
   { date: 'Jul 19, 2026', author: 'Nickie Wang', text: 'Full design brief (V1) received from Youngs. All 3 parts reviewed. Scope confirmed: 20 zones, 100+ individual booths, 70+ TVs. Next-Gen zone pending — Calvin notified.' },
@@ -307,7 +308,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 10;
+const CONTENT_VERSION = 11;
 let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
 
 function loadSiteData(){
