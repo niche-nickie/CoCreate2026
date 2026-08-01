@@ -187,6 +187,7 @@ OPEN_ITEMS: [
   { owner: 'Calvin / Ariana', urgent: false, text: 'Identify LACC-authorized electrical contractor. Must be one of: Edlen Electrical, GES Electrical, or Freeman Electrical.' },
   { owner: 'Calvin', urgent: false, text: 'TV quantity strategy. 70+ units of 42" TV across supplier booths alone. Confirm rental vs. purchase decision before quote is issued.' },
   { owner: 'Design team', urgent: true, text: 'Next-Gen Sourcing + AI zone. Marked "To be updated" in V1 design brief. Cannot complete engineering drawings or quote until this zone is finalized.' },
+  { owner: 'Youngs', urgent: true, text: 'Standard counter quantity. AMG currently has only ~30 std counters in stock. Youngs must confirm the total number needed by next week so any shortfall can be sourced in time.' },
   { owner: 'Calvin', urgent: false, text: 'Quote issuance. Full scope received Jul 19. Quote to be issued to Nickie for review before presenting to Youngs/Marshal.' },
   { owner: 'Calvin', urgent: false, text: 'UED Booth reuse — confirmed. Booth ships to San Francisco after CoCreate for reuse at a follow-up event — Plug and Play, Sunnyvale CA, Sep 13 2026, 2:30–6pm PT, same-day load-in/teardown. Need a separate quote for the shipping + reuse.' },
 ],
@@ -274,11 +275,16 @@ PROGRESS: [
 
 HARD_DEADLINES: [
   { title: 'Union Labor Docs → LACC', sub: '90-day rule · breached, escalate with LACC', date: '2026-06-08' },
+  { title: 'Youngs: 80% design confirm', sub: 'So AMG can schedule. Urgent — stage/backdrop (AMA, Breakout, Match), custom (Creator Market, Next-Gen) + std counter qty', date: '2026-08-07' },
   { title: 'Scaled Floor Diagrams → LACC', sub: '30-day rule · Fire Marshal approval', date: '2026-08-08' },
+  { title: 'Youngs: Merchant booth confirm', sub: 'Supplier / exhibitor booth designs locked', date: '2026-08-17' },
+  { title: 'Youngs: Graphics + hanging signs', sub: 'All artwork + hanging signs final', date: '2026-08-17' },
   { title: 'Fire Permit Requests', sub: '21-day rule · LAFD', date: '2026-08-19' },
+  { title: 'Youngs: Add-on pop-ups', sub: 'Any additional pop-up units final', date: '2026-08-26' },
 ],
 
 SEED_UPDATES: [
+  { date: 'Aug 1, 2026', author: 'Nickie Wang', text: 'Deadlines issued to Youngs: 80% design confirm by Aug 7 (priority: AMA/Breakout/Match stage+backdrop, Creator Market + Next-Gen custom, and std counter qty — AMG only has ~30); merchant booths + graphics + hanging signs by Aug 17; any add-on pop-ups by Aug 26.' },
   { date: 'Jul 20, 2026', author: 'Nickie Wang', text: 'Full 3-part design deck (73 pages) reviewed and implanted into the hub. Zone specs refined across 17 of 20 zones with renderings; Keynote Hall, Match Meeting, and Next-Gen Sourcing + AI still have no design received.' },
   { date: 'Jul 19, 2026', author: 'Nickie Wang', text: 'Full design brief (V1) received from Youngs. All 3 parts reviewed. Scope confirmed: 20 zones, 100+ individual booths, 70+ TVs. Next-Gen zone pending — Calvin notified.' },
   { date: 'Jul 17, 2026', author: 'Nickie Wang', text: 'Delta Showroom Timeline Rev 5 updated (AMG crew blackout Sep 9–11 confirmed for CoCreate).' },
@@ -295,7 +301,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 7;
+const CONTENT_VERSION = 8;
 let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
 
 function loadSiteData(){
