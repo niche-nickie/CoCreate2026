@@ -216,8 +216,8 @@ ZONES: [
   { name: 'Registration', owner: 'Ari', status: 'In Review', img: 'registration', gallery: ['registration-2'], scope: 'Std Panel + Fabric (9,896×2,409mm), column vinyl wraps. Furniture by Youngs', flag: 'Lobby area — LACC approval needed for placement',
     req: ['Std Panel structure (9,896×2,409mm)', 'Fabric graphic', 'Column vinyl wraps', 'Furniture (by Youngs)'] },
   { name: 'Keynote Hall', owner: 'Ari', status: 'TBD', scope: 'TBD — no design received', flag: '3,840m² / 1,200pax. Largest space.', blocking: true, req: [] },
-  { name: 'AMA / Influencer Hub', owner: 'Ari', status: 'In Review', img: 'ama-hub-updated', gallery: ['ama-hub-updated'], scope: 'Updated Jul 30 (Option 2). Custom Panel PVC/Formica (white) + vinyl letters, orange accent panel, white stage. LED 4×2.5m, Display Box (paint). Furniture: Youngs · AVL: Johnathan · Backdrop + Stage: AMG', flag: 'Stage height — check LACC 30" rule',
-    req: ['Custom Panel PVC/Formica (white)', 'Vinyl letters', 'Orange accent panel', 'White stage', 'LED screen (4×2.5m)', 'Display Box (paint)', 'Backdrop + stage build (AMG)', 'Furniture (by Youngs)', 'AVL (Johnathan)'] },
+  { name: 'AMA / Influencer Hub', owner: 'Ari', status: 'In Review', img: 'ama-hub-0731', gallery: ['ama-hub-0731'], scope: 'Updated Jul 31. Custom Panel PVC/Formica (white) + vinyl letters, white stage, large LED screen (~4×2.5m). Furniture: Youngs · AVL: Johnathan · Backdrop + Stage: AMG', flag: 'Stage height — check LACC 30" rule',
+    req: ['Custom Panel PVC/Formica (white)', 'Vinyl letters', 'White stage', 'LED screen (~4×2.5m)', 'Backdrop + stage build (AMG)', 'Furniture (by Youngs)', 'AVL (Johnathan)'] },
   { name: 'Match Meeting', owner: 'Ari', status: 'TBD', scope: 'TBD', flag: 'Furniture Youngs', req: ['Furniture (by Youngs)'] },
   { name: 'Breakout Session ×2', owner: 'Ari', status: 'In Review', img: 'breakout-supplychain', gallery: ['breakout-supplychain', 'breakout-ai'], scope: 'Updated Jul 30. Two sessions, wooden stage + white carpet, LED 3.5×2m each. "Supply Chain": Custom Panel Formica (white) + Display Box (paint). "AI": Custom Panel Formica (white) + PVC + Display Cone (paint). Furniture: Youngs · AVL: Johnathan · Backdrop + Stage: AMG', flag: 'Stage height — check LACC 30" rule',
     req: ['Wooden structure (stage, ×2)', 'White carpet', 'LED screen (3.5×2m ea.)', 'Custom Panel Formica (white)', 'Custom Panel PVC (AI session)', 'Display Box, paint (Supply Chain session)', 'Display Cone, paint (AI session)', 'Backdrop + stage build (AMG)', 'Furniture (by Youngs)', 'AVL (Johnathan)'] },
@@ -295,7 +295,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 6;
+const CONTENT_VERSION = 7;
 let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
 
 function loadSiteData(){
