@@ -148,7 +148,12 @@ GANTT_ROWS: [
   { label: 'AMG engineering + drawings (full scope)', owner: 'AMG', start: '2026-07-20', end: '2026-08-10', color: 'blue', note: 'Compressed — full scope only confirmed Jul 19' },
   { label: 'AMG quote issued → Nickie review', owner: 'Calvin', start: '2026-07-21', end: '2026-07-25', color: 'blue', note: 'Imminent' },
   { label: 'Quote approved · 75% deposit', owner: 'Youngs', start: '2026-07-28', end: '2026-08-07', color: 'amber', note: 'Needed before fabrication ramps up' },
-  { label: 'Fabrication + graphics', owner: 'AMG shop', start: '2026-08-01', end: '2026-09-05', color: 'blue', note: 'Compressed to ~5 weeks (was ~8)' },
+  { label: 'Youngs: 80% design confirm', owner: 'Youngs', point: '2026-08-07', color: 'amber', note: 'Gates stage/backdrop + custom fabrication' },
+  { label: 'Fab — stage/backdrop + custom', owner: 'AMG shop', start: '2026-08-08', end: '2026-09-02', color: 'blue', note: 'AMA/Breakout/Match + Creator Market/Next-Gen — starts after 80% confirm' },
+  { label: 'Youngs: booths + graphics + signs confirm', owner: 'Youngs', point: '2026-08-17', color: 'amber', note: 'Gates merchant-booth + graphics/sign fabrication' },
+  { label: 'Fab — merchant booths + graphics/signs', owner: 'AMG shop', start: '2026-08-18', end: '2026-09-03', color: 'blue', note: 'Supplier/sponsor booths + hanging signs — starts after Aug 17 confirm' },
+  { label: 'Youngs: add-on pop-ups confirm', owner: 'Youngs', point: '2026-08-26', color: 'amber', note: 'Gates pop-up fabrication — tightest gate' },
+  { label: 'Fab — add-on pop-ups', owner: 'AMG shop', start: '2026-08-27', end: '2026-09-05', color: 'blue', note: '⚠ Very tight — only days before freight (Sep 1) / install (Sep 7)' },
   { label: 'HARD: Scaled floor diagrams → LACC', owner: 'AMG', point: '2026-08-08', color: 'red', note: '30-day rule' },
   { label: 'Fire permit → LAFD', owner: 'AMG', point: '2026-08-19', color: 'amber', note: '21-day rule' },
   { label: 'Next-Gen Sourcing + AI zone design', owner: 'Design team', start: '2026-07-20', end: '2026-08-25', color: 'amber', note: 'Design not yet received — separate blocking track' },
@@ -168,7 +173,8 @@ PHASES: [
   { phase: 'GSC Application submitted', dates: 'TBD', duration: '—', status: 'notstarted', statusLabel: 'Not started', notes: 'Blocked by venue license; union labor deadline already missed' },
   { phase: 'AMG engineering + production drawings (full scope)', dates: 'Jul 20 → Aug 10', duration: '~3 weeks', status: 'progress', statusLabel: 'In progress', notes: 'Compressed — full scope only confirmed Jul 19, ~10 weeks later than originally planned' },
   { phase: 'AMG quote issued + approved', dates: 'Jul 21 → Aug 7', duration: '~2.5 weeks', status: 'progress', statusLabel: 'Imminent', notes: 'Quote drafting now that full scope is in hand; fast client turnaround needed' },
-  { phase: 'Fabrication + production', dates: 'Aug 1 → Sep 5', duration: '~5 weeks', status: 'notstarted', statusLabel: 'Not started', notes: 'Compressed from original ~8-week estimate' },
+  { phase: 'Youngs design confirmations (gate fabrication)', dates: '80% Aug 7 · booths/graphics Aug 17 · pop-ups Aug 26', duration: '—', status: 'unconfirmed', statusLabel: 'Deadlines set', notes: 'Deadlines issued to Youngs — each confirm releases its fabrication tranche' },
+  { phase: 'Fabrication — staged by confirm gate', dates: 'Aug 8 → Sep 5', duration: '~4 weeks', status: 'notstarted', statusLabel: 'Not started', notes: 'Stage/backdrop+custom after Aug 7 · booths+graphics after Aug 17 · pop-ups after Aug 26 (⚠ tight vs freight Sep 1)' },
   { phase: 'Scaled floor diagrams → LACC', dates: 'By Aug 8', duration: '—', status: 'hard', statusLabel: 'Hard deadline', notes: '30 days prior to move-in — now overlaps fabrication start' },
   { phase: 'Fire permit → LAFD', dates: 'By Aug 19', duration: '—', status: 'watch', statusLabel: 'Watch', notes: '21 days prior' },
   { phase: 'Next-Gen Sourcing + AI zone', dates: 'TBD', duration: '—', status: 'unconfirmed', statusLabel: 'Blocking', notes: 'Design brief still not received — blocks final engineering + quote for this zone' },
@@ -301,7 +307,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 8;
+const CONTENT_VERSION = 9;
 let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
 
 function loadSiteData(){
