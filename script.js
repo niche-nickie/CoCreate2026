@@ -218,46 +218,46 @@ RISKS: {
 },
 
 ZONES: [
-  { name: 'Registration', owner: 'Ari', status: 'In Review', img: 'registration', gallery: ['registration-2'], scope: 'Std Panel + Fabric (9,896×2,409mm), column vinyl wraps. Furniture by Youngs', flag: 'Lobby area — LACC approval needed for placement',
-    req: ['Std Panel structure (9,896×2,409mm)', 'Fabric graphic', 'Column vinyl wraps', 'Furniture (by Youngs)'] },
+  { name: 'Registration', owner: 'Ari', status: 'In Review', img: 'registration', renders: ['registration-2'], drawings: ['registration-dwg-1'], scope: 'AMG shop drawing A.7 (VB, V0). Std Door Panel ×2 + Std Trainel ×23 (990×2413), 12× LED arm light, BO fabric back wall (front+back, 9896×2409), curved PVC column cover, RX-101 channel 164ft. Client items by Youngs (table cloths, stanchions).', flag: 'Lobby area — LACC approval needed for placement',
+    req: ['2× Std Door Panel — White Formica (990×2413×100)', '23× Std Trainel — Raw Wood (990×2413×100)', '12× Std LED arm light', '1× BO fabric — back wall front (REG-BK-WALL-FRT, 9896×2409, 4/0)', '1× BO fabric — back wall back (REG-BK-WALL-BK, 9896×2409, 4/0)', '1× Curved PVC column cover w/ Velcro (COLUMN-COVER, 4/0)', 'RX-101 fabric channel — 164 ft', 'From client (Youngs): 6× 8ft table cloth, 7× stanchion sign support, 28× stanchions'] },
   { name: 'Keynote Hall', owner: 'Ari', status: 'TBD', scope: 'TBD — no design received', flag: '3,840m² / 1,200pax. Largest space.', blocking: true, req: [] },
-  { name: 'AMA / Influencer Hub', owner: 'Ari', status: 'In Review', img: 'ama-hub-0731', gallery: ['ama-hub-0731'], scope: 'Updated Jul 31. Custom Panel PVC/Formica (white) + vinyl letters, white stage, large LED screen (~4×2.5m). Furniture: Youngs · AVL: Johnathan · Backdrop + Stage: AMG', flag: 'Stage height — check LACC 30" rule',
+  { name: 'AMA / Influencer Hub', owner: 'Ari', status: 'In Review', img: 'ama-hub-0731', renders: ['ama-hub-0731'], scope: 'Updated Jul 31. Custom Panel PVC/Formica (white) + vinyl letters, white stage, large LED screen (~4×2.5m). Furniture: Youngs · AVL: Johnathan · Backdrop + Stage: AMG', flag: 'Stage height — check LACC 30" rule',
     req: ['Custom Panel PVC/Formica (white)', 'Vinyl letters', 'White stage', 'LED screen (~4×2.5m)', 'Backdrop + stage build (AMG)', 'Furniture (by Youngs)', 'AVL (Johnathan)'] },
   { name: 'Match Meeting', owner: 'Ari', status: 'TBD', scope: 'TBD', flag: 'Furniture Youngs', req: ['Furniture (by Youngs)'] },
-  { name: 'Breakout Session ×2', owner: 'Ari', status: 'In Review', img: 'breakout-supplychain', gallery: ['breakout-supplychain', 'breakout-ai'], scope: 'Updated Jul 30. Two sessions, wooden stage + white carpet, LED 3.5×2m each. "Supply Chain": Custom Panel Formica (white) + Display Box (paint). "AI": Custom Panel Formica (white) + PVC + Display Cone (paint). Furniture: Youngs · AVL: Johnathan · Backdrop + Stage: AMG', flag: 'Stage height — check LACC 30" rule',
+  { name: 'Breakout Session ×2', owner: 'Ari', status: 'In Review', img: 'breakout-supplychain', renders: ['breakout-supplychain', 'breakout-ai'], scope: 'Updated Jul 30. Two sessions, wooden stage + white carpet, LED 3.5×2m each. "Supply Chain": Custom Panel Formica (white) + Display Box (paint). "AI": Custom Panel Formica (white) + PVC + Display Cone (paint). Furniture: Youngs · AVL: Johnathan · Backdrop + Stage: AMG', flag: 'Stage height — check LACC 30" rule',
     req: ['Wooden structure (stage, ×2)', 'White carpet', 'LED screen (3.5×2m ea.)', 'Custom Panel Formica (white)', 'Custom Panel PVC (AI session)', 'Display Box, paint (Supply Chain session)', 'Display Cone, paint (AI session)', 'Backdrop + stage build (AMG)', 'Furniture (by Youngs)', 'AVL (Johnathan)'] },
-  { name: 'Core Display', owner: 'Iris', status: 'In Review', img: 'core-display', gallery: ['core-display-2'], scope: 'Freestanding 3D wooden letters "COCREATE" + base — character props brought by Youngs', flag: 'Large wooden structure — confirm weight/dimensions',
+  { name: 'Core Display', owner: 'Iris', status: 'In Review', img: 'core-display', renders: ['core-display-2'], scope: 'Freestanding 3D wooden letters "COCREATE" + base — character props brought by Youngs', flag: 'Large wooden structure — confirm weight/dimensions',
     req: ['Wooden structure (freestanding base)', '3D wooden letters "COCREATE"', 'Character props (by Youngs)'] },
   { name: 'Next-Gen Sourcing + AI', owner: 'Ari', status: 'TBD', scope: 'Design not received', flag: '⚠ Blocking engineering', blocking: true, req: [] },
-  { name: 'Buyer Story', owner: 'Ari', status: 'In Review', img: 'buyer-story-6', gallery: ['buyer-story-6'], scope: 'Slot-together panel system — honeycomb paperboard (preferred), heavy-duty corrugated, or OSB (alternative). 2 layout options, each with TV', flag: 'New material system — confirm AMG capability',
+  { name: 'Buyer Story', owner: 'Ari', status: 'In Review', img: 'buyer-story-6', renders: ['buyer-story-6'], scope: 'Slot-together panel system — honeycomb paperboard (preferred), heavy-duty corrugated, or OSB (alternative). 2 layout options, each with TV', flag: 'New material system — confirm AMG capability',
     req: ['Slot-together panel system', 'Honeycomb paperboard (preferred material)', 'Heavy-duty corrugated (alt. material)', 'OSB panels (alt. material)', 'TV (both layout options)'] },
-  { name: 'Unboxing Live', owner: 'Ari', status: 'In Review', img: 'unboxing-live-updated', gallery: ['unboxing-live-updated'], scope: 'Updated Jul 30. Vinyl Flooring (circular, branded) + 42" TV, branded counter, product display pedestals', flag: 'Simple scope — Option 1 confirmed',
+  { name: 'Unboxing Live', owner: 'Ari', status: 'In Review', img: 'unboxing-live-updated', renders: ['unboxing-live-updated'], scope: 'Updated Jul 30. Vinyl Flooring (circular, branded) + 42" TV, branded counter, product display pedestals', flag: 'Simple scope — Option 1 confirmed',
     req: ['Vinyl flooring (circular, branded)', '42" TV'] },
-  { name: 'Supplier Booths (A200)', owner: 'Jin & Chris', status: 'In Review', img: 'supplier-a200', gallery: ['supplier-a200-2', 'supplier-a200-3'], scope: 'Standard 8m² + Premium 14m² — wooden backdrop 4×2.5mH, 42" TV, Std Counter, grey carpet. Furniture by Youngs, others by AMG', flag: '48× 8sqm + 3× 14sqm = 51 units ⚠ Large quantity',
+  { name: 'Supplier Booths (A200)', owner: 'Jin & Chris', status: 'In Review', img: 'supplier-a200', renders: ['supplier-a200-2', 'supplier-a200-3'], scope: 'Standard 8m² + Premium 14m² — wooden backdrop 4×2.5mH, 42" TV, Std Counter, grey carpet. Furniture by Youngs, others by AMG', flag: '48× 8sqm + 3× 14sqm = 51 units ⚠ Large quantity',
     req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'],
     tiers: A200_TIERS,
     units: makeTieredUnits('supplier-a200', A200_TIERS) },
-  { name: 'Supplier Booths (Non-A200/GGS)', owner: 'Jin & Chris', status: 'In Review', img: 'supplier-nona200', gallery: ['supplier-nona200-2', 'supplier-nona200-3', 'supplier-nona200-4'], scope: '3 tiers — Starter 6m² (快幕秀 backdrop 3×2.5mH, ×11), Standard 8m² (backdrop 4×2.5mH, ×8), Premium 14m² (backdrop 4×2.5mH, ×3), all with 42" TV. Fabric display + shelving by Youngs', flag: '22 units total',
+  { name: 'Supplier Booths (Non-A200/GGS)', owner: 'Jin & Chris', status: 'In Review', img: 'supplier-nona200', renders: ['supplier-nona200-2', 'supplier-nona200-3', 'supplier-nona200-4'], scope: '3 tiers — Starter 6m² (快幕秀 backdrop 3×2.5mH, ×11), Standard 8m² (backdrop 4×2.5mH, ×8), Premium 14m² (backdrop 4×2.5mH, ×3), all with 42" TV. Fabric display + shelving by Youngs', flag: '22 units total',
     req: ['快幕秀 quick-pop backdrop (3×2.5mH / 4×2.5mH by tier)', '42" TV', 'Fabric display + shelving (by Youngs)'],
     tiers: NONA200_TIERS,
     units: makeTieredUnits('supplier-nona200', NONA200_TIERS) },
-  { name: 'Sponsor Booths ×19', owner: 'Jin & Chris', status: 'In Review', img: 'sponsor-booths', gallery: ['sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], scope: '4 tiers, escalating spec: Community 6m² (pop-up + counter), Associate 9m² (+42" monitor, high table), Executive 15m² (+2nd pop-up unit), Premier 20m² (L-shaped wall structure, full-height graphics, wall-mount monitor). Spotlights scale 2→7 pcs by tier', flag: '4 tiers: 6 / 9 / 15 / 20 sqm',
+  { name: 'Sponsor Booths ×19', owner: 'Jin & Chris', status: 'In Review', img: 'sponsor-booths', renders: ['sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], scope: '4 tiers, escalating spec: Community 6m² (pop-up + counter), Associate 9m² (+42" monitor, high table), Executive 15m² (+2nd pop-up unit), Premier 20m² (L-shaped wall structure, full-height graphics, wall-mount monitor). Spotlights scale 2→7 pcs by tier', flag: '4 tiers: 6 / 9 / 15 / 20 sqm',
     req: ['Pop-up display units (by tier)', 'L-shaped wall structure (Premier tier)', 'Full-height wall graphics (Premier tier)', 'Long-arm spotlights (2→7 pcs by tier)', '42" monitor + stand (Associate/Executive/Premier)', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools (Associate/Executive)', 'Round meeting table + chairs (Premier)', 'Electric socket', 'Furniture + fabric display (by Youngs)'],
     tiers: SPONSOR_TIERS,
     units: makeTieredUnits('sponsor', SPONSOR_TIERS) },
-  { name: 'LA City Pavilion', owner: 'Iris', status: 'In Review', img: 'lacity-pavilion-4', gallery: ['lacity-pavilion-3', 'lacity-pavilion-4', 'lacity-pavilion-5', 'lacity-pavilion-6'], scope: '224m² (15×16m). Premium-tier booths (10×15ft / 10×10ft / 8×8ft), wood backdrop, Std Panel + Fabric + lights, grey carpet. Hanging Banner Circle (double-sided, rigger needed), wooden signage', flag: '224m² / ⚠ Hanging banner = rigger required',
+  { name: 'LA City Pavilion', owner: 'Iris', status: 'In Review', img: 'lacity-pavilion-4', renders: ['lacity-pavilion-3', 'lacity-pavilion-4', 'lacity-pavilion-5', 'lacity-pavilion-6'], scope: '224m² (15×16m). Premium-tier booths (10×15ft / 10×10ft / 8×8ft), wood backdrop, Std Panel + Fabric + lights, grey carpet. Hanging Banner Circle (double-sided, rigger needed), wooden signage', flag: '224m² / ⚠ Hanging banner = rigger required',
     req: ['Wooden structure (backdrop, various sizes)', 'Std Panel structure', 'Fabric graphic', 'Lights', 'Std Counter', 'Grey carpet', 'Vinyl flooring', 'Hanging Banner Circle, double-sided (rigger required)', 'Wooden signage'] },
-  { name: 'Chongqing Pavilion', owner: 'Iris', status: 'In Review', img: 'chongqing-pavilion-3', gallery: ['chongqing-pavilion-2', 'chongqing-pavilion-3', 'chongqing-pavilion-4', 'chongqing-pavilion-5'], scope: '196m² (14×14m). Central island: 10 merchant booths (9m² each) + 85" TV; perimeter booths: 42" TV, wooden backdrop 2.97×2.413mH. Hanging Banner Square (double-sided, rigger needed), light strip', flag: '196m² / ⚠ Hanging banner = rigger required',
+  { name: 'Chongqing Pavilion', owner: 'Iris', status: 'In Review', img: 'chongqing-pavilion-3', renders: ['chongqing-pavilion-2', 'chongqing-pavilion-3', 'chongqing-pavilion-4', 'chongqing-pavilion-5'], scope: '196m² (14×14m). Central island: 10 merchant booths (9m² each) + 85" TV; perimeter booths: 42" TV, wooden backdrop 2.97×2.413mH. Hanging Banner Square (double-sided, rigger needed), light strip', flag: '196m² / ⚠ Hanging banner = rigger required',
     req: ['Wooden structure (central island backdrop, 3×2.5mH)', 'Wooden backdrop (perimeter booths, 2.97×2.413mH)', '85" TV (island reception)', '42" TV ×10 (merchant booths)', 'Hanging Banner Square, double-sided (rigger required)', 'Light strip', 'Wooden display stand', 'Black + Orange carpet'] },
-  { name: 'National Pavilion ×4', owner: 'Iris', status: 'In Review', img: 'national-pavilion', gallery: ['national-pavilion-2'], scope: '100m² (10×10m) per hall × 4 halls, 10 merchants × 4m² each. Wooden signage, grey carpet, lights', flag: '4 halls × 100m² = 400m² total',
+  { name: 'National Pavilion ×4', owner: 'Iris', status: 'In Review', img: 'national-pavilion', renders: ['national-pavilion-2'], scope: '100m² (10×10m) per hall × 4 halls, 10 merchants × 4m² each. Wooden signage, grey carpet, lights', flag: '4 halls × 100m² = 400m² total',
     req: ['Wooden signage', 'Grey carpet', 'Lights'] },
-  { name: 'Sourcing Hub', owner: 'Iris', status: 'In Review', img: 'sourcing-hub', gallery: ['sourcing-hub-3', 'sourcing-hub-4', 'sourcing-hub-5', 'sourcing-hub-6', 'sourcing-hub-7'], scope: '64m² (8×8m) overall — wooden structure w/ light strip, vinyl flooring. 4 named centers (9m² each): Guangzhou beauty, Shantou toys, Zhengzhou auto parts, Yongkang home & garden — wooden display stands, PVC header by AMG, fabric by Youngs', flag: '4 sourcing centers (9m² each) inside 64m² space',
+  { name: 'Sourcing Hub', owner: 'Iris', status: 'In Review', img: 'sourcing-hub', renders: ['sourcing-hub-3', 'sourcing-hub-4', 'sourcing-hub-5', 'sourcing-hub-6', 'sourcing-hub-7'], scope: '64m² (8×8m) overall — wooden structure w/ light strip, vinyl flooring. 4 named centers (9m² each): Guangzhou beauty, Shantou toys, Zhengzhou auto parts, Yongkang home & garden — wooden display stands, PVC header by AMG, fabric by Youngs', flag: '4 sourcing centers (9m² each) inside 64m² space',
     req: ['Wooden structure (w/ light strip)', 'Vinyl flooring (no carpet)', 'Wooden display stands ×4 (one per center)', 'PVC header (by AMG)', 'Fabric display ×4 centers (by Youngs)'] },
-  { name: 'Podcast', owner: 'Iris', status: 'In Review', img: 'podcast', gallery: ['podcast-2', 'podcast-3'], scope: 'Vinyl on glass room walls (setup only) — glass room + furniture by Youngs', flag: 'Glass room by Youngs',
+  { name: 'Podcast', owner: 'Iris', status: 'In Review', img: 'podcast', renders: ['podcast-2', 'podcast-3'], scope: 'Vinyl on glass room walls (setup only) — glass room + furniture by Youngs', flag: 'Glass room by Youngs',
     req: ['Vinyl on glass room walls (setup only)', 'Glass room (by Youngs)', 'Furniture (by Youngs)'] },
-  { name: 'Creator Market (Muse)', owner: 'Iris', status: 'In Review', img: 'creator-market', gallery: [...gallery('creator-market', 5), 'muse-booth-2', 'muse-booth-3', 'muse-booth-4', 'muse-booth-5', 'muse-booth-6', 'muse-booth-7'], scope: 'One area (Museland). Creator Market: wooden frame backdrop (2,413mmH), display columns (Museland Creation / Brand Builder / Shop Builder), large curved vinyl floor (11,000mm dia), central interactive display. Muse: Custom Panel + fabric, Ultraform acrylic letters (some hanging), wooden box display, grey carpet — clothes rack + changing room + acrylic box display by Youngs', flag: 'Circular floor 11,000mm dia · hanging cloth setup (Youngs)',
+  { name: 'Creator Market (Muse)', owner: 'Iris', status: 'In Review', img: 'creator-market', renders: [...gallery('creator-market', 5), 'muse-booth-2', 'muse-booth-3', 'muse-booth-4', 'muse-booth-5', 'muse-booth-6', 'muse-booth-7'], scope: 'One area (Museland). Creator Market: wooden frame backdrop (2,413mmH), display columns (Museland Creation / Brand Builder / Shop Builder), large curved vinyl floor (11,000mm dia), central interactive display. Muse: Custom Panel + fabric, Ultraform acrylic letters (some hanging), wooden box display, grey carpet — clothes rack + changing room + acrylic box display by Youngs', flag: 'Circular floor 11,000mm dia · hanging cloth setup (Youngs)',
     req: ['Wooden structure (frame backdrop, 2,413mmH)', 'Multiple display columns (Museland Creation / Brand Builder / Shop Builder)', 'Large curved vinyl floor', 'Central interactive display', 'Custom Panel + Graphic', 'Std Panel + Fabric', 'Ultraform acrylic letters (some hanging)', 'Wooden box display', 'Grey carpet', 'Clothes rack + changing room (by Youngs)', 'Acrylic box display (by Youngs)', 'Hanging cloth setup (by Youngs)'] },
-  { name: 'UED Booth', owner: 'Jin & Chris', status: 'In Review', img: 'ued-booth', gallery: ['ued-booth-2', 'ued-booth-3'], scope: 'Large U-shape custom wooden counter, Std Panel + Fabric. A4 standee, all machines/laptops/stanchions by Youngs', flag: 'Machines/laptops/stanchions by Youngs',
+  { name: 'UED Booth', owner: 'Jin & Chris', status: 'In Review', img: 'ued-booth', renders: ['ued-booth-2', 'ued-booth-3'], scope: 'Large U-shape custom wooden counter, Std Panel + Fabric. A4 standee, all machines/laptops/stanchions by Youngs', flag: 'Machines/laptops/stanchions by Youngs',
     req: ['Wooden structure (large U-shape custom counter)', 'Std Panel structure', 'Fabric graphic', 'A4 standee (by Youngs)', 'Machines/laptops/stanchions (by Youngs)'] },
 ],
 
@@ -306,7 +306,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 12;
+const CONTENT_VERSION = 13;
 let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
 
 function loadSiteData(){
@@ -754,7 +754,7 @@ function renderZonesFull(){
   document.getElementById('zone-grid').innerHTML = DATA.ZONES.map((z, i) => `
     <div class="zone-card${EDIT_MODE ? ' draggable-zone' : ''}" data-zone-index="${i}">
       ${EDIT_MODE ? '<div class="zone-drag-handle" title="Drag to reorder" draggable="true" onclick="event.stopPropagation()">⠿ drag to reorder</div>' : ''}
-      <div class="zone-thumb">${zoneThumbHtml(z)}${z.owner ? `<span class="zone-owner-tag" title="Owner">${escapeHtml(z.owner)}</span>` : ''}</div>
+      <div class="zone-thumb">${zoneThumbHtml(z)}${z.owner ? `<span class="zone-owner-tag" title="Owner">${escapeHtml(z.owner)}</span>` : ''}${(z.drawings && z.drawings.length) ? '<span class="zone-dwg-tag" title="AMG shop drawing received">📐 spec</span>' : ''}</div>
       <div class="zone-name"${editAttrs('ZONES', i, 'name')}>${escapeHtml(z.name)}</div>
       ${EDIT_MODE
         ? `<div class="zone-owner-edit">Owner <span contenteditable="true" data-arr="ZONES" data-idx="${i}" data-field="owner" onclick="event.stopPropagation()">${escapeHtml(z.owner || '')}</span></div>`
@@ -970,6 +970,7 @@ function setupZoneModal(){
   const viewer = document.querySelector('.zone-modal-viewer');
   const imgEl = document.getElementById('zone-modal-img');
   const counterEl = document.getElementById('zone-modal-counter');
+  const phototypeEl = document.getElementById('zone-modal-phototype');
   const prevBtn = document.getElementById('zone-modal-prev');
   const nextBtn = document.getElementById('zone-modal-next');
   const thumbsEl = document.getElementById('zone-modal-thumbs');
@@ -978,6 +979,14 @@ function setupZoneModal(){
 
   let zone = null;
   let photoIndex = 0;
+  let currentPhotoSlug = null;
+
+  // Tap a shop drawing to open it full-size in a new tab (specs are text-heavy).
+  imgEl.addEventListener('click', () => {
+    if(imgEl.classList.contains('is-drawing') && currentPhotoSlug){
+      window.open(`assets/zones/${currentPhotoSlug}.jpg`, '_blank');
+    }
+  });
 
   const newItemInput = document.getElementById('zone-modal-new-item');
   const addItemBtn = document.getElementById('zone-modal-add-btn');
@@ -986,11 +995,22 @@ function setupZoneModal(){
 
   let currentUnit = null; // a reference into zone.units[i], or null = viewing the shared/category checklist
 
-  // In Category overview, each gallery photo can represent a distinct tier (Community, Associate, ...).
-  // When that's the case, the checklist below the photo should match whichever tier is on screen.
+  // Photos = client renders first, then AMG shop drawings. Each tagged with its type.
+  function currentPhotos(){
+    const src = (currentUnit && ((currentUnit.renders && currentUnit.renders.length) || (currentUnit.drawings && currentUnit.drawings.length)))
+      ? currentUnit : zone;
+    const renders = (src.renders || []).map(s => ({ slug: s, type: 'render' }));
+    const drawings = (src.drawings || []).map(s => ({ slug: s, type: 'drawing' }));
+    return renders.concat(drawings);
+  }
+
+  // In Category overview, each RENDER can represent a distinct tier (Community, Associate, ...).
+  // Only renders map to tiers — shop drawings (which come after) never drive the checklist.
   function currentTier(){
     if(currentUnit) return null;
-    if(!zone.tiers || zone.tiers.length !== (zone.gallery || []).length) return null;
+    const renders = zone.renders || [];
+    if(!zone.tiers || zone.tiers.length !== renders.length) return null;
+    if(photoIndex >= renders.length) return null; // viewing a drawing, not a tier render
     return zone.tiers[photoIndex] || null;
   }
   function checklistKey(){
@@ -1187,7 +1207,7 @@ function setupZoneModal(){
   newItemInput.addEventListener('keydown', (e) => { if(e.key === 'Enter') addCustomItem(); });
 
   function renderPhoto(){
-    const photos = (currentUnit && currentUnit.gallery) || zone.gallery || [];
+    const photos = currentPhotos();
     const contextLabel = currentUnit ? currentUnit.label : zone.name;
     let existingEmpty = viewer.querySelector('.empty');
     if(existingEmpty) existingEmpty.remove();
@@ -1197,6 +1217,8 @@ function setupZoneModal(){
       counterEl.style.display = 'none';
       prevBtn.style.display = 'none';
       nextBtn.style.display = 'none';
+      phototypeEl.style.display = 'none';
+      currentPhotoSlug = null;
       const empty = document.createElement('div');
       empty.className = 'empty';
       empty.textContent = currentUnit
@@ -1204,9 +1226,16 @@ function setupZoneModal(){
         : 'No renderings yet — design not received for this zone.';
       viewer.appendChild(empty);
     } else {
+      const p = photos[photoIndex];
+      currentPhotoSlug = p.slug;
+      const isDwg = p.type === 'drawing';
       imgEl.style.display = '';
-      imgEl.src = `assets/zones/${photos[photoIndex]}.jpg`;
-      imgEl.alt = `${contextLabel} rendering ${photoIndex + 1}`;
+      imgEl.src = `assets/zones/${p.slug}.jpg`;
+      imgEl.alt = `${contextLabel} ${isDwg ? 'shop drawing' : 'rendering'} ${photoIndex + 1}`;
+      imgEl.classList.toggle('is-drawing', isDwg);
+      phototypeEl.style.display = '';
+      phototypeEl.className = `zone-modal-phototype ${isDwg ? 'drawing' : 'render'}`;
+      phototypeEl.textContent = isDwg ? '📐 AMG shop drawing · tap to enlarge' : '🎨 Client render';
       const multi = photos.length > 1;
       counterEl.style.display = multi ? '' : 'none';
       prevBtn.style.display = multi ? '' : 'none';
@@ -1215,9 +1244,11 @@ function setupZoneModal(){
     }
 
     thumbsEl.style.display = photos.length > 1 ? 'flex' : 'none';
-    thumbsEl.innerHTML = photos.map((slug, i) => `
-      <img src="assets/zones/${slug}.jpg" class="${i === photoIndex ? 'active' : ''}" data-i="${i}" alt="thumbnail ${i + 1}">
-    `).join('');
+    thumbsEl.innerHTML = photos.map((p, i) => {
+      const divider = (p.type === 'drawing' && i > 0 && photos[i - 1].type !== 'drawing')
+        ? '<span class="thumb-divider" title="AMG shop drawings">📐</span>' : '';
+      return `${divider}<img src="assets/zones/${p.slug}.jpg" class="thumb-${p.type} ${i === photoIndex ? 'active' : ''}" data-i="${i}" alt="thumbnail ${i + 1}">`;
+    }).join('');
   }
 
   function openZone(index){
@@ -1260,7 +1291,7 @@ function setupZoneModal(){
     }
   }
   function step(delta){
-    const photos = (currentUnit && currentUnit.gallery) || zone.gallery || [];
+    const photos = currentPhotos();
     if(photos.length === 0) return;
     photoIndex = (photoIndex + delta + photos.length) % photos.length;
     onPhotoChanged();
