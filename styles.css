@@ -194,8 +194,11 @@ section { scroll-margin-top: 24px; margin-bottom: 40px; }
 .zone-grid.full { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
 .zone-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 12px; transition: border-color 0.15s; cursor: pointer; }
 .zone-card:hover { border-color: var(--accent); }
-.zone-thumb { width: 100%; aspect-ratio: 16/9; background: var(--bg); border-radius: 4px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--text-dim); border: 1px dashed var(--border); overflow: hidden; }
+.zone-thumb { position: relative; width: 100%; aspect-ratio: 16/9; background: var(--bg); border-radius: 4px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--text-dim); border: 1px dashed var(--border); overflow: hidden; }
 .zone-thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 3px; }
+.zone-owner-tag { position: absolute; top: 6px; right: 6px; font-family: var(--sans); font-size: 9.5px; font-weight: 700; letter-spacing: 0.03em; color: var(--bg); background: var(--accent); padding: 3px 7px; border-radius: 999px; box-shadow: 0 1px 4px rgba(0,0,0,0.35); }
+.zone-owner-edit { font-family: var(--sans); font-size: 10.5px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+.zone-owner-edit span[contenteditable] { display: inline-block; min-width: 60px; text-transform: none; letter-spacing: normal; font-size: 12px; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 6px; margin-left: 4px; }
 .zone-name { font-size: 11.5px; font-weight: 700; }
 .zone-status { font-size: 10px; margin-top: 2px; }
 .zone-scope { font-size: 11px; color: var(--text-muted); margin-top: 6px; line-height: 1.4; }
