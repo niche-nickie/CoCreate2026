@@ -161,7 +161,6 @@ GANTT_ROWS: [
   { label: 'Installation', owner: 'AMG crew', start: '2026-09-07', end: '2026-09-08', color: 'green', note: '' },
   { label: 'CoCreate 2026 — SHOW', owner: 'Milestone', start: '2026-09-09', end: '2026-09-10', color: 'orange', note: '' },
   { label: 'Dismantle', owner: 'AMG crew', start: '2026-09-11', end: '2026-09-11', color: 'green', note: '' },
-  { label: 'Commission settlement', owner: 'Nickie / Wayne', start: '2026-09-15', end: '2026-10-15', color: 'grey', note: 'Post-show' },
 ],
 
 PHASES: [
@@ -182,7 +181,6 @@ PHASES: [
   { phase: 'Installation (I&D)', dates: 'Sep 7–8', duration: '2 days', status: 'notstarted', statusLabel: 'Not started', notes: 'Union labor' },
   { phase: 'Show days', dates: 'Sep 9–10', duration: '2 days', status: 'notstarted', statusLabel: 'Not started', notes: '' },
   { phase: 'Dismantle', dates: 'Sep 11', duration: '1 day', status: 'notstarted', statusLabel: 'Not started', notes: '' },
-  { phase: 'Commission settlement', dates: 'Post-show', duration: '~2–4 weeks', status: 'notstarted', statusLabel: 'Not started', notes: 'Nickie → Wayne → AMG invoice' },
 ],
 
 OPEN_ITEMS: [
@@ -308,7 +306,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 11;
+const CONTENT_VERSION = 12;
 let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
 
 function loadSiteData(){
@@ -463,7 +461,7 @@ function renderTimelinePreview(){
     { date: 'Aug 1–Sep 5', color: 'var(--blue)', title: 'Fabrication + production', sub: 'Compressed to ~5 weeks (was ~8)' },
     { date: 'Sep 7–8', color: 'var(--green)', title: 'Installation', sub: 'Union labor · AMG crew' },
     { date: 'Sep 9–10', color: 'var(--accent)', title: '🎉 CoCreate 2026 Show Days', sub: 'Los Angeles Convention Center' },
-    { date: 'Sep 11', color: 'var(--purple)', title: 'Dismantle', sub: 'Post-show: commission settlement', last: true },
+    { date: 'Sep 11', color: 'var(--purple)', title: 'Dismantle', sub: 'Post-show teardown', last: true },
   ];
   document.getElementById('timeline-preview').innerHTML = items.map(it => `
     <div class="timeline-item">
