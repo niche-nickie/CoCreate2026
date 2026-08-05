@@ -748,7 +748,7 @@ function renderRisk(){
   `).join('') + addBtn('Medium Risk', `addRow('RISKS.medium',{title:'New risk',body:'Describe the risk...'})`);
 }
 
-const ZONE_STATUS_OPTIONS = ['TBD', 'In Review', 'Approved'];
+const ZONE_STATUS_OPTIONS = ['TBD', 'In Review', 'Quoted', 'Approved', 'In Production', 'Complete'];
 
 function renderZonesFull(){
   document.getElementById('zone-grid').innerHTML = DATA.ZONES.map((z, i) => `
