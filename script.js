@@ -48,7 +48,7 @@ const TAG_STYLES = {
   Client: { bg: 'rgba(189,93,76,0.18)', color: '#bd5d4c' },
 };
 
-const ZONE_ICONS = { 'Registration': '🏛', 'Core Display': '🔤', 'Keynote Hall': '🎤', 'AMA / Influencer Hub': '📷', 'Match Meeting': '🤝', 'Breakout Session ×2': '🎙', 'Buyer Story': '📖', 'Unboxing Live': '📦', 'Next-Gen Sourcing + AI': '🤖', 'Podcast': '🎧', 'Chongqing Pavilion': '🏮', 'LA City Pavilion': '🌉', 'National Pavilion ×4': '🌐', 'Sourcing Hub': '🔎', 'Sponsor Booths ×19': '🏷', 'Supplier Booths (A200)': '🛒', 'Supplier Booths (Non-A200/GGS)': '🛍', 'Muse Booth': '🎨', 'UED Booth': '💻', 'Creator Market': '🧵' };
+const ZONE_ICONS = { 'Registration': '🏛', 'Core Display': '🔤', 'Keynote Hall': '🎤', 'AMA / Influencer Hub': '📷', 'Match Meeting': '🤝', 'Breakout Session ×2': '🎙', 'Buyer Story': '📖', 'Unboxing Live': '📦', 'Next-Gen Sourcing + AI': '🤖', 'Podcast': '🎧', 'Chongqing Pavilion': '🏮', 'LA City Pavilion': '🌉', 'National Pavilion ×4': '🌐', 'Sourcing Hub': '🔎', 'Sponsor Booths ×12': '🏷', 'Supplier Booths (A200)': '🛒', 'Supplier Booths (Non-A200/GGS)': '🛍', 'Muse Booth': '🎨', 'UED Booth': '💻', 'Creator Market': '🧵' };
 
 function gallery(slug, count){
   return Array.from({ length: count }, (_, i) => `${slug}-${i + 1}`);
@@ -86,14 +86,14 @@ function makeTieredUnits(prefix, tiers){
 // Tier definitions, pulled from the design brief renderings — one tier = one gallery photo,
 // so the zone modal can show the matching checklist as you flip through Category overview photos.
 const SPONSOR_TIERS = [
-  { key: 'community', name: 'Community', sqm: '6m²', count: 12, req: [
+  { key: 'community', name: 'Community', sqm: '6m²', count: 7, req: [
     'Pop-up display ×1 (3000×2500mm)',
     '2× Long-arm spotlight (LED, top of back wall)',
     'Counter w/ storage ×1 (1000×500×1000mm, wooden joinery, matte white Formica, lockable)',
     'Electric socket ×1',
     'Furniture + fabric display (by Youngs)',
   ] },
-  { key: 'associate', name: 'Associate', sqm: '9m²', count: 3, req: [
+  { key: 'associate', name: 'Associate', sqm: '9m²', count: 2, req: [
     'Pop-up display ×1 (3500×2500mm)',
     '4× Long-arm spotlight',
     '42" monitor + stand ×1 set',
@@ -102,7 +102,7 @@ const SPONSOR_TIERS = [
     'Electric socket ×1',
     'Furniture + fabric display (by Youngs)',
   ] },
-  { key: 'executive', name: 'Executive', sqm: '15m²', count: 3, req: [
+  { key: 'executive', name: 'Executive', sqm: '15m²', count: 2, req: [
     'L-shaped pop-up display ×2 units (5000×2500mm + 3000×2500mm)',
     '6× Long-arm spotlight',
     '42" monitor + stand ×1 set',
@@ -124,14 +124,14 @@ const SPONSOR_TIERS = [
 ];
 
 const A200_TIERS = [
-  { key: 'standard', name: 'Standard', sqm: '8m²', count: 48, req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'] },
-  { key: 'premium', name: 'Premium', sqm: '14m²', count: 3, req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'] },
+  { key: 'standard', name: 'Standard', sqm: '8m²', count: 45, req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'] },
+  { key: 'premium', name: 'Premium', sqm: '14m²', count: 2, req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'] },
 ];
 
 const NONA200_TIERS = [
   { key: 'starter', name: 'Starter', sqm: '6m²', count: 11, req: ['快幕秀 quick-pop backdrop (3×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
   { key: 'standard', name: 'Standard', sqm: '8m²', count: 8, req: ['快幕秀 quick-pop backdrop (4×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
-  { key: 'premium', name: 'Premium', sqm: '14m²', count: 3, req: ['快幕秀 quick-pop backdrop (4×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
+  { key: 'premium', name: 'Premium', sqm: '14m²', count: 2, req: ['快幕秀 quick-pop backdrop (4×2.5mH)', '42" TV', 'Fabric display + shelving (by Youngs)'] },
 ];
 
 // ---------- Default content (source of truth until the user edits it) ----------
@@ -233,15 +233,15 @@ ZONES: [
     req: ['Structure (by Youngs)', 'AMG build', '1× 42" TV + stand'] },
   { name: 'Unboxing Live', owner: 'Ari', status: 'In Review', img: 'unboxing-live-updated', renders: ['unboxing-live-updated'], drawings: ['unboxing-dwg-1'], scope: 'AMG shop drawing A.12 (Unboxing Live-R2, VB V0). 5× trainel (raw wood) + 2× custom angle panels, custom counter, 3× custom display boxes, 55" TV w/ stand. Client: camera + strobe + 2× ring-light tripod (Youngs). Graphics: BO fabric back walls (front+back), UL-CNTR + floor vinyl (5584×5584), RX-101/124 channels', flag: '⚠ Revised to R2 — now 55" TV + fabric back walls (was 42" TV only)',
     req: ['5× Std Trainel — 990×2413, raw wood', '2× Custom Angle Panel #01 — 341×2413, raw wood', '1× Custom Counter #02 — 2000×758×500, White Formica', '3× Custom Display Box #03–05 — White Formica', '1× 55" TV w/ stand', 'Client (Youngs): camera w/ tripod, strobe package, 2× ring-light phone tripod', 'Graphics: BO fabric back walls front+back (UL-BKWALL), UL-CNTR vinyl, UL-FLOOR floor vinyl 5584×5584', 'Fabric channels: RX-101 (140 ft) + RX-124 (16 ft)', '1× Carpet — 3266×1686 (finish pendent)'] },
-  { name: 'Supplier Booths (A200)', owner: 'Jin & Chris', status: 'In Review', img: 'supplier-a200', renders: ['supplier-a200-2', 'supplier-a200-3'], drawings: ['supplier-a200-dwg-1', 'supplier-a200-dwg-2'], scope: 'AMG shop drawings A.3–A.4 (JP, RENT). A200 8sqm: 8× Std Panel + 4× No Skin Panel + 2× Custom Panel 300×2413 + 4× Cover PVC. A200 14sqm. All: Std Counter 495×1000 (WHT 949-58) + 42" TV + 2× LED Arm Light + RX-101 + Fabric/PVC/Vinyl Graphics.', flag: '48× 8sqm + 3× 14sqm = 51 units ⚠ Large quantity',
+  { name: 'Supplier Booths (A200)', owner: 'Jin & Chris', status: 'In Review', img: 'supplier-a200', renders: ['supplier-a200-2', 'supplier-a200-3'], drawings: ['supplier-a200-dwg-1', 'supplier-a200-dwg-2'], scope: 'AMG shop drawings A.3–A.4 (JP, RENT). A200 8sqm: 8× Std Panel + 4× No Skin Panel + 2× Custom Panel 300×2413 + 4× Cover PVC. A200 14sqm. All: Std Counter 495×1000 (WHT 949-58) + 42" TV + 2× LED Arm Light + RX-101 + Fabric/PVC/Vinyl Graphics.', flag: '45× 8sqm + 2× 14sqm = 47 units · 95 total std counters',
     req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'],
     tiers: A200_TIERS,
     units: makeTieredUnits('supplier-a200', A200_TIERS) },
-  { name: 'Supplier Booths (Non-A200/GGS)', owner: 'Jin & Chris', status: 'In Review', img: 'supplier-nona200', renders: ['supplier-nona200-2', 'supplier-nona200-3', 'supplier-nona200-4'], drawings: ['supplier-nona200-dwg-1', 'supplier-nona200-dwg-2', 'supplier-nona200-dwg-3'], scope: 'AMG shop drawings A.5–A.7 (JP, RENT). CGS Non-A200 6/8/14sqm: Std Counter 495×1000 (WHT 949-58) + 2× Popup Bracket + 42" TV + 2-4× LED Arm Light + PVC/Vinyl Graphics.', flag: '22 units total (GGS awaiting model)',
+  { name: 'Supplier Booths (Non-A200/GGS)', owner: 'Jin & Chris', status: 'In Review', img: 'supplier-nona200', renders: ['supplier-nona200-2', 'supplier-nona200-3', 'supplier-nona200-4'], drawings: ['supplier-nona200-dwg-1', 'supplier-nona200-dwg-2', 'supplier-nona200-dwg-3'], scope: 'AMG shop drawings A.5–A.7 (JP, RENT). CGS Non-A200 6/8/14sqm: Std Counter 495×1000 (WHT 949-58) + 2× Popup Bracket + 42" TV + 2-4× LED Arm Light + PVC/Vinyl Graphics.', flag: 'CGS 21 + GGS 11 = 32 units · 95 total std counters',
     req: ['快幕秀 quick-pop backdrop (3×2.5mH / 4×2.5mH by tier)', '42" TV', 'Fabric display + shelving (by Youngs)'],
     tiers: NONA200_TIERS,
     units: makeTieredUnits('supplier-nona200', NONA200_TIERS) },
-  { name: 'Sponsor Booths ×19', owner: 'Jin & Chris', status: 'In Review', img: 'sponsor-booths', renders: ['sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], drawings: ['sponsor-dwg-1', 'sponsor-dwg-2', 'sponsor-dwg-3', 'sponsor-dwg-4'], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 4 tiers: Community 6m² (Std Counter + 42" TV + 2× LED), Associate 10m² (+4× LED), Executive 15m² (+6× LED), Premier 20m² (9× Std Panels + 4× Cover PVC + Custom Counter 1800×1000 + 42" wall mount + 7× LED + 90ft RX-101 + 2× Fabric Graphics). All: WHT Formica 949-58.', flag: '4 tiers: Community / Associate / Executive / Premier',
+  { name: 'Sponsor Booths ×12', owner: 'Jin & Chris', status: 'In Review', img: 'sponsor-booths', renders: ['sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], drawings: ['sponsor-dwg-1', 'sponsor-dwg-2', 'sponsor-dwg-3', 'sponsor-dwg-4'], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 4 tiers: Community 6m²×7 (Std Counter + 2× LED), Associate 9m²×2 (+42" TV + 4× LED), Executive 15m²×2 (+6× LED), Premier 20m²×1 (9× Std Panels + Custom Counter 1800×1000 + 42" wall-mount).', flag: '7+2+2+1 = 12 booths · 95 total std counters',
     req: ['Pop-up display units (by tier)', 'L-shaped wall structure (Premier tier)', 'Full-height wall graphics (Premier tier)', 'Long-arm spotlights (2→7 pcs by tier)', '42" monitor + stand (Associate/Executive/Premier)', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools (Associate/Executive)', 'Round meeting table + chairs (Premier)', 'Electric socket', 'Furniture + fabric display (by Youngs)'],
     tiers: SPONSOR_TIERS,
     units: makeTieredUnits('sponsor', SPONSOR_TIERS) },
