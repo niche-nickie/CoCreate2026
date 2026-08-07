@@ -162,15 +162,13 @@
   <section id="zones">
     <div class="section-heading">Zones</div>
     <p class="section-sub">Supplier: A200 A~E (46) + Non-A200 F (21) = 67 supplier booths · Sponsor 12 · Chongqing 4 = 83 std counters.</p>
-    <div class="floor-plan-row" style="display: flex; gap: 12px; flex-wrap: wrap;">
-      <div class="card floor-plan-card" onclick="openLightbox('assets/floor-plan-lacc.jpg')" style="flex:1; min-width:280px; cursor:zoom-in;">
-        <img src="assets/floor-plan-lacc.jpg" alt="Floor Plan — LACC, full zone overview">
-        <div class="floor-plan-caption">Page 1 — Zone Overview + Legend</div>
+    <div class="floor-plan-viewer" style="display: flex; align-items: center; gap: 8px; max-width: 700px; margin: 0 auto;">
+      <button onclick="flipFloor(-1)" style="background: none; border: none; color: #999; font-size: 2rem; cursor: pointer; padding: 0 8px;">◀</button>
+      <div class="card floor-plan-card" onclick="openLightbox(FP_PAGES[FP_IDX])" style="flex:1; cursor:zoom-in;">
+        <img id="floor-plan-img" src="assets/floor-plan-lacc.jpg" alt="Floor Plan">
+        <div id="floor-plan-caption" class="floor-plan-caption">Page 1 — Zone Overview + Legend</div>
       </div>
-      <div class="card floor-plan-card" onclick="openLightbox('assets/floor-plan-cgs.jpg')" style="flex:1; min-width:280px; cursor:zoom-in;">
-        <img src="assets/floor-plan-cgs.jpg" alt="Floor Plan — CGS Exhibitor Booths">
-        <div class="floor-plan-caption">Page 2 — CGS Exhibitor Booths (最終版)</div>
-      </div>
+      <button onclick="flipFloor(1)" style="background: none; border: none; color: #999; font-size: 2rem; cursor: pointer; padding: 0 8px;">▶</button>
     </div>
     <div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.92); cursor:zoom-out; align-items:center; justify-content:center;">
       <img id="lightbox-img" src="" style="max-width:95vw; max-height:95vh; object-fit:contain;" onclick="event.stopPropagation()">
@@ -243,6 +241,14 @@
 
 <script src="script.js?v=26"></script>
 <script>
+var FP_PAGES = ['assets/floor-plan-lacc.jpg', 'assets/floor-plan-cgs.jpg'];
+var FP_CAPTIONS = ['Page 1 — Zone Overview + Legend', 'Page 2 — CGS Exhibitor Booths (最終版)'];
+var FP_IDX = 0;
+function flipFloor(d) {
+  FP_IDX = (FP_IDX + d + FP_PAGES.length) % FP_PAGES.length;
+  document.getElementById('floor-plan-img').src = FP_PAGES[FP_IDX];
+  document.getElementById('floor-plan-caption').textContent = FP_CAPTIONS[FP_IDX];
+}
 function openLightbox(src) {
   const lb = document.getElementById('lightbox');
   document.getElementById('lightbox-img').src = src;
