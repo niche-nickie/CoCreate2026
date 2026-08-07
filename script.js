@@ -131,7 +131,11 @@ const ZONE_B_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:7, req: ['Wo
 const ZONE_C_TIER = [{ key:'booth', name:'Booth', sqm:'8-14m²', count:13, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
 const ZONE_D_TIER = [{ key:'booth', name:'Booth', sqm:'8-14m²', count:10, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
 const ZONE_E_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:8, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
-const ZONE_F_TIER = [{ key:'booth', name:'Booth', sqm:'4-14m²', count:21, req: ['快幕秀 quick-pop backdrop','42" TV','Fabric display + shelving (by Youngs)'] }];
+const ZONE_F_TIER = [
+  { key:'sm', name:'Booth', sqm:'6m²', count:11, req: ['YOUNGS: Pop Up','42" TV','Std Counter','Grey carpet','2× LED','YOUNGS: Displays and shelvings'] },
+  { key:'md', name:'Booth', sqm:'8m²', count:8, req: ['YOUNGS: Pop Up','42" TV','Std Counter','Grey carpet','2× LED','YOUNGS: Displays and shelvings'] },
+  { key:'lg', name:'Booth', sqm:'14m²', count:2, req: ['YOUNGS: Pop Up','42" TV','Std Counter','Grey carpet','4× LED','YOUNGS: Displays and shelvings'] },
+];
 
 // Booth ID labels with individual sqm from floor plan
 const BOOTH_LABELS = {
@@ -252,8 +256,8 @@ ZONES: [
     req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_D_TIER, units: makeTieredUnits('zone-d', ZONE_D_TIER, i => BOOTH_LABELS.d[i-1], n => [`zone-d-render-${n*2}`, `zone-d-render-${n*2-1}`]) },
   { name: 'Supplier A200 — Zone E', owner: 'Jin & Chris', status: 'In Review', img: 'zone-e-map', renders: ['zone-e-map'], drawings: [], scope: 'E-01 ~ E-08. 8× 8sqm. Wooden backdrop (4×2.5mH) + 42" TV + Std Counter + Grey carpet. A200 standard build.', flag: '8× 8sqm · 8 std counters',
     req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_E_TIER, units: makeTieredUnits('zone-e', ZONE_E_TIER, i => BOOTH_LABELS.e[i-1], n => [`zone-e-render-${n*2}`, `zone-e-render-${n*2-1}`]) },
-  { name: 'Supplier Non-A200 — Zone F', owner: 'Jin & Chris', status: 'In Review', img: 'zone-f-map', renders: ['zone-f-map'], drawings: [], scope: 'F-01 ~ F-21. 4/6/8/14sqm mixed. 快幕秀 quick-pop backdrop + 42" TV + Fabric display + shelving (Youngs).', flag: '21 booths · 21 std counters',
-    req: ['快幕秀 quick-pop backdrop', '42" TV', 'Fabric display + shelving (by Youngs)'], tiers: ZONE_F_TIER, units: makeTieredUnits('zone-f', ZONE_F_TIER, i => BOOTH_LABELS.f[i-1], n => [`zone-f-render-${n*2}`, `zone-f-render-${n*2-1}`]) },
+  { name: 'Supplier Non-A200 — Zone F', owner: 'Jin & Chris', status: 'In Review', img: 'zone-f-map', renders: ['zone-f-map'], drawings: [], scope: 'F-01 ~ F-21. 11×6m² + 8×8m² + 2×14m². YOUNGS Pop Up + 42" TV + Std Counter + LED (2/4).', flag: '21 booths · 21 std counters · 11/8/2',
+    req: ['YOUNGS: Pop Up', '42" TV', 'Std Counter', 'Grey carpet', '2/4× LED', 'YOUNGS: Displays and shelvings'], tiers: ZONE_F_TIER, units: makeTieredUnits('zone-f', ZONE_F_TIER, i => BOOTH_LABELS.f[i-1], n => [`zone-f-render-${n*2}`, `zone-f-render-${n*2-1}`]) },
   { name: 'Sponsor Booths ×12', owner: 'Jin & Chris', status: 'In Review', img: 'sponsor-booths', renders: ['sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], drawings: ['sponsor-dwg-1', 'sponsor-dwg-2', 'sponsor-dwg-3', 'sponsor-dwg-4'], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 4 tiers: Community 6m²×7 (Std Counter + 2× LED), Associate 9m²×2 (+42" TV + 4× LED), Executive 15m²×2 (+6× LED), Premier 20m²×1 (9× Std Panels + Custom Counter 1800×1000 + 42" wall-mount).', flag: '7+2+2+1 = 12 booths · 95 total std counters',
     req: ['Pop-up display units (by tier)', 'L-shaped wall structure (Premier tier)', 'Full-height wall graphics (Premier tier)', 'Long-arm spotlights (2→7 pcs by tier)', '42" monitor + stand (Associate/Executive/Premier)', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools (Associate/Executive)', 'Round meeting table + chairs (Premier)', 'Electric socket', 'Furniture + fabric display (by Youngs)'],
     tiers: SPONSOR_TIERS,
