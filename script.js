@@ -99,7 +99,7 @@ const SPONSOR_TIERS = [
   { key: 'associate', name: 'Associate', sqm: '9m²', count: 2, req: [
     'Pop-up display ×1 (3500×2500mm)',
     '4× Long-arm spotlight',
-    '42" monitor + stand ×1 set',
+    '42" TV + stand ×1 set',
     'Counter w/ storage ×1 (1000×500×1000mm)',
     'High table + bar stools ×1 set (4 chairs)',
     'Electric socket ×1',
@@ -108,7 +108,7 @@ const SPONSOR_TIERS = [
   { key: 'executive', name: 'Executive', sqm: '15m²', count: 2, req: [
     'L-shaped pop-up display ×2 units (5000×2500mm + 3000×2500mm)',
     '6× Long-arm spotlight',
-    '42" monitor + stand ×1 set',
+    '42" TV + stand ×1 set',
     'Counter w/ storage ×1 (1000×500×1000mm)',
     'High table + bar stools ×2 sets',
     'Electric socket ×1',
@@ -266,7 +266,7 @@ ZONES: [
     req: ['Wooden backdrop (4×2.5mH)', '42" TV + stand', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_E_TIER, units: makeTieredUnits('zone-e', ZONE_E_TIER, i => BOOTH_LABELS.e[i-1], n => [`zone-e-render-${n*2}`, `zone-e-render-${n*2-1}`]) },
   { name: 'Supplier Non-A200 — Zone F', owner: 'Jin & Chris', status: 'In Review', img: 'zone-f-map', renders: ['zone-f-map'], drawings: [], scope: 'F-01 ~ F-21. 11×6m² + 8×8m² + 2×14m². YOUNGS Pop Up + 42" TV + stand + Std Counter + LED (2/4).', flag: '21 booths · 21 std counters · 11/8/2',
     req: ['42" TV + stand', 'Std Counter', 'Grey carpet', '2/4× LED arm light', '— YOUNGS —', 'Pop Up', 'Displays and shelvings'], tiers: ZONE_F_TIER, units: makeTieredUnits('zone-f', ZONE_F_TIER, i => BOOTH_LABELS.f[i-1], n => [`zone-f-render-${n*2}`, `zone-f-render-${n*2-1}`]) },
-  { name: 'Sponsor Booths ×12', owner: 'Jin & Chris', status: 'In Review', img: 'sponsor-booths', renders: ['sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], drawings: ['sponsor-dwg-1', 'sponsor-dwg-2', 'sponsor-dwg-3', 'sponsor-dwg-4'], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 4 tiers: Community 6m²×7 (Std Counter + 2× LED), Associate 9m²×2 (+42" TV + stand + 4× LED), Executive 15m²×2 (+6× LED), Premier 20m²×1 (9× Std Panels + Custom Counter 1800×1000 + 42" wall-mount).', flag: '7+2+2+1 = 12 booths · 95 total std counters',
+  { name: 'Sponsor Booths ×12', owner: 'Jin & Chris', status: 'In Review', img: 'sponsor-booths', renders: ['sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], drawings: ['sponsor-dwg-1', 'sponsor-dwg-2', 'sponsor-dwg-3', 'sponsor-dwg-4'], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 4 tiers: Community 6m²×7 (Std Counter + 2× LED), Associate 9m²×2 (+42" TV + stand + 4× LED), Executive 15m²×2 (+6× LED), Premier 20m²×1 (L-shaped wall + Custom Counter + 42" wall-mount).', flag: '7+2+2+1 = 12 booths',
     req: ['Pop-up display units (by tier)', 'L-shaped wall structure (Premier tier)', 'Full-height wall graphics (Premier tier)', 'Long-arm spotlights (2→7 pcs by tier)', '42" monitor + stand (Associate/Executive/Premier)', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools (Associate/Executive)', 'Round meeting table + chairs (Premier)', 'Electric socket', 'Furniture + fabric display (by Youngs)'],
     tiers: SPONSOR_TIERS,
     units: makeTieredUnits('sponsor', SPONSOR_TIERS) },
