@@ -163,18 +163,17 @@
     <div class="section-heading">Zones</div>
     <p class="section-sub">Supplier: A200 A~E (46) + Non-A200 F (21) = 67 supplier booths · Sponsor 12 · Chongqing 4 = 83 std counters.</p>
     <div class="floor-plan-row" style="display: flex; gap: 12px; flex-wrap: wrap;">
-      <a href="assets/floor-plan-lacc.jpg" target="_blank" class="floor-plan-link" style="flex:1; min-width:280px;">
-        <div class="card floor-plan-card">
-          <img src="assets/floor-plan-lacc.jpg" alt="Floor Plan — LACC, full zone overview">
-          <div class="floor-plan-caption">Page 1 — Zone Overview + Legend</div>
-        </div>
-      </a>
-      <a href="assets/floor-plan-cgs.jpg" target="_blank" class="floor-plan-link" style="flex:1; min-width:280px;">
-        <div class="card floor-plan-card">
-          <img src="assets/floor-plan-cgs.jpg" alt="Floor Plan — CGS Exhibitor Booths">
-          <div class="floor-plan-caption">Page 2 — CGS Exhibitor Booths (最終版)</div>
-        </div>
-      </a>
+      <div class="card floor-plan-card" onclick="openLightbox('assets/floor-plan-lacc.jpg')" style="flex:1; min-width:280px; cursor:zoom-in;">
+        <img src="assets/floor-plan-lacc.jpg" alt="Floor Plan — LACC, full zone overview">
+        <div class="floor-plan-caption">Page 1 — Zone Overview + Legend</div>
+      </div>
+      <div class="card floor-plan-card" onclick="openLightbox('assets/floor-plan-cgs.jpg')" style="flex:1; min-width:280px; cursor:zoom-in;">
+        <img src="assets/floor-plan-cgs.jpg" alt="Floor Plan — CGS Exhibitor Booths">
+        <div class="floor-plan-caption">Page 2 — CGS Exhibitor Booths (最終版)</div>
+      </div>
+    </div>
+    <div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.92); cursor:zoom-out; align-items:center; justify-content:center;">
+      <img id="lightbox-img" src="" style="max-width:95vw; max-height:95vh; object-fit:contain;" onclick="event.stopPropagation()">
     </div>
     <div class="zone-grid full" id="zone-grid"></div>
     <div id="zones-add-row"></div>
@@ -243,5 +242,18 @@
 </div>
 
 <script src="script.js?v=26"></script>
+<script>
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  lb.style.display = 'none';
+  document.body.style.overflow = '';
+}
+</script>
 </body>
 </html>
