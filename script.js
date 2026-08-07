@@ -76,7 +76,7 @@ function makeTieredUnits(prefix, tiers, labelFn, renderFn){
       seq++;
       units.push({
         id: `${prefix}-${tier.key}-${i}`,
-        label: labelFn ? labelFn(i) : (tier.count > 1 ? `${tier.name} ${i} (${tier.sqm})` : `${tier.name} (${tier.sqm})`),
+        label: labelFn ? labelFn(seq) : (tier.count > 1 ? `${tier.name} ${i} (${tier.sqm})` : `${tier.name} (${tier.sqm})`),
         status: 'TBD',
         req: [...tier.req],
         renders: renderFn ? renderFn(seq) : undefined,
