@@ -128,7 +128,7 @@ const SPONSOR_TIERS = [
 
 const ZONE_A_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:9, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
 const ZONE_B_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:7, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
-const ZONE_C_TIER = [{ key:'booth', name:'Booth', sqm:'8-18m²', count:11, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
+const ZONE_C_TIER = [{ key:'booth', name:'Booth', sqm:'8-14m²', count:13, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
 const ZONE_D_TIER = [{ key:'booth', name:'Booth', sqm:'8-14m²', count:10, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
 const ZONE_E_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:8, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
 const ZONE_F_TIER = [{ key:'booth', name:'Booth', sqm:'4-14m²', count:21, req: ['快幕秀 quick-pop backdrop','42" TV','Fabric display + shelving (by Youngs)'] }];
@@ -246,7 +246,7 @@ ZONES: [
     req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_A_TIER, units: makeTieredUnits('zone-a', ZONE_A_TIER, BOOTH_LABELS.a, n => [`zone-a-render-${n*2}`, `zone-a-render-${n*2-1}`]) },
   { name: 'Supplier A200 — Zone B', owner: 'Jin & Chris', status: 'In Review', img: 'zone-b-render-1', renders: ['zone-b-map'], drawings: [], scope: 'B-01 ~ B-08. 7× 8sqm. Wooden backdrop (4×2.5mH) + 42" TV + Std Counter + Grey carpet. A200 standard build.', flag: '7× 8sqm · 7 std counters',
     req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_B_TIER, units: makeTieredUnits('zone-b', ZONE_B_TIER, BOOTH_LABELS.b, n => [`zone-b-render-${n*2}`, `zone-b-render-${n*2-1}`]) },
-  { name: 'Supplier A200 — Zone C', owner: 'Jin & Chris', status: 'In Review', img: 'zone-c-render-1', renders: ['zone-c-map'], drawings: [], scope: 'C-01 ~ C-11. 10× 8sqm + 1× 18sqm. Wooden backdrop (4×2.5mH) + 42" TV + Std Counter + Grey carpet. A200 standard build.', flag: '11 booths · 11 std counters',
+  { name: 'Supplier A200 — Zone C', owner: 'Jin & Chris', status: 'In Review', img: 'zone-c-render-1', renders: ['zone-c-map'], drawings: [], scope: 'C-01 ~ C-13. 13 booths. Wooden backdrop (4×2.5mH) + 42" TV + Std Counter + Grey carpet. A200 standard build.', flag: '13 booths · 13 std counters',
     req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_C_TIER, units: makeTieredUnits('zone-c', ZONE_C_TIER, BOOTH_LABELS.c, n => [`zone-c-render-${n*2}`, `zone-c-render-${n*2-1}`]) },
   { name: 'Supplier A200 — Zone D', owner: 'Jin & Chris', status: 'In Review', img: 'zone-d-render-1', renders: ['zone-d-map'], drawings: [], scope: 'D-01 ~ D-10. 8/14/8+2sqm mixed. Wooden backdrop (4×2.5mH) + 42" TV + Std Counter + Grey carpet. A200 standard build.', flag: '10 booths · 10 std counters',
     req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_D_TIER, units: makeTieredUnits('zone-d', ZONE_D_TIER, BOOTH_LABELS.d, n => [`zone-d-render-${n*2}`, `zone-d-render-${n*2-1}`]) },
