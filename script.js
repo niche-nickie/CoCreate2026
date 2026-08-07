@@ -126,11 +126,19 @@ const SPONSOR_TIERS = [
   ] },
 ];
 
-const ZONE_A_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:9, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
-const ZONE_B_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:7, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
-const ZONE_C_TIER = [{ key:'booth', name:'Booth', sqm:'8-14m²', count:13, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
-const ZONE_D_TIER = [{ key:'booth', name:'Booth', sqm:'8-14m²', count:10, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
-const ZONE_E_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:8, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
+const ZONE_A_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:9, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','2× LED arm light','Furniture (by Youngs)'] }];
+const ZONE_B_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:7, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','2× LED arm light','Furniture (by Youngs)'] }];
+const ZONE_C_TIER = [
+  { key:'m8', name:'Booth', sqm:'8m²', count:11, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','2× LED arm light','Furniture (by Youngs)'] },
+  { key:'m14', name:'Booth', sqm:'14m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','4× LED arm light','Furniture (by Youngs)'] },
+  { key:'m18', name:'Booth', sqm:'8+18m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','4× LED arm light','Furniture (by Youngs)'] },
+];
+const ZONE_D_TIER = [
+  { key:'m8', name:'Booth', sqm:'8m²', count:8, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','2× LED arm light','Furniture (by Youngs)'] },
+  { key:'m14', name:'Booth', sqm:'14m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','4× LED arm light','Furniture (by Youngs)'] },
+  { key:'m82', name:'Booth', sqm:'8+2m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','2× LED arm light','Furniture (by Youngs)'] },
+];
+const ZONE_E_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:8, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','2× LED arm light','Furniture (by Youngs)'] }];
 const ZONE_F_TIER = [
   { key:'sm', name:'Booth', sqm:'6m²', count:11, req: ['42" TV + stand','Std Counter','Grey carpet','2× LED arm light','— YOUNGS —','Pop Up','Displays and shelvings'] },
   { key:'md', name:'Booth', sqm:'8m²', count:8, req: ['42" TV + stand','Std Counter','Grey carpet','4× LED arm light','— YOUNGS —','Pop Up','Displays and shelvings'] },
