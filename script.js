@@ -133,14 +133,14 @@ const ZONE_D_TIER = [{ key:'booth', name:'Booth', sqm:'8-14m²', count:10, req: 
 const ZONE_E_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:8, req: ['Wooden backdrop (4×2.5mH)','42" TV','Std Counter','Grey carpet','Furniture (by Youngs)'] }];
 const ZONE_F_TIER = [{ key:'booth', name:'Booth', sqm:'4-14m²', count:21, req: ['快幕秀 quick-pop backdrop','42" TV','Fabric display + shelving (by Youngs)'] }];
 
-// Booth ID labels for supplier zones
+// Booth ID labels with individual sqm from floor plan
 const BOOTH_LABELS = {
-  a: i => `A-${String(i).padStart(2,'0')} (8m²)`,
-  b: i => `B-${String(i).padStart(2,'0')} (8m²)`,
-  c: i => `C-${String(i).padStart(2,'0')} (8-14m²)`,
-  d: i => `D-${String(i).padStart(2,'0')} (8-14m²)`,
-  e: i => `E-${String(i).padStart(2,'0')} (8m²)`,
-  f: i => `F-${String(i).padStart(2,'0')} (4-14m²)`,
+  a: ['A-01 (8m²)','A-02 (8m²)','A-03 (8m²)','A-04 (8m²)','A-05 (8m²)','A-06 (8m²)','A-07 (8m²)','A-08 (8m²)','A-09 (8m²)'],
+  b: ['B-01 (8m²)','B-02 (8m²)','B-03 (8m²)','B-04 (8m²)','B-05 (8+8m²)','B-06 (8+4m²)','B-07 (8m²)'],
+  c: ['C-01 (8m²)','C-02 (8m²)','C-03 (8m²)','C-04 (8m²)','C-05 (8m²)','C-06 (8m²)','C-07 (8m²)','C-08 (8m²)','C-09 (14m²)','C-10 (8m²)','C-11 (8m²)','C-12 (8m²)','C-13 (8+18m²)'],
+  d: ['D-01 (14m²)','D-02 (8m²)','D-03 (8m²)','D-04 (8m²)','D-05 (8m²)','D-06 (8m²)','D-07 (8m²)','D-08 (8m²)','D-09 (8m²)','D-10 (8+2m²)'],
+  e: ['E-01 (8m²)','E-02 (8m²)','E-03 (8m²)','E-04 (8m²)','E-05 (8m²)','E-06 (8m²)','E-07 (8m²)','E-08 (8m²)'],
+  f: ['F-01 (8m²)','F-02 (8m²)','F-03 (6m²)','F-04 (6m²)','F-05 (6m²)','F-06 (6m²)','F-07 (6m²)','F-08 (6m²)','F-09 (6m²)','F-10 (6m²)','F-11 (8m²)','F-12 (8m²)','F-13 (14m²)','F-14 (8m²)','F-15 (8m²)','F-16 (4m²)','F-17 (4m²)','F-18 (4m²)','F-19 (8m²)','F-20 (8m²)','F-21 (14m²)'],
 };
 
 // ---------- Default content (source of truth until the user edits it) ----------
@@ -243,17 +243,17 @@ ZONES: [
   { name: 'Unboxing Live', owner: 'Ari', status: 'Quoted', img: 'unboxing-live-v3', renders: ['unboxing-live-updated'], drawings: ['unboxing-dwg-1', 'unboxing-dwg-2'], scope: 'AMG shop drawing A.12 (Unboxing Live-R2, VB V0). 5× trainel (raw wood) + 2× custom angle panels, custom counter, 3× custom display boxes, 55" TV w/ stand. Client: camera + strobe + 2× ring-light tripod (Youngs). Graphics: BO fabric back walls (front+back), UL-CNTR + floor vinyl (5584×5584), RX-101/124 channels', flag: '⚠ Revised to R2 — now 55" TV + fabric back walls (was 42" TV only)',
     req: ['5× Std Trainel — 990×2413, raw wood', '2× Custom Angle Panel #01 — 341×2413, raw wood', '1× Custom Counter #02 — 2000×758×500, White Formica', '3× Custom Display Box #03–05 — White Formica', '1× 55" TV w/ stand', 'Client (Youngs): camera w/ tripod, strobe package, 2× ring-light phone tripod', 'Graphics: BO fabric back walls front+back (UL-BKWALL), UL-CNTR vinyl, UL-FLOOR floor vinyl 5584×5584', 'Fabric channels: RX-101 (140 ft) + RX-124 (16 ft)', '1× Carpet — 3266×1686 (finish pendent)'] },
   { name: 'Supplier A200 — Zone A', owner: 'Jin & Chris', status: 'In Review', img: 'zone-a-map', renders: ['zone-a-map'], drawings: [], scope: 'A-01 ~ A-09. 9× 8sqm. Wooden backdrop (4×2.5mH) + 42" TV + Std Counter + Grey carpet. A200 standard build.', flag: '9× 8sqm · 9 std counters',
-    req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_A_TIER, units: makeTieredUnits('zone-a', ZONE_A_TIER, BOOTH_LABELS.a, n => [`zone-a-render-${n*2}`, `zone-a-render-${n*2-1}`]) },
+    req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_A_TIER, units: makeTieredUnits('zone-a', ZONE_A_TIER, i => BOOTH_LABELS.a[i-1], n => [`zone-a-render-${n*2}`, `zone-a-render-${n*2-1}`]) },
   { name: 'Supplier A200 — Zone B', owner: 'Jin & Chris', status: 'In Review', img: 'zone-b-map', renders: ['zone-b-map'], drawings: [], scope: 'B-01 ~ B-08. 7× 8sqm. Wooden backdrop (4×2.5mH) + 42" TV + Std Counter + Grey carpet. A200 standard build.', flag: '7× 8sqm · 7 std counters',
-    req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_B_TIER, units: makeTieredUnits('zone-b', ZONE_B_TIER, BOOTH_LABELS.b, n => [`zone-b-render-${n*2}`, `zone-b-render-${n*2-1}`]) },
+    req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_B_TIER, units: makeTieredUnits('zone-b', ZONE_B_TIER, i => BOOTH_LABELS.b[i-1], n => [`zone-b-render-${n*2}`, `zone-b-render-${n*2-1}`]) },
   { name: 'Supplier A200 — Zone C', owner: 'Jin & Chris', status: 'In Review', img: 'zone-c-map', renders: ['zone-c-map'], drawings: [], scope: 'C-01 ~ C-13. 13 booths. Wooden backdrop (4×2.5mH) + 42" TV + Std Counter + Grey carpet. A200 standard build.', flag: '13 booths · 13 std counters',
-    req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_C_TIER, units: makeTieredUnits('zone-c', ZONE_C_TIER, BOOTH_LABELS.c, n => [`zone-c-render-${n*2}`, `zone-c-render-${n*2-1}`]) },
+    req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_C_TIER, units: makeTieredUnits('zone-c', ZONE_C_TIER, i => BOOTH_LABELS.c[i-1], n => [`zone-c-render-${n*2}`, `zone-c-render-${n*2-1}`]) },
   { name: 'Supplier A200 — Zone D', owner: 'Jin & Chris', status: 'In Review', img: 'zone-d-map', renders: ['zone-d-map'], drawings: [], scope: 'D-01 ~ D-10. 8/14/8+2sqm mixed. Wooden backdrop (4×2.5mH) + 42" TV + Std Counter + Grey carpet. A200 standard build.', flag: '10 booths · 10 std counters',
-    req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_D_TIER, units: makeTieredUnits('zone-d', ZONE_D_TIER, BOOTH_LABELS.d, n => [`zone-d-render-${n*2}`, `zone-d-render-${n*2-1}`]) },
+    req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_D_TIER, units: makeTieredUnits('zone-d', ZONE_D_TIER, i => BOOTH_LABELS.d[i-1], n => [`zone-d-render-${n*2}`, `zone-d-render-${n*2-1}`]) },
   { name: 'Supplier A200 — Zone E', owner: 'Jin & Chris', status: 'In Review', img: 'zone-e-map', renders: ['zone-e-map'], drawings: [], scope: 'E-01 ~ E-08. 8× 8sqm. Wooden backdrop (4×2.5mH) + 42" TV + Std Counter + Grey carpet. A200 standard build.', flag: '8× 8sqm · 8 std counters',
-    req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_E_TIER, units: makeTieredUnits('zone-e', ZONE_E_TIER, BOOTH_LABELS.e, n => [`zone-e-render-${n*2}`, `zone-e-render-${n*2-1}`]) },
+    req: ['Wooden backdrop (4×2.5mH)', '42" TV', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_E_TIER, units: makeTieredUnits('zone-e', ZONE_E_TIER, i => BOOTH_LABELS.e[i-1], n => [`zone-e-render-${n*2}`, `zone-e-render-${n*2-1}`]) },
   { name: 'Supplier Non-A200 — Zone F', owner: 'Jin & Chris', status: 'In Review', img: 'zone-f-map', renders: ['zone-f-map'], drawings: [], scope: 'F-01 ~ F-21. 4/6/8/14sqm mixed. 快幕秀 quick-pop backdrop + 42" TV + Fabric display + shelving (Youngs).', flag: '21 booths · 21 std counters',
-    req: ['快幕秀 quick-pop backdrop', '42" TV', 'Fabric display + shelving (by Youngs)'], tiers: ZONE_F_TIER, units: makeTieredUnits('zone-f', ZONE_F_TIER, BOOTH_LABELS.f, n => [`zone-f-render-${n*2}`, `zone-f-render-${n*2-1}`]) },
+    req: ['快幕秀 quick-pop backdrop', '42" TV', 'Fabric display + shelving (by Youngs)'], tiers: ZONE_F_TIER, units: makeTieredUnits('zone-f', ZONE_F_TIER, i => BOOTH_LABELS.f[i-1], n => [`zone-f-render-${n*2}`, `zone-f-render-${n*2-1}`]) },
   { name: 'Sponsor Booths ×12', owner: 'Jin & Chris', status: 'In Review', img: 'sponsor-booths', renders: ['sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], drawings: ['sponsor-dwg-1', 'sponsor-dwg-2', 'sponsor-dwg-3', 'sponsor-dwg-4'], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 4 tiers: Community 6m²×7 (Std Counter + 2× LED), Associate 9m²×2 (+42" TV + 4× LED), Executive 15m²×2 (+6× LED), Premier 20m²×1 (9× Std Panels + Custom Counter 1800×1000 + 42" wall-mount).', flag: '7+2+2+1 = 12 booths · 95 total std counters',
     req: ['Pop-up display units (by tier)', 'L-shaped wall structure (Premier tier)', 'Full-height wall graphics (Premier tier)', 'Long-arm spotlights (2→7 pcs by tier)', '42" monitor + stand (Associate/Executive/Premier)', 'Counter w/ storage — wooden joinery, matte white Formica', 'High table + bar stools (Associate/Executive)', 'Round meeting table + chairs (Premier)', 'Electric socket', 'Furniture + fabric display (by Youngs)'],
     tiers: SPONSOR_TIERS,
