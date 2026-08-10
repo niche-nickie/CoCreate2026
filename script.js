@@ -771,7 +771,7 @@ function renderRisk(){
   `).join('') + addBtn('Medium Risk', `addRow('RISKS.medium',{title:'New risk',body:'Describe the risk...'})`);
 }
 
-const ZONE_STATUS_OPTIONS = ['TBD', 'In Review', 'Quoted', 'Approved', 'In Production', 'Complete'];
+const ZONE_STATUS_OPTIONS = ['TBD', 'In Review', 'Quoted', 'Approved', 'In Production', 'Complete', 'No quote needed'];
 
 function renderZonesFull(){
   document.getElementById('zone-grid').innerHTML = DATA.ZONES.map((z, i) => `
@@ -784,7 +784,7 @@ function renderZonesFull(){
         : ''}
       ${EDIT_MODE
         ? `<select onclick="event.stopPropagation()" onchange="event.stopPropagation();saveFieldAndRender('ZONES',${i},'status',this)">${ZONE_STATUS_OPTIONS.map(s => `<option value="${s}" ${s === z.status ? 'selected' : ''}>${s}</option>`).join('')}</select>`
-        : `<div class="zone-status" style="color:${z.status === 'TBD' ? 'var(--red)' : 'var(--yellow)'}">${escapeHtml(z.status)}</div>`}
+        : `<div class="zone-status" style="color:${z.status === 'TBD' ? 'var(--red)' : z.status === 'No quote needed' ? 'var(--green)' : 'var(--yellow)'}">${escapeHtml(z.status)}</div>`}
       <div class="zone-scope"${editAttrs('ZONES', i, 'scope')}>${escapeHtml(z.scope)}</div>
       <div class="zone-flag ${z.blocking ? 'blocking' : ''}"${editAttrs('ZONES', i, 'flag')}>${escapeHtml(z.flag)}</div>
       ${EDIT_MODE ? `<button class="edit-remove-btn" onclick="event.stopPropagation();removeRow('ZONES',${i})" title="Remove zone">&times; Remove zone</button>` : ''}
