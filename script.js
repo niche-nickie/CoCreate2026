@@ -48,7 +48,7 @@ const TAG_STYLES = {
   Client: { bg: 'rgba(189,93,76,0.18)', color: '#bd5d4c' },
 };
 
-const ZONE_ICONS = { 'Registration': '🏛', 'Core Display': '🔤', 'Keynote Hall': '🎤', 'AMA / Influencer Hub': '📷', 'Match Meeting': '🤝', 'Mini Panel': '🎙', 'Buyer Story': '📖', 'Unboxing Live': '📦', 'Next-Gen Sourcing + AI': '🤖', 'Podcast': '🎧', 'Chongqing Pavilion': '🏮', 'National Pavilion': '🌐', 'Sourcing Hub': '🔎', 'Sponsor Booths ×12': '🏷', 'Supplier A200 — Block A': '🅰️', 'Supplier A200 — Block B': '🅱️', 'Supplier A200 — Block C': '©️', 'Supplier A200 — Block D': '🅳', 'Supplier A200 — Block E': '🅴', 'Supplier Non-A200 — Block F': '🅵', 'Muse Booth': '🎨', 'UED Booth': '💻', 'Creator Market': '🧵' };
+const ZONE_ICONS = { 'Registration': '🏛', 'Core Display': '🔤', 'Keynote Hall': '🎤', 'AMA / Influencer Hub': '📷', 'Match Meeting': '🤝', 'Mini Panel': '🎙', 'Buyer Story': '📖', 'Unboxing Live': '📦', 'Next-Gen Sourcing + AI': '🤖', 'Podcast': '🎧', 'Chongqing Pavilion': '🏮', 'National Pavilion': '🌐', 'Sourcing Hub': '🔎', 'Sponsor Booths ×12': '🏷', 'Supplier A200 — Block A': '🅰️', 'Supplier A200 — Block B': '🅱️', 'Supplier A200 — Block C': '©️', 'Supplier A200 — Block D': '🅳', 'Supplier A200 — Block E': '🅴', 'Supplier Non-A200 — Block F': '🅵', 'Muse Booth': '🎨', 'UED Booth': '💻', 'Creator Market': '🧵', 'Agentic Robotics Arena': '🦾' };
 
 function gallery(slug, count){
   return Array.from({ length: count }, (_, i) => `${slug}-${i + 1}`);
@@ -278,6 +278,7 @@ ZONES: [
     req: ['Wooden structure (frame backdrop, 2,413mmH)', 'Multiple display columns (Museland Creation / Brand Builder / Shop Builder)', 'Large curved vinyl floor', 'Central interactive display', 'Custom Panel + Graphic', 'Std Panel + Fabric', 'Ultraform acrylic letters (some hanging)', 'Wooden box display', 'Grey carpet', 'Clothes rack + changing room (by Youngs)', 'Acrylic box display (by Youngs)', 'Hanging cloth setup (by Youngs)'] },
   { name: 'UED Booth', owner: 'Jin & Chris', status: 'In Review', img: 'ued-render-1', renders: ['ued-render-1', 'ued-render-2'], scope: 'Std Counter w/ single-sided graphic, Std Panel w/ single-sided graphic, Customized foam cut-out, 55" TV w/ Stand, Flooring, Arm lights, Vinyl', flag: 'Furniture and devices from Youngs',
     req: ['5× Std Panel — 990W×2413H×100D, No Finish', '2× Graphic Bracket — 100W×250H×50D, Formica White', '1× Cover PVC White — 4\'×8\', Panel Edges', '4× Std Counter — 990W×1000H×495D, Formica White (949-58), Lockable Door+Shelf', '3× Std Counter — 495W×1000H×495D, Formica White, Lockable Door+Shelf', '2× Display Stand — 730W×1420H×300D, Formica White/Black', '1× 55" TV + Media Player, HDMI Cable, Floor Stand', '12× Stanchion', '4× LED Arm Light', '82ft RX-101 Aluminum Channels', '2× Fabric Graphics: 2846×2409 + 1956×2409', '1× PVC Graphic — 1600×250', '3× Vinyl Graphic — 450×100', '2× Vinyl Graphic — 600×150', 'Machines/laptops (by Youngs)'] },
+  { name: 'Agentic Robotics Arena', owner: 'Ari', status: 'TBD', img: 'agentic-robotics-render-1', renders: ['agentic-robotics-render-1', 'agentic-robotics-render-2'], scope: 'AMG only provide carpet and floor vinyl. All else by Youngs. Size TBD.', flag: '⚠ Size TBD — carpet + vinyl only', req: [] },
 ],
 
 TEAM: [
