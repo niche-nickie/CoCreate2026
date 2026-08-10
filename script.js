@@ -239,7 +239,7 @@ RISKS: {
 },
 
 ZONES: [
-  { name: 'Registration', owner: 'Ari', status: 'Quoted', img: 'registration-v2-2', renders: ['registration-v2-2'], drawings: ['registration-dwg-1'], scope: 'AMG shop drawing A.7 (VB, V0). Std Door Panel ×2 + Std Trainel ×23 (990×2413), 12× LED arm light, BO fabric back wall (front+back, 9896×2409), curved PVC column cover, RX-101 channel 164ft. Client items by Youngs (table cloths, stanchions).', flag: 'Lobby area — LACC approval needed for placement',
+  { name: 'Registration', owner: 'Ari', status: 'Quoted', img: 'registration-v2-2', renders: ['registration-v2-2'], drawings: ['registration-dwg-1'], scope: 'AMG provide registration backdrop, front and back graphic.column graphics', flag: 'Lobby area',
     req: ['2× Std Door Panel — White Formica (990×2413×100)', '23× Std Trainel — Raw Wood (990×2413×100)', '12× Std LED arm light', '1× BO fabric — back wall front (REG-BK-WALL-FRT, 9896×2409, 4/0)', '1× BO fabric — back wall back (REG-BK-WALL-BK, 9896×2409, 4/0)', '1× Curved PVC column cover w/ Velcro (COLUMN-COVER, 4/0)', 'RX-101 fabric channel — 164 ft', 'From client (Youngs): 6× 8ft table cloth, 7× stanchion sign support, 28× stanchions'] },
   { name: 'Keynote Hall', owner: 'Ari', status: 'Quoted', img: 'keynote-dark', renders: ['keynote-dark', 'keynote-plan'], scope: 'AMG only provide stage carpet (6.1m × 21m ≈ 1,379 sq ft).', flag: '⚠ AMG scope: stage carpet only · 6.1m × 21m', blocking: true, req: ['Stage carpet (AMG scope)', 'All other items — by Youngs / Client'] },
   { name: 'AMA / Influencer Hub', owner: 'Ari', status: 'Quoted', img: 'ama-hub-render-1', renders: ['ama-hub-render-1'], scope: 'YOUNGS X JOHNATHAN — Banner ×6, Stage, Furniture by Youngs', flag: 'YOUNGS X JOHNATHAN', req: [] },
