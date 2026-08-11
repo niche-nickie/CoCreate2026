@@ -4,6 +4,7 @@
 
 const TODAY = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
 const SHOW_START = new Date('2026-09-09');
+const IMG_CACHE_BUST = '?v=20260812';  // bump to bust image CDN cache
 
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
@@ -564,7 +565,7 @@ function renderTasksPreview(){
 
 function zoneThumbHtml(z){
   return z.img
-    ? `<img src="assets/zones/${z.img}.jpg" alt="${escapeHtml(z.name)} rendering" loading="lazy">`
+    ? `<img src="assets/zones/${z.img}.jpg${IMG_CACHE_BUST}" alt="${escapeHtml(z.name)} rendering" loading="lazy">`
     : (ZONE_ICONS[z.name] || '⬡');
 }
 
@@ -1014,7 +1015,7 @@ function setupZoneModal(){
   // Tap a shop drawing to open it full-size in a new tab (specs are text-heavy).
   imgEl.addEventListener('click', () => {
     if(imgEl.classList.contains('is-drawing') && currentPhotoSlug){
-      window.open(`assets/zones/${currentPhotoSlug}.jpg`, '_blank');
+      window.open(`assets/zones/${currentPhotoSlug}.jpg${IMG_CACHE_BUST}`, '_blank');
     }
   });
 
@@ -1260,7 +1261,7 @@ function setupZoneModal(){
       currentPhotoSlug = p.slug;
       const isDwg = p.type === 'drawing';
       imgEl.style.display = '';
-      imgEl.src = `assets/zones/${p.slug}.jpg`;
+      imgEl.src = `assets/zones/${p.slug}.jpg${IMG_CACHE_BUST}`;
       imgEl.alt = `${contextLabel} ${isDwg ? 'shop drawing' : 'rendering'} ${photoIndex + 1}`;
       imgEl.classList.toggle('is-drawing', isDwg);
       phototypeEl.style.display = '';
@@ -1277,7 +1278,7 @@ function setupZoneModal(){
     thumbsEl.innerHTML = photos.map((p, i) => {
       const divider = (p.type === 'drawing' && i > 0 && photos[i - 1].type !== 'drawing')
         ? '<span class="thumb-divider" title="AMG shop drawings">📐</span>' : '';
-      return `${divider}<img src="assets/zones/${p.slug}.jpg" class="thumb-${p.type} ${i === photoIndex ? 'active' : ''}" data-i="${i}" alt="thumbnail ${i + 1}">`;
+      return `${divider}<img src="assets/zones/${p.slug}.jpg${IMG_CACHE_BUST}" class="thumb-${p.type} ${i === photoIndex ? 'active' : ''}" data-i="${i}" alt="thumbnail ${i + 1}">`;
     }).join('');
   }
 
