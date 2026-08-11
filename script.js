@@ -4,7 +4,7 @@
 
 const TODAY = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
 const SHOW_START = new Date('2026-09-09');
-const IMG_CACHE_BUST = '?v=20260812g';  // bump to bust image CDN cache
+const IMG_CACHE_BUST = '?v=20260812h';  // bump to bust image CDN cache
 
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
@@ -138,7 +138,15 @@ const ZONE_A_TIER = [
   { key:'a08', name:'A-08', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter','Grey carpet','2× LED arm light','4x) 700 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','11x) 450 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','30x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture'] },
   { key:'a09', name:'A-09', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter','Grey carpet','2× LED arm light','3x) 1500 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','9x) 450 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','27x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture'] },
 ];
-const ZONE_B_TIER = [{ key:'booth', name:'Booth', sqm:'8m²', count:7, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] }];
+const ZONE_B_TIER = [
+  { key:'b01', name:'B-01', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
+  { key:'b02', name:'B-02', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
+  { key:'b03', name:'B-03', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
+  { key:'b04', name:'B-04', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
+  { key:'b05', name:'B-05', sqm:'16m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
+  { key:'b06', name:'B-06', sqm:'12m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
+  { key:'b07', name:'B-07', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
+];
 const ZONE_C_TIER = [
   { key:'m8', name:'Booth', sqm:'8m²', count:11, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
   { key:'m14', name:'Booth', sqm:'14m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter','Grey carpet','4× LED arm light','— YOUNGS —','Furniture'] },
@@ -264,8 +272,8 @@ ZONES: [
   { name: 'Unboxing Live', owner: 'Ari', status: 'In Review', img: 'unboxing-live-render-1', renders: ['unboxing-live-render-1'], scope: 'R4 — Display block ×3, Double-sided Pop-up, 55" TV, Furniture by Youngs, Cheapest flooring option', flag: '⚠ R4 — Pop-up + Display blocks + TV', req: ['3× Display block', 'Double-sided Pop-up', '1× 55" TV w/ stand', 'Furniture by Youngs', 'Cheapest flooring option'] },
   { name: 'Supplier A200 — Block A', owner: 'Jin & Chris', status: 'In Review', img: 'zone-a-map', renders: ['zone-a-map'], drawings: [], scope: 'A-01 ~ A-09. 9× 8sqm. Wooden backdrop (4×2.5mH) + 42" TV + stand + Media Player + Std Counter + Grey carpet + AMG provide shelf & L-bracket.', flag: '9× 8sqm · 9 std counters · AMG shelf',
     req: ['9× Wooden backdrop (4×2.5mH)', '9× 42" TV + stand + Media Player', '9× Std Counter', '9× Grey carpet (≈775 sqft)', '18× LED arm light', '3× Metal Panel Footing', '— AMG Shelf —', '36× 700mm shelf, Formica (WHT)', '4× 900mm shelf, Formica (WHT)', '3× 1500mm shelf, Formica (WHT)', '82× 450mm shelf, Formica (WHT)', '239× 10" Metal L-Bracket (WHT)', '— YOUNGS —', '9× Furniture', '2× Wire Grid 550×1100×50 (A-04 only)'], tiers: ZONE_A_TIER, units: makeTieredUnits('zone-a', ZONE_A_TIER, i => BOOTH_LABELS.a[i-1], n => [`zone-a-render-${n*2}`, `zone-a-render-${n*2-1}`]) },
-  { name: 'Supplier A200 — Block B', owner: 'Jin & Chris', status: 'In Review', img: 'zone-b-map', renders: ['zone-b-map'], drawings: [], scope: 'B-01 ~ B-08. 7× 8sqm. Wooden backdrop (4×2.5mH) + 42" TV + stand + Media Player + Std Counter + Grey carpet. A200 standard build.', flag: '7× 8sqm · 7 std counters',
-    req: ['7× Wooden backdrop (4×2.5mH)', '7× 42" TV + stand + Media Player', '7× Std Counter', '7× Grey carpet (≈603 sqft)', '14× LED arm light', '— YOUNGS —', '7× Furniture'], tiers: ZONE_B_TIER, units: makeTieredUnits('zone-b', ZONE_B_TIER, i => BOOTH_LABELS.b[i-1], n => [`zone-b-render-${n*2}`, `zone-b-render-${n*2-1}`]) },
+  { name: 'Supplier A200 — Block B', owner: 'Jin & Chris', status: 'In Review', img: 'zone-b-map', renders: ['zone-b-map'], drawings: [], scope: 'B-01 ~ B-07. 5×8m² + 1×12m² + 1×16m². Wooden backdrop (4×2.5mH) + 42" TV + stand + Media Player + Std Counter + Grey carpet. A200 standard build.', flag: '7 booths · 7 std counters · 5×8 + 12 + 16m²',
+    req: ['7× Wooden backdrop (4×2.5mH)', '7× 42" TV + stand + Media Player', '7× Std Counter', '7× Grey carpet (≈732 sqft)', '14× LED arm light', '— YOUNGS —', '7× Furniture'], tiers: ZONE_B_TIER, units: makeTieredUnits('zone-b', ZONE_B_TIER, i => BOOTH_LABELS.b[i-1], n => [`zone-b-render-${n*2}`, `zone-b-render-${n*2-1}`]) },
   { name: 'Supplier A200 — Block C', owner: 'Jin & Chris', status: 'In Review', img: 'zone-c-map', renders: ['zone-c-map'], drawings: [], scope: 'C-01 ~ C-13. 13 booths. Wooden backdrop (4×2.5mH) + 42" TV + stand + Media Player + Std Counter + Grey carpet. A200 standard build.', flag: '13 booths · 13 std counters',
     req: ['Wooden backdrop (4×2.5mH)', '42" TV + stand + Media Player', 'Std Counter', 'Grey carpet', 'Furniture (by Youngs)'], tiers: ZONE_C_TIER, units: makeTieredUnits('zone-c', ZONE_C_TIER, i => BOOTH_LABELS.c[i-1], n => [`zone-c-render-${n*2}`, `zone-c-render-${n*2-1}`]) },
   { name: 'Supplier A200 — Block D', owner: 'Jin & Chris', status: 'In Review', img: 'zone-d-map', renders: ['zone-d-map'], drawings: [], scope: 'D-01 ~ D-10. 8/14/8+2sqm mixed. Wooden backdrop (4×2.5mH) + 42" TV + stand + Media Player + Std Counter + Grey carpet. A200 standard build.', flag: '10 booths · 10 std counters',
