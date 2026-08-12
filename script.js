@@ -4,7 +4,7 @@
 
 const TODAY = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
 const SHOW_START = new Date('2026-09-09');
-const IMG_CACHE_BUST = '?v=20260812r';  // bump to bust image CDN cache
+const IMG_CACHE_BUST = '?v=20260812s';  // bump to bust image CDN cache
 
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
@@ -321,8 +321,8 @@ ZONES: [
   { name: 'Podcast', owner: 'Iris', status: 'In Review', img: 'podcast-render-1', renders: ['podcast-render-1', 'podcast-render-2'], scope: 'Std Glass Panel, Vinyl, Lightbox, Custom glass panel, Furniture by Youngs', req: [] },
   { name: 'Creator Market (Muse)', owner: 'Iris', status: 'In Review', img: 'muse-scope-1', renders: [...gallery('muse-scope', 15)], drawings: [...gallery('muse-dwg', 6)], scope: 'AMG shop drawings A.1–A.6 (JP, RENT). Island: 4× Std Counter (BLK 909-58), 3D Letter 2850×550×200 (WHT), Display Case 4000×2410×500 (WHT + fishing lines), 6× Display Stands. Exhibitor: 11× 32sqm booths, 150× LED Arm Light, 30× Pipe & Drape (WHT), 126M Floor Vinyl/Tape. Registration: 3× LED Arm Light. Sponsor: 5× Std Counter (WHT 949-58) + 15× LED Arm Light.', flag: '150× LED Arm Light · 126M floor vinyl',
     req: ['Wooden structure (frame backdrop, 2,413mmH)', 'Multiple display columns (Museland Creation / Brand Builder / Shop Builder)', 'Large curved vinyl floor', 'Central interactive display', 'Custom Panel + Graphic', 'Std Panel + Fabric', 'Ultraform acrylic letters (some hanging)', 'Wooden box display', 'Grey carpet', 'Clothes rack + changing room (by Youngs)', 'Acrylic box display (by Youngs)', 'Hanging cloth setup (by Youngs)'] },
-  { name: 'UED Booth', owner: 'Jin & Chris', status: 'Approved', img: 'ued-render-1', renders: ['ued-render-1', 'ued-render-2'], scope: 'Std Counter w/ single-sided graphic, Std Panel w/ single-sided graphic, Customized foam cut-out, 55" TV w/ Stand, Flooring, Arm lights, Vinyl', flag: 'Furniture and devices from Youngs',
-    req: ['5× Std Panel — 990W×2413H×100D, No Finish', '2× Graphic Bracket — 100W×250H×50D, Formica White', '1× Cover PVC White — 4\'×8\', Panel Edges', '4× Std Counter — 990W×1000H×495D, Formica White (949-58), Lockable Door+Shelf', '3× Std Counter — 495W×1000H×495D, Formica White, Lockable Door+Shelf', '2× Display Stand — 730W×1420H×300D, Formica White/Black', '1× 55" TV + Media Player, HDMI Cable, Floor Stand', '12× Stanchion', '4× LED Arm Light', '82ft RX-101 Aluminum Channels', '2× Fabric Graphics: 2846×2409 + 1956×2409', '1× PVC Graphic — 1600×250', '3× Vinyl Graphic — 450×100', '2× Vinyl Graphic — 600×150', 'Machines/laptops (by Youngs)'] },
+  { name: 'UED Booth', owner: 'Jin & Chris', status: 'Approved', img: 'ued-render-1', renders: ['ued-render-1', 'ued-render-2'], drawings: ['ued-dwg-1'], scope: '7×2.2m (15.4m²). Std Panel + Std Counter + 55" TV + LED + RX-101 channels. Flooring ≈169 sqft.', flag: 'Furniture and devices from Youngs',
+    req: ['5× Std Panel — 990W×2413H×100D, No Finish', '2× Graphic Bracket — 100W×250H×50D, Formica White', '1× Cover PVC White — 4\'×8\', Panel Edges', '4× Std Counter — 990W×1000H×495D, Formica White (949-58), Lockable Door+Shelf', '3× Std Counter — 495W×1000H×495D, Formica White, Lockable Door+Shelf', '1× 55" TV + Media Player, HDMI Cable, Floor Stand', '3× LED Arm Light', '82ft RX-101 Aluminum Channels', '— YOUNGS —', 'Furniture and devices'] },
   { name: 'Agentic Robotics Arena', owner: 'Ari', status: 'TBD', img: 'agentic-robotics-render-1', renders: ['agentic-robotics-render-1', 'agentic-robotics-render-2'], scope: 'AMG only provide carpet and floor vinyl. All else by Youngs. Size TBD.', flag: '⚠ Size TBD — carpet + vinyl only', req: [] },
 ],
 
