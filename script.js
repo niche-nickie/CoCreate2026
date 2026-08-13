@@ -261,14 +261,6 @@ PHASES: [
 ],
 
 OPEN_ITEMS: [
-  { owner: 'Youngs', urgent: true, text: 'LACC venue license status. GSC application cannot be submitted until LACC licenses the event. Current status unknown.' },
-  { owner: 'Calvin', urgent: false, text: 'AMG COI coverage levels for LACC. Must confirm policy covers: $1M CGL / $2M aggregate / $2M umbrella / $1M workers comp / $1M auto. Additional insured: AEG Management LACC LLC, City of LA, ASM Global Parent Inc.' },
-  { owner: 'Calvin', urgent: false, text: 'Willwork LACC authorization. Is Willwork on the LACC Authorized GSC list? If not, identify alternative union I&D partner.' },
-  { owner: 'Ariana', urgent: false, text: 'Identify LACC-authorized rigger. One contractor only per event. Needed on GSC application. CoCreate 2026 has hanging banners (Chongqing square + LA City circle — both double-sided).' },
-  { owner: 'Calvin / Ariana', urgent: false, text: 'Identify LACC-authorized electrical contractor. Must be one of: Edlen Electrical, GES Electrical, or Freeman Electrical.' },
-  { owner: 'Calvin', urgent: false, text: 'TV quantity strategy. 70+ units of 42" TV + stand + Media Player across supplier booths alone. Confirm rental vs. purchase decision before quote is issued.' },
-  { owner: 'Design team', urgent: false, text: 'Next-Gen Sourcing + AI zone. 7-page scope received Aug 11. Now under AMG review — can begin engineering.' },
-  { owner: 'Youngs', urgent: true, text: 'Standard counter quantity. AMG currently has only ~30 std counters in stock. Youngs must confirm the total number needed by next week so any shortfall can be sourced in time.' },
   { owner: 'Calvin', urgent: false, text: 'Quote — remaining zones. First quote sent Aug 1 for zones with designs received. Still need to quote Keynote, Match Meeting, and Next-Gen once their designs land + any Youngs add-ons (pop-ups, extra counters).' },
   { owner: 'Calvin', urgent: false, text: 'UED Booth reuse — confirmed. Booth ships to San Francisco after CoCreate for reuse at a follow-up event — Plug and Play, Sunnyvale CA, Sep 13 2026, 2:30–6pm PT, same-day load-in/teardown. Need a separate quote for the shipping + reuse.' },
 ],
@@ -276,6 +268,8 @@ OPEN_ITEMS: [
 DONE_ITEMS: [
   { owner: 'Nickie · Done', text: 'Confirm show dates + scope with Marshal' },
   { owner: 'Marshal · Done', text: 'Design brief V1 received (Jul 10)' },
+  { owner: 'Calvin · Done', text: 'AMG COI coverage levels for LACC. Must confirm policy covers: $1M CGL / $2M aggregate / $2M umbrella / $1M workers comp / $1M auto. Additional insured: AEG Management LACC LLC, City of LA, ASM Global Parent Inc.' },
+  { owner: 'Youngs · Done', text: 'LACC venue license status. GSC application cannot be submitted until LACC licenses the event. Current status unknown.' },
 ],
 
 RISKS: {
