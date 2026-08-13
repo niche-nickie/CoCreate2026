@@ -261,6 +261,7 @@ PHASES: [
 ],
 
 OPEN_ITEMS: [
+  { owner: 'Calvin - AMG / Jose / Brianna', urgent: false, text: 'Third-party products via Youngs — Youngs will have third parties bring their products in, so recommend Youngs charge them material handling. Need to clarify scope + whether we need a marshaling yard. Check with Richard where to store empties. Also create a shipping label + shipping instructions for Youngs to give to exhibitors.' },
   { owner: 'Calvin', urgent: false, text: 'Quote — remaining zones. First quote sent Aug 1 for zones with designs received. Still need to quote Keynote, Match Meeting, and Next-Gen once their designs land + any Youngs add-ons (pop-ups, extra counters).' },
   { owner: 'Calvin', urgent: false, text: 'UED Booth reuse — confirmed. Booth ships to San Francisco after CoCreate for reuse at a follow-up event — Plug and Play, Sunnyvale CA, Sep 13 2026, 2:30–6pm PT, same-day load-in/teardown. Need a separate quote for the shipping + reuse.' },
 ],
