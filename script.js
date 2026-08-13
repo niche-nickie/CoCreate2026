@@ -192,6 +192,12 @@ const ZONE_G_TIER = [
   { key:'sm', name:'Booth', sqm:'6m²', count:9, req: ['42" TV + stand + Media Player','Std Counter','Grey carpet','2× LED arm light','— YOUNGS —','Pop Up','Displays and shelvings'] },
   { key:'lg', name:'Booth', sqm:'12m²', count:2, req: ['42" TV + stand + Media Player','Std Counter','Grey carpet','4× LED arm light','— YOUNGS —','Pop Up','Displays and shelvings'] },
 ];
+const ZONE_CQ_TIER = [
+  { key:'cq1', name:'CQ-1', sqm:'9m²', count:1, req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 495W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
+  { key:'cq2', name:'CQ-2', sqm:'9m²', count:1, req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 495W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
+  { key:'cq3', name:'CQ-3', sqm:'9m²', count:1, req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 495W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
+  { key:'cq4', name:'CQ-4', sqm:'9m²', count:1, req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 495W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
+];
 
 // Booth ID labels with individual sqm from floor plan
 const BOOTH_LABELS = {
@@ -202,6 +208,7 @@ const BOOTH_LABELS = {
   e: ['E-01 (8m²)','E-02 (8m²)','E-03 (8m²)','E-04 (8m²)','E-05 (8m²)','E-06 (8m²)','E-07 (8m²)','E-08 (8m²)'],
   f: ['F-01 (8m²)','F-02 (8m²)','F-03 (6m²)','F-04 (6m²)','F-05 (6m²)','F-06 (6m²)','F-07 (6m²)','F-08 (6m²)','F-09 (6m²)','F-10 (6m²)','F-11 (8m²)','F-12 (8m²)','F-13 (14m²)','F-14 (8m²)','F-15 (8m²)','F-16 (4m²)','F-17 (4m²)','F-18 (4m²)','F-19 (8m²)','F-20 (8m²)','F-21 (14m²)'],
   g: ['G-01 (6m²)','G-02 (6m²)','G-03 (6m²)','G-04 (6m²)','G-05 (6m²)','G-06 (6m²)','G-07 (12m²)','G-08 (12m²)','G-09 (6m²)','G-10 (6m²)','G-11 (6m²)'],
+  cq: ['CQ-1 (9m²)','CQ-2 (9m²)','CQ-3 (9m²)','CQ-4 (9m²)'],
 };
 
 // ---------- Default content (source of truth until the user edits it) ----------
@@ -319,7 +326,7 @@ ZONES: [
     tiers: SPONSOR_TIERS,
     units: makeTieredUnits('sponsor', SPONSOR_TIERS) },
   { name: 'Chongqing Pavilion', owner: 'Iris', status: 'Approved', img: 'chongqing-map', renders: ['chongqing-map', 'chongqing-v2-2'], drawings: ['chongqing-dwg-3'], scope: 'AMG shop drawings A.2–A.4 (JP, RENT). 36m² (4× 9sqm). Central: LED Lighting Structure 1200mm dia×3450mm H + 36× LED strips + 4× Display Stands (BLK Formica). Perimeter: 3× Std No Skin Panels 990×2413 + 42" TV + stand + Media Player wall mount + Counter. Floor Trim 260ft.', flag: '4× 9sqm booths',
-    req: ['4× Std No Skin Panel — 3000W×2413H×500D', '4× Std Counter — 495W×1000H×495D, Formica Black', '4× 42" TV wall mount + Media Player (4 booths)', '4× Fabric Graphic — 2966×2409mm, RX-101 Channel 36ft', '4× 9sqm Booths, Black+Orange Carpet'] },
+    req: ['4× Std No Skin Panel — 3000W×2413H×500D', '4× Std Counter — 495W×1000H×495D, Formica Black', '4× 42" TV wall mount + Media Player', '4× Fabric Graphic — 2966×2409mm, RX-101 Channel 36ft', '4× 9sqm Booths, Black+Orange Carpet'], tiers: ZONE_CQ_TIER, units: makeTieredUnits('cq', ZONE_CQ_TIER, i => BOOTH_LABELS.cq[i-1]) },
   { name: 'National Pavilion', owner: 'Iris', status: 'In Review', img: 'national-v2-2', renders: ['national-v2-2'], drawings: ['national-dwg-1', 'national-dwg-3'], scope: '1 pavilion. 120m². AMG provide carpet 10×12M, wooden signage, 40× LED armlight.', flag: '1 pavilion · 120m² · AMG provide',
     req: ['Carpet 10×12M', 'Wooden signage', '40× LED armlight'] },
   { name: 'Sourcing Hub', owner: 'Iris', status: 'Approved', img: 'sourcing-hub-v2-2', renders: ['sourcing-hub-v2-2', 'sourcing-hub-v2-3', 'sourcing-hub-v2-4', 'sourcing-hub-v2-5', 'sourcing-hub-v2-6', 'sourcing-hub-v2-7'], drawings: ['sourcing-hub-dwg-1', 'sourcing-hub-dwg-2', 'sourcing-hub-dwg-3', 'sourcing-hub-dwg-4', 'sourcing-hub-dwg-5', 'sourcing-hub-dwg-6'], scope: 'AMG shop drawings A.2–A.7 (JP, RENT). 64m² (8×8m). Display Sign 1000×2000mm. 42" TV + stand + Media Player. 4 centers: A 汕頭 (Stair Display), B 永康 (Display Stand+Acrylic), C 鄭州 (5× Display Stands), D 廣州 (Curved Display Stand 2000×1300). PVC graphics + floor vinyl per booth.', flag: '4 sourcing centers (9m² each) inside 64m² space',
