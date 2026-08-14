@@ -109,7 +109,7 @@ const SPONSOR_TIERS = [
   { key:'p02', name:'P-02', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
   { key:'p03', name:'P-03', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
   { key:'p04', name:'P-04', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
-  { key:'p05', name:'P-05', sqm:'10×20ft 空地', count:1, req: [] },
+  { key:'p05', name:'P-05', sqm:'10×20ft 空地', count:1, req: [], renders: ['sponsor-booths-empty'] },
   { key:'p06', name:'P-06', sqm:'10×20ft', count:1, req: SPONSOR_PREMIER_REQ, renders: R_10X20, drawings: D_10X20 },
   { key:'p07', name:'P-07', sqm:'10×15ft', count:1, req: SPONSOR_EXECUTIVE_REQ, renders: R_10X15, drawings: D_10X15 },
   { key:'p08', name:'P-08', sqm:'10×15ft', count:1, req: SPONSOR_EXECUTIVE_REQ, renders: R_10X15, drawings: D_10X15 },
