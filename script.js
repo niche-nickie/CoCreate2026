@@ -89,47 +89,28 @@ function makeTieredUnits(prefix, tiers, labelFn, renderFn){
 
 // Tier definitions, pulled from the design brief renderings — one tier = one gallery photo,
 // so the zone modal can show the matching checklist as you flip through Category overview photos.
+const SPONSOR_COMMUNITY_REQ = ['1× Std Counter — 990W×1000H×495D, Formica White', '1× 42" TV + stand + Media Player', '2× LED arm light', 'Grey carpet', '— YOUNGS —', 'Pop-up display (3000×2500mm)', 'Furniture + fabric display'];
+const SPONSOR_ASSOCIATE_REQ = ['1× Std Counter — 990W×1000H×495D, Formica White', '1× 42" TV + stand + Media Player', '4× LED arm light', 'Grey carpet', '— YOUNGS —', 'Pop-up display (3500×2500mm)', 'High table + bar stools ×1 set', 'Furniture + fabric display'];
+const SPONSOR_EXECUTIVE_REQ = ['1× Std Counter — 990W×1000H×495D, Formica White', '1× 42" TV + stand + Media Player', '6× LED arm light', 'Grey carpet', '— YOUNGS —', 'L-shaped pop-up display (5000×2500mm + 3000×2500mm)', 'High table + bar stools ×2 sets', 'Furniture + fabric display'];
+const SPONSOR_PREMIER_REQ = ['1× Custom Counter — 1800W×500H×1000D, wooden joinery', '1× 42" TV wall mount + Media Player', '7× LED arm light', 'Grey carpet', 'L-shaped wall structure (5000×2500mm + 4000×2500mm)', '2× Full-height wall graphic, front only', '— YOUNGS —', 'Round meeting table + chairs ×2 sets', 'Furniture'];
+
 const SPONSOR_TIERS = [
-  { key: 'community', name: 'Community', sqm: '6m²', count: 9, req: [
-    '1× Std Counter — 990W×1000H×495D, Formica White',
-    '1× 42" TV + stand + Media Player',
-    '2× LED arm light',
-    'Grey carpet',
-    '— YOUNGS —',
-    'Pop-up display (3000×2500mm)',
-    'Furniture + fabric display',
-  ] },
-  { key: 'associate', name: 'Associate', sqm: '9m²', count: 3, req: [
-    '1× Std Counter — 990W×1000H×495D, Formica White',
-    '1× 42" TV + stand + Media Player',
-    '4× LED arm light',
-    'Grey carpet',
-    '— YOUNGS —',
-    'Pop-up display (3500×2500mm)',
-    'High table + bar stools ×1 set',
-    'Furniture + fabric display',
-  ] },
-  { key: 'executive', name: 'Executive', sqm: '15m²', count: 2, req: [
-    '1× Std Counter — 990W×1000H×495D, Formica White',
-    '1× 42" TV + stand + Media Player',
-    '6× LED arm light',
-    'Grey carpet',
-    '— YOUNGS —',
-    'L-shaped pop-up display (5000×2500mm + 3000×2500mm)',
-    'High table + bar stools ×2 sets',
-    'Furniture + fabric display',
-  ] },
-  { key: 'premier', name: 'Premier', sqm: '20m²', count: 1, req: [
-    '1× Custom Counter — 1800W×500H×1000D, wooden joinery',
-    '1× 42" TV wall mount + Media Player',
-    '7× LED arm light',
-    'Grey carpet',
-    'L-shaped wall structure (5000×2500mm + 4000×2500mm)',
-    '2× Full-height wall graphic, front only',
-    '— YOUNGS —',
-    'Round meeting table + chairs ×2 sets',
-    'Furniture',
-  ] },
+  { key:'p01', name:'P-01', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ },
+  { key:'p02', name:'P-02', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ },
+  { key:'p03', name:'P-03', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ },
+  { key:'p04', name:'P-04', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ },
+  { key:'p05', name:'P-05', sqm:'10×20ft 空地', count:1, req: [] },
+  { key:'p06', name:'P-06', sqm:'10×20ft', count:1, req: SPONSOR_PREMIER_REQ },
+  { key:'p07', name:'P-07', sqm:'10×15ft', count:1, req: SPONSOR_EXECUTIVE_REQ },
+  { key:'p08', name:'P-08', sqm:'10×15ft', count:1, req: SPONSOR_EXECUTIVE_REQ },
+  { key:'p09', name:'P-09', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ },
+  { key:'p10', name:'P-10', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ },
+  { key:'p11', name:'P-11', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ },
+  { key:'p12', name:'P-12', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ },
+  { key:'p13', name:'P-13', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ },
+  { key:'p14', name:'P-14', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ },
+  { key:'p15', name:'P-15', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ },
+  { key:'p16', name:'P-16', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ },
 ];
 
 const ZONE_A_TIER = [
@@ -325,7 +306,7 @@ ZONES: [
     req: ['11× Std Counter — 990W×1000H×495D, Formica White, Lockable Door+Shelf', '11× 42" TV + Media Player + HDMI Cable + Floor Stand', '11× Grey carpet (≈858 sqft)', '26× LED Arm Light', '22× Popup Bracket for PVC Graphic', '— YOUNGS —', 'Pop Up', 'Displays and shelvings'], tiers: ZONE_G_TIER, units: makeTieredUnits('zone-g', ZONE_G_TIER, i => BOOTH_LABELS.g[i-1], n => [`zone-g-render-${n*2}`, `zone-g-render-${n*2-1}`]) },
   { name: 'Chongqing Pavilion', owner: 'Iris', status: 'Approved', img: 'chongqing-map', renders: ['chongqing-map', 'chongqing-v2-2'], drawings: ['chongqing-dwg-3'], scope: 'AMG shop drawings A.2–A.4 (JP, RENT). 36m² (4× 9sqm). Central: LED Lighting Structure 1200mm dia×3450mm H + 36× LED strips + 4× Display Stands (BLK Formica). Perimeter: 3× Std No Skin Panels 990×2413 + 42" TV + stand + Media Player wall mount + Counter. Floor Trim 260ft.', flag: '4× 9sqm booths',
     req: ['4× Std No Skin Panel — 3000W×2413H×500D', '4× Std Counter — 950W×1000H×495D, Formica Black', '4× 42" TV wall mount + Media Player', '4× Fabric Graphic — 2966×2409mm, RX-101 Channel 36ft', '4× 9sqm Booths, Black+Orange Carpet'], tiers: ZONE_CQ_TIER, units: makeTieredUnits('cq', ZONE_CQ_TIER, i => BOOTH_LABELS.cq[i-1]) },
-  { name: 'Sponsor Booths 15+1', owner: 'Jin & Chris', status: 'Approved', img: 'sponsor-booths-map', renders: ['sponsor-booths-map', 'sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], drawings: ['sponsor-dwg-1', 'sponsor-dwg-2', 'sponsor-dwg-3', 'sponsor-dwg-4'], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 4 tiers: Community 8×8ft×9 (6m², Std Counter + 42" TV + 2× LED), Associate 10×10ft×3 (9m², +42" TV + stand + Media Player + 4× LED), Executive 10×15ft×2 (15m², +6× LED), Premier 10×20ft×1 (20m², L-shaped wall + Custom Counter + 42" wall-mount). 另 1× 10×20ft 空地 (自帶展台, AMG 不提供).', flag: '15+1 booths · 1× 空地',
+  { name: 'Sponsor Booths 15+1', owner: 'Jin & Chris', status: 'Approved', img: 'sponsor-booths-map', renders: ['sponsor-booths-map', 'sponsor-booths-2', 'sponsor-booths-3', 'sponsor-booths-4', 'sponsor-booths-5'], drawings: ['sponsor-dwg-1', 'sponsor-dwg-2', 'sponsor-dwg-3', 'sponsor-dwg-4'], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 16 booths (P-01 ~ P-16): 8×8ft ×9, 10×10ft ×3, 10×15ft ×2, 10×20ft ×2 (P-05 空地, AMG 不提供).', flag: '15+1 booths · 1× 空地',
     req: ['14× Std Counter — 990W×1000H×495D, Formica White', '1× Custom Counter — 1800W×500H×1000D, wooden joinery (Premier)', '14× 42" TV + stand + Media Player', '1× 42" TV wall mount + Media Player (Premier)', '15× Grey carpet', '1× L-shaped wall structure (Premier)', '2× Full-height wall graphic, front only (Premier)', 'LED arm light (數量 TBD)', '— YOUNGS —', 'Pop-up display', 'Furniture + fabric display'],
     tiers: SPONSOR_TIERS,
     units: makeTieredUnits('sponsor', SPONSOR_TIERS) },
