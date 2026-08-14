@@ -195,6 +195,12 @@ const ZONE_CQ_TIER = [
   { key:'cq4', name:'CQ-4', sqm:'9m²', count:1, req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
 ];
 
+const ZONE_GB_TIER = [
+  { key:'us', name:'GB-US', sqm:'6m²', count:20, req: ['Grey carpet', 'LED arm light'] },
+  { key:'pk', name:'GB-Pakistan', sqm:'6m²', count:11, req: ['Grey carpet', 'LED arm light'] },
+  { key:'ot', name:'GB-Others', sqm:'6m²', count:10, req: ['Grey carpet', 'LED arm light'] },
+];
+
 // Booth ID labels with individual sqm from floor plan
 const BOOTH_LABELS = {
   a: ['A-01 (8m²)','A-02 (8m²)','A-03 (8m²)','A-04 (8m²)','A-05 (8m²)','A-06 (8m²)','A-07 (8m²)','A-08 (8m²)','A-09 (8m²)'],
@@ -205,6 +211,7 @@ const BOOTH_LABELS = {
   f: ['F-01 (8m²)','F-02 (8m²)','F-03 (6m²)','F-04 (6m²)','F-05 (6m²)','F-06 (6m²)','F-07 (6m²)','F-08 (6m²)','F-09 (6m²)','F-10 (6m²)','F-11 (8m²)','F-12 (8m²)','F-13 (14m²)','F-14 (8m²)','F-15 (8m²)','F-16 (4m²)','F-17 (4m²)','F-18 (4m²)','F-19 (8m²)','F-20 (8m²)','F-21 (14m²)'],
   g: ['G-01 (6m²)','G-02 (6m²)','G-03 (6m²)','G-04 (6m²)','G-05 (6m²)','G-06 (6m²)','G-07 (12m²)','G-08 (12m²)','G-09 (6m²)','G-10 (6m²)','G-11 (6m²)'],
   cq: ['CQ-1 (9m²)','CQ-2 (9m²)','CQ-3 (9m²)','CQ-4 (9m²)'],
+  gb: ['GB-01 (6m²)','GB-02 (6m²)','GB-03 (6m²)','GB-04 (6m²)','GB-05 (6m²)','GB-06 (6m²)','GB-07 (6m²)','GB-08 (6m²)','GB-09 (6m²)','GB-10 (6m²)','GB-11 (6m²)','GB-12 (6m²)','GB-13 (6m²)','GB-14 (12m²)','GB-15 (6m²)','GB-16 (6m²)','GB-17 (6m²)','GB-18 (6m²)','GB-19 (6m²)','GB-20 (6m²)','GB-21 (6m²)','GB-22 (6m²)','GB-23 (6m²)','GB-24 (6m²)','GB-25 (6m²)','GB-26 (6m²)','GB-27 (6m²)','GB-28 (6m²)','GB-29 (6m²)','GB-30 (6m²)','GB-31 (6m²)','GB-32 (6m²)','GB-33 (6m²)','GB-34 (6m²)','GB-35 (6m²)','GB-36 (6m²)','GB-37 (6m²)','GB-38 (6m²)','GB-39 (6m²)','GB-40 (6m²)','GB-41 (6m²)'],
 };
 
 // ---------- Default content (source of truth until the user edits it) ----------
@@ -320,8 +327,8 @@ ZONES: [
     req: ['14× Std Counter — 990W×1000H×495D, Formica White', '1× Custom Counter — 1800W×500H×1000D, wooden joinery (Premier)', '14× 42" TV + stand + Media Player', '1× 42" TV wall mount + Media Player (Premier)', '15× Grey carpet (≈1376 sqft)', '1× L-shaped wall structure (Premier)', '2× Full-height wall graphic, front only (Premier)', 'LED arm light (數量 TBD)', '— YOUNGS —', 'Pop-up display', 'Furniture + fabric display'],
     tiers: SPONSOR_TIERS,
     units: makeTieredUnits('sponsor', SPONSOR_TIERS) },
-  { name: 'National Pavilion', owner: 'Iris', status: 'In Review', img: 'national-v2-2', renders: ['national-v2-2'], drawings: ['national-dwg-1', 'national-dwg-3'], scope: '1 pavilion. 120m². AMG provide carpet 10×12M, wooden signage, 40× LED armlight.', flag: '1 pavilion · 120m² · AMG provide',
-    req: ['Carpet 10×12M', 'Wooden signage', '40× LED armlight'] },
+  { name: 'National Pavilion', owner: 'Iris', status: 'In Review', img: 'national-v2-2', renders: ['national-v2-2'], drawings: ['national-dwg-1', 'national-dwg-3'], scope: 'GB-01 ~ GB-41. AMG provide carpet + LED arm light only. 3 groups: GB-US×20, GB-Pakistan×11, GB-Others×10.', flag: '41 booths · carpet + lights only',
+    req: ['Carpet 10×12M', '40× LED arm light'], tiers: ZONE_GB_TIER, units: makeTieredUnits('gb', ZONE_GB_TIER, i => BOOTH_LABELS.gb[i-1]) },
   { name: 'Sourcing Hub', owner: 'Iris', status: 'Approved', img: 'sourcing-hub-v2-2', renders: ['sourcing-hub-v2-2', 'sourcing-hub-v2-3', 'sourcing-hub-v2-4', 'sourcing-hub-v2-5', 'sourcing-hub-v2-6', 'sourcing-hub-v2-7'], drawings: ['sourcing-hub-dwg-1', 'sourcing-hub-dwg-2', 'sourcing-hub-dwg-3', 'sourcing-hub-dwg-4', 'sourcing-hub-dwg-5', 'sourcing-hub-dwg-6'], scope: 'AMG shop drawings A.2–A.7 (JP, RENT). 64m² (8×8m). Display Sign 1000×2000mm. 42" TV + stand + Media Player. 4 centers: A 汕頭 (Stair Display), B 永康 (Display Stand+Acrylic), C 鄭州 (5× Display Stands), D 廣州 (Curved Display Stand 2000×1300). PVC graphics + floor vinyl per booth.', flag: '4 sourcing centers (9m² each) inside 64m² space',
     req: ['1× Display Sign — 1000W×2000H×300D, Formica White, Paint Orange, LED Strip', '1× 42" TV + stand + Media Player + Media Player, Floor Stand', 'Booth A 汕頭: Three-Step Stair Display 1200W×900H×900D (WHT) + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth B 永康: Display Stand 1424W×1700H×412D (WHT+Wood+Acrylic) + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth C 鄭州: 5× Display Stands (1500×500 + 500×500 + 2× 500×800 + 500×1000) Formica WHT + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth D 廣州: Curved Display Stand 2000W×1300H×1000D Formica WHT + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl'] },
   { name: 'Podcast', owner: 'Iris', status: 'Approved', img: 'podcast-render-1', renders: ['podcast-render-1'], drawings: ['podcast-dwg-1'], scope: '5.4×3.4m. Octanorm structure + clear acrylic panels + carpet. Client provides angle tables, chairs, On Air lightbox.', flag: 'OP1 spec A.13 · Client display items',
