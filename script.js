@@ -364,6 +364,7 @@ HARD_DEADLINES: [
   { title: 'Youngs: Graphics + hanging signs', sub: 'All artwork + hanging signs final', date: '2026-08-17' },
   { title: 'Muse carpet drawing + color code → Nickie', sub: '8/19 發包地毯 + vinyl floor (Muse) — 圖 + 色號 8/18 前要給 Nickie', date: '2026-08-18' },
   { title: 'Fire Permit Requests', sub: '21-day rule · LAFD', date: '2026-08-19' },
+  { title: 'Electrical Requirement + Floor Plan', sub: 'LACC requirement', date: '2026-08-19' },
   { title: 'Youngs: Add-on pop-ups', sub: 'Any additional pop-up units final', date: '2026-08-26' },
 ],
 
