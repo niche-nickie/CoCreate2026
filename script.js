@@ -214,6 +214,15 @@ const BOOTH_LABELS = {
   gb: ['GB-01 (4m²)','GB-02 (4m²)','GB-03 (4m²)','GB-04 (4m²)','GB-05 (4m²)','GB-06 (4m²)','GB-07 (4m²)','GB-08 (4m²)','GB-09 (4m²)','GB-10 (4m²)','GB-11 (4m²)','GB-12 (4m²)','GB-13 (4m²)','GB-14 (4m²)','GB-15 (4m²)','GB-16 (4m²)','GB-17 (4m²)','GB-18 (4m²)','GB-19 (4m²)','GB-20 (4m²)','GB-21 (4m²)','GB-22 (4m²)','GB-23 (4m²)','GB-24 (4m²)','GB-25 (4m²)','GB-26 (4m²)','GB-27 (4m²)','GB-28 (4m²)','GB-29 (4m²)','GB-30 (4m²)','GB-31 (4m²)','GB-32 (4m²)','GB-33 (4m²)','GB-34 (4m²)','GB-35 (4m²)','GB-36 (4m²)','GB-37 (4m²)','GB-38 (4m²)','GB-39 (4m²)','GB-40 (4m²)','GB-41 (4m²)'],
 };
 
+// Supplier English short names (0818 floor plan) — keyed by booth ID
+const SUPPLIER_EN = {
+  'A-01':'Wenzhou Baoshijie','A-02':'Ningbo Youyi','A-03':'Choebe','A-04':'Zhejiang Minghui','A-06':'Sowin','A-07':'OPT','A-08':'Xiamen Xiefa','A-09':'Fuzhou Sencai',
+  'B-01':'Shandong Nuoman','B-02':'Shanghai Kaiwei','B-03':'Henan Zhongyu Dingli','B-04':'Suzhou Transparent','B-05':'Shandong Eachan','B-06':'Shandong Raytop','B-07':'Suzhou Tongda',
+  'C-01':'Ningbo Super','C-02':'Dongguan Yujie','C-03':'Charming','C-04':'Beijing Doorwin','C-05':'Masuma','C-06':'Xiamen Mingyuansheng','C-07':'Xiamen Hym','C-08':'Shenzhen Ejeas','C-09':'Foshan Fuson','C-10':'Zhangzhou Builder','C-11':'Guangdong Dejiyoupin','C-12':'SACA','C-13':'Qingdao Seahisun',
+  'D-01':'Biocaro','D-02':'Huion','D-03':'Quanzhou Binqi','D-04':'Xiamen Weiyou','D-05':'Gardensun','D-06':'Chiyang','D-07':'Superlaser','D-09':'Rundarongjia','D-10':'EMOKA',
+  'E-01':'Healy','E-02':'Heniemo','E-03':'Funan Willow','E-04':'Bright Show','E-05':'YSTAR','E-06':'Allbright','E-07':'Yuze','E-08':'Sentron',
+};
+
 // ---------- Default content (source of truth until the user edits it) ----------
 
 const DEFAULT_DATA = {
@@ -1137,11 +1146,19 @@ function setupZoneModal(){
     const statusColor = (s) => s === 'TBD' ? 'var(--red)' : (s === 'Approved' ? 'var(--green)' : 'var(--yellow)');
     unitsEl.innerHTML = `
       <span class="unit-chip category-chip ${!currentUnit ? 'active' : ''}" data-unit="">Category overview</span>
-      ${zone.units.map((u, i) => `
-        <span class="unit-chip ${currentUnit === u ? 'active' : ''}" data-unit="${i}">
-          <span class="unit-dot" style="background:${statusColor(u.status)}"></span>${escapeHtml(u.label)}
-        </span>
-      `).join('')}
+      ${zone.units.map((u, i) => {
+        const boothId = (u.label || '').split(' ')[0];
+        const supplier = SUPPLIER_EN[boothId];
+        return `
+          <span class="unit-chip ${currentUnit === u ? 'active' : ''}" data-unit="${i}">
+            <span class="unit-dot" style="background:${statusColor(u.status)}"></span>
+            <span class="unit-chip-text">
+              <span class="unit-label">${escapeHtml(u.label)}</span>
+              ${supplier ? `<span class="unit-supplier">${escapeHtml(supplier)}</span>` : ''}
+            </span>
+          </span>
+        `;
+      }).join('')}
     `;
     renderChecklistLabel();
   }
