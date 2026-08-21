@@ -539,7 +539,6 @@ GRAPHICS: [
   { zone: 'Supplier Block D', items: [
     { item: 'D-01-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/d-01-header.jpg' },
     { item: 'D-01-FRT', size: '3956×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-01-frt.jpg' },
-    { item: 'D-01-BK', size: '3956×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-01-bk.jpg' },
     { item: 'D-02-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/d-02-header.jpg' },
     { item: 'D-02-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-02-bk-wall.jpg' },
     { item: 'D-02-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-02-side-l.jpg' },
@@ -554,8 +553,8 @@ GRAPHICS: [
     { item: 'D-05-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-05-side-l.jpg' },
     { item: 'D-06-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/d-06-header.jpg' },
     { item: 'D-06-BK-WALL', size: '3962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-06-bk-wall.jpg' },
-    { item: 'D-06-SIDE-WALL-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'D-06-SIDE-WALL-OUT', size: '2096×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-06-side-wall-out.jpg' },
+    { item: 'D-06-SIDE-WALL-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-06-side-wall-in.jpg' },
+    { item: 'D-06-SIDE-WALL-OUT', size: '2096×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'D-07-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
     { item: 'D-07-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'D-07-SIDE-L', size: '1982×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
