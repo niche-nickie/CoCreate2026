@@ -453,6 +453,7 @@ const GRAPHIC_STATUS = [
   { value: 'approved',  label: 'Approved',  emoji: '✅', color: '#16a34a' },
   { value: 'printed',   label: 'Printed',   emoji: '🖨️', color: '#a855f7' },
   { value: 'installed', label: 'Installed', emoji: '🏗️', color: '#f59e0b' },
+  { value: 'done',      label: 'Done',      emoji: '🎉', color: '#15803d' },
 ];
 function graphicStatusMeta(v){ return GRAPHIC_STATUS.find(s => s.value === v) || GRAPHIC_STATUS[0]; }
 
