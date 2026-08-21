@@ -482,7 +482,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 23;
+const CONTENT_VERSION = 24;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
@@ -979,26 +979,35 @@ function renderZonesFull(){
 let graphicsList = []; // 當前顯示的 graphics 資料（Firestore 或 seed）
 
 function renderGraphics(){
-  if(!document.getElementById('graphics-list')) return;
-  // 先用 seed 畫
-  graphicsList = DATA.GRAPHICS;
-  renderGraphicsWith(graphicsList);
-  // 非同步拉 Firestore（多人同步的權威資料）
-  if (FB_DB) {
-    FB_DB.collection(GRAPHICS_COLLECTION).orderBy('order').get().then(snap => {
-      if (!snap.empty) {
-        const list = [];
-        snap.forEach(d => {
-          const data = d.data();
-          list.push({ id: d.id, zone: data.zone, items: data.items || [] });
-        });
-        graphicsList = list;
-        renderGraphicsWith(list);
-      } else {
-        seedGraphics();
-      }
-    }).catch(e => console.warn('load graphics failed:', e));
+  const el = document.getElementById('graphics-list');
+  if(!el) return;
+  if (!FB_DB) {
+    // 無 Firebase → 用 seed
+    graphicsList = DATA.GRAPHICS;
+    renderGraphicsWith(graphicsList);
+    return;
   }
+  // 先顯示 loading，等 Firestore 權威資料（避免先畫 seed 的 pending 閃現、
+  // 造成用戶在 Firestore 載入前改 status 卻沒寫回 Firestore → reload 又跳回 pending）
+  el.innerHTML = '<p style="color:#999;padding:12px;">Loading graphics…</p>';
+  FB_DB.collection(GRAPHICS_COLLECTION).orderBy('order').get().then(snap => {
+    if (!snap.empty) {
+      const list = [];
+      snap.forEach(d => {
+        const data = d.data();
+        list.push({ id: d.id, zone: data.zone, items: data.items || [] });
+      });
+      graphicsList = list;
+      renderGraphicsWith(list);
+    } else {
+      // Firestore 空 → seed（seed 後會重新讀取並 render）
+      seedGraphics();
+    }
+  }).catch(e => {
+    console.warn('load graphics failed:', e);
+    graphicsList = DATA.GRAPHICS;
+    renderGraphicsWith(graphicsList);
+  });
 }
 
 function seedGraphics(){
