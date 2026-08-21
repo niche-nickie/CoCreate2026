@@ -652,10 +652,6 @@ GRAPHICS: [
     { item: 'CQ-CNTR-LOGO', size: '800×250mm', material: 'Vinyl', qty: 4, status: 'pending', thumb: '' },
   ]},
   { zone: 'Sponsor Booths', items: [
-    { item: 'Pop-up display', size: '3000×2500mm', material: '—', qty: 9, status: 'pending', thumb: '' },
-    { item: 'Pop-up display', size: '3500×2500mm', material: '—', qty: 3, status: 'pending', thumb: '' },
-    { item: 'L-shaped pop-up', size: '5000×2500 + 3000×2500mm', material: '—', qty: 2, status: 'pending', thumb: '' },
-    { item: 'Full-height wall graphic', size: '—', material: '—', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-LOGO-1', size: '400×100mm', material: 'Vinyl', qty: 14, status: 'pending', thumb: '' },
     { item: 'COMM-P-01-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-02-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
