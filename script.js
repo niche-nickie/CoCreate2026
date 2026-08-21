@@ -637,8 +637,19 @@ GRAPHICS: [
     { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 11, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
   ]},
   { zone: 'Chongqing Pavilion', items: [
-
-    { item: 'Fabric Graphic', size: '2966×2409mm', material: 'Fabric / RX-101', qty: 4, status: 'pending', thumb: '' },
+    { item: 'CQ-01-WALL-FRT', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-01-WALL-BK', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-01-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-02-WALL-FRT', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-02-WALL-BK', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-02-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-03-WALL-FRT', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-03-WALL-BK', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-03-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-04-WALL-FRT', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-04-WALL-BK', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-04-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 4, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
   ]},
   { zone: 'Sponsor Booths', items: [
     { item: 'Pop-up display', size: '3000×2500mm', material: '—', qty: 9, status: 'pending', thumb: '' },
