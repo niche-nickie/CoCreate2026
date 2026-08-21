@@ -622,6 +622,20 @@ GRAPHICS: [
     { item: 'F-21-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
     { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 21, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
   ]},
+  { zone: 'Supplier Non-A200 — Block G', items: [
+    { item: 'G-01-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'G-02-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'G-03-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'G-04-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'G-05-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'G-06-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'G-07-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'G-08-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'G-09-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'G-10-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'G-11-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 11, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
+  ]},
   { zone: 'Chongqing Pavilion', items: [
 
     { item: 'Fabric Graphic', size: '2966×2409mm', material: 'Fabric / RX-101', qty: 4, status: 'pending', thumb: '' },
