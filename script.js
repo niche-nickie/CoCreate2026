@@ -675,6 +675,10 @@ GRAPHICS: [
     { item: 'PREM-LOGO-2', size: '1000×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'Sourcing Hub', items: [
+    { item: 'SH-HEADER-1', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: '' },
+    { item: 'SH-HEADER-2', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: '' },
+    { item: 'SH-HEADER-3', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: '' },
+    { item: 'SH-HEADER-4', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: '' },
   ]},
   { zone: 'Podcast', items: [
     { item: 'Vinyl Graphic (front glass)', size: '1208×898mm', material: 'Vinyl', qty: 4, status: 'pending', thumb: '' },
