@@ -377,6 +377,45 @@ HARD_DEADLINES: [
   { title: 'Youngs: Add-on pop-ups', sub: 'Any additional pop-up units final', date: '2026-08-26' },
 ],
 
+GRAPHICS: [
+  { zone: 'Registration', items: [
+    { item: 'Back wall fabric — front', size: '9896×2409mm', material: 'BO Fabric', file: 'REG-WALL-FRT', status: 'pending', thumb: '' },
+    { item: 'Back wall fabric — back', size: '9896×2409mm', material: 'BO Fabric', file: 'REG-WALL-BK', status: 'pending', thumb: '' },
+    { item: 'Curved column cover', size: '—', material: 'Curved PVC', file: 'COLUMN-COVER', status: 'pending', thumb: '' },
+    { item: 'Fabric channel', size: '164 ft', material: 'RX-101', file: '—', status: 'pending', thumb: '' },
+  ]},
+  { zone: 'Unboxing Live', items: [
+    { item: 'Double-sided Pop-up', size: '—', material: '—', file: '—', status: 'pending', thumb: '' },
+  ]},
+  { zone: 'Chongqing Pavilion', items: [
+    { item: 'Fabric Graphic ×4', size: '2966×2409mm', material: 'Fabric / RX-101', file: '—', status: 'pending', thumb: '' },
+  ]},
+  { zone: 'Sponsor Booths', items: [
+    { item: 'Pop-up display ×9', size: '3000×2500mm', material: '—', file: '—', status: 'pending', thumb: '' },
+    { item: 'Pop-up display ×3', size: '3500×2500mm', material: '—', file: '—', status: 'pending', thumb: '' },
+    { item: 'L-shaped pop-up ×2', size: '5000×2500 + 3000×2500mm', material: '—', file: '—', status: 'pending', thumb: '' },
+    { item: 'Full-height wall graphic', size: '—', material: '—', file: '—', status: 'pending', thumb: '' },
+  ]},
+  { zone: 'Sourcing Hub', items: [
+    { item: 'Display Sign', size: '1000×2000×300', material: 'Formica White', file: '—', status: 'pending', thumb: '' },
+    { item: 'PVC Graphic (Booth A–D)', size: '2150×250', material: 'PVC', file: '—', status: 'pending', thumb: '' },
+    { item: 'Floor Vinyl (Booth A–D)', size: '—', material: 'Vinyl', file: '—', status: 'pending', thumb: '' },
+  ]},
+  { zone: 'Podcast', items: [
+    { item: 'Vinyl Graphic ×4 (front glass)', size: '1208×898mm', material: 'Vinyl', file: 'PD-FRONT-GLASS', status: 'pending', thumb: '' },
+    { item: 'Vinyl Graphic ×3 (left glass)', size: '1029×898mm', material: 'Vinyl', file: 'PD-LEFT-GLASS', status: 'pending', thumb: '' },
+  ]},
+  { zone: 'Creator Market (Muse)', items: [
+    { item: 'PVC graphic ×3 (both sides)', size: '—', material: 'PVC', file: '—', status: 'pending', thumb: '' },
+    { item: 'Custom Column ×6 (Island)', size: '—', material: '—', file: '—', status: 'pending', thumb: '' },
+    { item: 'Vinyl sticker (Sponsor)', size: '—', material: 'Vinyl', file: '—', status: 'pending', thumb: '' },
+  ]},
+  { zone: 'UED Booth', items: [
+    { item: 'Graphic Bracket ×2', size: '100×250×50', material: 'Formica White', file: '—', status: 'pending', thumb: '' },
+    { item: 'RX-101 Aluminum Channels', size: '82 ft', material: 'RX-101', file: '—', status: 'pending', thumb: '' },
+  ]},
+],
+
 SEED_UPDATES: [
   { date: 'Aug 1, 2026', author: 'Nickie Wang', text: 'First quote sent out — covers the zones with designs already received. Keynote, Match Meeting, and Next-Gen (plus any Youngs add-ons like pop-ups / extra counters) will be quoted once their designs/quantities land.' },
   { date: 'Aug 1, 2026', author: 'Nickie Wang', text: 'Deadlines issued to Youngs: 80% design confirm by Aug 7 (priority: AMA/Breakout/Match stage+backdrop, Creator Market + Next-Gen custom, and std counter qty — AMG only has ~30); merchant booths + graphics + hanging signs by Aug 17; any add-on pop-ups by Aug 26.' },
@@ -396,7 +435,36 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 14;
+const CONTENT_VERSION = 15;
+
+// ---------- Firebase (graphics 多人同步) ----------
+const FB_CONFIG = {
+  apiKey: "AIzaSyA_WfffoyU5_ESBmUiQ680_AmNsSNydmek",
+  authDomain: "cocreate2026-62530.firebaseapp.com",
+  projectId: "cocreate2026-62530",
+  storageBucket: "cocreate2026-62530.firebasestorage.app",
+  messagingSenderId: "1036108803620",
+  appId: "1:1036108803620:web:ed6a8137a2b4c072e632b1"
+};
+const GRAPHICS_COLLECTION = 'graphics';
+const GRAPHIC_STATUS = [
+  { value: 'pending',   label: 'Pending',   emoji: '⏳', color: '#999999' },
+  { value: 'received',  label: 'Received',  emoji: '📥', color: '#3b82f6' },
+  { value: 'approved',  label: 'Approved',  emoji: '✅', color: '#16a34a' },
+  { value: 'printed',   label: 'Printed',   emoji: '🖨️', color: '#a855f7' },
+  { value: 'installed', label: 'Installed', emoji: '🏗️', color: '#f59e0b' },
+];
+function graphicStatusMeta(v){ return GRAPHIC_STATUS.find(s => s.value === v) || GRAPHIC_STATUS[0]; }
+
+let FB_DB = null;
+function initFirebase(){
+  try {
+    if (typeof firebase !== 'undefined') {
+      if (!firebase.apps || !firebase.apps.length) firebase.initializeApp(FB_CONFIG);
+      FB_DB = firebase.firestore();
+    }
+  } catch(e) { console.warn('Firebase init failed:', e); }
+}
 let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
 
 function loadSiteData(){
@@ -860,6 +928,108 @@ function renderZonesFull(){
   document.getElementById('zones-add-row').innerHTML = addBtn('Zone', `addRow('ZONES',{name:'New Zone',status:'TBD',scope:'TBD',flag:'',req:[]})`);
 }
 
+let graphicsList = []; // 當前顯示的 graphics 資料（Firestore 或 seed）
+
+function renderGraphics(){
+  if(!document.getElementById('graphics-list')) return;
+  // 先用 seed 畫
+  graphicsList = DATA.GRAPHICS;
+  renderGraphicsWith(graphicsList);
+  // 非同步拉 Firestore（多人同步的權威資料）
+  if (FB_DB) {
+    FB_DB.collection(GRAPHICS_COLLECTION).orderBy('order').get().then(snap => {
+      if (!snap.empty) {
+        const list = [];
+        snap.forEach(d => {
+          const data = d.data();
+          list.push({ id: d.id, zone: data.zone, items: data.items || [] });
+        });
+        graphicsList = list;
+        renderGraphicsWith(list);
+      } else {
+        seedGraphics();
+      }
+    }).catch(e => console.warn('load graphics failed:', e));
+  }
+}
+
+function seedGraphics(){
+  if (!FB_DB) return;
+  const batch = FB_DB.batch();
+  DATA.GRAPHICS.forEach((g, i) => {
+    const ref = FB_DB.collection(GRAPHICS_COLLECTION).doc();
+    batch.set(ref, { zone: g.zone, items: g.items, order: i });
+  });
+  batch.commit().then(() => {
+    // seed 後重新讀取，讓 graphicsList 帶上 doc id（後續 status 更新才能寫回 Firestore）
+    FB_DB.collection(GRAPHICS_COLLECTION).orderBy('order').get().then(snap => {
+      const list = [];
+      snap.forEach(d => {
+        const data = d.data();
+        list.push({ id: d.id, zone: data.zone, items: data.items || [] });
+      });
+      graphicsList = list;
+      renderGraphicsWith(list);
+    }).catch(e => console.warn('reload after seed failed:', e));
+  }).catch(e => console.warn('seed graphics failed:', e));
+}
+
+function renderGraphicsWith(list){
+  const el = document.getElementById('graphics-list');
+  if(!el) return;
+  el.innerHTML = list.map((g, gi) => `
+    <details class="card graphic-card" ${gi === 0 ? 'open' : ''} style="margin-bottom:12px;">
+      <summary class="card-header graphic-summary" style="cursor:pointer;list-style:none;">
+        <div class="card-title">🖼 ${escapeHtml(g.zone)}</div>
+        <span class="pill">${(g.items||[]).length} items</span>
+      </summary>
+      <div class="card-body" style="padding:0;overflow-x:auto;">
+        <table class="phases">
+          <thead><tr><th>Item</th><th>Size</th><th>Material</th><th>File</th><th>Thumbnail</th><th>Status</th></tr></thead>
+          <tbody>
+            ${(g.items||[]).map((it, ii) => {
+              const meta = graphicStatusMeta(it.status);
+              const thumbHtml = it.thumb
+                ? `<img src="${escapeHtml(it.thumb)}" alt="" style="width:72px;height:auto;border-radius:6px;cursor:zoom-in;" onclick="event.stopPropagation();openLightbox('${escapeHtml(it.thumb)}')">`
+                : `<span style="color:#ccc;font-size:12px;">none</span>`;
+              return `
+              <tr>
+                <td>${escapeHtml(it.item)}</td>
+                <td>${escapeHtml(it.size)}</td>
+                <td>${escapeHtml(it.material)}</td>
+                <td><code>${escapeHtml(it.file)}</code></td>
+                <td>${thumbHtml}</td>
+                <td>
+                  <select data-gi="${gi}" data-ii="${ii}" onchange="setGraphicStatus(this)" style="color:${meta.color};font-weight:600;border:1px solid ${meta.color}33;background:${meta.color}11;">
+                    ${GRAPHIC_STATUS.map(s => `<option value="${s.value}" ${s.value === it.status ? 'selected' : ''}>${s.emoji} ${s.label}</option>`).join('')}
+                  </select>
+                </td>
+              </tr>
+            `}).join('')}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  `).join('');
+}
+
+function setGraphicStatus(sel){
+  const gi = parseInt(sel.dataset.gi, 10);
+  const ii = parseInt(sel.dataset.ii, 10);
+  const val = sel.value;
+  if (graphicsList[gi] && graphicsList[gi].items && graphicsList[gi].items[ii]) {
+    graphicsList[gi].items[ii].status = val;
+  }
+  const meta = graphicStatusMeta(val);
+  sel.style.color = meta.color;
+  sel.style.border = `1px solid ${meta.color}33`;
+  sel.style.background = `${meta.color}11`;
+  if (FB_DB && graphicsList[gi] && graphicsList[gi].id) {
+    FB_DB.collection(GRAPHICS_COLLECTION).doc(graphicsList[gi].id).update({ items: graphicsList[gi].items })
+      .catch(e => console.warn('update graphic failed:', e));
+  }
+}
+
 function loadPostedUpdates(){
   try{ return JSON.parse(localStorage.getItem('cocreate2026_updates') || '[]'); }
   catch(e){ return []; }
@@ -914,6 +1084,7 @@ function renderAll(){
   renderOpenItemsFull();
   renderRisk();
   renderZonesFull();
+  renderGraphics();
 
   const allUpdates = getAllUpdates();
   renderActivityPreview(allUpdates);
@@ -1462,6 +1633,7 @@ function setupZoneDrag(){
 
 document.addEventListener('DOMContentLoaded', () => {
   loadSiteData();
+  initFirebase();
   renderAll();
   renderSidebarUser();
   setupNav();

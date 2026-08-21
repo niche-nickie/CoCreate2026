@@ -24,6 +24,7 @@
   <a class="nav-item" href="#open-items"><span class="nav-icon">✓</span> Open Items <span class="nav-badge" id="nav-badge-items"></span></a>
   <a class="nav-item" href="#risk"><span class="nav-icon">⚑</span> Risk <span class="nav-badge" id="nav-badge-risk"></span></a>
   <a class="nav-item" href="#zones"><span class="nav-icon">⬡</span> Zones</a>
+  <a class="nav-item" href="#graphics"><span class="nav-icon">🖼</span> Graphics</a>
 
   <div class="nav-section-label">Log</div>
   <a class="nav-item" href="#updates"><span class="nav-icon">🕓</span> Updates</a>
@@ -177,6 +178,12 @@
     <div id="zones-add-row"></div>
   </section>
 
+  <section id="graphics">
+    <div class="section-heading">Graphics</div>
+    <p class="section-sub">Graphic 輸出物清單，按 Zone 分區。每筆記：項目／尺寸／材質／檔案名／狀態。</p>
+    <div id="graphics-list"></div>
+  </section>
+
   <section id="updates">
     <div class="section-heading">Updates</div>
     <p class="section-sub">Live log · reverse chronological. Post via the ✎ Report / Ask button.</p>
@@ -239,7 +246,9 @@
   </div>
 </div>
 
-<script src="script.js?v=140&t=20260818"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="script.js?v=142&t=20260820"></script>
 <script>
 var FP_PAGES = ['assets/floor-plan-lacc.jpg', 'assets/floor-plan-cgs.jpg'];
 var FP_CAPTIONS = ['Page 1 — Zone Overview + Legend', 'Page 2 — Full Floor Plan (全場平面圖)'];
