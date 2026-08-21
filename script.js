@@ -690,9 +690,6 @@ GRAPHICS: [
     { item: 'PODCAST-VINYL-07', size: '1208×898mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/podcast-vinyl-07.jpg' },
   ]},
   { zone: 'Creator Market (Muse)', items: [
-    { item: 'PVC graphic (both sides)', size: '—', material: 'PVC', qty: 3, status: 'pending', thumb: '' },
-    { item: 'Custom Column (Island)', size: '—', material: '—', qty: 6, status: 'pending', thumb: '' },
-    { item: 'Vinyl sticker (Sponsor)', size: '—', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'UED Booth', items: [
     { item: 'Graphic Bracket', size: '100×250×50', material: 'Formica White', qty: 2, status: 'pending', thumb: '' },
