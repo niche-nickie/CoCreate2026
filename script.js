@@ -490,7 +490,7 @@ GRAPHICS: [
     { item: 'B-07-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/b-07-header.jpg' },
     { item: 'B-07-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/b-07-bk-wall.jpg' },
     { item: 'B-07-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/b-07-side-r.jpg' },
-    { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 7, status: 'pending', thumb: '' },
+    { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 7, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
     { item: 'B-BK-WALL', size: '12076×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'Chongqing Pavilion', items: [
