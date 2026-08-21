@@ -217,7 +217,7 @@ const BOOTH_LABELS = {
 // Supplier English short names (0818 floor plan) — keyed by booth ID
 const SUPPLIER_EN = {
   'A-01':'Wenzhou Baoshijie','A-02':'Ningbo Youyi','A-03':'Choebe','A-04':'Zhejiang Minghui','A-06':'Sowin','A-07':'OPT','A-08':'Xiamen Xiefa','A-09':'Fuzhou Sencai',
-  'B-01':'Shandong Nuoman','B-02':'Shanghai Kaiwei','B-03':'Henan Zhongyu Dingli','B-04':'Suzhou Transparent','B-05':'Shandong Eachan','B-06':'Shandong Raytop','B-07':'Suzhou Tongda',
+  'B-01':'Shandong Nuoman','B-02':'Shanghai Kaiwei','B-03':'Henan Zhongyu Dingli','B-04':'Suzhou Transparent','B-05':'Shandong Eachan','B-06':'Shandong Hightop','B-07':'Suzhou Tongda',
   'C-01':'Ningbo Super','C-02':'Dongguan Yujie','C-03':'Charming','C-04':'Beijing Doorwin','C-05':'Masuma','C-06':'Xiamen Mingyuansheng','C-07':'Xiamen Hym','C-08':'Shenzhen Ejeas','C-09':'Foshan Fuson','C-10':'Zhangzhou Builder','C-11':'Guangdong Dejiyoupin','C-12':'SACA','C-13':'Qingdao Seahisun',
   'D-01':'Biocaro','D-02':'Huion','D-03':'Quanzhou Binqi','D-04':'Xiamen Weiyou','D-05':'Gardensun','D-06':'Chiyang','D-07':'Superlaser','D-09':'Rundarongjia','D-10':'EMOKA',
   'E-01':'Healy','E-02':'Heniemo','E-03':'Funan Willow','E-04':'Bright Show','E-05':'YSTAR','E-06':'Allbright','E-07':'Yuze','E-08':'Sentron',
