@@ -379,84 +379,84 @@ HARD_DEADLINES: [
 
 GRAPHICS: [
   { zone: 'Registration', items: [
-    { item: 'Back wall fabric — front', size: '9896×2409mm', material: 'BO Fabric', qty: 1, file: 'REG-WALL-FRT', status: 'pending', thumb: '' },
-    { item: 'Curved column cover', size: '—', material: 'Curved PVC', qty: 1, file: 'COLUMN-COVER', status: 'pending', thumb: '' },
+    { item: 'Back wall fabric — front', size: '9896×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'Curved column cover', size: '—', material: 'Curved PVC', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'Next Gen', items: [
-    { item: 'NG-MEET-FRT', size: '2966×2996mm', material: 'BO Fabric', qty: 1, file: 'NG-MEET-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-MEET-BK', size: '2966×2996mm', material: 'BO Fabric', qty: 1, file: 'NG-MEET-BK', status: 'pending', thumb: '' },
-    { item: 'NG-MEET-CNTR-FRT', size: '1485×1000mm', material: 'PVC', qty: 1, file: 'NG-MEET-CNTR-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-SHAPE-1', size: '370×365mm', material: 'PVC', qty: 1, file: 'NG-SHAPE-1', status: 'pending', thumb: '' },
-    { item: 'NG-SHAPE-2', size: '591×573mm', material: 'PVC', qty: 1, file: 'NG-SHAPE-2', status: 'pending', thumb: '' },
-    { item: 'NG-SHAPE-3', size: '570×562mm', material: 'PVC', qty: 1, file: 'NG-SHAPE-3', status: 'pending', thumb: '' },
-    { item: 'NG-FLOOR', size: '7000×7000mm', material: 'Floor Vinyl', qty: 1, file: 'NG-FLOOR', status: 'pending', thumb: '' },
-    { item: 'NG-GAME-CNTR-LOGO', size: '840×100mm', material: 'Vinyl', qty: 2, file: 'NG-GAME-CNTR-LOGO', status: 'pending', thumb: '' },
-    { item: 'NG-GAME-ARROW', size: '80×2700mm', material: 'Vinyl', qty: 2, file: 'NG-GAME-ARROW', status: 'pending', thumb: '' },
-    { item: 'NG-GAME', size: '1440×3000mm', material: 'Vinyl', qty: 1, file: 'NG-GAME', status: 'pending', thumb: '' },
-    { item: 'NG-PLATFORM', size: '1650×1559mm', material: 'Vinyl', qty: 1, file: 'NG-PLATFORM', status: 'pending', thumb: '' },
-    { item: 'NG-PLATFORM-SIDES', size: '1536×166mm', material: 'Vinyl', qty: 2, file: 'NG-PLATFORM-SIDES', status: 'pending', thumb: '' },
-    { item: 'NG-PLATFORM-BK', size: '1649×166mm', material: 'Vinyl', qty: 1, file: 'NG-PLATFORM-BK', status: 'pending', thumb: '' },
-    { item: 'NG-R-CNTR-LOGO', size: '560×90mm', material: 'Vinyl', qty: 4, file: 'NG-R-CNTR-LOGO', status: 'pending', thumb: '' },
-    { item: 'NG-FRT-HEADER-FRT', size: '3000×300mm', material: 'PVC', qty: 1, file: 'NG-FRT-HEADER-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-FRT-HEADER-BK', size: '3000×300mm', material: 'PVC', qty: 1, file: 'NG-FRT-HEADER-BK', status: 'pending', thumb: '' },
-    { item: 'NG-CURVE-HEADER', size: '8928×300mm', material: 'Vinyl', qty: 1, file: 'NG-CURVE-HEADER', status: 'pending', thumb: '' },
-    { item: 'NG-CURVE-BOX-1..4', size: '1280×1140mm', material: 'Vinyl', qty: 4, file: 'NG-CURVE-BOX-1..4', status: 'pending', thumb: '' },
-    { item: 'NG-FRT-WALL-FRT', size: '4156×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-FRT-WALL-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-FRT-WALL-BK', size: '4156×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-FRT-WALL-BK', status: 'pending', thumb: '' },
-    { item: 'NG-L-HEADER-1-FRT', size: '2038×300mm', material: 'PVC', qty: 1, file: 'NG-L-HEADER-1-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-L-HEADER-1-BK', size: '2038×300mm', material: 'PVC', qty: 1, file: 'NG-L-HEADER-1-BK', status: 'pending', thumb: '' },
-    { item: 'NG-L-HEADER-2-FRT', size: '2038×300mm', material: 'PVC', qty: 1, file: 'NG-L-HEADER-2-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-L-HEADER-2-BK', size: '2038×300mm', material: 'PVC', qty: 1, file: 'NG-L-HEADER-2-BK', status: 'pending', thumb: '' },
-    { item: 'NG-L-HEADER-3-FRT', size: '2038×300mm', material: 'PVC', qty: 1, file: 'NG-L-HEADER-3-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-L-HEADER-3-BK', size: '2038×300mm', material: 'PVC', qty: 1, file: 'NG-L-HEADER-3-BK', status: 'pending', thumb: '' },
-    { item: 'NG-L-HEADER-4-FRT', size: '2038×300mm', material: 'PVC', qty: 1, file: 'NG-L-HEADER-4-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-L-HEADER-4-BK', size: '2038×300mm', material: 'PVC', qty: 1, file: 'NG-L-HEADER-4-BK', status: 'pending', thumb: '' },
-    { item: 'NG-L-WALL-1-FRT', size: '1976×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-L-WALL-1-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-L-WALL-1-BK', size: '1976×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-L-WALL-1-BK', status: 'pending', thumb: '' },
-    { item: 'NG-L-WALL-2-FRT', size: '1976×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-L-WALL-2-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-L-WALL-2-BK', size: '1976×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-L-WALL-2-BK', status: 'pending', thumb: '' },
-    { item: 'NG-L-WALL-3-FRT', size: '1976×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-L-WALL-3-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-L-WALL-3-BK', size: '1976×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-L-WALL-3-BK', status: 'pending', thumb: '' },
-    { item: 'NG-L-WALL-4-FRT', size: '1976×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-L-WALL-4-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-L-WALL-4-BK', size: '1976×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-L-WALL-4-BK', status: 'pending', thumb: '' },
-    { item: 'NG-R-HEADER-1-FRT', size: '2242×300mm', material: 'PVC', qty: 1, file: 'NG-R-HEADER-1-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-R-HEADER-1-BK', size: '2242×300mm', material: 'PVC', qty: 1, file: 'NG-R-HEADER-1-BK', status: 'pending', thumb: '' },
-    { item: 'NG-R-HEADER-2-FRT', size: '2242×300mm', material: 'PVC', qty: 1, file: 'NG-R-HEADER-2-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-R-HEADER-2-BK', size: '2242×300mm', material: 'PVC', qty: 1, file: 'NG-R-HEADER-2-BK', status: 'pending', thumb: '' },
-    { item: 'NG-R-WALL-1-FRT', size: '3461×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-R-WALL-1-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-R-WALL-1-BK', size: '3461×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-R-WALL-1-BK', status: 'pending', thumb: '' },
-    { item: 'NG-R-WALL-2-FRT', size: '3461×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-R-WALL-2-FRT', status: 'pending', thumb: '' },
-    { item: 'NG-R-WALL-2-BK', size: '3461×2409mm', material: 'BO Fabric', qty: 1, file: 'NG-R-WALL-2-BK', status: 'pending', thumb: '' },
+    { item: 'NG-MEET-FRT', size: '2966×2996mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-MEET-BK', size: '2966×2996mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-MEET-CNTR-FRT', size: '1485×1000mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-SHAPE-1', size: '370×365mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-SHAPE-2', size: '591×573mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-SHAPE-3', size: '570×562mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-FLOOR', size: '7000×7000mm', material: 'Floor Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-GAME-CNTR-LOGO', size: '840×100mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: '' },
+    { item: 'NG-GAME-ARROW', size: '80×2700mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: '' },
+    { item: 'NG-GAME', size: '1440×3000mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-PLATFORM', size: '1650×1559mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-PLATFORM-SIDES', size: '1536×166mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: '' },
+    { item: 'NG-PLATFORM-BK', size: '1649×166mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-R-CNTR-LOGO', size: '560×90mm', material: 'Vinyl', qty: 4, status: 'pending', thumb: '' },
+    { item: 'NG-FRT-HEADER-FRT', size: '3000×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-FRT-HEADER-BK', size: '3000×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-CURVE-HEADER', size: '8928×300mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-CURVE-BOX-1..4', size: '1280×1140mm', material: 'Vinyl', qty: 4, status: 'pending', thumb: '' },
+    { item: 'NG-FRT-WALL-FRT', size: '4156×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-FRT-WALL-BK', size: '4156×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-HEADER-1-FRT', size: '2038×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-HEADER-1-BK', size: '2038×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-HEADER-2-FRT', size: '2038×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-HEADER-2-BK', size: '2038×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-HEADER-3-FRT', size: '2038×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-HEADER-3-BK', size: '2038×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-HEADER-4-FRT', size: '2038×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-HEADER-4-BK', size: '2038×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-WALL-1-FRT', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-WALL-1-BK', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-WALL-2-FRT', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-WALL-2-BK', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-WALL-3-FRT', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-WALL-3-BK', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-WALL-4-FRT', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-L-WALL-4-BK', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-R-HEADER-1-FRT', size: '2242×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-R-HEADER-1-BK', size: '2242×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-R-HEADER-2-FRT', size: '2242×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-R-HEADER-2-BK', size: '2242×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-R-WALL-1-FRT', size: '3461×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-R-WALL-1-BK', size: '3461×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-R-WALL-2-FRT', size: '3461×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-R-WALL-2-BK', size: '3461×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'Unboxing Live', items: [
-    { item: 'Double-sided Pop-up', size: '—', material: '—', qty: 1, file: '—', status: 'pending', thumb: '' },
+    { item: 'Double-sided Pop-up', size: '—', material: '—', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'Chongqing Pavilion', items: [
-    { item: 'Fabric Graphic', size: '2966×2409mm', material: 'Fabric / RX-101', qty: 4, file: '—', status: 'pending', thumb: '' },
+    { item: 'Fabric Graphic', size: '2966×2409mm', material: 'Fabric / RX-101', qty: 4, status: 'pending', thumb: '' },
   ]},
   { zone: 'Sponsor Booths', items: [
-    { item: 'Pop-up display', size: '3000×2500mm', material: '—', qty: 9, file: '—', status: 'pending', thumb: '' },
-    { item: 'Pop-up display', size: '3500×2500mm', material: '—', qty: 3, file: '—', status: 'pending', thumb: '' },
-    { item: 'L-shaped pop-up', size: '5000×2500 + 3000×2500mm', material: '—', qty: 2, file: '—', status: 'pending', thumb: '' },
-    { item: 'Full-height wall graphic', size: '—', material: '—', qty: 1, file: '—', status: 'pending', thumb: '' },
+    { item: 'Pop-up display', size: '3000×2500mm', material: '—', qty: 9, status: 'pending', thumb: '' },
+    { item: 'Pop-up display', size: '3500×2500mm', material: '—', qty: 3, status: 'pending', thumb: '' },
+    { item: 'L-shaped pop-up', size: '5000×2500 + 3000×2500mm', material: '—', qty: 2, status: 'pending', thumb: '' },
+    { item: 'Full-height wall graphic', size: '—', material: '—', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'Sourcing Hub', items: [
-    { item: 'Display Sign', size: '1000×2000×300', material: 'Formica White', qty: 1, file: '—', status: 'pending', thumb: '' },
-    { item: 'PVC Graphic', size: '2150×250', material: 'PVC', qty: 4, file: '—', status: 'pending', thumb: '' },
-    { item: 'Floor Vinyl', size: '—', material: 'Vinyl', qty: 4, file: '—', status: 'pending', thumb: '' },
+    { item: 'Display Sign', size: '1000×2000×300', material: 'Formica White', qty: 1, status: 'pending', thumb: '' },
+    { item: 'PVC Graphic', size: '2150×250', material: 'PVC', qty: 4, status: 'pending', thumb: '' },
+    { item: 'Floor Vinyl', size: '—', material: 'Vinyl', qty: 4, status: 'pending', thumb: '' },
   ]},
   { zone: 'Podcast', items: [
-    { item: 'Vinyl Graphic (front glass)', size: '1208×898mm', material: 'Vinyl', qty: 4, file: 'PD-FRONT-GLASS', status: 'pending', thumb: '' },
-    { item: 'Vinyl Graphic (left glass)', size: '1029×898mm', material: 'Vinyl', qty: 3, file: 'PD-LEFT-GLASS', status: 'pending', thumb: '' },
+    { item: 'Vinyl Graphic (front glass)', size: '1208×898mm', material: 'Vinyl', qty: 4, status: 'pending', thumb: '' },
+    { item: 'Vinyl Graphic (left glass)', size: '1029×898mm', material: 'Vinyl', qty: 3, status: 'pending', thumb: '' },
   ]},
   { zone: 'Creator Market (Muse)', items: [
-    { item: 'PVC graphic (both sides)', size: '—', material: 'PVC', qty: 3, file: '—', status: 'pending', thumb: '' },
-    { item: 'Custom Column (Island)', size: '—', material: '—', qty: 6, file: '—', status: 'pending', thumb: '' },
-    { item: 'Vinyl sticker (Sponsor)', size: '—', material: 'Vinyl', qty: 1, file: '—', status: 'pending', thumb: '' },
+    { item: 'PVC graphic (both sides)', size: '—', material: 'PVC', qty: 3, status: 'pending', thumb: '' },
+    { item: 'Custom Column (Island)', size: '—', material: '—', qty: 6, status: 'pending', thumb: '' },
+    { item: 'Vinyl sticker (Sponsor)', size: '—', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'UED Booth', items: [
-    { item: 'Graphic Bracket', size: '100×250×50', material: 'Formica White', qty: 2, file: '—', status: 'pending', thumb: '' },
-    { item: 'RX-101 Aluminum Channels', size: '82 ft', material: 'RX-101', qty: 1, file: '—', status: 'pending', thumb: '' },
+    { item: 'Graphic Bracket', size: '100×250×50', material: 'Formica White', qty: 2, status: 'pending', thumb: '' },
+    { item: 'RX-101 Aluminum Channels', size: '82 ft', material: 'RX-101', qty: 1, status: 'pending', thumb: '' },
   ]},
 ],
 
@@ -479,7 +479,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 19;
+const CONTENT_VERSION = 20;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
@@ -1030,7 +1030,7 @@ function renderGraphicsWith(list){
       </summary>
       <div class="card-body" style="padding:0;overflow-x:auto;">
         <table class="phases">
-          <thead><tr><th>Item</th><th>Size</th><th>Material</th><th>Qty</th><th>File</th><th>Thumbnail</th><th>Status</th></tr></thead>
+          <thead><tr><th>Item</th><th>Size</th><th>Material</th><th>Qty</th><th>Thumbnail</th><th>Status</th></tr></thead>
           <tbody>
             ${(g.items||[]).map((it, ii) => {
               const meta = graphicStatusMeta(it.status);
@@ -1043,7 +1043,6 @@ function renderGraphicsWith(list){
                 <td>${escapeHtml(it.size)}</td>
                 <td>${escapeHtml(it.material)}</td>
                 <td>${it.qty || 1}</td>
-                <td><code>${escapeHtml(it.file)}</code></td>
                 <td>${thumbHtml}</td>
                 <td>
                   <select data-gi="${gi}" data-ii="${ii}" onchange="setGraphicStatus(this)" style="color:${meta.color};font-weight:600;border:1px solid ${meta.color}33;background:${meta.color}11;">
