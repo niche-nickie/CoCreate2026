@@ -690,6 +690,14 @@ GRAPHICS: [
     { item: 'PODCAST-VINYL-07', size: '1208×898mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/podcast-vinyl-07.jpg' },
   ]},
   { zone: 'Creator Market (Muse)', items: [
+    { item: 'MB-MID-SIDE-OUT', size: '600×2400mm', material: 'Vinyl', qty: 6, status: 'pending', thumb: '' },
+    { item: 'MB-MID-SIDE-IN', size: '600×2100mm', material: 'Vinyl', qty: 6, status: 'pending', thumb: '' },
+    { item: 'MB-FLOOR-OUT', size: '14326×14326mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'MB-FLOOR-IN', size: '3656×3656mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'MB-CNTR-1', size: '250×50mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'MB-CNTR-2', size: '250×50mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'MB-HEADER-1', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'MB-HEADER-2', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'UED Booth', items: [
     { item: 'Graphic Bracket', size: '100×250×50', material: 'Formica White', qty: 2, status: 'pending', thumb: '' },
