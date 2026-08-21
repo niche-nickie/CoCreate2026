@@ -1203,7 +1203,7 @@ function renderGraphicsWith(list){
     <details class="card graphic-card" ${gi === 0 ? 'open' : ''} style="margin-bottom:12px;">
       <summary class="card-header graphic-summary" style="cursor:pointer;list-style:none;">
         <div class="card-title">🖼 ${escapeHtml(g.zone)}</div>
-        <span class="pill">${(g.items||[]).length} items</span>
+        <span class="pill">${(g.items||[]).filter(it => it.status === 'approved').length}/${(g.items||[]).length} approved</span>
       </summary>
       <div class="card-body" style="padding:0;overflow-x:auto;">
         <table class="phases">
