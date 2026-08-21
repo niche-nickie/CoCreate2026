@@ -379,40 +379,40 @@ HARD_DEADLINES: [
 
 GRAPHICS: [
   { zone: 'Registration', items: [
-    { item: 'Back wall fabric — front', size: '9896×2409mm', material: 'BO Fabric', file: 'REG-WALL-FRT', status: 'pending', thumb: '' },
-    { item: 'Back wall fabric — back', size: '9896×2409mm', material: 'BO Fabric', file: 'REG-WALL-BK', status: 'pending', thumb: '' },
-    { item: 'Curved column cover', size: '—', material: 'Curved PVC', file: 'COLUMN-COVER', status: 'pending', thumb: '' },
-    { item: 'Fabric channel', size: '164 ft', material: 'RX-101', file: '—', status: 'pending', thumb: '' },
+    { item: 'Back wall fabric — front', size: '9896×2409mm', material: 'BO Fabric', qty: 1, file: 'REG-WALL-FRT', status: 'pending', thumb: '' },
+    { item: 'Back wall fabric — back', size: '9896×2409mm', material: 'BO Fabric', qty: 1, file: 'REG-WALL-BK', status: 'pending', thumb: '' },
+    { item: 'Curved column cover', size: '—', material: 'Curved PVC', qty: 1, file: 'COLUMN-COVER', status: 'pending', thumb: '' },
+    { item: 'Fabric channel', size: '164 ft', material: 'RX-101', qty: 1, file: '—', status: 'pending', thumb: '' },
   ]},
   { zone: 'Unboxing Live', items: [
-    { item: 'Double-sided Pop-up', size: '—', material: '—', file: '—', status: 'pending', thumb: '' },
+    { item: 'Double-sided Pop-up', size: '—', material: '—', qty: 1, file: '—', status: 'pending', thumb: '' },
   ]},
   { zone: 'Chongqing Pavilion', items: [
-    { item: 'Fabric Graphic ×4', size: '2966×2409mm', material: 'Fabric / RX-101', file: '—', status: 'pending', thumb: '' },
+    { item: 'Fabric Graphic', size: '2966×2409mm', material: 'Fabric / RX-101', qty: 4, file: '—', status: 'pending', thumb: '' },
   ]},
   { zone: 'Sponsor Booths', items: [
-    { item: 'Pop-up display ×9', size: '3000×2500mm', material: '—', file: '—', status: 'pending', thumb: '' },
-    { item: 'Pop-up display ×3', size: '3500×2500mm', material: '—', file: '—', status: 'pending', thumb: '' },
-    { item: 'L-shaped pop-up ×2', size: '5000×2500 + 3000×2500mm', material: '—', file: '—', status: 'pending', thumb: '' },
-    { item: 'Full-height wall graphic', size: '—', material: '—', file: '—', status: 'pending', thumb: '' },
+    { item: 'Pop-up display', size: '3000×2500mm', material: '—', qty: 9, file: '—', status: 'pending', thumb: '' },
+    { item: 'Pop-up display', size: '3500×2500mm', material: '—', qty: 3, file: '—', status: 'pending', thumb: '' },
+    { item: 'L-shaped pop-up', size: '5000×2500 + 3000×2500mm', material: '—', qty: 2, file: '—', status: 'pending', thumb: '' },
+    { item: 'Full-height wall graphic', size: '—', material: '—', qty: 1, file: '—', status: 'pending', thumb: '' },
   ]},
   { zone: 'Sourcing Hub', items: [
-    { item: 'Display Sign', size: '1000×2000×300', material: 'Formica White', file: '—', status: 'pending', thumb: '' },
-    { item: 'PVC Graphic (Booth A–D)', size: '2150×250', material: 'PVC', file: '—', status: 'pending', thumb: '' },
-    { item: 'Floor Vinyl (Booth A–D)', size: '—', material: 'Vinyl', file: '—', status: 'pending', thumb: '' },
+    { item: 'Display Sign', size: '1000×2000×300', material: 'Formica White', qty: 1, file: '—', status: 'pending', thumb: '' },
+    { item: 'PVC Graphic', size: '2150×250', material: 'PVC', qty: 4, file: '—', status: 'pending', thumb: '' },
+    { item: 'Floor Vinyl', size: '—', material: 'Vinyl', qty: 4, file: '—', status: 'pending', thumb: '' },
   ]},
   { zone: 'Podcast', items: [
-    { item: 'Vinyl Graphic ×4 (front glass)', size: '1208×898mm', material: 'Vinyl', file: 'PD-FRONT-GLASS', status: 'pending', thumb: '' },
-    { item: 'Vinyl Graphic ×3 (left glass)', size: '1029×898mm', material: 'Vinyl', file: 'PD-LEFT-GLASS', status: 'pending', thumb: '' },
+    { item: 'Vinyl Graphic (front glass)', size: '1208×898mm', material: 'Vinyl', qty: 4, file: 'PD-FRONT-GLASS', status: 'pending', thumb: '' },
+    { item: 'Vinyl Graphic (left glass)', size: '1029×898mm', material: 'Vinyl', qty: 3, file: 'PD-LEFT-GLASS', status: 'pending', thumb: '' },
   ]},
   { zone: 'Creator Market (Muse)', items: [
-    { item: 'PVC graphic ×3 (both sides)', size: '—', material: 'PVC', file: '—', status: 'pending', thumb: '' },
-    { item: 'Custom Column ×6 (Island)', size: '—', material: '—', file: '—', status: 'pending', thumb: '' },
-    { item: 'Vinyl sticker (Sponsor)', size: '—', material: 'Vinyl', file: '—', status: 'pending', thumb: '' },
+    { item: 'PVC graphic (both sides)', size: '—', material: 'PVC', qty: 3, file: '—', status: 'pending', thumb: '' },
+    { item: 'Custom Column (Island)', size: '—', material: '—', qty: 6, file: '—', status: 'pending', thumb: '' },
+    { item: 'Vinyl sticker (Sponsor)', size: '—', material: 'Vinyl', qty: 1, file: '—', status: 'pending', thumb: '' },
   ]},
   { zone: 'UED Booth', items: [
-    { item: 'Graphic Bracket ×2', size: '100×250×50', material: 'Formica White', file: '—', status: 'pending', thumb: '' },
-    { item: 'RX-101 Aluminum Channels', size: '82 ft', material: 'RX-101', file: '—', status: 'pending', thumb: '' },
+    { item: 'Graphic Bracket', size: '100×250×50', material: 'Formica White', qty: 2, file: '—', status: 'pending', thumb: '' },
+    { item: 'RX-101 Aluminum Channels', size: '82 ft', material: 'RX-101', qty: 1, file: '—', status: 'pending', thumb: '' },
   ]},
 ],
 
@@ -435,7 +435,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 15;
+const CONTENT_VERSION = 16;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
@@ -986,7 +986,7 @@ function renderGraphicsWith(list){
       </summary>
       <div class="card-body" style="padding:0;overflow-x:auto;">
         <table class="phases">
-          <thead><tr><th>Item</th><th>Size</th><th>Material</th><th>File</th><th>Thumbnail</th><th>Status</th></tr></thead>
+          <thead><tr><th>Item</th><th>Size</th><th>Material</th><th>Qty</th><th>File</th><th>Thumbnail</th><th>Status</th></tr></thead>
           <tbody>
             ${(g.items||[]).map((it, ii) => {
               const meta = graphicStatusMeta(it.status);
@@ -998,6 +998,7 @@ function renderGraphicsWith(list){
                 <td>${escapeHtml(it.item)}</td>
                 <td>${escapeHtml(it.size)}</td>
                 <td>${escapeHtml(it.material)}</td>
+                <td>${it.qty || 1}</td>
                 <td><code>${escapeHtml(it.file)}</code></td>
                 <td>${thumbHtml}</td>
                 <td>
