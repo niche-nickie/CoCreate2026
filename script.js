@@ -432,7 +432,7 @@ GRAPHICS: [
     { item: 'NG-R-WALL-2-BK', size: '3461×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'Unboxing Live', items: [
-    { item: 'EZTube-20ft-Straight', size: '20 ft', material: '—', qty: 1, status: 'pending', thumb: 'assets/graphics/eztube-20ft-straight.jpg' },
+    { item: 'EZTube-20ft-Straight', size: '20ft × 7.5ft', material: 'Double Sided Pop Up', qty: 1, status: 'pending', thumb: 'assets/graphics/eztube-20ft-straight.jpg' },
   ]},
   { zone: 'Chongqing Pavilion', items: [
     { item: 'Fabric Graphic', size: '2966×2409mm', material: 'Fabric / RX-101', qty: 4, status: 'pending', thumb: '' },
@@ -482,7 +482,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 25;
+const CONTENT_VERSION = 26;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
