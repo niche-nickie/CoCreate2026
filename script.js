@@ -400,7 +400,10 @@ GRAPHICS: [
     { item: 'NG-FRT-HEADER-FRT', size: '3000×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
     { item: 'NG-FRT-HEADER-BK', size: '3000×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
     { item: 'NG-CURVE-HEADER', size: '8928×300mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
-    { item: 'NG-CURVE-BOX-1..4', size: '1280×1140mm', material: 'Vinyl', qty: 4, status: 'pending', thumb: '' },
+    { item: 'NG-CURVE-BOX-1', size: '1280×1140mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-CURVE-BOX-2', size: '1280×1140mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-CURVE-BOX-3', size: '1280×1140mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'NG-CURVE-BOX-4', size: '1280×1140mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'NG-FRT-WALL-FRT', size: '4156×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'NG-FRT-WALL-BK', size: '4156×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'NG-L-HEADER-1-FRT', size: '2038×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
@@ -479,7 +482,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 22;
+const CONTENT_VERSION = 23;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
