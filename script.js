@@ -681,8 +681,7 @@ GRAPHICS: [
     { item: 'SH-HEADER-4', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: '' },
   ]},
   { zone: 'Podcast', items: [
-    { item: 'Vinyl Graphic (front glass)', size: '1208×898mm', material: 'Vinyl', qty: 4, status: 'pending', thumb: '' },
-    { item: 'Vinyl Graphic (left glass)', size: '1029×898mm', material: 'Vinyl', qty: 3, status: 'pending', thumb: '' },
+    { item: 'Vinyl Graphic', size: '1208×898mm', material: 'Vinyl', qty: 7, status: 'pending', thumb: '' },
   ]},
   { zone: 'Creator Market (Muse)', items: [
     { item: 'PVC graphic (both sides)', size: '—', material: 'PVC', qty: 3, status: 'pending', thumb: '' },
