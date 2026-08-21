@@ -435,37 +435,37 @@ GRAPHICS: [
     { item: 'EZTube-20ft-Straight', size: '20ft × 7.5ft', material: 'Double Sided Pop Up', qty: 1, status: 'pending', thumb: 'assets/graphics/eztube-20ft-straight.jpg' },
   ]},
   { zone: 'Supplier Block A', items: [
+    { item: 'A-01-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-01-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-01-SIDE-WALL-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-01-SIDE-WALL-OUT', size: '2096×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-02-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-02-BK-WALL', size: '3928×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-02-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-02-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-03-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-03-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-03-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-07-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-07-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-06-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-06-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-01-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-02-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-03-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-04-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-05-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-06-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-07-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-08-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-09-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-01...09-LOGO', size: '800×250mm', material: 'Vinyl', qty: 9, status: 'pending', thumb: '' },
-    { item: 'A-01-SIDE-WALL-OUT', size: '2096×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-05-BK-WALL', size: '3928×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-04-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-04-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-05-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-05-BK-WALL', size: '3928×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-05-SIDE-L', size: '1982×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-05-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-06-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-06-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-06-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-07-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-07-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-07-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-08-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-08-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-08-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-09-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-09-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'A-09-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-08-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-08-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 9, status: 'pending', thumb: '' },
   ]},
   { zone: 'Chongqing Pavilion', items: [
     { item: 'Fabric Graphic', size: '2966×2409mm', material: 'Fabric / RX-101', qty: 4, status: 'pending', thumb: '' },
@@ -515,7 +515,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 28;
+const CONTENT_VERSION = 29;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
