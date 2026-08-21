@@ -675,9 +675,6 @@ GRAPHICS: [
     { item: 'PREM-LOGO-2', size: '1000×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'Sourcing Hub', items: [
-    { item: 'Display Sign', size: '1000×2000×300', material: 'Formica White', qty: 1, status: 'pending', thumb: '' },
-    { item: 'PVC Graphic', size: '2150×250', material: 'PVC', qty: 4, status: 'pending', thumb: '' },
-    { item: 'Floor Vinyl', size: '—', material: 'Vinyl', qty: 4, status: 'pending', thumb: '' },
   ]},
   { zone: 'Podcast', items: [
     { item: 'Vinyl Graphic (front glass)', size: '1208×898mm', material: 'Vinyl', qty: 4, status: 'pending', thumb: '' },
