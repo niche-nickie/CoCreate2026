@@ -701,7 +701,7 @@ GRAPHICS: [
   { zone: 'UED Booth', items: [
     { item: 'UED-HEADER', size: '1386×390mm', material: 'Ultrafoam', qty: 1, status: 'pending', thumb: '' },
     { item: 'UED-WALL-IN-HEAD', size: '2000×300mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
-    { item: 'UED-WALL-IN-SIDE', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'UED-WALL-IN-SIDE', size: '1976×2409mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'UED-CNTR-IN-1', size: '1485×1000mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'UED-CNTR-IN-2', size: '3465×1000mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'UED-CNTR-OUT-2', size: '900×150mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: '' },
