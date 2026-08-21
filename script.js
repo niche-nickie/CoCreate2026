@@ -700,7 +700,7 @@ GRAPHICS: [
   ]},
   { zone: 'UED Booth', items: [
     { item: 'UED-HEADER', size: '1386×390mm', material: 'Ultrafoam', qty: 1, status: 'pending', thumb: 'assets/graphics/ued-header.jpg' },
-    { item: 'UED-WALL-IN-HEAD', size: '2000×300mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'UED-WALL-IN-FRT', size: '2862×2409mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ued-wall-in-frt.jpg' },
     { item: 'UED-WALL-IN-SIDE', size: '1976×2409mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ued-wall-in-side.jpg' },
     { item: 'UED-CNTR-IN-1', size: '1485×1000mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ued-cntr-in-1.jpg' },
     { item: 'UED-CNTR-IN-2', size: '3465×1000mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ued-cntr-in-2.jpg' },
