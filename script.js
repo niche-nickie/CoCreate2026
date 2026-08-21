@@ -649,7 +649,7 @@ GRAPHICS: [
     { item: 'CQ-04-WALL-FRT', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'CQ-04-WALL-BK', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'CQ-04-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 4, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
+    { item: 'CQ-CNTR-LOGO', size: '800×250mm', material: 'Vinyl', qty: 4, status: 'pending', thumb: '' },
   ]},
   { zone: 'Sponsor Booths', items: [
     { item: 'Pop-up display', size: '3000×2500mm', material: '—', qty: 9, status: 'pending', thumb: '' },
