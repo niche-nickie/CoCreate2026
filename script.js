@@ -1047,7 +1047,7 @@ function renderGraphicsWith(list){
             ${(g.items||[]).map((it, ii) => {
               const meta = graphicStatusMeta(it.status);
               const thumbHtml = it.thumb
-                ? `<img src="${escapeHtml(it.thumb)}" alt="" style="width:72px;height:auto;border-radius:6px;cursor:zoom-in;" onclick="event.stopPropagation();openLightbox('${escapeHtml(it.thumb)}')">`
+                ? `<img src="${escapeHtml(it.thumb)}" alt="" style="width:72px;height:auto;border-radius:6px;cursor:zoom-in;" onclick="event.stopPropagation();openGraphicModal('${escapeHtml(it.item)}','${escapeHtml(it.thumb)}')">`
                 : `<span style="color:#ccc;font-size:12px;">none</span>`;
               return `
               <tr>

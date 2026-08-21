@@ -246,9 +246,19 @@
   </div>
 </div>
 
+<div class="modal-overlay" id="graphic-modal-overlay">
+  <div class="modal zone-modal" style="max-width:720px;">
+    <button class="close-x" id="graphic-modal-close">&times;</button>
+    <h3 id="graphic-modal-title"></h3>
+    <div class="zone-modal-viewer">
+      <img id="graphic-modal-img" alt="">
+    </div>
+  </div>
+</div>
+
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<script src="script.js?v=154&t=20260820"></script>
+<script src="script.js?v=155&t=20260820"></script>
 <script>
 var FP_PAGES = ['assets/floor-plan-lacc.jpg', 'assets/floor-plan-cgs.jpg'];
 var FP_CAPTIONS = ['Page 1 — Zone Overview + Legend', 'Page 2 — Full Floor Plan (全場平面圖)'];
@@ -269,6 +279,18 @@ function closeLightbox() {
   lb.style.display = 'none';
   document.body.style.overflow = '';
 }
+function openGraphicModal(title, src) {
+  document.getElementById('graphic-modal-title').textContent = title;
+  document.getElementById('graphic-modal-img').src = src;
+  document.getElementById('graphic-modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeGraphicModal() {
+  document.getElementById('graphic-modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('graphic-modal-close').addEventListener('click', closeGraphicModal);
+document.getElementById('graphic-modal-overlay').addEventListener('click', (e) => { if(e.target === e.currentTarget) closeGraphicModal(); });
 </script>
 </body>
 </html>
