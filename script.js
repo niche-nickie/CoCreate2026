@@ -665,8 +665,6 @@ GRAPHICS: [
     { item: 'COMM-P-16-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'PREM-BK-WALL', size: '4932×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'PREM-SIDE-WALL-IN', size: '3962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'PREM-SIDE-WALL-OUT', size: '4076×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'PREM-SIDE-ENDCAP', size: '531×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'PREM-LOGO-1', size: '400×100mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'PREM-LOGO-2', size: '1000×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
   ]},
@@ -718,7 +716,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 41;
+const CONTENT_VERSION = 42;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
