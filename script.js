@@ -4,7 +4,7 @@
 
 const TODAY = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
 const SHOW_START = new Date('2026-09-09');
-const IMG_CACHE_BUST = '?v=20260822';  // bump to bust image CDN cache
+const IMG_CACHE_BUST = '?v=20260824';  // bump to bust image CDN cache
 
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
@@ -315,7 +315,7 @@ ZONES: [
   { name: 'Buyer Story', owner: 'Chris', status: 'Approved', img: 'buyer-story-v2-2', renders: ['buyer-story-v2-2','buyer-story-v2-3','buyer-story-v2-4','buyer-story-v2-5'], scope: 'Youngs provide structure. AMG build + 1× 42" TV + stand + Media Player.', flag: '⚠ Youngs structure · AMG build + TV',
     req: ['Structure (by Youngs)', 'AMG build', '1× 42" TV + stand + Media Player'] },
   { name: 'Unboxing Live', owner: 'Charles', status: 'Approved', img: 'unboxing-live-render-1', renders: ['unboxing-live-render-1'], scope: 'R4 — Display block ×3, Double-sided Pop-up, 55" TV, Furniture by Youngs, Carpet 5584×5584mm', flag: '⚠ R4 — Pop-up + Display blocks + TV', req: ['1× Custom Display Box #03 — 300W×600H×300D, White Formica', '1× Custom Display Box #04 — 300W×650H×300D, White Formica', '1× Custom Display Box #05 — 300W×450H×300D, White Formica', 'Double-sided Pop-up', '1× 55" TV w/ stand', 'Furniture by Youngs', '1× Carpet — 5584 (W)×5584 (L), Finish (Pendent), 343 sqft'] },
-  { name: 'Supplier A200 — Block A', owner: 'Jin', status: 'Approved', img: 'zone-a-map-0818', renders: ['zone-a-map-0818'], drawings: [], scope: 'A-01 ~ A-09. 9× 8sqm. Wooden backdrop (4×2.5mH) + 42" TV + stand + Media Player + Std Counter + Grey carpet + AMG provide shelf & L-bracket.', flag: '9× 8sqm · 9 std counters · AMG shelf',
+  { name: 'Supplier A200 — Block A', owner: 'Jin', status: 'Approved', img: 'zone-a-map-0824', renders: ['zone-a-map-0824'], drawings: [], scope: 'A-01 ~ A-09. 9× 8sqm. Wooden backdrop (4×2.5mH) + 42" TV + stand + Media Player + Std Counter + Grey carpet + AMG provide shelf & L-bracket.', flag: '9× 8sqm · 9 std counters · AMG shelf',
     req: ['9× Wooden backdrop (4×2.5mH)', '9× 42" TV + stand + Media Player', '9× Std Counter — 990W×1000H×495D, Formica White', '9× Grey carpet (≈792 sqft)', '18× LED arm light', '3× Metal Panel Footing', '— AMG Shelf —', '27× 700mm shelf, Formica (WHT) (23× @300D + 4× @400D A-08)', '4× 900mm shelf, Formica (WHT) (4× @400D A-02)', '3× 1500mm shelf, Formica (WHT)', '82× 450mm shelf, Formica (WHT)', '239× 10" Metal L-Bracket (WHT)', '— YOUNGS —', '9× Furniture', '2× Wire Grid 550×1100×50 (A-04 only)'], tiers: ZONE_A_TIER, units: makeTieredUnits('zone-a', ZONE_A_TIER, i => BOOTH_LABELS.a[i-1], n => [`zone-a-render-${n*2}`, `zone-a-render-${n*2-1}`]) },
   { name: 'Supplier A200 — Block B', owner: 'Jin', status: 'Approved', img: 'zone-b-map-0818', renders: ['zone-b-map-0818'], drawings: [], scope: 'B-01 ~ B-07. 5×8m² + 1×12m² + 1×16m². Wooden backdrop (4×2.5mH) + 42" TV + stand + Media Player + Std Counter + Grey carpet. A200 standard build.', flag: '7 booths · 7 std counters · 5×8 + 12 + 16m²',
     req: ['7× Wooden backdrop (4×2.5mH)', '7× 42" TV + stand + Media Player', '7× Std Counter — 990W×1000H×495D, Formica White', '7× Grey carpet (≈748 sqft)', '14× LED arm light', '4× Metal Panel Footing', '— YOUNGS —', '7× Furniture'], tiers: ZONE_B_TIER, units: makeTieredUnits('zone-b', ZONE_B_TIER, i => BOOTH_LABELS.b[i-1], n => [`zone-b-render-${n*2}`, `zone-b-render-${n*2-1}`]) },
