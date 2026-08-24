@@ -4,7 +4,7 @@
 
 const TODAY = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
 const SHOW_START = new Date('2026-09-09');
-const IMG_CACHE_BUST = '?v=20260824c';  // bump to bust image CDN cache
+const IMG_CACHE_BUST = '?v=20260824d';  // bump to bust image CDN cache
 
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
@@ -719,7 +719,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 35;
+const CONTENT_VERSION = 36;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
