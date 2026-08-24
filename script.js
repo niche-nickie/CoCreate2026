@@ -303,7 +303,7 @@ RISKS: {
 },
 
 ZONES: [
-  { name: 'Registration', owner: 'Ari', status: 'Approved', img: 'registration-v2-2', renders: ['registration-v2-2'], drawings: ['registration-dwg-1'], scope: 'AMG provide registration backdrop, front and back graphic.column graphics', flag: 'Lobby area',
+  { name: 'Registration', owner: 'Ari', status: 'Approved', img: 'registration-v2-2', renders: ['registration-v2-2'], drawings: ['registration-dwg-1', 'registration-dwg-2'], scope: 'AMG provide registration backdrop, front and back graphic.column graphics', flag: 'Lobby area',
     req: ['2× Std Door Panel — White Formica (990×2413×100)', '23× Std Trainel — Raw Wood (990×2413×100)', '12× Std LED arm light', '1× BO fabric — back wall front (REG-BK-WALL-FRT, 9896×2409, 4/0)', '1× BO fabric — back wall back (REG-BK-WALL-BK, 9896×2409, 4/0)', '1× Curved PVC column cover w/ Velcro (COLUMN-COVER, 4/0)', 'RX-101 fabric channel — 164 ft', 'From client (Youngs): 6× 8ft table cloth, 7× stanchion sign support, 28× stanchions'] },
   { name: 'Keynote Hall', owner: 'Ari', status: 'Quoted', img: 'keynote-dark', renders: ['keynote-dark', 'keynote-plan'], scope: 'Carpet removed. All by Youngs / Client.', flag: '⚠ Carpet removed', blocking: true, req: ['All other items — by Youngs / Client'] },
   { name: 'AMA / Influencer Hub', owner: 'Iris', status: 'No quote needed', img: 'ama-hub-render-1', renders: ['ama-hub-render-1'], scope: 'YOUNGS X JOHNATHAN — Banner ×6, Stage, Furniture by Youngs', flag: 'YOUNGS X JOHNATHAN', req: [] },
@@ -719,7 +719,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 36;
+const CONTENT_VERSION = 37;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
