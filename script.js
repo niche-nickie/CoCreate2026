@@ -678,13 +678,7 @@ GRAPHICS: [
     { item: 'SH-HEADER-4', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: '' },
   ]},
   { zone: 'Podcast', items: [
-    { item: 'PODCAST-VINYL-01', size: '1208×898mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/podcast-vinyl-01.jpg' },
-    { item: 'PODCAST-VINYL-02', size: '1208×898mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/podcast-vinyl-02.jpg' },
-    { item: 'PODCAST-VINYL-03', size: '1208×898mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/podcast-vinyl-03.jpg' },
-    { item: 'PODCAST-VINYL-04', size: '1208×898mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/podcast-vinyl-04.jpg' },
-    { item: 'PODCAST-VINYL-05', size: '1208×898mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/podcast-vinyl-05.jpg' },
-    { item: 'PODCAST-VINYL-06', size: '1208×898mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/podcast-vinyl-06.jpg' },
-    { item: 'PODCAST-VINYL-07', size: '1208×898mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/podcast-vinyl-07.jpg' },
+    { item: 'PODCAST-VINYL', size: '1208×898mm', material: 'Vinyl', qty: 7, status: 'pending', thumb: 'assets/graphics/podcast-vinyl.jpg' },
   ]},
   { zone: 'Creator Market (Muse)', items: [
     { item: 'MB-MID-SIDE-OUT', size: '600×2400mm', material: 'Vinyl', qty: 6, status: 'pending', thumb: '' },
