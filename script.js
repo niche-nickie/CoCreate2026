@@ -49,7 +49,7 @@ const TAG_STYLES = {
   Client: { bg: 'rgba(189,93,76,0.18)', color: '#bd5d4c' },
 };
 
-const ZONE_ICONS = { 'Registration': '🏛', 'Core Display': '🔤', 'Keynote Hall': '🎤', 'AMA / Influencer Hub': '📷', 'Match Meeting': '🤝', 'Mini Panel': '🎙', 'Buyer Story': '📖', 'Unboxing Live': '📦', 'Next-Gen Sourcing + AI': '🤖', 'Podcast': '🎧', 'Chongqing Pavilion': '🏮', 'National Pavilion': '🌐', 'Sourcing Hub': '🔎', 'Sponsor Booths 15+1': '🏷', 'Supplier A200 — Block A': '🅰️', 'Supplier A200 — Block B': '🅱️', 'Supplier A200 — Block C': '©️', 'Supplier A200 — Block D': '🅳', 'Supplier A200 — Block E': '🅴', 'Supplier Non-A200 — Block F': '🅵', 'Supplier Non-A200 — Block G': '🅶', 'Muse Booth': '🎨', 'UED Booth': '💻', 'Creator Market': '🧵', 'Agentic Robotics Arena': '🦾' };
+const ZONE_ICONS = { 'Registration': '🏛', 'Core Display': '🔤', 'Keynote Hall': '🎤', 'AMA / Influencer Hub': '📷', 'Match Meeting': '🤝', 'Mini Panel': '🎙', 'Buyer Story': '📖', 'Unboxing Live': '📦', 'Next-Gen Sourcing + AI': '🤖', 'Podcast': '🎧', 'Chongqing Pavilion': '🏮', 'National Pavilion': '🌐', 'Sourcing Hub': '🔎', 'Sponsor Booths 16+1': '🏷', 'Supplier A200 — Block A': '🅰️', 'Supplier A200 — Block B': '🅱️', 'Supplier A200 — Block C': '©️', 'Supplier A200 — Block D': '🅳', 'Supplier A200 — Block E': '🅴', 'Supplier Non-A200 — Block F': '🅵', 'Supplier Non-A200 — Block G': '🅶', 'Muse Booth': '🎨', 'UED Booth': '💻', 'Creator Market': '🧵', 'Agentic Robotics Arena': '🦾' };
 
 function gallery(slug, count){
   return Array.from({ length: count }, (_, i) => `${slug}-${i + 1}`);
@@ -109,18 +109,19 @@ const SPONSOR_TIERS = [
   { key:'p02', name:'P-02', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
   { key:'p03', name:'P-03', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
   { key:'p04', name:'P-04', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
-  { key:'p05', name:'P-05', sqm:'10×20ft 空地', count:1, req: [], renders: ['sponsor-booths-empty'] },
-  { key:'p06', name:'P-06', sqm:'10×20ft', count:1, req: SPONSOR_PREMIER_REQ, renders: R_10X20, drawings: D_10X20 },
+  { key:'p05', name:'P-05', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
+  { key:'p06', name:'P-06', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
   { key:'p07', name:'P-07', sqm:'10×15ft', count:1, req: SPONSOR_EXECUTIVE_REQ, renders: R_10X15, drawings: D_10X15 },
-  { key:'p08', name:'P-08', sqm:'10×15ft', count:1, req: SPONSOR_EXECUTIVE_REQ, renders: R_10X15, drawings: D_10X15 },
-  { key:'p09', name:'P-09', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
+  { key:'p08', name:'P-08', sqm:'10×20ft', count:1, req: SPONSOR_PREMIER_REQ, renders: R_10X20, drawings: D_10X20 },
+  { key:'p09', name:'P-09', sqm:'10×15ft', count:1, req: SPONSOR_EXECUTIVE_REQ, renders: R_10X15, drawings: D_10X15 },
   { key:'p10', name:'P-10', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
   { key:'p11', name:'P-11', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
   { key:'p12', name:'P-12', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
   { key:'p13', name:'P-13', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
-  { key:'p14', name:'P-14', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ, renders: R_10X10, drawings: D_10X10 },
+  { key:'p14', name:'P-14', sqm:'10×10ft 空地', count:1, req: [], renders: ['sponsor-booths-empty'] },
   { key:'p15', name:'P-15', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ, renders: R_10X10, drawings: D_10X10 },
   { key:'p16', name:'P-16', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ, renders: R_10X10, drawings: D_10X10 },
+  { key:'p17', name:'P-17', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ, renders: R_10X10, drawings: D_10X10 },
 ];
 
 const ZONE_A_TIER = [
@@ -331,8 +332,8 @@ ZONES: [
     req: ['11× Std Counter — 990W×1000H×495D, Formica White, Lockable Door+Shelf', '11× 42" TV + Media Player + HDMI Cable + Floor Stand', '11× Grey carpet (≈1100 sqft)', '26× LED Arm Light', '22× Popup Bracket for PVC Graphic', '— YOUNGS —', 'Pop Up', 'Displays and shelvings'], tiers: ZONE_G_TIER, units: makeTieredUnits('zone-g', ZONE_G_TIER, i => BOOTH_LABELS.g[i-1], n => [`zone-g-render-${n*2}`, `zone-g-render-${n*2-1}`]) },
   { name: 'Chongqing Pavilion', owner: 'Chris', status: 'Approved', img: 'chongqing-map', renders: ['chongqing-map', 'chongqing-v2-2'], drawings: ['chongqing-dwg-3'], scope: 'AMG shop drawings A.2–A.4 (JP, RENT). 27m² (3× 9sqm). Central: LED Lighting Structure 1200mm dia×3450mm H + 27× LED strips + 3× Display Stands (BLK Formica). Perimeter: 3× Std No Skin Panels 990×2413 + 42" TV + stand + Media Player wall mount + Counter. Floor Trim 260ft.', flag: '3× 9sqm booths',
     req: ['3× Std No Skin Panel — 3000W×2413H×500D', '3× Std Counter — 990W×1000H×495D, Formica Black', '3× 42" TV wall mount + Media Player', '3× Fabric Graphic — 2966×2409mm, RX-101 Channel 27ft', '6× LED arm light', '3× 9sqm Booths, Black+Orange Carpet'], tiers: ZONE_CQ_TIER, units: makeTieredUnits('cq', ZONE_CQ_TIER, i => BOOTH_LABELS.cq[i-1]) },
-  { name: 'Sponsor Booths 15+1', owner: 'Jin', status: 'Approved', img: 'sponsor-booths-map-0824', renders: ['sponsor-booths-map-0824'], drawings: [], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 16 booths (P-01 ~ P-16): 8×8ft ×9, 10×10ft ×3, 10×15ft ×2, 10×20ft ×2 (P-05 空地, AMG 不提供).', flag: '15+1 booths · 1× 空地',
-    req: ['14× Std Counter — 990W×1000H×495D, Formica White', '1× Custom Counter — 1800W×500H×1000D, wooden joinery (Premier)', '5× 42" TV + stand + Media Player', '1× 42" TV wall mount + Media Player (Premier)', '15× Grey carpet (≈1376 sqft)', '1× L-shaped wall structure (Premier)', '2× Full-height wall graphic, front only (Premier)', '49× LED arm light', '— YOUNGS —', 'Pop-up display', 'Furniture + fabric display'],
+  { name: 'Sponsor Booths 16+1', owner: 'Jin', status: 'Approved', img: 'sponsor-booths-map-0824', renders: ['sponsor-booths-map-0824'], drawings: [], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 17 booths (P-01 ~ P-17): 8×8ft ×10, 10×10ft ×3, 10×15ft ×2, 10×20ft ×1 (P-14 空地, AMG 不提供).', flag: '16+1 booths · 1× 空地',
+    req: ['15× Std Counter — 990W×1000H×495D, Formica White', '1× Custom Counter — 1800W×500H×1000D, wooden joinery (Premier)', '5× 42" TV + stand + Media Player', '1× 42" TV wall mount + Media Player (Premier)', '16× Grey carpet (≈1440 sqft)', '1× L-shaped wall structure (Premier)', '2× Full-height wall graphic, front only (Premier)', '51× LED arm light', '— YOUNGS —', 'Pop-up display', 'Furniture + fabric display'],
     tiers: SPONSOR_TIERS,
     units: makeTieredUnits('sponsor', SPONSOR_TIERS) },
   { name: 'National Pavilion', owner: 'Iris', status: 'In Review', img: 'national-v2-2', renders: ['national-v2-2'], drawings: ['national-dwg-1', 'national-dwg-3'], scope: 'GB-01 ~ GB-41 (41 booths). AMG provide carpet + LED arm light only. 3 groups: GB-US×20, GB-Pakistan×11, GB-Others×10.', flag: '41 booths · carpet + lights only',
@@ -724,7 +725,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 30;
+const CONTENT_VERSION = 31;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
