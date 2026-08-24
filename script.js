@@ -4,7 +4,7 @@
 
 const TODAY = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
 const SHOW_START = new Date('2026-09-09');
-const IMG_CACHE_BUST = '?v=20260824b';  // bump to bust image CDN cache
+const IMG_CACHE_BUST = '?v=20260824c';  // bump to bust image CDN cache
 
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
@@ -338,7 +338,7 @@ ZONES: [
     units: makeTieredUnits('sponsor', SPONSOR_TIERS) },
   { name: 'National Pavilion', owner: 'Iris', status: 'In Review', img: 'national-gb-map', renders: ['national-gb-map'], drawings: [], scope: 'GB-01 ~ GB-44 (44 booths). AMG provide carpet + LED arm light only. 3 groups: GB-US×19, GB-Pakistan×11, GB-Others×14.', flag: '44 booths · carpet + lights only',
     req: ['44× Carpet (≈1980 sqft)', '88× LED arm light'], tiers: ZONE_GB_TIER, units: makeTieredUnits('gb', ZONE_GB_TIER, i => BOOTH_LABELS.gb[i-1]) },
-  { name: 'Sourcing Hub', owner: 'Iris', status: 'Approved', img: 'sourcing-hub-map', renders: ['sourcing-hub-map'], drawings: ['sourcing-hub-dwg-1', 'sourcing-hub-dwg-2', 'sourcing-hub-dwg-3', 'sourcing-hub-dwg-4', 'sourcing-hub-dwg-5', 'sourcing-hub-dwg-6'], scope: 'AMG shop drawings A.2–A.7 (JP, RENT). 64m² (8×8m). Display Sign 1000×2000mm. 42" TV + stand + Media Player. 4 centers: A 汕頭 (Stair Display), B 永康 (Display Stand+Acrylic), C 鄭州 (5× Display Stands), D 廣州 (Curved Display Stand 2000×1300). PVC graphics + floor vinyl per booth.', flag: '4 sourcing centers (9m² each) inside 64m² space',
+  { name: 'Sourcing Hub', owner: 'Iris', status: 'Approved', img: 'sourcing-hub-map', renders: ['sourcing-hub-map'], drawings: ['sourcing-hub-dwg-1', 'sourcing-hub-dwg-2', 'sourcing-hub-dwg-3'], scope: 'AMG shop drawings A.2–A.7 (JP, RENT). 64m² (8×8m). Display Sign 1000×2000mm. 42" TV + stand + Media Player. 4 centers: A 汕頭 (Stair Display), B 永康 (Display Stand+Acrylic), C 鄭州 (5× Display Stands), D 廣州 (Curved Display Stand 2000×1300). PVC graphics + floor vinyl per booth.', flag: '4 sourcing centers (9m² each) inside 64m² space',
     req: ['1× Display Sign — 1000W×2000H×300D, Formica White, Paint Orange, LED Strip', '8× LED arm light', '1× 42" TV + stand + Media Player + Media Player, Floor Stand', 'Booth A 汕頭: Three-Step Stair Display 1200W×900H×900D (WHT) + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth B 永康: Display Stand 1424W×1700H×412D (WHT+Wood+Acrylic) + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth C 鄭州: 5× Display Stands (1500×500 + 500×500 + 2× 500×800 + 500×1000) Formica WHT + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth D 廣州: Curved Display Stand 2000W×1300H×1000D Formica WHT + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl'] },
   { name: 'Podcast', owner: 'Iris', status: 'Approved', img: 'podcast-render-1', renders: ['podcast-render-1'], drawings: ['podcast-dwg-1'], scope: '5.4×3.4m. Octanorm structure + clear acrylic panels + carpet. Client provides angle tables, chairs, On Air lightbox.', flag: 'OP1 spec A.13 · Client display items',
     req: ['1× Custom Octanorm Structure — 5400W×2423H×3588D', '4× Clear Acrylic #01 — 1208×2266×3mm, 1/8"', '3× Clear Acrylic #02 — 1029×2266×3mm, 1/8"', '1× Carpet — 5180×3368mm (≈192 sqft)', '4× Vinyl Graphic — 1208×898mm, 4/0 (PD-FRONT-GLASS)', '3× Vinyl Graphic — 1029×898mm, 4/0 (PD-LEFT-GLASS)', '— CLIENT —', '4× Angle Table', '1× On Air Lightbox', '6× Chair'] },
@@ -719,7 +719,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 34;
+const CONTENT_VERSION = 35;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
