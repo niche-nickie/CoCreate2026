@@ -192,7 +192,6 @@ const ZONE_CQ_TIER = [
   { key:'cq1', name:'CQ-1', sqm:'9m²', count:1, req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
   { key:'cq2', name:'CQ-2', sqm:'9m²', count:1, req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
   { key:'cq3', name:'CQ-3', sqm:'9m²', count:1, req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
-  { key:'cq4', name:'CQ-4', sqm:'9m²', count:1, req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
 ];
 
 const ZONE_GB_TIER = [
@@ -210,7 +209,7 @@ const BOOTH_LABELS = {
   e: ['E-01 (8m²)','E-02 (8m²)','E-03 (8m²)','E-04 (8m²)','E-05 (8m²)','E-06 (8m²)','E-07 (8m²)','E-08 (8m²)'],
   f: ['F-01 (8m²)','F-02 (8m²)','F-03 (6m²)','F-04 (6m²)','F-05 (6m²)','F-06 (6m²)','F-07 (6m²)','F-08 (6m²)','F-09 (6m²)','F-10 (6m²)','F-11 (8m²)','F-12 (8m²)','F-13 (14m²)','F-14 (8m²)','F-15 (8m²)','F-16 (4m²)','F-17 (4m²)','F-18 (4m²)','F-19 (8m²)','F-20 (8m²)','F-21 (14m²)'],
   g: ['G-01 (8m²)','G-02 (8m²)','G-03 (8m²)','G-04 (8m²)','G-05 (8m²)','G-06 (8m²)','G-07 (14m²)','G-08 (14m²)','G-09 (8m²)','G-10 (8m²)','G-11 (8m²)'],
-  cq: ['CQ-1 (9m²)','CQ-2 (9m²)','CQ-3 (9m²)','CQ-4 (9m²)'],
+  cq: ['CQ-1 (9m²)','CQ-2 (9m²)','CQ-3 (9m²)'],
   gb: ['GB-01 (4m²)','GB-02 (4m²)','GB-03 (4m²)','GB-04 (4m²)','GB-05 (4m²)','GB-06 (4m²)','GB-07 (4m²)','GB-08 (4m²)','GB-09 (4m²)','GB-10 (4m²)','GB-11 (4m²)','GB-12 (4m²)','GB-13 (4m²)','GB-14 (4m²)','GB-15 (4m²)','GB-16 (4m²)','GB-17 (4m²)','GB-18 (4m²)','GB-19 (4m²)','GB-20 (4m²)','GB-21 (4m²)','GB-22 (4m²)','GB-23 (4m²)','GB-24 (4m²)','GB-25 (4m²)','GB-26 (4m²)','GB-27 (4m²)','GB-28 (4m²)','GB-29 (4m²)','GB-30 (4m²)','GB-31 (4m²)','GB-32 (4m²)','GB-33 (4m²)','GB-34 (4m²)','GB-35 (4m²)','GB-36 (4m²)','GB-37 (4m²)','GB-38 (4m²)','GB-39 (4m²)','GB-40 (4m²)','GB-41 (4m²)'],
 };
 
@@ -330,8 +329,8 @@ ZONES: [
     req: ['21× Std Counter — 990W×1000H×495D, Formica White, Lockable Door+Shelf', '21× 42" TV + Media Player + HDMI Cable + Floor Stand', '21× Grey carpet (≈1738 sqft)', '46× LED Arm Light', '26× Popup Bracket for PVC Graphic', '— YOUNGS —', 'Pop Up', 'Displays and shelvings'], tiers: ZONE_F_TIER, units: makeTieredUnits('zone-f', ZONE_F_TIER, i => BOOTH_LABELS.f[i-1], n => [`zone-f-render-${n*2}`, `zone-f-render-${n*2-1}`]) },
   { name: 'Supplier Non-A200 — Block G', owner: 'Iris', status: 'TBD', img: 'zone-g-map', renders: ['zone-g-map'], drawings: [], scope: 'G-01 ~ G-11. 9×8m² + 2×14m². YOUNGS Pop Up. AMG provide counter + TV + lighting + bracket.', flag: '11 booths · 11 std counters · 9/2',
     req: ['11× Std Counter — 990W×1000H×495D, Formica White, Lockable Door+Shelf', '11× 42" TV + Media Player + HDMI Cable + Floor Stand', '11× Grey carpet (≈1100 sqft)', '26× LED Arm Light', '22× Popup Bracket for PVC Graphic', '— YOUNGS —', 'Pop Up', 'Displays and shelvings'], tiers: ZONE_G_TIER, units: makeTieredUnits('zone-g', ZONE_G_TIER, i => BOOTH_LABELS.g[i-1], n => [`zone-g-render-${n*2}`, `zone-g-render-${n*2-1}`]) },
-  { name: 'Chongqing Pavilion', owner: 'Chris', status: 'Approved', img: 'chongqing-map', renders: ['chongqing-map', 'chongqing-v2-2'], drawings: ['chongqing-dwg-3'], scope: 'AMG shop drawings A.2–A.4 (JP, RENT). 36m² (4× 9sqm). Central: LED Lighting Structure 1200mm dia×3450mm H + 36× LED strips + 4× Display Stands (BLK Formica). Perimeter: 3× Std No Skin Panels 990×2413 + 42" TV + stand + Media Player wall mount + Counter. Floor Trim 260ft.', flag: '4× 9sqm booths',
-    req: ['4× Std No Skin Panel — 3000W×2413H×500D', '4× Std Counter — 990W×1000H×495D, Formica Black', '4× 42" TV wall mount + Media Player', '4× Fabric Graphic — 2966×2409mm, RX-101 Channel 36ft', '8× LED arm light', '4× 9sqm Booths, Black+Orange Carpet'], tiers: ZONE_CQ_TIER, units: makeTieredUnits('cq', ZONE_CQ_TIER, i => BOOTH_LABELS.cq[i-1]) },
+  { name: 'Chongqing Pavilion', owner: 'Chris', status: 'Approved', img: 'chongqing-map', renders: ['chongqing-map', 'chongqing-v2-2'], drawings: ['chongqing-dwg-3'], scope: 'AMG shop drawings A.2–A.4 (JP, RENT). 27m² (3× 9sqm). Central: LED Lighting Structure 1200mm dia×3450mm H + 27× LED strips + 3× Display Stands (BLK Formica). Perimeter: 3× Std No Skin Panels 990×2413 + 42" TV + stand + Media Player wall mount + Counter. Floor Trim 260ft.', flag: '3× 9sqm booths',
+    req: ['3× Std No Skin Panel — 3000W×2413H×500D', '3× Std Counter — 990W×1000H×495D, Formica Black', '3× 42" TV wall mount + Media Player', '3× Fabric Graphic — 2966×2409mm, RX-101 Channel 27ft', '6× LED arm light', '3× 9sqm Booths, Black+Orange Carpet'], tiers: ZONE_CQ_TIER, units: makeTieredUnits('cq', ZONE_CQ_TIER, i => BOOTH_LABELS.cq[i-1]) },
   { name: 'Sponsor Booths 15+1', owner: 'Jin', status: 'Approved', img: 'sponsor-booths-map', renders: ['sponsor-booths-map'], drawings: [], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 16 booths (P-01 ~ P-16): 8×8ft ×9, 10×10ft ×3, 10×15ft ×2, 10×20ft ×2 (P-05 空地, AMG 不提供).', flag: '15+1 booths · 1× 空地',
     req: ['14× Std Counter — 990W×1000H×495D, Formica White', '1× Custom Counter — 1800W×500H×1000D, wooden joinery (Premier)', '5× 42" TV + stand + Media Player', '1× 42" TV wall mount + Media Player (Premier)', '15× Grey carpet (≈1376 sqft)', '1× L-shaped wall structure (Premier)', '2× Full-height wall graphic, front only (Premier)', '49× LED arm light', '— YOUNGS —', 'Pop-up display', 'Furniture + fabric display'],
     tiers: SPONSOR_TIERS,
@@ -646,10 +645,7 @@ GRAPHICS: [
     { item: 'CQ-03-WALL-FRT', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'CQ-03-WALL-BK', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'CQ-03-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'CQ-04-WALL-FRT', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'CQ-04-WALL-BK', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'CQ-04-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'CQ-CNTR-LOGO', size: '800×250mm', material: 'Vinyl', qty: 4, status: 'pending', thumb: '' },
+    { item: 'CQ-CNTR-LOGO', size: '800×250mm', material: 'Vinyl', qty: 3, status: 'pending', thumb: '' },
   ]},
   { zone: 'Sponsor Booths', items: [
     { item: 'COMM-LOGO-1', size: '400×100mm', material: 'Vinyl', qty: 14, status: 'pending', thumb: '' },
@@ -728,7 +724,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 29;
+const CONTENT_VERSION = 30;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
