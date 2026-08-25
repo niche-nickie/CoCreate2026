@@ -4,7 +4,7 @@
 
 const TODAY = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
 const SHOW_START = new Date('2026-09-09');
-const IMG_CACHE_BUST = '?v=20260824e';  // bump to bust image CDN cache
+const IMG_CACHE_BUST = '?v=20260824f';  // bump to bust image CDN cache
 
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
@@ -463,7 +463,7 @@ GRAPHICS: [
     { item: 'A-07-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/a-07-side-r.jpg' },
     { item: 'A-08-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/a-08-header.jpg' },
     { item: 'A-08-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/a-08-bk-wall.jpg' },
-    { item: 'A-08-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-08-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/a-08-side-l.jpg' },
     { item: 'A-09-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/a-09-header.jpg' },
     { item: 'A-09-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/a-09-bk-wall.jpg' },
     { item: 'A-09-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/a-09-side-r.jpg' },
@@ -532,7 +532,7 @@ GRAPHICS: [
     { item: 'C-12-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'approved', thumb: 'assets/graphics/c-12-header.jpg' },
     { item: 'C-12-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/c-12-bk-wall.jpg' },
     { item: 'C-12-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/c-12-side-r.jpg' },
-    { item: 'C-13-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'C-13-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/c-13-header.jpg' },
     { item: 'C-13-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/c-13-bk-wall.jpg' },
     { item: 'C-13-SIDE-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/c-13-side-in.jpg' },
     { item: 'C-13-SIDE-OUT', size: '2491×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
@@ -597,7 +597,7 @@ GRAPHICS: [
     { item: 'E-07-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/e-07-side-l.jpg' },
     { item: 'E-08-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/e-08-header.jpg' },
     { item: 'E-08-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/e-08-bk-wall.jpg' },
-    { item: 'E-08-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'E-08-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/e-08-side-r.jpg' },
     { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 8, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
   ]},
   { zone: 'Supplier Non-A200 — Block F', items: [
@@ -666,10 +666,10 @@ GRAPHICS: [
     { item: 'COMM-P-14-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-15-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-16-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
-    { item: 'PREM-BK-WALL', size: '4932×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'PREM-SIDE-WALL-IN', size: '3962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'PREM-LOGO-1', size: '400×100mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
-    { item: 'PREM-LOGO-2', size: '1000×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'PREM-BK-WALL', size: '4932×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/prem-bk-wall.jpg' },
+    { item: 'PREM-SIDE-WALL-IN', size: '3962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/prem-side-wall-in.jpg' },
+    { item: 'PREM-LOGO-1', size: '400×100mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/prem-logo-1.jpg' },
+    { item: 'PREM-LOGO-2', size: '1000×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/prem-logo-2.jpg' },
   ]},
   { zone: 'Sourcing Hub', items: [
     { item: 'SH-HEADER-1', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: '' },
@@ -719,7 +719,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 44;
+const CONTENT_VERSION = 45;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
