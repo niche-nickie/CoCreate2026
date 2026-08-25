@@ -118,7 +118,7 @@ const SPONSOR_TIERS = [
   { key:'p11', name:'P-11', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
   { key:'p12', name:'P-12', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-12-0825'], drawings: D_8X8 },
   { key:'p13', name:'P-13', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-13-0825'], drawings: D_8X8 },
-  { key:'p14', name:'P-14', sqm:'10×10ft 空地', count:1, req: [], renders: ['sponsor-p-14-0825'] },
+  { key:'p14', name:'P-14', sqm:'10×10ft', count:1, req: [], renders: ['sponsor-p-14-0825'] },
   { key:'p15', name:'P-15', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ, renders: R_10X10, drawings: D_10X10 },
   { key:'p16', name:'P-16', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ, renders: ['sponsor-p-16-0825'], drawings: D_10X10 },
   { key:'p17', name:'P-17', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ, renders: ['sponsor-p-17-0825'], drawings: D_10X10 },
@@ -720,7 +720,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 69;
+const CONTENT_VERSION = 70;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
