@@ -347,7 +347,7 @@ ZONES: [
     req: ['1× Custom Octanorm Structure — 5400W×2423H×3588D', '4× Clear Acrylic #01 — 1208×2266×3mm, 1/8"', '3× Clear Acrylic #02 — 1029×2266×3mm, 1/8"', '1× Carpet — 5180×3368mm (≈192 sqft)', '4× Vinyl Graphic — 1208×898mm, 4/0 (PD-FRONT-GLASS)', '3× Vinyl Graphic — 1029×898mm, 4/0 (PD-LEFT-GLASS)', '— CLIENT —', '4× Angle Table', '1× On Air Lightbox', '6× Chair'] },
   { name: 'Creator Market (Muse)', owner: 'Iris', status: 'Approved', img: 'muse-scope-0822-1', renders: ['muse-scope-0822-1', 'muse-scope-0822-2', 'muse-scope-0822-3', 'muse-scope-0822-4', 'muse-scope-0822-5', 'muse-scope-0822-6', 'muse-scope-7', 'muse-scope-8'], drawings: [], scope: 'Muse client design (revised 8/14) · Island + Sponsor. 1× Circular flooring 320sqm. 4× Custom wood frame. 3× PVC graphic. 6× Custom column. 1× Vinyl sticker.', flag: 'Structure confirmed 8/17 · 22 booths (12× 8sqm + 6× 16sqm + 4× 32sqm)',
     req: ['1× Circular flooring — black/grey/white w/ text (320sqm)', '4× Custom wood frame structure w/ base (open 5 sides, overhead crossbeam for fishing lines)', '3× PVC graphic on both sides', '6× Custom Column (Island)', '1× Vinyl sticker (Sponsor)'] },
-  { name: 'UED Booth', owner: 'Ari', status: 'Approved', img: 'ued-render-1', renders: ['ued-0825-1', 'ued-0825-2', 'ued-0825-3', 'ued-0825-4', 'ued-0825-5', 'ued-0825-6', 'ued-0825-7'], drawings: ['ued-dwg-1'], scope: '7×2.2m (15.4m²). Std Panel + Std Counter + 55" TV + LED + RX-101 channels. Flooring ≈169 sqft.', flag: 'Furniture and devices from Youngs',
+  { name: 'UED Booth', owner: 'Ari', status: 'Approved', img: 'ued-0825-1', renders: ['ued-0825-1', 'ued-0825-2', 'ued-0825-3', 'ued-0825-4', 'ued-0825-5', 'ued-0825-6', 'ued-0825-7'], drawings: ['ued-dwg-1'], scope: '7×2.2m (15.4m²). Std Panel + Std Counter + 55" TV + LED + RX-101 channels. Flooring ≈169 sqft.', flag: 'Furniture and devices from Youngs',
     req: ['5× Std Panel — 990W×2413H×100D, No Finish', '2× Graphic Bracket — 100W×250H×50D, Formica White', '1× Cover PVC White — 4\'×8\', Panel Edges', '4× Std Counter — 990W×1000H×495D, Formica White, Lockable Door+Shelf', '3× Std Counter — 495W×1000H×495D, Formica White, Lockable Door+Shelf', '1× 55" TV + Media Player, HDMI Cable, Floor Stand', '1× Grey carpet — 7000×2200mm, ≈169 sqft', '3× LED Arm Light', '82ft RX-101 Aluminum Channels', '— YOUNGS —', 'Furniture and devices'] },
   { name: 'Agentic Robotics Arena', owner: 'Charles', status: 'TBD', img: 'agentic-robotics-render-1', renders: ['agentic-robotics-render-1', 'agentic-robotics-render-2'], scope: 'AMG only provide carpet and floor vinyl. All else by Youngs. Size TBD.', flag: '⚠ Size TBD — carpet + vinyl only', req: [] },
 ],
@@ -720,7 +720,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 70;
+const CONTENT_VERSION = 71;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
