@@ -192,9 +192,9 @@ const ZONE_G_TIER = [
   { key:'lg', name:'Booth', sqm:'14m²', count:2, req: ['42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','4× LED arm light','— YOUNGS —','Pop Up','Displays and shelvings'] },
 ];
 const ZONE_CQ_TIER = [
-  { key:'cq1', name:'CQ-1', sqm:'9m²', count:1, req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
-  { key:'cq2', name:'CQ-2', sqm:'9m²', count:1, req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
-  { key:'cq3', name:'CQ-3', sqm:'9m²', count:1, req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
+  { key:'cq1', name:'CQ-1', sqm:'9m²', count:1, renders: ['chongqing-0825-5'], req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
+  { key:'cq2', name:'CQ-2', sqm:'9m²', count:1, renders: ['chongqing-0825-6'], req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
+  { key:'cq3', name:'CQ-3', sqm:'9m²', count:1, renders: ['chongqing-0825-7'], req: ['1× Std No Skin Panel — 3000W×2413H×500D','1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
 ];
 
 const ZONE_GB_TIER = [
@@ -333,7 +333,7 @@ ZONES: [
     req: ['21× Std Counter — 990W×1000H×495D, Formica White, Lockable Door+Shelf', '21× 42" TV + Media Player + HDMI Cable + Floor Stand', '21× Grey carpet (≈1738 sqft)', '46× LED Arm Light', '26× Popup Bracket for PVC Graphic', '— YOUNGS —', 'Pop Up', 'Displays and shelvings'], tiers: ZONE_F_TIER, units: makeTieredUnits('zone-f', ZONE_F_TIER, i => BOOTH_LABELS.f[i-1], n => [`zone-f-render-${n*2}`, `zone-f-render-${n*2-1}`]) },
   { name: 'Supplier Non-A200 — Block G', owner: 'Iris', status: 'TBD', img: 'zone-g-map-0825', renders: ['zone-g-map-0825'], drawings: [], scope: 'G-01 ~ G-11. 9×8m² + 2×14m². YOUNGS Pop Up. AMG provide counter + TV + lighting + bracket.', flag: '11 booths · 11 std counters · 9/2',
     req: ['11× Std Counter — 990W×1000H×495D, Formica White, Lockable Door+Shelf', '11× 42" TV + Media Player + HDMI Cable + Floor Stand', '11× Grey carpet (≈1100 sqft)', '26× LED Arm Light', '22× Popup Bracket for PVC Graphic', '— YOUNGS —', 'Pop Up', 'Displays and shelvings'], tiers: ZONE_G_TIER, units: makeTieredUnits('zone-g', ZONE_G_TIER, i => BOOTH_LABELS.g[i-1], n => [`zone-g-render-${n*2}`, `zone-g-render-${n*2-1}`]) },
-  { name: 'Chongqing Pavilion', owner: 'Chris', status: 'Approved', img: 'chongqing-map', renders: ['chongqing-0825-2', 'chongqing-0825-3', 'chongqing-0825-4', 'chongqing-0825-5', 'chongqing-0825-6', 'chongqing-0825-7'], drawings: ['chongqing-dwg-3'], scope: 'AMG shop drawings A.2–A.4 (JP, RENT). 27m² (3× 9sqm). Central: LED Lighting Structure 1200mm dia×3450mm H + 27× LED strips + 3× Display Stands (BLK Formica). Perimeter: 3× Std No Skin Panels 990×2413 + 42" TV + stand + Media Player wall mount + Counter. Floor Trim 260ft.', flag: '3× 9sqm booths',
+  { name: 'Chongqing Pavilion', owner: 'Chris', status: 'Approved', img: 'chongqing-map', renders: ['chongqing-0825-2', 'chongqing-0825-3', 'chongqing-0825-4'], drawings: ['chongqing-dwg-3'], scope: 'AMG shop drawings A.2–A.4 (JP, RENT). 27m² (3× 9sqm). Central: LED Lighting Structure 1200mm dia×3450mm H + 27× LED strips + 3× Display Stands (BLK Formica). Perimeter: 3× Std No Skin Panels 990×2413 + 42" TV + stand + Media Player wall mount + Counter. Floor Trim 260ft.', flag: '3× 9sqm booths',
     req: ['3× Std No Skin Panel — 3000W×2413H×500D', '3× Std Counter — 990W×1000H×495D, Formica Black', '3× 42" TV wall mount + Media Player', '3× Fabric Graphic — 2966×2409mm, RX-101 Channel 27ft', '6× LED arm light', '3× 9sqm Booths, Black+Orange Carpet'], tiers: ZONE_CQ_TIER, units: makeTieredUnits('cq', ZONE_CQ_TIER, i => BOOTH_LABELS.cq[i-1]) },
   { name: 'Sponsor Booths 16+1', owner: 'Jin', status: 'Approved', img: 'sponsor-booths-map-0825', renders: ['sponsor-booths-map-0825'], drawings: [], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 17 booths (P-01 ~ P-17): 8×8ft ×10, 10×10ft ×3, 10×15ft ×2, 10×20ft ×1 (P-14 空地, AMG 不提供).', flag: '16+1 booths · 1× 空地',
     req: ['15× Std Counter — 990W×1000H×495D, Formica White', '1× Custom Counter — 1800W×500H×1000D, wooden joinery (Premier)', '5× 42" TV + stand + Media Player', '1× 42" TV wall mount + Media Player (Premier)', '16× Grey carpet (≈1440 sqft)', '1× L-shaped wall structure (Premier)', '2× Full-height wall graphic, front only (Premier)', '51× LED arm light', '— YOUNGS —', 'Pop-up display', 'Furniture + fabric display'],
@@ -720,7 +720,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 67;
+const CONTENT_VERSION = 68;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
