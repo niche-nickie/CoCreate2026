@@ -641,13 +641,13 @@ GRAPHICS: [
   { zone: 'Chongqing Pavilion', items: [
     { item: 'CQ-01-WALL-FRT', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/cq-01-wall-frt.jpg' },
     { item: 'CQ-01-WALL-BK', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'CQ-01-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-01-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/cq-01-header.jpg' },
     { item: 'CQ-02-WALL-FRT', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/cq-02-wall-frt.jpg' },
     { item: 'CQ-02-WALL-BK', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'CQ-02-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-02-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/cq-02-header.jpg' },
     { item: 'CQ-03-WALL-FRT', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/cq-03-wall-frt.jpg' },
     { item: 'CQ-03-WALL-BK', size: '2966×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'CQ-03-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'CQ-03-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/cq-03-header.jpg' },
     { item: 'CQ-CNTR-LOGO', size: '800×250mm', material: 'Vinyl', qty: 3, status: 'pending', thumb: 'assets/graphics/cq-cntr-logo.jpg' },
   ]},
   { zone: 'Sponsor Booths', items: [
@@ -681,13 +681,11 @@ GRAPHICS: [
     { item: 'PODCAST-VINYL', size: '1208×898mm', material: 'Vinyl', qty: 7, status: 'pending', thumb: 'assets/graphics/podcast-vinyl.jpg' },
   ]},
   { zone: 'Creator Market (Muse)', items: [
-    { item: 'MB-MID-SIDE-OUT', size: '600×2400mm', material: 'Vinyl', qty: 6, status: 'pending', thumb: 'assets/graphics/mb-mid-side-out.jpg' },
-    { item: 'MB-MID-SIDE-IN', size: '600×2100mm', material: 'Vinyl', qty: 6, status: 'pending', thumb: '' },
+    { item: 'MB-MID-SIDE-OUT-1', size: '600×2400mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: 'assets/graphics/mb-mid-side-out.jpg' },
+    { item: 'MB-MID-SIDE-OUT-2', size: '600×2400mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: 'assets/graphics/mb-mid-side-out-2.jpg' },
+    { item: 'MB-MID-SIDE-OUT-3', size: '600×2400mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: 'assets/graphics/mb-mid-side-out-3.jpg' },
     { item: 'MB-FLOOR-OUT', size: '14326×14326mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/mb-floor-out.jpg' },
     { item: 'MB-FLOOR-IN', size: '3656×3656mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/mb-floor-in.jpg' },
-    { item: 'MB-CNTR', size: '250×50mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: '' },
-    { item: 'MB-HEADER-1', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'MB-HEADER-2', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'UED Booth', items: [
     { item: 'UED-HEADER', size: '1386×390mm', material: 'Ultrafoam', qty: 1, status: 'pending', thumb: 'assets/graphics/ued-header.jpg' },
@@ -719,7 +717,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 49;
+const CONTENT_VERSION = 50;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
