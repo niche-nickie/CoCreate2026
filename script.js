@@ -652,20 +652,22 @@ GRAPHICS: [
   ]},
   { zone: 'Sponsor Booths', items: [
     { item: 'COMM-LOGO-1', size: '400×100mm', material: 'Vinyl', qty: 14, status: 'pending', thumb: 'assets/graphics/comm-logo-1.jpg' },
-    { item: 'COMM-P-01-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'COMM-P-01-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-01-logo.jpg' },
     { item: 'COMM-P-02-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-03-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-04-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
-    { item: 'COMM-P-07-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'COMM-P-05-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-05-logo.jpg' },
+    { item: 'COMM-P-07-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-07-logo.jpg' },
     { item: 'COMM-P-08-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-09-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-10-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-11-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
-    { item: 'COMM-P-12-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'COMM-P-12-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-12-logo.jpg' },
     { item: 'COMM-P-13-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-14-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-15-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
-    { item: 'COMM-P-16-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'COMM-P-16-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-16-logo.jpg' },
+    { item: 'COMM-P-17-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-17-logo.jpg' },
     { item: 'PREM-BK-WALL', size: '4932×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/prem-bk-wall.jpg' },
     { item: 'PREM-SIDE-WALL-IN', size: '3962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/prem-side-wall-in.jpg' },
     { item: 'PREM-LOGO-1', size: '400×100mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/prem-logo-1.jpg' },
@@ -717,7 +719,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 50;
+const CONTENT_VERSION = 51;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
