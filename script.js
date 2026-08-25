@@ -721,7 +721,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 77;
+const CONTENT_VERSION = 78;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
@@ -788,8 +788,14 @@ function loadChecklistFromFirestore(callback){
         edits: d.edits || {}
       };
     });
-    CHECKLIST_CACHE = state;
-    try{ localStorage.setItem('cocreate2026_checklist', JSON.stringify(state)); }catch(e){}
+    if(Object.keys(state).length === 0){
+      // Firestore 尚無資料 → 用本機 localStorage 的既有勾選，並回傳一份到 Firestore 建立初始同步
+      try{ CHECKLIST_CACHE = JSON.parse(localStorage.getItem('cocreate2026_checklist') || '{}'); }catch(e){ CHECKLIST_CACHE = {}; }
+      if(Object.keys(CHECKLIST_CACHE).length > 0) checklistSyncToFirestore(CHECKLIST_CACHE);
+    } else {
+      CHECKLIST_CACHE = state;
+      try{ localStorage.setItem('cocreate2026_checklist', JSON.stringify(state)); }catch(e){}
+    }
     callback();
   }).catch(() => {
     try{ CHECKLIST_CACHE = JSON.parse(localStorage.getItem('cocreate2026_checklist') || '{}'); }catch(e){ CHECKLIST_CACHE = {}; }
