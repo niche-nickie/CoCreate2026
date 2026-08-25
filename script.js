@@ -311,7 +311,7 @@ ZONES: [
   { name: 'Keynote Hall', owner: 'Ari', status: 'Quoted', img: 'keynote-dark', renders: ['keynote-dark', 'keynote-plan'], scope: 'Carpet removed. All by Youngs / Client.', flag: '⚠ Carpet removed', blocking: true, req: ['All other items — by Youngs / Client'] },
   { name: 'AMA / Influencer Hub', owner: 'Iris', status: 'No quote needed', img: 'ama-hub-render-1', renders: ['ama-hub-render-1'], scope: 'YOUNGS X JOHNATHAN — Banner ×6, Stage, Furniture by Youngs', flag: 'YOUNGS X JOHNATHAN', req: [] },
 
-  { name: 'Match Meeting', owner: 'Chris', status: 'In Review', img: 'match-meeting-render-1', renders: ['match-meeting-render-1', 'match-meeting-render-2'], scope: 'YOUNGS X JOHNATHAN — Furniture by Youngs', flag: 'AMG provide TV', req: ['3× 65" TV with stand'] },
+  { name: 'Match Meeting', owner: 'Chris', status: 'In Review', img: 'match-meeting-render-1', renders: ['match-meeting-render-1', 'match-meeting-render-2'], scope: 'YOUNGS X JOHNATHAN — Furniture by Youngs', req: [] },
   { name: 'Mini Panel', owner: 'Ari', status: 'No quote needed', img: 'mini-panel-render-1', renders: ['mini-panel-render-1', 'mini-panel-render-2'], scope: 'YOUNGS X JOHNATHAN — Mini Panel ×2, LED 4×2.5m, Banner ×2 each, Stage, Furniture by Youngs', flag: 'YOUNGS X JOHNATHAN', req: [] },
   { name: 'Core Display', owner: 'Ari', status: 'No quote needed', img: 'core-display-v2-2', renders: ['core-display-v2-2'], scope: 'Youngs provide', flag: 'YOUNGS', req: [] },
   { name: 'Next-Gen Sourcing + AI', owner: 'Ari', status: 'Approved', img: 'nextgen-render-1', renders: ['nextgen-render-1', 'nextgen-render-2', 'nextgen-render-3', 'nextgen-render-4', 'nextgen-render-5', 'nextgen-render-6', 'nextgen-render-7'], scope: 'AMG: Hanging Banners, Std+Custom Wood Panels (double-sided graphic), Floor Vinyl ×3, Custom Wood Display ×4, PVC Cut-outs ×3, Banners ×2, Cut-outs ×5, Tilted Wood Platform, 55" TV ×13, 100" TV ×1, Std Counter (9× 990 Black + 5× 495 Black + 1× 990 White + 1× 495 White + 2× 495 Orange), Tables & Stools, Custom Installation. JT: All Mac. All else by Youngs.', flag: 'Structure confirmed 8/17 — AMG+JT+Youngs',
@@ -720,7 +720,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 55;
+const CONTENT_VERSION = 56;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
