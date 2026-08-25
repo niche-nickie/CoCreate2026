@@ -467,7 +467,7 @@ GRAPHICS: [
     { item: 'A-09-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/a-09-header.jpg' },
     { item: 'A-09-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/a-09-bk-wall.jpg' },
     { item: 'A-09-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/a-09-side-r.jpg' },
-    { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 9, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
+    { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 8, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
   ]},
   { zone: 'Supplier Block B', items: [
     { item: 'B-01-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'approved', thumb: 'assets/graphics/b-01-header.jpg' },
@@ -536,7 +536,7 @@ GRAPHICS: [
     { item: 'C-13-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/c-13-bk-wall.jpg' },
     { item: 'C-13-SIDE-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/c-13-side-in.jpg' },
     { item: 'C-13-SIDE-OUT', size: '2491×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 13, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
+    { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 14, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
   ]},
   { zone: 'Supplier Block D', items: [
     { item: 'D-01-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/d-01-header.jpg' },
@@ -719,7 +719,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 43;
+const CONTENT_VERSION = 44;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
