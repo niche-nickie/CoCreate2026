@@ -541,6 +541,7 @@ GRAPHICS: [
   { zone: 'Supplier Block D', items: [
     { item: 'D-01-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'approved', thumb: 'assets/graphics/d-01-header.jpg' },
     { item: 'D-01-FRT', size: '3956×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/d-01-frt.jpg' },
+    { item: 'D-01-BK', size: '3956×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'D-02-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'approved', thumb: 'assets/graphics/d-02-header.jpg' },
     { item: 'D-02-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/d-02-bk-wall.jpg' },
     { item: 'D-02-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/d-02-side-l.jpg' },
@@ -719,7 +720,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 54;
+const CONTENT_VERSION = 55;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
