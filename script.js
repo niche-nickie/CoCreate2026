@@ -721,7 +721,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 76;
+const CONTENT_VERSION = 77;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
@@ -751,6 +751,50 @@ function initFirebase(){
       FB_DB = firebase.firestore();
     }
   } catch(e) { console.warn('Firebase init failed:', e); }
+}
+
+// ---------- Zone checklist Firestore 多人同步 ----------
+let CHECKLIST_CACHE = {};
+let CHECKLIST_SYNC_TIMER = null;
+function checklistSyncToFirestore(state){
+  if(!FB_DB) return;
+  try{
+    const batch = FB_DB.batch();
+    Object.keys(state).forEach(key => {
+      const zs = state[key] || {};
+      const ref = FB_DB.collection('checklists').doc(encodeURIComponent(key));
+      batch.set(ref, {
+        key: key,
+        checked: zs.checked || [],
+        removed: zs.removed || [],
+        custom: (zs.custom || []).map(c => ({ text: c.text, checked: !!c.checked })),
+        edits: zs.edits || {},
+        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+    });
+    batch.commit().catch(e => console.warn('checklist sync failed:', e));
+  }catch(e){ console.warn('checklist sync error:', e); }
+}
+function loadChecklistFromFirestore(callback){
+  if(!FB_DB){ callback(); return; }
+  FB_DB.collection('checklists').get().then(snapshot => {
+    const state = {};
+    snapshot.forEach(doc => {
+      const d = doc.data();
+      state[d.key] = {
+        checked: d.checked || [],
+        removed: d.removed || [],
+        custom: d.custom || [],
+        edits: d.edits || {}
+      };
+    });
+    CHECKLIST_CACHE = state;
+    try{ localStorage.setItem('cocreate2026_checklist', JSON.stringify(state)); }catch(e){}
+    callback();
+  }).catch(() => {
+    try{ CHECKLIST_CACHE = JSON.parse(localStorage.getItem('cocreate2026_checklist') || '{}'); }catch(e){ CHECKLIST_CACHE = {}; }
+    callback();
+  });
 }
 let DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
 
@@ -1582,11 +1626,13 @@ function setupZoneModal(){
   }
 
   function loadAllState(){
-    try{ return JSON.parse(localStorage.getItem('cocreate2026_checklist') || '{}'); }
-    catch(e){ return {}; }
+    return CHECKLIST_CACHE;
   }
   function saveAllState(state){
-    localStorage.setItem('cocreate2026_checklist', JSON.stringify(state));
+    CHECKLIST_CACHE = state;
+    try{ localStorage.setItem('cocreate2026_checklist', JSON.stringify(state)); }catch(e){}
+    clearTimeout(CHECKLIST_SYNC_TIMER);
+    CHECKLIST_SYNC_TIMER = setTimeout(() => checklistSyncToFirestore(state), 500);
   }
   function loadZoneState(zoneName){
     const all = loadAllState();
@@ -1930,10 +1976,12 @@ function setupZoneDrag(){
 document.addEventListener('DOMContentLoaded', () => {
   loadSiteData();
   initFirebase();
-  renderAll();
-  renderSidebarUser();
-  setupNav();
-  setupModal();
-  setupZoneModal();
-  setupZoneDrag();
+  loadChecklistFromFirestore(() => {
+    renderAll();
+    renderSidebarUser();
+    setupNav();
+    setupModal();
+    setupZoneModal();
+    setupZoneDrag();
+  });
 });
