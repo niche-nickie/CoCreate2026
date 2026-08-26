@@ -308,7 +308,7 @@ RISKS: {
 ZONES: [
   { name: 'Registration', owner: 'Ari', status: 'Approved', img: 'registration-v2-2', renders: ['registration-0825-2'], drawings: ['registration-dwg-1', 'registration-dwg-2'], scope: 'AMG provide registration backdrop, front and back graphic.column graphics', flag: 'Lobby area',
     req: ['2× Std Door Panel — White Formica (990×2413×100)', '23× Std Trainel — Raw Wood (990×2413×100)', '12× Std LED arm light', '1× BO fabric — back wall front (REG-BK-WALL-FRT, 9896×2409, 4/0)', '1× BO fabric — back wall back (REG-BK-WALL-BK, 9896×2409, 4/0)', '1× Curved PVC column cover w/ Velcro (COLUMN-COVER, 4/0)', 'RX-101 fabric channel — 164 ft', 'From client (Youngs): 6× 8ft table cloth, 7× stanchion sign support, 28× stanchions'] },
-  { name: 'Wayfinding System & Promotion Materials', owner: 'Ari', status: 'Approved', img: 'wayfinding-0825-1', renders: ['wayfinding-0825-1'], drawings: [], scope: 'AMG provide. Stand ×5 (70×170cmH) + 100" TV ×2 w/ stand + Pop up ×3 (3×6.5ft).', flag: '', req: ['5× Stand — 70×170cmH', '2× 100" TV w/ stand', '3× Pop up — 3×6.5ft'] },
+  { name: 'Wayfinding System & Promotion Materials', owner: 'Ari', status: 'Approved', img: 'wayfinding-0825-1', renders: ['wayfinding-0825-1'], drawings: ['wayfinding-dwg-1'], scope: 'AMG provide. Stand ×5 (70×170cmH) + 100" TV ×2 w/ stand + Pop up ×3 (3×6.5ft).', flag: '', req: ['5× Stand — 70×170cmH', '2× 100" TV w/ stand', '3× Pop up — 3×6.5ft'] },
   { name: 'Keynote Hall', owner: 'Ari', status: 'Quoted', img: 'keynote-dark', renders: ['keynote-dark', 'keynote-plan'], scope: 'Carpet removed. All by Youngs / Client.', flag: '⚠ Carpet removed', blocking: true, req: ['All other items — by Youngs / Client'] },
   { name: 'AMA / Influencer Hub', owner: 'Iris', status: 'No quote needed', img: 'ama-hub-render-1', renders: ['ama-hub-render-1'], scope: 'YOUNGS X JOHNATHAN — Banner ×6, Stage, Furniture by Youngs', flag: 'YOUNGS X JOHNATHAN', req: [] },
 
@@ -726,7 +726,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 87;
+const CONTENT_VERSION = 88;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
