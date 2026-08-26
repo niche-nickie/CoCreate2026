@@ -537,6 +537,9 @@ GRAPHICS: [
     { item: 'C-13-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/c-13-bk-wall.jpg' },
     { item: 'C-13-SIDE-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/c-13-side-in.jpg' },
     { item: 'C-13-SIDE-OUT', size: '2491×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'C-14-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/c-14-header.jpg' },
+    { item: 'C-14-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/c-14-bk-wall.jpg' },
+    { item: 'C-14-SIDE', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/c-14-side.jpg' },
     { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 14, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
   ]},
   { zone: 'Supplier Block D', items: [
@@ -562,9 +565,9 @@ GRAPHICS: [
     { item: 'D-07-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'approved', thumb: '' },
     { item: 'D-07-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: '' },
     { item: 'D-07-SIDE-L', size: '1982×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: '' },
-    { item: 'D-08-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
-    { item: 'D-08-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'D-08-SIDE-WALL-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'D-08-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/d-08-header.jpg' },
+    { item: 'D-08-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-08-bk-wall.jpg' },
+    { item: 'D-08-SIDE-WALL-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-08-side.jpg' },
     { item: 'D-08-SIDE-WALL-OUT', size: '2096×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'D-09-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'approved', thumb: 'assets/graphics/d-09-header.jpg' },
     { item: 'D-09-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/d-09-bk-wall.jpg' },
@@ -655,18 +658,18 @@ GRAPHICS: [
   { zone: 'Sponsor Booths', items: [
     { item: 'COMM-LOGO-1', size: '400×100mm', material: 'Vinyl', qty: 14, status: 'pending', thumb: 'assets/graphics/comm-logo-1.jpg' },
     { item: 'COMM-P-01-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-01-logo.jpg' },
-    { item: 'COMM-P-02-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
-    { item: 'COMM-P-03-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'COMM-P-02-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-02-logo.jpg' },
+    { item: 'COMM-P-03-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-03-logo.jpg' },
     { item: 'COMM-P-04-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-05-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-05-logo.jpg' },
     { item: 'COMM-P-06-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-07-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-07-logo.jpg' },
     { item: 'COMM-P-08-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-09-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
-    { item: 'COMM-P-10-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'COMM-P-10-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-10-logo.jpg' },
     { item: 'COMM-P-11-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-12-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-12-logo.jpg' },
-    { item: 'COMM-P-13-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'COMM-P-13-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-13-logo.jpg' },
     { item: 'COMM-P-15-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
     { item: 'COMM-P-16-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-16-logo.jpg' },
     { item: 'COMM-P-17-LOGO', size: '800×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/comm-p-17-logo.jpg' },
@@ -676,10 +679,10 @@ GRAPHICS: [
     { item: 'PREM-LOGO-2', size: '1000×150mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/prem-logo-2.jpg' },
   ]},
   { zone: 'Sourcing Hub', items: [
-    { item: 'SH-HEADER-1', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: '' },
-    { item: 'SH-HEADER-2', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: '' },
-    { item: 'SH-HEADER-3', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: '' },
-    { item: 'SH-HEADER-4', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: '' },
+    { item: 'SH-HEADER-1', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: 'assets/graphics/sh-header-1.jpg' },
+    { item: 'SH-HEADER-2', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: 'assets/graphics/sh-header-2.jpg' },
+    { item: 'SH-HEADER-3', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: 'assets/graphics/sh-header-3.jpg' },
+    { item: 'SH-HEADER-4', size: '2150×250mm', material: 'PVC', qty: 2, status: 'pending', thumb: 'assets/graphics/sh-header-4.jpg' },
   ]},
   { zone: 'Podcast', items: [
     { item: 'PODCAST-VINYL', size: '1208×898mm', material: 'Vinyl', qty: 7, status: 'pending', thumb: 'assets/graphics/podcast-vinyl.jpg' },
@@ -721,7 +724,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 79;
+const CONTENT_VERSION = 80;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
