@@ -221,7 +221,7 @@ const SUPPLIER_EN = {
   'A-01':'Wenzhou Baoshijie','A-02':'Ningbo Youyi','A-03':'Choebe','A-04':'Zhejiang Minghui','A-06':'Sowin','A-07':'OPT','A-08':'Xiamen Xiefa','A-09':'Fuzhou Sencai',
   'B-01':'Shandong Nuoman','B-02':'Shanghai Kaiwei','B-03':'Henan Zhongyu Dingli','B-04':'Suzhou Transparent','B-05':'Shandong Eachan','B-06':'Shandong Hightop','B-07':'Suzhou Tongda',
   'C-01':'Ningbo Super','C-02':'Dongguan Yujie','C-03':'Charming','C-04':'Beijing Doorwin','C-05':'Masuma','C-06':'Xiamen Mingyuansheng','C-07':'Xiamen Hym','C-08':'Shenzhen Ejeas','C-09':'Foshan Fuson','C-10':'Zhangzhou Builder','C-11':'Guangdong Dejiyoupin','C-12':'SACA','C-13':'Qingdao Seahisun',
-  'D-01':'Biocaro','D-02':'Huion','D-03':'Quanzhou Binqi','D-04':'Xiamen Weiyou','D-05':'Gardensun','D-06':'Chiyang','D-07':'Superlaser','D-09':'Rundarongjia','D-10':'EMOKA',
+  'D-01':'Biocaro','D-02':'Huion','D-03':'Quanzhou Binqi','D-04':'Xiamen Weiyou','D-05':'Gardensun','D-06':'Chiyang','D-07':'Superlaser','D-08':'South Intelligent Manufacturing','D-09':'Rundarongjia','D-10':'EMOKA',
   'E-01':'Healy','E-02':'Heniemo','E-03':'Funan Willow','E-04':'Bright Show','E-05':'YSTAR','E-06':'Allbright','E-07':'Yuze','E-08':'Sentron',
   'G-01':'Optor','G-02':'HMG','G-03':'JEWELUX','G-04':'VF Home','G-05':'Nongshim','G-06':'TAIDOC','G-07':'Gowinpc','G-08':'PACK EVER','G-09':'PACE SPORTS','G-10':'SNDZ','G-11':'GAME ON',
 };
@@ -726,7 +726,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 90;
+const CONTENT_VERSION = 91;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
