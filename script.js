@@ -4,7 +4,7 @@
 
 const TODAY = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
 const SHOW_START = new Date('2026-09-09');
-const IMG_CACHE_BUST = '?v=20260826i';  // bump to bust image CDN cache
+const IMG_CACHE_BUST = '?v=20260827';  // bump to bust image CDN cache
 
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
@@ -729,7 +729,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 122;
+const CONTENT_VERSION = 123;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
@@ -1344,7 +1344,7 @@ function renderGraphicsWith(list){
             ${(g.items||[]).map((it, ii) => {
               const meta = graphicStatusMeta(it.status);
               const thumbHtml = it.thumb
-                ? `<img src="${escapeHtml(it.thumb)}" alt="" style="width:72px;height:auto;border-radius:6px;cursor:zoom-in;" onclick="event.stopPropagation();openGraphicModal('${escapeHtml(it.item)}','${escapeHtml(it.thumb)}')">`
+                ? `<img src="${escapeHtml(it.thumb)}${IMG_CACHE_BUST}" alt="" style="width:72px;height:auto;border-radius:6px;cursor:zoom-in;" onclick="event.stopPropagation();openGraphicModal('${escapeHtml(it.item)}','${escapeHtml(it.thumb)}')">`
                 : `<span style="color:#ccc;font-size:12px;">none</span>`;
               return `
               <tr>
