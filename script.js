@@ -730,7 +730,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 134;
+const CONTENT_VERSION = 135;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
@@ -1380,30 +1380,26 @@ function renderGraphicsMissing() {
   (graphicsList || []).forEach(g => {
     (g.items || []).forEach(it => {
       const noThumb = !it.thumb;
-      const noSize = !it.size || it.size === '—';
-      if (noThumb || noSize) {
-        missing.push({ zone: g.zone, item: it.item, noThumb, noSize });
+      if (noThumb) {
+        missing.push({ zone: g.zone, item: it.item });
       }
     });
   });
   if (!missing.length) {
-    el.innerHTML = '<div class="card" style="margin-bottom:12px;border-left:4px solid var(--green);"><div class="card-body" style="color:var(--green);">✓ 全部 graphic 都有圖，規格齊全</div></div>';
+    el.innerHTML = '<div class="card" style="margin-bottom:12px;border-left:4px solid var(--green);"><div class="card-body" style="color:var(--green);">✓ 全部 graphic 都有圖</div></div>';
     return;
   }
-  const noThumbCount = missing.filter(m => m.noThumb).length;
-  const noSizeCount = missing.filter(m => m.noSize).length;
   el.innerHTML = `
     <div class="card" style="margin-bottom:12px;border-left:4px solid var(--red);">
-      <div class="card-header"><div class="card-title">⚠️ Missing — ${missing.length} 筆（${noThumbCount} 缺圖 / ${noSizeCount} 缺規格）</div></div>
+      <div class="card-header"><div class="card-title">⚠️ 缺圖 — ${missing.length} 筆</div></div>
       <div class="card-body" style="padding:0;overflow-x:auto;">
         <table class="phases">
-          <thead><tr><th>Zone</th><th>Item</th><th>缺什麼</th></tr></thead>
+          <thead><tr><th>Zone</th><th>Item</th></tr></thead>
           <tbody>
             ${missing.map(m => `
               <tr>
                 <td>${escapeHtml(m.zone)}</td>
                 <td>${escapeHtml(m.item)}</td>
-                <td>${[m.noThumb ? '缺圖' : '', m.noSize ? '缺規格 size' : ''].filter(Boolean).join(' + ')}</td>
               </tr>
             `).join('')}
           </tbody>
