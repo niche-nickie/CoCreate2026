@@ -455,7 +455,7 @@ GRAPHICS: [
     { item: 'A-01-SIDE-WALL-OUT', size: '2096×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/a-01-side-wall-out.jpg' },
     { item: 'A-02-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/a-02-header.jpg' },
     { item: 'A-02-BK-WALL', size: '3928×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/a-02-bk-wall.jpg' },
-    { item: 'A-02-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-02-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/a-02-side-l.jpg' },
     { item: 'A-02-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/a-02-side-r.jpg' },
     { item: 'A-03-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/a-03-header.jpg' },
     { item: 'A-03-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/a-03-bk-wall.jpg' },
@@ -545,7 +545,7 @@ GRAPHICS: [
     { item: 'C-13-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/c-13-header.jpg' },
     { item: 'C-13-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/c-13-bk-wall.jpg' },
     { item: 'C-13-SIDE-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/c-13-side-in.jpg' },
-    { item: 'C-13-SIDE-OUT', size: '2491×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'C-13-SIDE-OUT', size: '2491×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/c-13-side-out.jpg' },
     { item: 'C-14-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/c-14-header.jpg' },
     { item: 'C-14-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/c-14-bk-wall.jpg' },
     { item: 'C-14-SIDE', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/c-14-side.jpg' },
@@ -577,7 +577,7 @@ GRAPHICS: [
     { item: 'D-08-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/d-08-header.jpg' },
     { item: 'D-08-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-08-bk-wall.jpg' },
     { item: 'D-08-SIDE-WALL-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-08-side.jpg' },
-    { item: 'D-08-SIDE-WALL-OUT', size: '2096×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'D-08-SIDE-WALL-OUT', size: '2096×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-08-side-wall-out.jpg' },
     { item: 'D-09-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'approved', thumb: 'assets/graphics/d-09-header.jpg' },
     { item: 'D-09-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/d-09-bk-wall.jpg' },
     { item: 'D-09-SIDE-WALL-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/d-09-side-wall-in.jpg' },
@@ -729,7 +729,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 121;
+const CONTENT_VERSION = 122;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
