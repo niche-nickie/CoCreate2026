@@ -281,7 +281,7 @@ function closeLightbox() {
 }
 function openGraphicModal(title, src) {
   document.getElementById('graphic-modal-title').textContent = title;
-  document.getElementById('graphic-modal-img').src = src;
+  document.getElementById('graphic-modal-img').src = src + (typeof IMG_CACHE_BUST !== 'undefined' ? IMG_CACHE_BUST : '');
   document.getElementById('graphic-modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
