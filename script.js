@@ -410,7 +410,6 @@ GRAPHICS: [
     { item: 'NG-CUSTOM-PANEL-03', size: '—', material: 'Custom Wood', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-custom-panel-03.jpg' },
     { item: 'NG-CUSTOM-PANEL-05', size: '—', material: 'Custom Wood', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-custom-panel-05.jpg' },
     { item: 'NG-CUSTOM-PANEL-06', size: '—', material: 'Custom Wood', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-custom-panel-06.jpg' },
-    { item: 'NG-CUSTOM-PANEL-09', size: '—', material: 'Custom Wood', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-custom-panel-09.jpg' },
     { item: 'NG-PLATFORM', size: '1650×1559mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-platform.jpg' },
     { item: 'NG-PLATFORM-SIDES', size: '1536×166mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: 'assets/graphics/ng-platform-sides.jpg' },
     { item: 'NG-PLATFORM-BK', size: '1649×166mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-platform-bk.jpg' },
@@ -731,7 +730,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 111;
+const CONTENT_VERSION = 112;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
