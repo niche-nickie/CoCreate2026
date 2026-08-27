@@ -404,7 +404,7 @@ GRAPHICS: [
     { item: 'NG-SHAPE-3', size: '570×562mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-shape-3.jpg' },
     { item: 'NG-FLOOR', size: '7000×7000mm', material: 'Floor Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-floor.jpg' },
     { item: 'NG-GAME-CNTR-LOGO', size: '840×100mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: 'assets/graphics/ng-game-cntr-logo.jpg' },
-    { item: 'NG-GAME-ARROW', size: '80×2700mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: '' },
+    { item: 'NG-GAME-ARROW', size: '80×2700mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-game-arrow.jpg' },
     { item: 'NG-GAME', size: '1440×3000mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-game.jpg' },
     { item: 'NG-PLATFORM', size: '1650×1559mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-platform.jpg' },
     { item: 'NG-PLATFORM-SIDES', size: '1536×166mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: 'assets/graphics/ng-platform-sides.jpg' },
@@ -726,7 +726,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 105;
+const CONTENT_VERSION = 106;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
