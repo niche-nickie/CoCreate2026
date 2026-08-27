@@ -536,7 +536,6 @@ GRAPHICS: [
     { item: 'C-10-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'approved', thumb: 'assets/graphics/c-10-header.jpg' },
     { item: 'C-10-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/c-10-bk-wall.jpg' },
     { item: 'C-10-SIDE-WALL-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/c-10-side-wall-in.jpg' },
-    { item: 'C-10-SIDE-WALL-OUT', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'C-11-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'approved', thumb: 'assets/graphics/c-11-header.jpg' },
     { item: 'C-11-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/c-11-wall-backside.jpg' },
     { item: 'C-11-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/c-11-side-l.jpg' },
@@ -731,7 +730,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 118;
+const CONTENT_VERSION = 119;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
