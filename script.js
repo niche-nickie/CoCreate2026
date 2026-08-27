@@ -168,7 +168,7 @@ const ZONE_D_TIER = [
   { key:'d05', name:'D-05', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
   { key:'d06', name:'D-06', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','1x) 1350 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','2x) 1500 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','1x) 1800 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','13x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture'] },
   { key:'d07', name:'D-07', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
-  { key:'d08', name:'D-08', sqm:'8m²', count:1, renders: [], req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
+  { key:'d08', name:'D-08', sqm:'8m²', count:1, renders: ['d08-render-1'], req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
   { key:'d09', name:'D-09', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','7x) 700 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','4x) 900 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','22x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture'] },
   { key:'d10', name:'D-10', sqm:'10m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','2x) 450 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','2x) 700 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','2x) 1400 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','16x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture'] },
 ];
@@ -731,7 +731,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 117;
+const CONTENT_VERSION = 118;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
