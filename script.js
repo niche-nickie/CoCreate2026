@@ -391,8 +391,8 @@ GRAPHICS: [
     { item: 'VIP-LOUNGE', size: '—', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/vip-lounge.jpg' },
     { item: 'COCREATE-MATCH', size: '—', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/cocreate-match.jpg' },
     { item: 'ALIBABA-COCREATE-2026', size: '—', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
-    { item: 'SOURCING-HUB', size: '700×1700mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
-    { item: 'NATIONAL-PAVILION', size: '700×1700mm', material: 'Vinyl', qty: 3, status: 'pending', thumb: '' },
+    { item: 'SOURCING-HUB', size: '700×1700mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/sourcing-hub.jpg' },
+    { item: 'NATIONAL-PAVILION', size: '700×1700mm', material: 'Vinyl', qty: 3, status: 'pending', thumb: 'assets/graphics/national-pavilion.jpg' },
     { item: 'MAIN-FORUM', size: '700×1700mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'Next Gen', items: [
@@ -729,7 +729,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 100;
+const CONTENT_VERSION = 101;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
