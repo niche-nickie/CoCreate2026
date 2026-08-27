@@ -572,7 +572,7 @@ GRAPHICS: [
     { item: 'D-06-SIDE-WALL-IN', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/d-06-side-wall-in.jpg' },
     { item: 'D-06-SIDE-WALL-OUT', size: '2096×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/d-06-side-wall-out.jpg' },
     { item: 'D-07-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'approved', thumb: 'assets/graphics/d-07-header.jpg' },
-    { item: 'D-07-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: '' },
+    { item: 'D-07-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/d-07-bk-wall.jpg' },
     { item: 'D-07-SIDE-L', size: '1982×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: '' },
     { item: 'D-08-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/d-08-header.jpg' },
     { item: 'D-08-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/d-08-bk-wall.jpg' },
@@ -729,7 +729,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 127;
+const CONTENT_VERSION = 128;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
