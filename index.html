@@ -46,7 +46,7 @@
       <p>Alibaba CoCreate 2026 · Los Angeles Convention Center · AMG General Service Contractor</p>
     </div>
     <div class="search-wrap">
-      <input type="text" id="global-search" placeholder="🔍 搜攤位 / 圖檔..." autocomplete="off">
+      <input type="text" id="global-search" placeholder="🔍 Search booths / graphics..." autocomplete="off">
       <div class="search-dropdown" id="search-dropdown"></div>
     </div>
     <div class="header-actions">
@@ -142,7 +142,7 @@
       <button onclick="flipFloor(-1)" style="background: none; border: none; color: #999; font-size: 2rem; cursor: pointer; padding: 0 8px; flex-shrink:0;">◀</button>
       <div class="card floor-plan-card" onclick="openLightbox(FP_PAGES[FP_IDX])" style="width:100%; cursor:zoom-in;">
         <img id="floor-plan-img" src="assets/floor-plan-zone.jpg" alt="Floor Plan">
-        <div id="floor-plan-caption" class="floor-plan-caption">Full Floor Plan (全場平面圖)</div>
+        <div id="floor-plan-caption" class="floor-plan-caption">Full Floor Plan</div>
       </div>
       <button onclick="flipFloor(1)" style="background: none; border: none; color: #999; font-size: 2rem; cursor: pointer; padding: 0 8px; flex-shrink:0;">▶</button>
     </div>
@@ -155,7 +155,7 @@
 
   <section id="graphics">
     <div class="section-heading">Graphics</div>
-    <p class="section-sub">Graphic 輸出物清單，按 Zone 分區。每筆記：項目／尺寸／材質／檔案名／狀態。</p>
+    <p class="section-sub">Graphic output list by zone. Each item records: item / size / material / filename / status.</p>
     <div id="graphics-missing"></div>
     <div id="graphics-list"></div>
   </section>
@@ -234,10 +234,10 @@
 
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<script src="script.js?v=295&t=20260826"></script>
+<script src="script.js?v=296&t=20260826"></script>
 <script>
 var FP_PAGES = ['assets/floor-plan-zone.jpg', 'assets/floor-plan-detail.jpg', 'assets/sponsor-power-plan.jpg'];
-var FP_CAPTIONS = ['Full Floor Plan (全場平面圖)', 'Floor Plan Detail (平面圖明細)', 'Sponsor Power Plan (Sponsor 電力配置)'];
+var FP_CAPTIONS = ['Full Floor Plan', 'Floor Plan Detail', 'Sponsor Power Plan'];
 var FP_IDX = 0;
 function flipFloor(d) {
   FP_IDX = (FP_IDX + d + FP_PAGES.length) % FP_PAGES.length;

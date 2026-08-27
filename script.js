@@ -700,7 +700,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 138;
+const CONTENT_VERSION = 139;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
@@ -1143,7 +1143,7 @@ function zoneProgressHtml(zoneName) {
   const color = pct === 100 ? 'var(--green)' : pct >= 50 ? 'var(--yellow)' : 'var(--red)';
   return `<div class="zone-progress" data-zone-progress="${escapeHtml(zoneName)}">
     <div class="zone-progress-track"><div class="zone-progress-fill" style="width:${pct}%;background:${color};"></div></div>
-    <div class="zone-progress-label">🖼 ${s.done}/${s.total} 圖</div>
+    <div class="zone-progress-label">🖼 ${s.done}/${s.total}</div>
   </div>`;
 }
 
@@ -1156,7 +1156,7 @@ function updateZoneProgressBars() {
     const fill = el.querySelector('.zone-progress-fill');
     const label = el.querySelector('.zone-progress-label');
     if (fill) { fill.style.width = pct + '%'; fill.style.background = color; }
-    if (label) label.textContent = `🖼 ${s.done}/${s.total} 圖`;
+    if (label) label.textContent = `🖼 ${s.done}/${s.total}`;
   });
 }
 
@@ -1249,12 +1249,12 @@ function renderGraphicsMissing() {
     });
   });
   if (!missing.length) {
-    el.innerHTML = '<div class="card" style="margin-bottom:12px;border-left:4px solid var(--green);"><div class="card-body" style="color:var(--green);">✓ 全部 graphic 都有圖</div></div>';
+    el.innerHTML = '<div class="card" style="margin-bottom:12px;border-left:4px solid var(--green);"><div class="card-body" style="color:var(--green);">✓ All graphics complete</div></div>';
     return;
   }
   el.innerHTML = `
     <div class="card" style="margin-bottom:12px;border-left:4px solid var(--red);">
-      <div class="card-header"><div class="card-title">⚠️ 缺圖 — ${missing.length} 筆</div></div>
+      <div class="card-header"><div class="card-title">⚠️ Missing graphics — ${missing.length}</div></div>
       <div class="card-body" style="padding:0;overflow-x:auto;">
         <table class="phases">
           <thead><tr><th>Zone</th><th>Item</th></tr></thead>
@@ -1282,7 +1282,7 @@ function renderGraphicsWith(list){
       </summary>
       <div class="card-body" style="padding:0;overflow-x:auto;">
         <table class="phases">
-          <thead><tr><th>Item</th><th>Size</th><th>Material</th><th>Qty</th><th>Thumbnail</th><th>Status</th><th>Niche</th><th>空運</th></tr></thead>
+          <thead><tr><th>Item</th><th>Size</th><th>Material</th><th>Qty</th><th>Thumbnail</th><th>Status</th><th>Niche</th><th>Air</th></tr></thead>
           <tbody>
             ${(g.items||[]).map((it, ii) => {
               const meta = graphicStatusMeta(it.status);
@@ -1961,11 +1961,11 @@ function buildSearchIndex() {
   Object.entries(SUPPLIER_EN).forEach(([code, name]) => {
     const prefix = code.split('-')[0].toUpperCase();
     const zone = zoneMap[prefix] || '';
-    index.push({ label: `${code} ${name}`, type: '攤位', zone, searchText: `${code} ${name}`.toLowerCase() });
+    index.push({ label: `${code} ${name}`, type: 'Booth', zone, searchText: `${code} ${name}`.toLowerCase() });
   });
   (graphicsList || []).forEach(g => {
     (g.items || []).forEach(it => {
-      index.push({ label: it.item, type: '圖檔', zone: g.zone, searchText: it.item.toLowerCase() });
+      index.push({ label: it.item, type: 'Graphic', zone: g.zone, searchText: it.item.toLowerCase() });
     });
   });
   return index;
@@ -1981,7 +1981,7 @@ function setupSearch() {
     const results = buildSearchIndex().filter(r => r.searchText.includes(q)).slice(0, 12);
     dropdown.innerHTML = results.length
       ? results.map(r => `<div class="search-item" data-zone="${escapeHtml(r.zone)}"><span>${escapeHtml(r.label)}</span><span class="si-type">${r.type}</span></div>`).join('')
-      : '<div class="search-empty">沒有找到「' + escapeHtml(input.value) + '」</div>';
+      : '<div class="search-empty">No results for "' + escapeHtml(input.value) + '"</div>';
     dropdown.classList.add('open');
   });
   dropdown.addEventListener('click', (e) => {
