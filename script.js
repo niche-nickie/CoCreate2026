@@ -387,6 +387,10 @@ GRAPHICS: [
   ]},
   { zone: 'Wayfinding System & Promotion Materials', items: [
     { item: 'COLUMN-COVER', size: '—', material: 'Curved PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'ASK-ME-ANYTHING', size: '—', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'VIP-LOUNGE', size: '—', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'COCREATE-MATCH', size: '—', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
+    { item: 'ALIBABA-COCREATE-2026', size: '—', material: 'Vinyl', qty: 1, status: 'pending', thumb: '' },
   ]},
   { zone: 'Next Gen', items: [
     { item: 'NG-MEET-FRT', size: '2966×2996mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
@@ -726,7 +730,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 92;
+const CONTENT_VERSION = 93;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
