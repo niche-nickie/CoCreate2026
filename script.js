@@ -406,6 +406,7 @@ GRAPHICS: [
     { item: 'NG-GAME-CNTR-LOGO', size: '840×100mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: 'assets/graphics/ng-game-cntr-logo.jpg' },
     { item: 'NG-GAME-ARROW', size: '80×2700mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-game-arrow.jpg' },
     { item: 'NG-GAME', size: '1440×3000mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-game.jpg' },
+    { item: 'NG-GAME-BK', size: '1440×3000mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-game-bk.jpg' },
     { item: 'NG-PLATFORM', size: '1650×1559mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-platform.jpg' },
     { item: 'NG-PLATFORM-SIDES', size: '1536×166mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: 'assets/graphics/ng-platform-sides.jpg' },
     { item: 'NG-PLATFORM-BK', size: '1649×166mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-platform-bk.jpg' },
@@ -726,7 +727,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 107;
+const CONTENT_VERSION = 108;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
