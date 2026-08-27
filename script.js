@@ -649,7 +649,7 @@ GRAPHICS: [
     { item: 'G-08-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/g-08-header.jpg' },
     { item: 'G-09-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/g-09-header.jpg' },
     { item: 'G-10-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/g-10-header.jpg' },
-    { item: 'G-11-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: '' },
+    { item: 'G-11-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/g-11-header.jpg' },
     { item: 'Counter Logo', size: '800×250mm', material: 'Vinyl', qty: 11, status: 'approved', thumb: 'assets/graphics/counter-logo.jpg' },
   ]},
   { zone: 'Chongqing Pavilion', items: [
@@ -729,7 +729,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 120;
+const CONTENT_VERSION = 121;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
