@@ -398,7 +398,6 @@ GRAPHICS: [
   { zone: 'Next Gen', items: [
     { item: 'NG-MEET-FRT', size: '2966×2996mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-meet-frt.jpg' },
     { item: 'NG-MEET-BK', size: '2966×2996mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-meet-bk.jpg' },
-    { item: 'NG-MEET-CNTR-FRT', size: '1485×1000mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-meet-cntr-frt.jpg' },
     { item: 'NG-SHAPE-1', size: '370×365mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-shape-1.jpg' },
     { item: 'NG-SHAPE-2', size: '591×573mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-shape-2.jpg' },
     { item: 'NG-SHAPE-3', size: '570×562mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-shape-3.jpg' },
@@ -731,7 +730,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 109;
+const CONTENT_VERSION = 110;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
