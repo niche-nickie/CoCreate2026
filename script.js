@@ -4,7 +4,7 @@
 
 const TODAY = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
 const SHOW_START = new Date('2026-09-09');
-const IMG_CACHE_BUST = '?v=20260827b';  // bump to bust image CDN cache
+const IMG_CACHE_BUST = '?v=20260827c';  // bump to bust image CDN cache
 
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
@@ -463,9 +463,10 @@ GRAPHICS: [
     { item: 'A-04-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/a-04-header.jpg' },
     { item: 'A-04-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/a-04-bk-wall.jpg' },
     { item: 'A-04-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/a-04-side-l.jpg' },
-    { item: 'A-05-BK-WALL', size: '3928×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-05-SIDE-L', size: '1982×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
-    { item: 'A-05-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
+    { item: 'A-05-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/a-05-header.jpg' },
+    { item: 'A-05-BK-WALL', size: '3928×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/a-05-bk-wall.jpg' },
+    { item: 'A-05-SIDE-L', size: '1982×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/a-05-side-l.jpg' },
+    { item: 'A-05-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/a-05-side-r.jpg' },
     { item: 'A-06-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/a-06-header.jpg' },
     { item: 'A-06-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/a-06-bk-wall.jpg' },
     { item: 'A-06-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'approved', thumb: 'assets/graphics/a-06-side-l.jpg' },
@@ -729,7 +730,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 130;
+const CONTENT_VERSION = 131;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
