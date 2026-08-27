@@ -726,7 +726,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 103;
+const CONTENT_VERSION = 104;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
@@ -1378,8 +1378,15 @@ function setGraphicStatus(sel){
   sel.style.border = `1px solid ${meta.color}33`;
   sel.style.background = `${meta.color}11`;
   if (FB_DB && graphicsList[gi] && graphicsList[gi].id) {
-    FB_DB.collection(GRAPHICS_COLLECTION).doc(graphicsList[gi].id).update({ items: graphicsList[gi].items })
-      .catch(e => console.warn('update graphic failed:', e));
+    const ref = FB_DB.collection(GRAPHICS_COLLECTION).doc(graphicsList[gi].id);
+    // 用 transaction 讀-改-寫，避免覆蓋其他欄位（如 thumb）造成多人同步遺失
+    FB_DB.runTransaction(async (tx) => {
+      const snap = await tx.get(ref);
+      const data = snap.data() || {};
+      const items = Array.isArray(data.items) ? data.items : [];
+      if (items[ii]) { items[ii] = { ...items[ii], status: val }; }
+      tx.update(ref, { items: items });
+    }).catch(e => console.warn('update graphic failed:', e));
   }
 }
 
@@ -1391,8 +1398,14 @@ function toggleGraphicFlag(cb){
     graphicsList[gi].items[ii][field] = cb.checked;
   }
   if (FB_DB && graphicsList[gi] && graphicsList[gi].id) {
-    FB_DB.collection(GRAPHICS_COLLECTION).doc(graphicsList[gi].id).update({ items: graphicsList[gi].items })
-      .catch(e => console.warn('update graphic flag failed:', e));
+    const ref = FB_DB.collection(GRAPHICS_COLLECTION).doc(graphicsList[gi].id);
+    FB_DB.runTransaction(async (tx) => {
+      const snap = await tx.get(ref);
+      const data = snap.data() || {};
+      const items = Array.isArray(data.items) ? data.items : [];
+      if (items[ii]) { items[ii] = { ...items[ii], [field]: cb.checked }; }
+      tx.update(ref, { items: items });
+    }).catch(e => console.warn('update graphic flag failed:', e));
   }
 }
 
