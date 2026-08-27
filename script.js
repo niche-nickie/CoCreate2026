@@ -730,7 +730,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 133;
+const CONTENT_VERSION = 134;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
@@ -1254,6 +1254,49 @@ function renderRisk(){
 
 const ZONE_STATUS_OPTIONS = ['TBD', 'In Review', 'Quoted', 'Approved', 'In Production', 'Complete', 'No quote needed'];
 
+function graphicZoneToZoneName(gz) {
+  const map = {
+    'Supplier Block A': 'Supplier A200 — Block A',
+    'Supplier Block B': 'Supplier A200 — Block B',
+    'Supplier Block C': 'Supplier A200 — Block C',
+    'Supplier Block D': 'Supplier A200 — Block D',
+    'Supplier Block E': 'Supplier A200 — Block E',
+    'Sponsor Booths': 'Sponsor Booths 16+1',
+  };
+  return map[gz] || gz;
+}
+
+function getZoneGraphicStats(zoneName) {
+  const g = (graphicsList || []).find(x => graphicZoneToZoneName(x.zone) === zoneName);
+  const items = (g && g.items) || [];
+  const total = items.length;
+  const done = items.filter(it => it.thumb).length;
+  return { done, total };
+}
+
+function zoneProgressHtml(zoneName) {
+  const s = getZoneGraphicStats(zoneName);
+  const pct = s.total ? Math.round(s.done / s.total * 100) : 0;
+  const color = pct === 100 ? 'var(--green)' : pct >= 50 ? 'var(--yellow)' : 'var(--red)';
+  return `<div class="zone-progress" data-zone-progress="${escapeHtml(zoneName)}">
+    <div class="zone-progress-track"><div class="zone-progress-fill" style="width:${pct}%;background:${color};"></div></div>
+    <div class="zone-progress-label">🖼 ${s.done}/${s.total} 圖</div>
+  </div>`;
+}
+
+function updateZoneProgressBars() {
+  document.querySelectorAll('[data-zone-progress]').forEach(el => {
+    const name = el.getAttribute('data-zone-progress');
+    const s = getZoneGraphicStats(name);
+    const pct = s.total ? Math.round(s.done / s.total * 100) : 0;
+    const color = pct === 100 ? 'var(--green)' : pct >= 50 ? 'var(--yellow)' : 'var(--red)';
+    const fill = el.querySelector('.zone-progress-fill');
+    const label = el.querySelector('.zone-progress-label');
+    if (fill) { fill.style.width = pct + '%'; fill.style.background = color; }
+    if (label) label.textContent = `🖼 ${s.done}/${s.total} 圖`;
+  });
+}
+
 function renderZonesFull(){
   document.getElementById('zone-grid').innerHTML = DATA.ZONES.map((z, i) => `
     <div class="zone-card${EDIT_MODE ? ' draggable-zone' : ''}" data-zone-index="${i}">
@@ -1266,6 +1309,7 @@ function renderZonesFull(){
       ${EDIT_MODE
         ? `<select onclick="event.stopPropagation()" onchange="event.stopPropagation();saveFieldAndRender('ZONES',${i},'status',this)">${ZONE_STATUS_OPTIONS.map(s => `<option value="${s}" ${s === z.status ? 'selected' : ''}>${s}</option>`).join('')}</select>`
         : `<div class="zone-status" style="color:${z.status === 'TBD' ? 'var(--red)' : z.status === 'No quote needed' ? 'var(--green)' : 'var(--yellow)'}">${escapeHtml(z.status)}</div>`}
+      ${zoneProgressHtml(z.name)}
       <div class="zone-scope"${editAttrs('ZONES', i, 'scope')}>${escapeHtml(z.scope)}</div>
       <div class="zone-flag ${z.blocking ? 'blocking' : ''}"${editAttrs('ZONES', i, 'flag')}>${escapeHtml(z.flag)}</div>
       ${EDIT_MODE ? `<button class="edit-remove-btn" onclick="event.stopPropagation();removeRow('ZONES',${i})" title="Remove zone">&times; Remove zone</button>` : ''}
@@ -1329,6 +1373,45 @@ function seedGraphics(){
   }).catch(e => console.warn('seed graphics failed:', e));
 }
 
+function renderGraphicsMissing() {
+  const el = document.getElementById('graphics-missing');
+  if (!el) return;
+  const missing = [];
+  (graphicsList || []).forEach(g => {
+    (g.items || []).forEach(it => {
+      const noThumb = !it.thumb;
+      const noSize = !it.size || it.size === '—';
+      if (noThumb || noSize) {
+        missing.push({ zone: g.zone, item: it.item, noThumb, noSize });
+      }
+    });
+  });
+  if (!missing.length) {
+    el.innerHTML = '<div class="card" style="margin-bottom:12px;border-left:4px solid var(--green);"><div class="card-body" style="color:var(--green);">✓ 全部 graphic 都有圖，規格齊全</div></div>';
+    return;
+  }
+  const noThumbCount = missing.filter(m => m.noThumb).length;
+  const noSizeCount = missing.filter(m => m.noSize).length;
+  el.innerHTML = `
+    <div class="card" style="margin-bottom:12px;border-left:4px solid var(--red);">
+      <div class="card-header"><div class="card-title">⚠️ Missing — ${missing.length} 筆（${noThumbCount} 缺圖 / ${noSizeCount} 缺規格）</div></div>
+      <div class="card-body" style="padding:0;overflow-x:auto;">
+        <table class="phases">
+          <thead><tr><th>Zone</th><th>Item</th><th>缺什麼</th></tr></thead>
+          <tbody>
+            ${missing.map(m => `
+              <tr>
+                <td>${escapeHtml(m.zone)}</td>
+                <td>${escapeHtml(m.item)}</td>
+                <td>${[m.noThumb ? '缺圖' : '', m.noSize ? '缺規格 size' : ''].filter(Boolean).join(' + ')}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    </div>`;
+}
+
 function renderGraphicsWith(list){
   const el = document.getElementById('graphics-list');
   if(!el) return;
@@ -1368,6 +1451,8 @@ function renderGraphicsWith(list){
       </div>
     </details>
   `).join('');
+  updateZoneProgressBars();
+  renderGraphicsMissing();
 }
 
 function setGraphicStatus(sel){
@@ -2016,6 +2101,64 @@ function setupZoneDrag(){
   });
 }
 
+function buildSearchIndex() {
+  const index = [];
+  const zoneMap = {
+    A: 'Supplier Block A', B: 'Supplier Block B', C: 'Supplier Block C',
+    D: 'Supplier Block D', E: 'Supplier Block E',
+    F: 'Supplier Non-A200 — Block F', G: 'Supplier Non-A200 — Block G',
+  };
+  Object.entries(SUPPLIER_EN).forEach(([code, name]) => {
+    const prefix = code.split('-')[0].toUpperCase();
+    const zone = zoneMap[prefix] || '';
+    index.push({ label: `${code} ${name}`, type: '攤位', zone, searchText: `${code} ${name}`.toLowerCase() });
+  });
+  (graphicsList || []).forEach(g => {
+    (g.items || []).forEach(it => {
+      index.push({ label: it.item, type: '圖檔', zone: g.zone, searchText: it.item.toLowerCase() });
+    });
+  });
+  return index;
+}
+
+function setupSearch() {
+  const input = document.getElementById('global-search');
+  const dropdown = document.getElementById('search-dropdown');
+  if (!input || !dropdown) return;
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    if (!q) { dropdown.classList.remove('open'); return; }
+    const results = buildSearchIndex().filter(r => r.searchText.includes(q)).slice(0, 12);
+    dropdown.innerHTML = results.length
+      ? results.map(r => `<div class="search-item" data-zone="${escapeHtml(r.zone)}"><span>${escapeHtml(r.label)}</span><span class="si-type">${r.type}</span></div>`).join('')
+      : '<div class="search-empty">沒有找到「' + escapeHtml(input.value) + '」</div>';
+    dropdown.classList.add('open');
+  });
+  dropdown.addEventListener('click', (e) => {
+    const item = e.target.closest('.search-item');
+    if (!item) return;
+    const zone = item.getAttribute('data-zone');
+    dropdown.classList.remove('open');
+    input.value = '';
+    location.hash = '#graphics';
+    setTimeout(() => {
+      document.querySelectorAll('.graphic-card').forEach(card => {
+        const t = card.querySelector('.card-title');
+        if (t && t.textContent.includes(zone)) {
+          card.open = true;
+          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }, 120);
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-wrap')) dropdown.classList.remove('open');
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') dropdown.classList.remove('open');
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   loadSiteData();
   initFirebase();
@@ -2026,5 +2169,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setupModal();
     setupZoneModal();
     setupZoneDrag();
+    setupSearch();
   });
 });
