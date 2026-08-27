@@ -369,9 +369,9 @@ GRAPHICS: [
     { item: 'NG-MEET-FRT', size: '2966×2996mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-meet-frt.jpg' },
     { item: 'NG-MEET-BK', size: '2966×2996mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-meet-bk.jpg' },
     { item: 'NG-MEET-CNTR-FRT', size: '1485×1000mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-meet-cntr-frt.jpg' },
-    { item: 'NG-SHAPE-1', size: '370×365mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-shape-1.jpg' },
-    { item: 'NG-SHAPE-2', size: '591×573mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-shape-2.jpg' },
-    { item: 'NG-SHAPE-3', size: '570×562mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-shape-3.jpg' },
+    { item: 'NG-SHAPE-1', size: '365×365mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-shape-1.jpg' },
+    { item: 'NG-SHAPE-2', size: '573×573mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-shape-2.jpg' },
+    { item: 'NG-SHAPE-3', size: '562×562mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-shape-3.jpg' },
     { item: 'NG-FLOOR', size: '7000×7000mm', material: 'Floor Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-floor.jpg' },
     { item: 'NG-GAME-CNTR-LOGO', size: '840×100mm', material: 'Vinyl', qty: 2, status: 'pending', thumb: 'assets/graphics/ng-game-cntr-logo.jpg' },
     { item: 'NG-GAME-ARROW', size: '80×2700mm', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-game-arrow.jpg' },
@@ -700,7 +700,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 140;
+const CONTENT_VERSION = 141;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
