@@ -275,36 +275,6 @@ PHASES: [
   { phase: 'Dismantle', dates: 'Sep 11', duration: '1 day', status: 'notstarted', statusLabel: 'Not started', notes: '' },
 ],
 
-OPEN_ITEMS: [
-  { owner: 'Nickie', urgent: false, text: 'UED client wants to visit warehouse to test their products — printer + thermal transfer printer will be shipped to us. Timing TBD (client lands 9/4, may test 9/5 or weekend; Monday not possible). Coordinate with Tony (Youngs).' },
-  { owner: 'Calvin - AMG / Jose / Brianna', urgent: false, text: 'Third-party products via Youngs — Youngs will have third parties bring their products in, so recommend Youngs charge them material handling. Need to clarify scope + whether we need a marshaling yard. Check with Richard where to store empties. Also create a shipping label + shipping instructions for Youngs to give to exhibitors.' },
-  { owner: 'Calvin', urgent: false, text: 'Quote — remaining zones. First quote sent Aug 1 for zones with designs received. Still need to quote Keynote, Match Meeting, and Next-Gen once their designs land + any Youngs add-ons (pop-ups, extra counters).' },
-  { owner: 'Chris', urgent: false, text: 'UED Booth reuse — confirmed. Booth ships to San Francisco after CoCreate for reuse at a follow-up event — Plug and Play, Sunnyvale CA, Sep 13 2026, 2:30–6pm PT, same-day load-in/teardown. Need a separate quote for the shipping + reuse.' },
-],
-
-DONE_ITEMS: [
-  { owner: 'Nickie · Done', text: 'Confirm show dates + scope with Marshal' },
-  { owner: 'Marshal · Done', text: 'Design brief V1 received (Jul 10)' },
-  { owner: 'Calvin · Done', text: 'AMG COI coverage levels for LACC. Must confirm policy covers: $1M CGL / $2M aggregate / $2M umbrella / $1M workers comp / $1M auto. Additional insured: AEG Management LACC LLC, City of LA, ASM Global Parent Inc.' },
-  { owner: 'Youngs · Done', text: 'LACC venue license status. GSC application cannot be submitted until LACC licenses the event. Current status unknown.' },
-],
-
-RISKS: {
-  high: [
-    { title: 'Union labor documentation deadline already breached', body: 'The 90-day rule required union labor documentation at LACC by June 8. That date has passed — venue license and GSC application were not ready in time. This needs immediate escalation with LACC to determine whether an exception or expedited path exists; it cannot be fixed by rescheduling.' },
-    { title: 'Production schedule compressed from ~8 weeks to ~5', body: 'Full design scope wasn\'t confirmed until Jul 19 — about 10 weeks later than originally planned. Engineering, quote approval, and fabrication now have to happen back-to-back-to-back between now and the Sep 7 install, with no slack for revisions or delays.' },
-    { title: 'GSC Application — now filing', body: 'Venue license received Aug 7. AMG now applying for GSC status at LACC. Jose is handling the application; 楊思 tracking LACC deadlines. Approval timeline still TBD, but submission unblocked.' },
-    { title: 'Hanging banners require LACC-authorized rigger', body: 'Chongqing Pavilion (square, double-sided) and LA City Pavilion (circle, double-sided) both require ceiling-hung banners. Rigging is outside AMG\'s GSC scope — must engage separate LACC-authorized rigger. Only ONE rigger contractor allowed per event. Must be named on GSC application.' },
-    { title: 'Next-Gen scope received Aug 11', body: '7-page scope document. AMG + JT + Youngs split. Under engineering review — can now proceed with drawings and quote.' },
-  ],
-  medium: [
-    { title: 'Scale — 70+ supplier/sponsor booths', body: 'This is a fundamentally different scope from CoCreate 2025 ($475k, single-zone build). CoCreate 2026 includes 100+ individual booth builds across multiple pavilions, requiring significant I&D labor and crew coordination. Crew blackout Sep 9–11 (show + dismantle) is already fixed.' },
-    { title: 'HVAC cost during install/dismantle', body: 'LACC charges $325/hr per hall section during install (Sep 7–8) and dismantle (Sep 11). Must be in Youngs\' budget — not in any quote yet.' },
-    { title: 'Breakout Session stage height', body: 'Two Breakout Session stages with wooden platform. If height exceeds 30 inches, LACC requires wet-stamped engineering plans + City of LA Building Safety inspection. Confirm dimensions with design team.' },
-    { title: 'Covered structures (fire code)', body: 'Any enclosed/covered zone exceeding 750 sqft requires Automatic Fire Sprinkler System (AFSS). Review all zone designs with canopy/ceiling elements against this limit.' },
-  ],
-},
-
 ZONES: [
   { name: 'Registration', owner: 'Ari', status: 'Approved', img: 'registration-v2-2', renders: ['registration-0825-2'], drawings: ['registration-dwg-1', 'registration-dwg-2'], scope: 'AMG provide registration backdrop, front and back graphic.column graphics', flag: 'Lobby area',
     req: ['2× Std Door Panel — White Formica (990×2413×100)', '23× Std Trainel — Raw Wood (990×2413×100)', '12× Std LED arm light', '1× BO fabric — back wall front (REG-BK-WALL-FRT, 9896×2409, 4/0)', '1× BO fabric — back wall back (REG-BK-WALL-BK, 9896×2409, 4/0)', '1× Curved PVC column cover w/ Velcro (COLUMN-COVER, 4/0)', 'RX-101 fabric channel — 164 ft', 'From client (Youngs): 6× 8ft table cloth, 7× stanchion sign support, 28× stanchions'] },
@@ -730,7 +700,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 136;
+const CONTENT_VERSION = 137;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
@@ -941,11 +911,6 @@ function renderStatCards(){
       <div class="stat-sub"><span class="stat-dot" style="background:var(--red)"></span>${nextDeadline ? 'Next: ' + fmtDate(new Date(nextDeadline.date)) : 'All passed'}</div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">Open Items</div>
-      <div class="stat-value" style="color:var(--yellow)">${DATA.OPEN_ITEMS.length}</div>
-      <div class="stat-sub">${DATA.OPEN_ITEMS.filter(i => i.urgent).length} urgent</div>
-    </div>
-    <div class="stat-card">
       <div class="stat-label">GSC Application</div>
       <div class="stat-value" style="color:var(--orange); font-size:16px; padding-top:5px;">Pending</div>
       <div class="stat-sub">Awaiting venue license</div>
@@ -1011,29 +976,6 @@ function renderProgressWidget(){
       <div class="progress-bar"><div class="progress-fill" style="width:${p.pct}%;background:${p.color}"></div></div>
     </div>
   `).join('') + addBtn('Progress row', `addRow('PROGRESS',{label:'New row',pct:0,color:'var(--accent)'})`);
-}
-
-function renderTasksPreview(){
-  const el = document.getElementById('tasks-preview');
-  const doneHtml = DATA.DONE_ITEMS.map((d, i) => `
-    <div class="task-item">
-      <div class="task-check done" onclick="markItemOpen(${i})" title="Mark as open">✓</div>
-      <div class="task-info">
-        <div class="task-title done">${escapeHtml(d.text)}</div>
-        <div class="task-meta"><span class="task-assign" style="color:var(--green)">${escapeHtml(d.owner)}</span></div>
-      </div>
-    </div>
-  `).join('');
-  const openHtml = DATA.OPEN_ITEMS.slice(0, 3).map((i, idx) => `
-    <div class="task-item">
-      <div class="task-check" onclick="markItemDone(${idx})" title="Mark as done"></div>
-      <div class="task-info">
-        <div class="task-title">${escapeHtml(i.text.split('.')[0])}</div>
-        <div class="task-meta">${priorityDot(i.urgent)}<span class="task-assign">${escapeHtml(i.owner)} · ${i.urgent ? 'Critical' : 'Open'}</span></div>
-      </div>
-    </div>
-  `).join('');
-  el.innerHTML = doneHtml + openHtml;
 }
 
 function zoneThumbHtml(z){
@@ -1171,85 +1113,6 @@ function renderPhases(){
     </tr>
   `).join('');
   document.getElementById('phases-add-row').innerHTML = addBtn('Phase', `addRow('PHASES',{phase:'New phase',dates:'TBD',duration:'—',status:'notstarted',statusLabel:'Not started',notes:''})`);
-}
-
-function markItemDone(idx){
-  const item = DATA.OPEN_ITEMS[idx];
-  DATA.OPEN_ITEMS.splice(idx, 1);
-  DATA.DONE_ITEMS.push({ owner: item.owner + ' · Done', text: item.text });
-  saveSiteData();
-  renderAll();
-}
-function markItemOpen(idx){
-  const item = DATA.DONE_ITEMS[idx];
-  DATA.DONE_ITEMS.splice(idx, 1);
-  const owner = item.owner.replace(/\s*·\s*Done$/i, '').trim();
-  DATA.OPEN_ITEMS.push({ owner: owner || 'TBD', urgent: false, text: item.text });
-  saveSiteData();
-  renderAll();
-}
-function addOpenItemQuick(){
-  const ownerInput = document.getElementById('quick-add-owner');
-  const textInput = document.getElementById('quick-add-text');
-  const text = textInput.value.trim();
-  if(!text) return;
-  DATA.OPEN_ITEMS.push({ owner: ownerInput.value.trim() || 'TBD', urgent: false, text });
-  saveSiteData();
-  renderAll();
-  const freshText = document.getElementById('quick-add-text');
-  if(freshText) freshText.focus();
-}
-
-function renderOpenItemsFull(){
-  const doneHtml = DATA.DONE_ITEMS.map((d, i) => `
-    <div class="task-item">
-      <div class="task-check done" onclick="markItemOpen(${i})" title="Mark as open">✓</div>
-      <div class="task-info">
-        <div class="task-title done"${editAttrs('DONE_ITEMS', i, 'text')}>${escapeHtml(d.text)}</div>
-        <div class="task-meta"><span class="task-assign" style="color:var(--green)"${editAttrs('DONE_ITEMS', i, 'owner')}>${escapeHtml(d.owner)}</span>${editBtns('DONE_ITEMS', i)}</div>
-      </div>
-    </div>
-  `).join('') + addBtn('Done Item', `addRow('DONE_ITEMS',{owner:'TBD · Done',text:'New completed item'})`);
-
-  const openHtml = DATA.OPEN_ITEMS.map((i, idx) => `
-    <div class="task-item">
-      <div class="task-check" onclick="markItemDone(${idx})" title="Mark as done"></div>
-      <div class="task-info">
-        <div class="task-title"${editAttrs('OPEN_ITEMS', idx, 'text')}>${escapeHtml(i.text)}</div>
-        <div class="task-meta">
-          ${EDIT_MODE ? `<input type="checkbox" ${i.urgent ? 'checked' : ''} onchange="saveFieldBool('OPEN_ITEMS',${idx},'urgent',this)" title="Urgent">` : priorityDot(i.urgent)}
-          <span class="task-assign"${editAttrs('OPEN_ITEMS', idx, 'owner')}>${escapeHtml(i.owner)}</span> · ${i.urgent ? 'Critical' : 'Open'}
-          ${editBtns('OPEN_ITEMS', idx)}
-        </div>
-      </div>
-    </div>
-  `).join('');
-
-  const quickAdd = `
-    <div class="quick-add-item">
-      <input type="text" id="quick-add-owner" placeholder="Owner" class="quick-add-owner">
-      <input type="text" id="quick-add-text" placeholder="Add an open item..." class="quick-add-text" onkeydown="if(event.key==='Enter') addOpenItemQuick()">
-      <button onclick="addOpenItemQuick()">+ Add</button>
-    </div>`;
-
-  document.getElementById('open-items-list').innerHTML = '<div class="edit-section-label edit-only">Done</div>' + doneHtml + '<div class="edit-section-label edit-only">Open</div>' + openHtml + quickAdd;
-}
-
-function renderRisk(){
-  document.getElementById('risk-high').innerHTML = DATA.RISKS.high.map((r, i) => `
-    <div class="risk-card">
-      <span class="risk-title"${editAttrs('RISKS.high', i, 'title')}>${escapeHtml(r.title)}</span>
-      <p${editAttrs('RISKS.high', i, 'body')}>${escapeHtml(r.body)}</p>
-      ${editBtns('RISKS.high', i)}
-    </div>
-  `).join('') + addBtn('High Risk', `addRow('RISKS.high',{title:'New risk',body:'Describe the risk...'})`);
-  document.getElementById('risk-medium').innerHTML = DATA.RISKS.medium.map((r, i) => `
-    <div class="risk-card medium">
-      <span class="risk-title"${editAttrs('RISKS.medium', i, 'title')}>${escapeHtml(r.title)}</span>
-      <p${editAttrs('RISKS.medium', i, 'body')}>${escapeHtml(r.body)}</p>
-      ${editBtns('RISKS.medium', i)}
-    </div>
-  `).join('') + addBtn('Medium Risk', `addRow('RISKS.medium',{title:'New risk',body:'Describe the risk...'})`);
 }
 
 const ZONE_STATUS_OPTIONS = ['TBD', 'In Review', 'Quoted', 'Approved', 'In Production', 'Complete', 'No quote needed'];
@@ -1540,22 +1403,16 @@ function renderAll(){
   renderTimelinePreview();
   renderDeadlinesWidget();
   renderProgressWidget();
-  renderTasksPreview();
   renderZonesPreview();
   renderTeamWidget();
   renderGantt();
   renderPhases();
-  renderOpenItemsFull();
-  renderRisk();
   renderZonesFull();
   renderGraphics();
 
   const allUpdates = getAllUpdates();
   renderActivityPreview(allUpdates);
   renderUpdatesFull(allUpdates);
-
-  document.getElementById('nav-badge-items').textContent = DATA.OPEN_ITEMS.filter(i => i.urgent).length;
-  document.getElementById('nav-badge-risk').textContent = DATA.RISKS.high.length;
 }
 
 // generic save-on-blur for contenteditable fields (quiet — no re-render, so focus isn't disturbed)
@@ -1578,9 +1435,6 @@ function setupNav(){
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  document.getElementById('btn-view-tasks').addEventListener('click', () => {
-    window.location.hash = '#open-items';
-  });
   document.getElementById('btn-edit-toggle').addEventListener('click', toggleEditMode);
   document.getElementById('btn-reset-content').addEventListener('click', resetSiteData);
 }

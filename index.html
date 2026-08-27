@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CoCreate 2026 — Project Hub</title>
-<link rel="stylesheet" href="styles.css?v=17">
+<link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
 
@@ -21,8 +21,6 @@
   <a class="nav-item" href="#phases"><span class="nav-icon">▤</span> Phases</a>
 
   <div class="nav-section-label">Project</div>
-  <a class="nav-item" href="#open-items"><span class="nav-icon">✓</span> Open Items <span class="nav-badge" id="nav-badge-items"></span></a>
-  <a class="nav-item" href="#risk"><span class="nav-icon">⚑</span> Risk <span class="nav-badge" id="nav-badge-risk"></span></a>
   <a class="nav-item" href="#zones"><span class="nav-icon">⬡</span> Zones</a>
   <a class="nav-item" href="#graphics"><span class="nav-icon">🖼</span> Graphics</a>
 
@@ -55,7 +53,6 @@
       <button class="btn btn-ghost edit-only" id="btn-reset-content" title="Reset all content back to defaults">↺ Reset</button>
       <button class="btn btn-ghost" id="btn-edit-toggle">✎ Edit Page</button>
       <button class="btn btn-ghost" id="btn-add-update">+ Add Update</button>
-      <button class="btn btn-primary" id="btn-view-tasks">+ View Tasks</button>
     </div>
   </div>
 
@@ -75,7 +72,7 @@
         <div class="card">
           <div class="card-header">
             <div class="card-title">⚑ Upcoming Deadlines</div>
-            <a class="card-action" href="#risk">View all</a>
+            <a class="card-action" href="#schedule">View all</a>
           </div>
           <div class="card-body" id="deadlines-widget" style="padding-top:8px;padding-bottom:8px;"></div>
         </div>
@@ -88,14 +85,6 @@
     </div>
 
     <div class="three-col">
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title">✓ Open Tasks</div>
-          <a class="card-action" href="#open-items">All tasks →</a>
-        </div>
-        <div class="card-body" id="tasks-preview" style="padding-top:4px;padding-bottom:4px;"></div>
-      </div>
-
       <div class="card">
         <div class="card-header">
           <div class="card-title">⬡ Design Zones</div>
@@ -144,24 +133,6 @@
       <tbody id="phases-body"></tbody>
     </table>
     <div id="phases-add-row"></div>
-  </section>
-
-  <section id="open-items">
-    <div class="section-heading">Open Items</div>
-    <p class="section-sub">Who owes what. Bold / red priority = most urgent.</p>
-    <div class="card"><div class="card-body open-items-full" id="open-items-list"></div></div>
-  </section>
-
-  <section id="risk">
-    <div class="section-heading">Risk</div>
-    <div class="risk-group">
-      <h3>🔴 High Risk</h3>
-      <div id="risk-high"></div>
-    </div>
-    <div class="risk-group">
-      <h3>🟡 Medium Risk</h3>
-      <div id="risk-medium"></div>
-    </div>
   </section>
 
   <section id="zones">
@@ -263,7 +234,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<script src="script.js?v=293&t=20260826"></script>
+<script src="script.js?v=294&t=20260826"></script>
 <script>
 var FP_PAGES = ['assets/floor-plan-zone.jpg', 'assets/floor-plan-detail.jpg', 'assets/sponsor-power-plan.jpg'];
 var FP_CAPTIONS = ['Full Floor Plan (全場平面圖)', 'Floor Plan Detail (平面圖明細)', 'Sponsor Power Plan (Sponsor 電力配置)'];
