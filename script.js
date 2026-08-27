@@ -315,7 +315,7 @@ ZONES: [
   { name: 'Match Meeting', owner: 'Chris', status: 'In Review', img: 'match-meeting-render-1', renders: ['match-meeting-render-1', 'match-meeting-render-2'], scope: 'YOUNGS X JOHNATHAN — Furniture by Youngs', req: [] },
   { name: 'Mini Panel', owner: 'Ari', status: 'No quote needed', img: 'mini-panel-render-1', renders: ['mini-panel-render-1', 'mini-panel-render-2'], scope: 'YOUNGS X JOHNATHAN — Mini Panel ×2, LED 4×2.5m, Banner ×2 each, Stage, Furniture by Youngs', flag: 'YOUNGS X JOHNATHAN', req: [] },
   { name: 'Core Display', owner: 'Ari', status: 'No quote needed', img: 'core-display-v2-2', renders: ['core-display-0825-2'], scope: 'Youngs provide', flag: 'YOUNGS', req: [] },
-  { name: 'Next-Gen Sourcing + AI', owner: 'Ari', status: 'Approved', img: 'nextgen-render-1', renders: ['nextgen-render-1', 'nextgen-render-2', 'nextgen-render-3', 'nextgen-render-4', 'nextgen-render-5', 'nextgen-render-6', 'nextgen-render-7'], scope: 'AMG: Hanging Banners, Std+Custom Wood Panels (double-sided graphic), Floor Vinyl ×3, Custom Wood Display ×4, PVC Cut-outs ×3, Banners ×2, Cut-outs ×5, Tilted Wood Platform, 55" TV ×13, 100" TV ×1, Std Counter (9× 990 Black + 5× 495 Black + 1× 990 White + 1× 495 White + 2× 495 Orange), Tables & Stools, Custom Installation. JT: All Mac. All else by Youngs.', flag: 'Structure confirmed 8/17 — AMG+JT+Youngs',
+  { name: 'Next-Gen Sourcing + AI', owner: 'Ari', status: 'Approved', img: 'nextgen-render-1', renders: ['nextgen-render-1', 'nextgen-render-2', 'nextgen-render-3', 'nextgen-render-4', 'nextgen-render-5', 'nextgen-render-6', 'nextgen-render-7', 'nextgen-render-8', 'nextgen-render-9', 'nextgen-render-10', 'nextgen-render-11', 'nextgen-render-12', 'nextgen-render-13', 'nextgen-render-14', 'nextgen-render-15', 'nextgen-render-16', 'nextgen-render-17', 'nextgen-render-18', 'nextgen-render-19', 'nextgen-render-20', 'nextgen-render-21', 'nextgen-render-22'], scope: 'AMG: Hanging Banners, Std+Custom Wood Panels (double-sided graphic), Floor Vinyl ×3, Custom Wood Display ×4, PVC Cut-outs ×3, Banners ×2, Cut-outs ×5, Tilted Wood Platform, 55" TV ×13, 100" TV ×1, Std Counter (9× 990 Black + 5× 495 Black + 1× 990 White + 1× 495 White + 2× 495 Orange), Tables & Stools, Custom Installation. JT: All Mac. All else by Youngs.', flag: 'Structure confirmed 8/17 — AMG+JT+Youngs',
     req: ['9× Std Counter — 990W×1000H×495D, Formica Black', '5× Std Counter — 495W×1000H×495D, Formica Black', '1× Std Counter — 990W×1000H×495D, Formica White', '1× Std Counter — 495W×1000H×495D, Formica White', '2× Std Counter — 495W×1000H×495D, Formica Orange', '13× 55" TV wall mount', '1× 100" TV wall mount', '1× Gray Carpet — 24000 (W)×12000 (L), 3168 sqft'] },
   { name: 'Buyer Story', owner: 'Chris', status: 'Approved', img: 'buyer-story-v2-2', renders: ['buyer-story-0825-2', 'buyer-story-0825-3', 'buyer-story-0825-4', 'buyer-story-0825-5', 'buyer-story-0825-6'], scope: 'Youngs provide structure. AMG build + 1× 42" TV (portrait) + stand + Media Player.', flag: '⚠ Youngs structure · AMG build + TV',
     req: ['Structure (by Youngs)', 'AMG build', '1× 42" TV (portrait) + stand + Media Player'] },
@@ -731,7 +731,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 115;
+const CONTENT_VERSION = 116;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
