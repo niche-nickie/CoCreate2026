@@ -261,7 +261,7 @@ PHASES: [
   { phase: 'Full scope confirmed (V1 complete)', dates: 'Jul 19, 2026', duration: '—', status: 'done', statusLabel: 'Done', notes: '20 zones, 100+ booths, 70+ TVs — Next-Gen zone still TBD' },
   { phase: 'Venue license (Youngs → LACC)', dates: 'Aug 7, 2026', duration: '—', status: 'done', statusLabel: 'Received ✅', notes: 'Venue license received Aug 7. Event manager assigned.' },
   { phase: 'Union labor documentation', dates: 'Was due Jun 8', duration: '—', status: 'hard', statusLabel: 'Breached', notes: '90-day rule missed — venue license/GSC application weren\'t ready in time. Needs LACC escalation.' },
-  { phase: 'GSC Application submitted', dates: 'Starting Aug 7', duration: '—', status: 'progress', statusLabel: 'In progress', notes: 'Venue license received — AMG now applying. Jose leading + 楊思 tracking LACC deadlines.' },
+  { phase: 'GSC Application submitted', dates: 'Starting Aug 7', duration: '—', status: 'progress', statusLabel: 'In progress', notes: 'Venue license received — AMG now applying. Jose leading + Yang Si tracking LACC deadlines.' },
   { phase: 'AMG engineering + production drawings (full scope)', dates: 'Jul 20 → Aug 10', duration: '~3 weeks', status: 'progress', statusLabel: 'In progress', notes: 'Compressed — full scope only confirmed Jul 19, ~10 weeks later than originally planned' },
   { phase: 'AMG quote issued + approved', dates: 'First quote Aug 1', duration: '—', status: 'progress', statusLabel: 'First quote sent', notes: 'First quote sent Aug 1 for zones with designs received; Keynote/Match/Next-Gen + add-ons still to quote. Client approval + 75% deposit next.' },
   { phase: 'Youngs design confirmations (gate fabrication)', dates: '80% Aug 7 · booths/graphics Aug 17 · pop-ups Aug 26', duration: '—', status: 'unconfirmed', statusLabel: 'Deadlines set', notes: 'Deadlines issued to Youngs — each confirm releases its fabrication tranche' },
@@ -294,7 +294,7 @@ ZONES: [
     req: ['8× Wooden backdrop (4×2.5mH)', '8× 42" TV + stand + Media Player', '8× Std Counter — 990W×1000H×495D, Formica White', '9× Grey carpet (≈792 sqft)', '16× LED arm light', '3× Metal Panel Footing', '— AMG Shelf —', '27× 700mm shelf, Formica (WHT) (23× @300D + 4× @400D A-08)', '4× 900mm shelf, Formica (WHT) (4× @400D A-02)', '3× 1500mm shelf, Formica (WHT)', '73× 450mm shelf, Formica (WHT)', '213× 10" Metal L-Bracket (WHT)', '— YOUNGS —', '8× Furniture', '2× Wire Grid 550×1100×50 (A-04 only)'], tiers: ZONE_A_TIER, units: makeTieredUnits('zone-a', ZONE_A_TIER, i => BOOTH_LABELS.a[i-1], n => [`zone-a-render-${n*2}`, `zone-a-render-${n*2-1}`]) },
   { name: 'Supplier A200 — Block B', owner: 'Jin', status: 'Approved', img: 'zone-b-map-0825', renders: ['zone-b-map-0825', 'block-b-graphic-final-1', 'block-b-graphic-final-2'], drawings: [], scope: 'B-01 ~ B-07. 5×8m² + 1×12m² + 1×16m². Wooden backdrop (4×2.5mH) + 42" TV + stand + Media Player + Std Counter + Grey carpet. A200 standard build.', flag: '7 booths · 7 std counters · 5×8 + 12 + 16m²',
     req: ['7× Wooden backdrop (4×2.5mH)', '7× 42" TV + stand + Media Player', '7× Std Counter — 990W×1000H×495D, Formica White', '7× Grey carpet (≈748 sqft)', '14× LED arm light', '4× Metal Panel Footing', '— YOUNGS —', '7× Furniture'], tiers: ZONE_B_TIER, units: makeTieredUnits('zone-b', ZONE_B_TIER, i => BOOTH_LABELS.b[i-1], n => [`zone-b-render-${n*2}`, `zone-b-render-${n*2-1}`]) },
-  { name: 'Supplier A200 — Block C', owner: 'Chris', status: 'Approved', img: 'zone-c-map-0825', renders: ['zone-c-map-0825', 'block-c-graphic-final-1', 'block-c-graphic-final-2', 'block-c-graphic-final-3', 'block-c-graphic-final-4'], drawings: [], scope: 'C-01 ~ C-14. 13×8m² + 1×14m² + 18m² 額外地毯 (C-13). Wooden backdrop (4×2.5mH) + 42" TV + stand + Media Player + Std Counter + Grey carpet + AMG provide shelf & L-bracket.', flag: '14 booths · 14 std counters · AMG shelf',
+  { name: 'Supplier A200 — Block C', owner: 'Chris', status: 'Approved', img: 'zone-c-map-0825', renders: ['zone-c-map-0825', 'block-c-graphic-final-1', 'block-c-graphic-final-2', 'block-c-graphic-final-3', 'block-c-graphic-final-4'], drawings: [], scope: 'C-01 ~ C-14. 13×8m² + 1×14m² + 18m² extra carpet (C-13). Wooden backdrop (4×2.5mH) + 42" TV + stand + Media Player + Std Counter + Grey carpet + AMG provide shelf & L-bracket.', flag: '14 booths · 14 std counters · AMG shelf',
     req: ['14× Wooden backdrop (4×2.5mH)', '14× 42" TV + stand + Media Player', '14× Std Counter — 990W×1000H×495D, Formica White', '14× Grey carpet (≈1496 sqft)', '30× LED arm light', '6× Metal Panel Footing', '— AMG Shelf —', '20× 700mm shelf, Formica (WHT)', '12× 450mm shelf, Formica (WHT)', '16× 1500mm shelf, Formica (WHT)', '5× 1700mm shelf, Formica (WHT)', '1× Display Shelving — 1452×1700×440, Curved, Formica (WHT) (C-09)', '132× 10" Metal L-Bracket (WHT)', '— YOUNGS —', '14× Furniture'], tiers: ZONE_C_TIER, units: makeTieredUnits('zone-c', ZONE_C_TIER, i => BOOTH_LABELS.c[i-1], n => [`zone-c-render-${n*2}`, `zone-c-render-${n*2-1}`]) },
   { name: 'Supplier A200 — Block D', owner: 'Chris', status: 'Approved', img: 'zone-d-map-0825', renders: ['zone-d-map-0825', 'block-d-graphic-final-1', 'block-d-graphic-final-2'], drawings: [], scope: 'D-01 ~ D-10. 1×14m² + 8×8m² + 1×10m² = 88m². Wooden backdrop + TV + Std Counter + Grey carpet + AMG shelf & L-bracket.', flag: '10 booths · 10 std counters · AMG shelf',
     req: ['10× Wooden backdrop (4×2.5mH)', '10× 42" TV + stand + Media Player', '10× Std Counter — 990W×1000H×495D, Formica White', '10× Grey carpet (≈968 sqft)', '22× LED arm light', '3× Metal Panel Footing', '— AMG Shelf —', '3× 450mm shelf, Formica (WHT)', '9× 700mm shelf, Formica (WHT)', '7× 900mm shelf, Formica (WHT)', '3× 1000mm shelf, Formica (WHT)', '6× 1350mm shelf, Formica (WHT)', '8× 1500mm shelf, Formica (WHT)', '2× 1800mm shelf, Formica (WHT)', '2× 1400mm shelf, Formica (WHT)', '1× 1950mm shelf, Formica (WHT)', '1× Display Shelving — 1452×1700×440, Curved, Formica (WHT) (D-01)', '106× 10" Metal L-Bracket (WHT)', '— YOUNGS —', '10× Furniture'], tiers: ZONE_D_TIER, units: makeTieredUnits('zone-d', ZONE_D_TIER, i => BOOTH_LABELS.d[i-1], n => [`zone-d-render-${n*2}`, `zone-d-render-${n*2-1}`]) },
@@ -306,14 +306,14 @@ ZONES: [
     req: ['11× Std Counter — 990W×1000H×495D, Formica White, Lockable Door+Shelf', '11× 42" TV + Media Player + HDMI Cable + Floor Stand', '11× Grey carpet (≈1100 sqft)', '26× LED Arm Light', '22× Popup Bracket for PVC Graphic', '— YOUNGS —', 'Pop Up', 'Displays and shelvings'], tiers: ZONE_G_TIER, units: makeTieredUnits('zone-g', ZONE_G_TIER, i => BOOTH_LABELS.g[i-1], n => [`zone-g-render-${n*2}`, `zone-g-render-${n*2-1}`]) },
   { name: 'Chongqing Pavilion', owner: 'Chris', status: 'Approved', img: 'chongqing-map', renders: ['chongqing-0825-2', 'chongqing-0825-3', 'chongqing-0825-4'], drawings: ['chongqing-dwg-3'], scope: 'AMG shop drawings A.2–A.4 (JP, RENT). 27m² (3× 9sqm). Central: LED Lighting Structure 1200mm dia×3450mm H + 27× LED strips + 3× Display Stands (BLK Formica). Perimeter: 3× Std No Skin Panels 990×2413 + 42" TV + stand + Media Player wall mount + Counter. Floor Trim 260ft.', flag: '3× 9sqm booths',
     req: ['3× Std No Skin Panel — 3000W×2413H×500D', '3× Std Counter — 990W×1000H×495D, Formica Black', '3× 42" TV wall mount + Media Player', '3× Fabric Graphic — 2966×2409mm, RX-101 Channel 27ft', '6× LED arm light', '3× 9sqm Booths, Black+Orange Carpet'], tiers: ZONE_CQ_TIER, units: makeTieredUnits('cq', ZONE_CQ_TIER, i => BOOTH_LABELS.cq[i-1]) },
-  { name: 'Sponsor Booths 16+1', owner: 'Jin', status: 'Approved', img: 'sponsor-booths-map-0825', renders: ['sponsor-booths-map-0825'], drawings: [], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 17 booths (P-01 ~ P-17): 8×8ft ×10, 10×10ft ×3, 10×15ft ×2, 10×20ft ×1 (P-14 空地, AMG 不提供).', flag: '16+1 booths · 1× 空地',
+  { name: 'Sponsor Booths 16+1', owner: 'Jin', status: 'Approved', img: 'sponsor-booths-map-0825', renders: ['sponsor-booths-map-0825'], drawings: [], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 17 booths (P-01 ~ P-17): 8×8ft ×10, 10×10ft ×3, 10×15ft ×2, 10×20ft ×1 (P-14 empty lot, not provided by AMG).', flag: '16+1 booths · 1× empty lot',
     req: ['15× Std Counter — 990W×1000H×495D, Formica White', '1× Custom Counter — 1800W×500H×1000D, wooden joinery (Premier)', '5× 42" TV + stand + Media Player', '1× 42" TV wall mount + Media Player (Premier)', '16× Grey carpet (≈1440 sqft)', '1× L-shaped wall structure (Premier)', '2× Full-height wall graphic, front only (Premier)', '51× LED arm light', '— YOUNGS —', 'Pop-up display', 'Furniture + fabric display'],
     tiers: SPONSOR_TIERS,
     units: makeTieredUnits('sponsor', SPONSOR_TIERS) },
-  { name: 'National Pavilion', owner: 'Iris', status: 'In Review', img: 'national-gb-map', renders: ['national-gb-map'], drawings: [], scope: 'GB-01 ~ GB-44 (42 booths, GB-25 & GB-29 退出). AMG provide carpet + LED arm light only. 3 groups: GB-US×19, GB-Pakistan×9, GB-Others×14.', flag: '42 booths · carpet + lights only',
+  { name: 'National Pavilion', owner: 'Iris', status: 'In Review', img: 'national-gb-map', renders: ['national-gb-map'], drawings: [], scope: 'GB-01 ~ GB-44 (42 booths, GB-25 & GB-29 withdrew). AMG provide carpet + LED arm light only. 3 groups: GB-US×19, GB-Pakistan×9, GB-Others×14.', flag: '42 booths · carpet + lights only',
     req: ['42× Carpet (≈1890 sqft)', '84× LED arm light'], tiers: ZONE_GB_TIER, units: makeTieredUnits('gb', ZONE_GB_TIER, i => BOOTH_LABELS.gb[i-1]) },
-  { name: 'Sourcing Hub', owner: 'Iris', status: 'Approved', img: 'sourcing-hub-map', renders: ['sourcing-hub-0825-2', 'sourcing-hub-0825-3'], drawings: ['sourcing-hub-dwg-1', 'sourcing-hub-dwg-2', 'sourcing-hub-dwg-3'], scope: 'AMG shop drawings A.2–A.7 (JP, RENT). 64m² (8×8m). Display Sign 1000×2000mm. 42" TV + stand + Media Player. 4 centers: A 汕頭 (Stair Display), B 永康 (Display Stand+Acrylic), C 鄭州 (5× Display Stands), D 廣州 (Curved Display Stand 2000×1300). PVC graphics + floor vinyl per booth.', flag: '4 sourcing centers (9m² each) inside 64m² space',
-    req: ['1× Display Sign — 1000W×2000H×300D, Formica White, Paint Orange, LED Strip', '8× LED arm light', '1× 42" TV + stand + Media Player + Media Player, Floor Stand', 'Booth A 汕頭: Three-Step Stair Display 1200W×900H×900D (WHT) + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth B 永康: Display Stand 1424W×1700H×412D (WHT+Wood+Acrylic) + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth C 鄭州: 5× Display Stands (1500×500 + 500×500 + 2× 500×800 + 500×1000) Formica WHT + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth D 廣州: Curved Display Stand 2000W×1300H×1000D Formica WHT + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl'] },
+  { name: 'Sourcing Hub', owner: 'Iris', status: 'Approved', img: 'sourcing-hub-map', renders: ['sourcing-hub-0825-2', 'sourcing-hub-0825-3'], drawings: ['sourcing-hub-dwg-1', 'sourcing-hub-dwg-2', 'sourcing-hub-dwg-3'], scope: 'AMG shop drawings A.2–A.7 (JP, RENT). 64m² (8×8m). Display Sign 1000×2000mm. 42" TV + stand + Media Player. 4 centers: A Shantou (Stair Display), B Yongkang (Display Stand+Acrylic), C Zhengzhou (5× Display Stands), D Guangzhou (Curved Display Stand 2000×1300). PVC graphics + floor vinyl per booth.', flag: '4 sourcing centers (9m² each) inside 64m² space',
+    req: ['1× Display Sign — 1000W×2000H×300D, Formica White, Paint Orange, LED Strip', '8× LED arm light', '1× 42" TV + stand + Media Player + Media Player, Floor Stand', 'Booth A Shantou: Three-Step Stair Display 1200W×900H×900D (WHT) + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth B Yongkang: Display Stand 1424W×1700H×412D (WHT+Wood+Acrylic) + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth C Zhengzhou: 5× Display Stands (1500×500 + 500×500 + 2× 500×800 + 500×1000) Formica WHT + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth D Guangzhou: Curved Display Stand 2000W×1300H×1000D Formica WHT + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl'] },
   { name: 'Podcast', owner: 'Iris', status: 'Approved', img: 'podcast-render-1', renders: ['podcast-0825-2'], drawings: ['podcast-dwg-1'], scope: '5.4×3.4m. Octanorm structure + clear acrylic panels + carpet. Client provides angle tables, chairs, On Air lightbox.', flag: 'OP1 spec A.13 · Client display items',
     req: ['1× Custom Octanorm Structure — 5400W×2423H×3588D', '4× Clear Acrylic #01 — 1208×2266×3mm, 1/8"', '3× Clear Acrylic #02 — 1029×2266×3mm, 1/8"', '1× Carpet — 5180×3368mm (≈192 sqft)', '4× Vinyl Graphic — 1208×898mm, 4/0 (PD-FRONT-GLASS)', '3× Vinyl Graphic — 1029×898mm, 4/0 (PD-LEFT-GLASS)', '— CLIENT —', '4× Angle Table', '1× On Air Lightbox', '6× Chair'] },
   { name: 'Creator Market (Muse)', owner: 'Iris', status: 'Approved', img: 'muse-scope-0822-1', renders: ['muse-scope-0822-1', 'muse-scope-0822-2', 'muse-scope-0822-3', 'muse-scope-0822-4', 'muse-scope-0822-5', 'muse-scope-0822-6', 'muse-scope-7', 'muse-scope-8'], drawings: ['muse-dwg-1', 'muse-dwg-2', 'muse-dwg-3', 'muse-dwg-4'], scope: 'Muse client design (revised 8/14) · Island + Sponsor. 1× Circular flooring 320sqm. 4× Custom wood frame. 3× PVC graphic. 6× Custom column. 1× Vinyl sticker.', flag: 'Structure confirmed 8/17 · 22 booths (12× 8sqm + 6× 16sqm + 4× 32sqm)',
@@ -335,7 +335,7 @@ TEAM: [
 PROGRESS: [
   { label: 'GSC Application', pct: 5, color: 'var(--orange)' },
   { label: 'Design Brief', pct: 90, color: 'var(--blue)' },
-  { label: 'Quote / 成控', pct: 40, color: 'var(--green)' },
+  { label: 'Quote / Cost Control', pct: 40, color: 'var(--green)' },
   { label: 'Production', pct: 0, color: 'var(--accent)' },
 ],
 
@@ -345,7 +345,7 @@ HARD_DEADLINES: [
   { title: 'Scaled Floor Diagrams → LACC', sub: '30-day rule · Fire Marshal approval', date: '2026-08-08' },
   { title: 'Youngs: Merchant booth confirm', sub: 'Supplier / exhibitor booth designs locked', date: '2026-08-17' },
   { title: 'Youngs: Graphics + hanging signs', sub: 'All artwork + hanging signs final', date: '2026-08-17' },
-  { title: 'Muse carpet drawing + color code → Nickie', sub: '8/19 發包地毯 + vinyl floor (Muse) — 圖 + 色號 8/18 前要給 Nickie', date: '2026-08-18' },
+  { title: 'Muse carpet drawing + color code → Nickie', sub: '8/19 carpet + vinyl floor (Muse) issued — drawing + color code due to Nickie by 8/18', date: '2026-08-18' },
   { title: 'Fire Permit Requests', sub: '21-day rule · LAFD', date: '2026-08-19' },
   { title: 'Electrical Requirement + Floor Plan', sub: 'LACC requirement', date: '2026-08-19' },
   { title: 'Youngs: Add-on pop-ups', sub: 'Any additional pop-up units final', date: '2026-08-26' },
@@ -700,9 +700,9 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 139;
+const CONTENT_VERSION = 140;
 
-// ---------- Firebase (graphics 多人同步) ----------
+// ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
   apiKey: "AIzaSyA_WfffoyU5_ESBmUiQ680_AmNsSNydmek",
   authDomain: "cocreate2026-62530.firebaseapp.com",
@@ -732,7 +732,7 @@ function initFirebase(){
   } catch(e) { console.warn('Firebase init failed:', e); }
 }
 
-// ---------- Zone checklist Firestore 多人同步 ----------
+// ---------- Zone checklist Firestore multi-user sync ----------
 let CHECKLIST_CACHE = {};
 let CHECKLIST_SYNC_TIMER = null;
 function checklistSyncToFirestore(state){
@@ -768,7 +768,7 @@ function loadChecklistFromFirestore(callback){
       };
     });
     if(Object.keys(state).length === 0){
-      // Firestore 尚無資料 → 用本機 localStorage 的既有勾選，並回傳一份到 Firestore 建立初始同步
+      // Firestore empty → use existing localStorage checkboxes, and write a copy back to Firestore to establish initial sync
       try{ CHECKLIST_CACHE = JSON.parse(localStorage.getItem('cocreate2026_checklist') || '{}'); }catch(e){ CHECKLIST_CACHE = {}; }
       if(Object.keys(CHECKLIST_CACHE).length > 0) checklistSyncToFirestore(CHECKLIST_CACHE);
     } else {
@@ -1181,19 +1181,19 @@ function renderZonesFull(){
   document.getElementById('zones-add-row').innerHTML = addBtn('Zone', `addRow('ZONES',{name:'New Zone',status:'TBD',scope:'TBD',flag:'',req:[]})`);
 }
 
-let graphicsList = []; // 當前顯示的 graphics 資料（Firestore 或 seed）
+let graphicsList = []; // current graphics data (Firestore or seed)
 
 function renderGraphics(){
   const el = document.getElementById('graphics-list');
   if(!el) return;
   if (!FB_DB) {
-    // 無 Firebase → 用 seed
+    // no Firebase → use seed
     graphicsList = DATA.GRAPHICS;
     renderGraphicsWith(graphicsList);
     return;
   }
-  // 先顯示 loading，等 Firestore 權威資料（避免先畫 seed 的 pending 閃現、
-  // 造成用戶在 Firestore 載入前改 status 卻沒寫回 Firestore → reload 又跳回 pending）
+  // Show loading first, wait for Firestore authoritative data (avoid flashing seed's pending state,
+  // which would let users change status before Firestore loads, then lose it on reload)
   el.innerHTML = '<p style="color:#999;padding:12px;">Loading graphics…</p>';
   FB_DB.collection(GRAPHICS_COLLECTION).orderBy('order').get().then(snap => {
     if (!snap.empty) {
@@ -1205,7 +1205,7 @@ function renderGraphics(){
       graphicsList = list;
       renderGraphicsWith(list);
     } else {
-      // Firestore 空 → seed（seed 後會重新讀取並 render）
+      // Firestore empty → seed (re-read after seeding so graphicsList gets doc ids)
       seedGraphics();
     }
   }).catch(e => {
@@ -1223,7 +1223,7 @@ function seedGraphics(){
     batch.set(ref, { zone: g.zone, items: g.items, order: i });
   });
   batch.commit().then(() => {
-    // seed 後重新讀取，讓 graphicsList 帶上 doc id（後續 status 更新才能寫回 Firestore）
+    // re-read after seeding so graphicsList carries doc ids (needed for later status writes)
     FB_DB.collection(GRAPHICS_COLLECTION).orderBy('order').get().then(snap => {
       const list = [];
       snap.forEach(d => {
@@ -1327,7 +1327,7 @@ function setGraphicStatus(sel){
   sel.style.background = `${meta.color}11`;
   if (FB_DB && graphicsList[gi] && graphicsList[gi].id) {
     const ref = FB_DB.collection(GRAPHICS_COLLECTION).doc(graphicsList[gi].id);
-    // 用 transaction 讀-改-寫，避免覆蓋其他欄位（如 thumb）造成多人同步遺失
+    // use transaction read-modify-write to avoid overwriting other fields (like thumb) and losing multi-user sync
     FB_DB.runTransaction(async (tx) => {
       const snap = await tx.get(ref);
       const data = snap.data() || {};
