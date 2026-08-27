@@ -726,7 +726,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 91;
+const CONTENT_VERSION = 92;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
@@ -1336,7 +1336,7 @@ function renderGraphicsWith(list){
       </summary>
       <div class="card-body" style="padding:0;overflow-x:auto;">
         <table class="phases">
-          <thead><tr><th>Item</th><th>Size</th><th>Material</th><th>Qty</th><th>Thumbnail</th><th>Status</th></tr></thead>
+          <thead><tr><th>Item</th><th>Size</th><th>Material</th><th>Qty</th><th>Thumbnail</th><th>Status</th><th>Niche</th><th>空運</th></tr></thead>
           <tbody>
             ${(g.items||[]).map((it, ii) => {
               const meta = graphicStatusMeta(it.status);
@@ -1355,6 +1355,8 @@ function renderGraphicsWith(list){
                     ${GRAPHIC_STATUS.map(s => `<option value="${s.value}" ${s.value === it.status ? 'selected' : ''}>${s.emoji} ${s.label}</option>`).join('')}
                   </select>
                 </td>
+                <td><input type="checkbox" data-gi="${gi}" data-ii="${ii}" data-field="niche" ${it.niche ? 'checked' : ''} onchange="toggleGraphicFlag(this)" style="width:18px;height:18px;cursor:pointer;"></td>
+                <td><input type="checkbox" data-gi="${gi}" data-ii="${ii}" data-field="air" ${it.air ? 'checked' : ''} onchange="toggleGraphicFlag(this)" style="width:18px;height:18px;cursor:pointer;"></td>
               </tr>
             `}).join('')}
           </tbody>
@@ -1378,6 +1380,19 @@ function setGraphicStatus(sel){
   if (FB_DB && graphicsList[gi] && graphicsList[gi].id) {
     FB_DB.collection(GRAPHICS_COLLECTION).doc(graphicsList[gi].id).update({ items: graphicsList[gi].items })
       .catch(e => console.warn('update graphic failed:', e));
+  }
+}
+
+function toggleGraphicFlag(cb){
+  const gi = parseInt(cb.dataset.gi, 10);
+  const ii = parseInt(cb.dataset.ii, 10);
+  const field = cb.dataset.field;
+  if (graphicsList[gi] && graphicsList[gi].items && graphicsList[gi].items[ii]) {
+    graphicsList[gi].items[ii][field] = cb.checked;
+  }
+  if (FB_DB && graphicsList[gi] && graphicsList[gi].id) {
+    FB_DB.collection(GRAPHICS_COLLECTION).doc(graphicsList[gi].id).update({ items: graphicsList[gi].items })
+      .catch(e => console.warn('update graphic flag failed:', e));
   }
 }
 
