@@ -158,7 +158,7 @@ const ZONE_C_TIER = [
   { key:'c11', name:'C-11', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
   { key:'c12', name:'C-12', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','5x) 1700 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','20x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture'] },
   { key:'c13', name:'C-13', sqm:'8+18m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
-  { key:'c14', name:'C-14', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
+  { key:'c14', name:'C-14', sqm:'8m²', count:1, renders: ['c14-render-1'], req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
 ];
 const ZONE_D_TIER = [
   { key:'d01', name:'D-01', sqm:'14m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','4× LED arm light','2x) 900 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','3x) 1000 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','1x) 1950 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','14x) 10" Metal L-Bracket (WHT)','1x) Display Shelving — 1452W×1700H×440D, Curved, Formica (WHT)','— YOUNGS —','Furniture'] },
@@ -729,7 +729,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 126;
+const CONTENT_VERSION = 127;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
