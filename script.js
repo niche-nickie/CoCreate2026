@@ -434,7 +434,7 @@ GRAPHICS: [
     { item: 'NG-L-WALL-1-BK', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-l-wall-1-bk.jpg' },
     { item: 'NG-L-WALL-2-FRT', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-l-wall-2-frt.jpg' },
     { item: 'NG-L-WALL-2-BK', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-l-wall-2-bk.jpg' },
-    { item: 'NG-L-WALL-3-FRT', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-l-wall-3-frt.jpg' },
+    { item: 'NG-L-WALL-3-FRT', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'NG-L-WALL-3-BK', size: '1976×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-l-wall-3-bk.jpg' },
     { item: 'NG-R-HEADER-1-FRT', size: '2242×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-r-header-1-frt.jpg' },
     { item: 'NG-R-HEADER-1-BK', size: '2242×300mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-r-header-1-bk.jpg' },
@@ -730,7 +730,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 135;
+const CONTENT_VERSION = 136;
 
 // ---------- Firebase (graphics 多人同步) ----------
 const FB_CONFIG = {
