@@ -700,7 +700,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 144;
+const CONTENT_VERSION = 145;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -1440,24 +1440,47 @@ const DELIVERIES = [
   { no: '38', client: 'Muse', item: 'Decorative Bow', qty: '1', tracking: 'TBA334055408168', arrival: '', status: 'Order Placed' },
 ];
 
+const DELIVERY_STATUSES = ['Pending', 'Order Placed', 'Shipped', 'In Transit', 'Arrived', 'Delivered'];
+
 function renderDelivery(){
   const el = document.getElementById('delivery-list');
   if(!el) return;
-  const rows = DELIVERIES.map(d => `
-    <tr>
+  el.innerHTML = '<div class="card" style="margin-bottom:12px;"><div class="card-body">Loading deliveries…</div></div>';
+  FB_DB.collection('deliveries').orderBy('no').get().then(snap => {
+    if(snap.empty){
+      const batch = FB_DB.batch();
+      DELIVERIES.forEach(d => {
+        batch.set(FB_DB.collection('deliveries').doc(String(d.no)), { no: Number(d.no), client: d.client, item: d.item, qty: d.qty, tracking: d.tracking, arrival: d.arrival, status: d.status });
+      });
+      return batch.commit().then(() => renderDelivery());
+    }
+    const list = [];
+    snap.forEach(d => { const data = d.data(); list.push(Object.assign({ id: d.id }, data)); });
+    renderDeliveryTable(list);
+  }).catch(() => {
+    renderDeliveryTable(DELIVERIES.map(d => Object.assign({ id: String(d.no) }, d)));
+  });
+}
+
+function renderDeliveryTable(list){
+  const el = document.getElementById('delivery-list');
+  if(!el) return;
+  const rows = list.map(d => {
+    const opts = DELIVERY_STATUSES.map(s => `<option value="${s}"${s === d.status ? ' selected' : ''}>${s}</option>`).join('');
+    return `<tr>
       <td>${d.no}</td>
       <td>${escapeHtml(d.client)}</td>
       <td>${escapeHtml(d.item || '—')}</td>
       <td>${d.qty}</td>
       <td>${escapeHtml(d.tracking || '—')}</td>
       <td>${escapeHtml(d.arrival || '—')}</td>
-      <td><span class="status-pill status-${d.status.toLowerCase().replace(/[^a-z]/g,'')}">${escapeHtml(d.status)}</span></td>
-    </tr>
-  `).join('');
+      <td><select class="delivery-status" data-id="${d.id}" onchange="setDeliveryStatus(this)">${opts}</select></td>
+    </tr>`;
+  }).join('');
   el.innerHTML = `
     <details class="card" open style="margin-bottom:12px;">
       <summary class="card-header" style="cursor:pointer;list-style:none;">
-        <div class="card-title">📦 Youngs → AMG Delivery (${DELIVERIES.length} items)</div>
+        <div class="card-title">📦 Youngs → AMG Delivery (${list.length} items)</div>
       </summary>
       <div class="card-body" style="padding:0;overflow-x:auto;">
         <table class="phases">
@@ -1466,6 +1489,12 @@ function renderDelivery(){
         </table>
       </div>
     </details>`;
+}
+
+function setDeliveryStatus(sel){
+  const id = sel.dataset.id;
+  const status = sel.value;
+  FB_DB.collection('deliveries').doc(id).update({ status }).catch(e => console.warn('delivery status save fail', e));
 }
 
 function renderAll(){

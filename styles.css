@@ -291,6 +291,8 @@ table.phases .notes { color: var(--text-muted); }
 .status-arrived { background: rgba(125,140,124,0.15); color: var(--green); }
 .status-pending { background: rgba(140,122,84,0.15); color: var(--yellow); }
 .status-orderplaced { background: rgba(143,163,174,0.15); color: var(--blue); }
+.delivery-status { background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; font-family: var(--mono); font-size: 11px; font-weight: 600; cursor: pointer; }
+.delivery-status:focus { outline: 1px solid var(--accent); }
 
 /* ── OPEN ITEMS (full task list) ── */
 .open-items-full .task-item { padding: 14px 0; }
