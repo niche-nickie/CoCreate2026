@@ -575,7 +575,7 @@ GRAPHICS: [
     { item: 'E-05-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/e-05-bk-wall.jpg' },
     { item: 'E-05-SIDE-L', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/e-05-side-l.jpg' },
     { item: 'E-06-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/e-06-header.jpg' },
-    { item: 'E-06-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/e-06-bk-wall.jpg' },
+    { item: 'E-06-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: '' },
     { item: 'E-06-SIDE-R', size: '1962×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/e-06-side-r.jpg' },
     { item: 'E-07-HEADER', size: '1600×250mm', material: 'PVC', qty: 1, status: 'pending', thumb: 'assets/graphics/e-07-header.jpg' },
     { item: 'E-07-BK-WALL', size: '3942×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/e-07-bk-wall.jpg' },
@@ -700,7 +700,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 142;
+const CONTENT_VERSION = 143;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
