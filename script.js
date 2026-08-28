@@ -700,7 +700,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 143;
+const CONTENT_VERSION = 144;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -1398,6 +1398,76 @@ function renderUpdatesFull(all){
   `).join('');
 }
 
+// ---------- Youngs -> AMG Delivery ----------
+const DELIVERIES = [
+  { no: '1', client: 'UED', item: 'Printer', qty: '2', tracking: 'TBA333785388391', arrival: '8/22', status: 'Arrived' },
+  { no: '2', client: 'UED', item: 'Heat Press Machine', qty: '2', tracking: 'TBA333785388391', arrival: '8/22', status: 'Arrived' },
+  { no: '3', client: 'UED', item: 'Trolley', qty: '1', tracking: 'TBA333785388391', arrival: '8/22', status: 'Arrived' },
+  { no: '4', client: 'E-01(Healy)', item: 'Mannequin', qty: '1', tracking: 'FedEx 876293166017', arrival: '', status: 'Order Placed' },
+  { no: '5', client: 'E-01(Healy)', item: 'Mannequin', qty: '1', tracking: 'FedEx 876293166017', arrival: '', status: 'Order Placed' },
+  { no: '6', client: 'C-11(Deji)', item: 'Display Table', qty: '1', tracking: 'UPS 1ZXH04600381612632', arrival: '', status: 'Order Placed' },
+  { no: '7', client: 'E-05(Ystar)*1 / A-04(Minghui)*2 / E-04(Brightshow)*4', item: 'Wire Grid', qty: '3', tracking: 'ONTRAC 1LSD40D0018K37G', arrival: '', status: 'Order Placed' },
+  { no: '8', client: 'US Pavilion', item: '', qty: '2', tracking: 'TBA334064123740', arrival: '', status: 'Order Placed' },
+  { no: '9', client: 'US Pavilion', item: 'Display Shelf 1', qty: '12', tracking: '', arrival: '', status: 'Pending' },
+  { no: '10', client: 'US Pavilion', item: 'Display Shelf 2', qty: '7', tracking: '', arrival: '', status: 'Pending' },
+  { no: '11', client: 'Sourcing Hub', item: 'Pegboard', qty: '1', tracking: '', arrival: '', status: 'Order Placed' },
+  { no: '12', client: 'Genral', item: 'Foam Board Stand 1', qty: '16', tracking: '', arrival: '', status: 'Pending' },
+  { no: '13', client: 'Genral', item: 'Foam Board Stand 2', qty: '2', tracking: 'TBA334067230579 / TBA334065471844', arrival: '', status: 'Order Placed' },
+  { no: '14', client: 'F-19(Sy)', item: 'White Display Stand', qty: '2', tracking: 'TBA334062386323', arrival: '', status: 'Order Placed' },
+  { no: '15', client: 'Muse', item: 'Mannequin Riser 1', qty: '2', tracking: 'UPS 1Z196EB10329834700', arrival: '', status: 'Order Placed' },
+  { no: '16', client: 'Muse', item: 'Mannequin Riser 2', qty: '2', tracking: 'TBA334065815427', arrival: '', status: 'Order Placed' },
+  { no: '17', client: 'Muse', item: '75" TV', qty: '3', tracking: '', arrival: '', status: 'Pending' },
+  { no: '18', client: 'Muse', item: 'TV Stand / TV Mount', qty: '3', tracking: 'TBA334054280119 / TBA334055711746', arrival: '', status: 'Order Placed' },
+  { no: '19', client: 'Muse', item: '47" Writing Desk', qty: '9', tracking: 'UPS 1ZXH04600307384671', arrival: '', status: 'Order Placed' },
+  { no: '20', client: 'Muse', item: 'Tablecloth', qty: '3', tracking: 'TBA334064428476', arrival: '', status: 'Order Placed' },
+  { no: '21', client: 'Muse', item: 'Display Plinth', qty: '1', tracking: '', arrival: '', status: 'Order Placed' },
+  { no: '22', client: 'Muse', item: 'Storage Rack', qty: '1', tracking: 'USPS 9361289711067753564820', arrival: '', status: 'Order Placed' },
+  { no: '23', client: 'Muse', item: 'Mannequin', qty: '12', tracking: '', arrival: '', status: 'Pending' },
+  { no: '24', client: 'Muse', item: 'Christmas Tree 1', qty: '2', tracking: '', arrival: '', status: 'Order Placed' },
+  { no: '25', client: 'Muse', item: 'Christmas Tree 2', qty: '3', tracking: '', arrival: '', status: 'Order Placed' },
+  { no: '26', client: 'Muse', item: 'iPad Stand', qty: '5', tracking: '', arrival: '', status: 'Pending' },
+  { no: '27', client: 'Muse', item: 'Dressing Mirror', qty: '29', tracking: '', arrival: '', status: 'Order Placed' },
+  { no: '28', client: 'Muse', item: 'Steamer', qty: '4', tracking: '', arrival: '', status: 'Order Placed' },
+  { no: '29', client: 'Muse', item: 'Partition Screen', qty: '1', tracking: '', arrival: '', status: 'Order Placed' },
+  { no: '30', client: 'Muse', item: 'Disco Ball 1', qty: '1', tracking: 'TBA334054089530', arrival: '', status: 'Order Placed' },
+  { no: '31', client: 'Muse', item: 'Disco Ball 2', qty: '1', tracking: 'TBA334054089530', arrival: '', status: 'Order Placed' },
+  { no: '32', client: 'Muse', item: 'Disco Ball 3', qty: '1', tracking: '', arrival: '', status: 'Order Placed' },
+  { no: '33', client: 'Muse', item: 'Leopard Print Rug', qty: '1', tracking: 'TBA334058128171', arrival: '', status: 'Order Placed' },
+  { no: '34', client: 'Muse', item: 'Acrylic Paint Marker', qty: '1', tracking: 'TBA334058128171', arrival: '', status: 'Order Placed' },
+  { no: '35', client: 'Muse', item: 'Heart-Shaped Balloon 1', qty: '1', tracking: 'TBA334054280119', arrival: '', status: 'Order Placed' },
+  { no: '36', client: 'Muse', item: 'Heart-Shaped Balloon 2', qty: '1', tracking: '', arrival: '', status: 'Order Placed' },
+  { no: '37', client: 'Muse', item: 'LED Fill Light', qty: '3', tracking: 'TBA334055408168 / TBA334055711746', arrival: '', status: 'Order Placed' },
+  { no: '38', client: 'Muse', item: 'Decorative Bow', qty: '1', tracking: 'TBA334055408168', arrival: '', status: 'Order Placed' },
+];
+
+function renderDelivery(){
+  const el = document.getElementById('delivery-list');
+  if(!el) return;
+  const rows = DELIVERIES.map(d => `
+    <tr>
+      <td>${d.no}</td>
+      <td>${escapeHtml(d.client)}</td>
+      <td>${escapeHtml(d.item || '—')}</td>
+      <td>${d.qty}</td>
+      <td>${escapeHtml(d.tracking || '—')}</td>
+      <td>${escapeHtml(d.arrival || '—')}</td>
+      <td><span class="status-pill status-${d.status.toLowerCase().replace(/[^a-z]/g,'')}">${escapeHtml(d.status)}</span></td>
+    </tr>
+  `).join('');
+  el.innerHTML = `
+    <details class="card" open style="margin-bottom:12px;">
+      <summary class="card-header" style="cursor:pointer;list-style:none;">
+        <div class="card-title">📦 Youngs → AMG Delivery (${DELIVERIES.length} items)</div>
+      </summary>
+      <div class="card-body" style="padding:0;overflow-x:auto;">
+        <table class="phases">
+          <thead><tr><th>No.</th><th>Client</th><th>Item</th><th>Qty.</th><th>Tracking ID.</th><th>Est. Arrival</th><th>Status</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </details>`;
+}
+
 function renderAll(){
   renderStatCards();
   renderTimelinePreview();
@@ -1409,6 +1479,7 @@ function renderAll(){
   renderPhases();
   renderZonesFull();
   renderGraphics();
+  renderDelivery();
 
   const allUpdates = getAllUpdates();
   renderActivityPreview(allUpdates);
