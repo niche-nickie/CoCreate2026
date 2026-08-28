@@ -700,7 +700,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 146;
+const CONTENT_VERSION = 147;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -2068,6 +2068,10 @@ function buildSearchIndex() {
       index.push({ label: it.item, type: 'Graphic', zone: g.zone, searchText: it.item.toLowerCase() });
     });
   });
+  (DELIVERIES || []).forEach(d => {
+    const searchText = `${d.no} ${d.client} ${d.item} ${d.tracking}`.toLowerCase();
+    index.push({ label: `${d.tracking} — ${d.client} ${d.item}`, type: 'Delivery', zone: '#delivery', searchText });
+  });
   return index;
 }
 
@@ -2080,7 +2084,7 @@ function setupSearch() {
     if (!q) { dropdown.classList.remove('open'); return; }
     const results = buildSearchIndex().filter(r => r.searchText.includes(q)).slice(0, 12);
     dropdown.innerHTML = results.length
-      ? results.map(r => `<div class="search-item" data-zone="${escapeHtml(r.zone)}"><span>${escapeHtml(r.label)}</span><span class="si-type">${r.type}</span></div>`).join('')
+      ? results.map(r => `<div class="search-item" data-zone="${escapeHtml(r.zone)}" data-type="${r.type}"><span>${escapeHtml(r.label)}</span><span class="si-type">${r.type}</span></div>`).join('')
       : '<div class="search-empty">No results for "' + escapeHtml(input.value) + '"</div>';
     dropdown.classList.add('open');
   });
@@ -2088,8 +2092,17 @@ function setupSearch() {
     const item = e.target.closest('.search-item');
     if (!item) return;
     const zone = item.getAttribute('data-zone');
+    const type = item.getAttribute('data-type');
     dropdown.classList.remove('open');
     input.value = '';
+    if (type === 'Delivery') {
+      location.hash = '#delivery';
+      setTimeout(() => {
+        const card = document.querySelector('#delivery-list details');
+        if (card) { card.open = true; card.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      }, 120);
+      return;
+    }
     location.hash = '#graphics';
     setTimeout(() => {
       document.querySelectorAll('.graphic-card').forEach(card => {
