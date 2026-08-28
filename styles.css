@@ -287,6 +287,10 @@ table.phases .notes { color: var(--text-muted); }
 .pill.hard { background: rgba(189,93,76,0.15); color: var(--red); }
 .pill.unconfirmed { background: rgba(176,143,92,0.15); color: var(--orange); }
 .pill.notstarted { background: rgba(107,107,130,0.15); color: var(--text-muted); }
+.status-pill { display: inline-block; font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.status-arrived { background: rgba(125,140,124,0.15); color: var(--green); }
+.status-pending { background: rgba(140,122,84,0.15); color: var(--yellow); }
+.status-orderplaced { background: rgba(143,163,174,0.15); color: var(--blue); }
 
 /* ── OPEN ITEMS (full task list) ── */
 .open-items-full .task-item { padding: 14px 0; }
