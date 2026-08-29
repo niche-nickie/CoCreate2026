@@ -700,7 +700,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 148;
+const CONTENT_VERSION = 149;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -1282,7 +1282,7 @@ function renderGraphicsWith(list){
       </summary>
       <div class="card-body" style="padding:0;overflow-x:auto;">
         <table class="phases">
-          <thead><tr><th>Item</th><th>Size</th><th>Material</th><th>Qty</th><th>Thumbnail</th><th>Status</th><th>Niche</th><th>Received</th></tr></thead>
+          <thead><tr><th>Item</th><th>Size</th><th>Material</th><th>Qty</th><th>Thumbnail</th><th>Status</th><th>Niche</th><th>Checked</th></tr></thead>
           <tbody>
             ${(g.items||[]).map((it, ii) => {
               const meta = graphicStatusMeta(it.status);
@@ -1302,7 +1302,7 @@ function renderGraphicsWith(list){
                   </select>
                 </td>
                 <td><input type="checkbox" data-gi="${gi}" data-ii="${ii}" data-field="niche" ${it.niche ? 'checked' : ''} onchange="toggleGraphicFlag(this)" style="width:18px;height:18px;cursor:pointer;"></td>
-                <td><input type="checkbox" data-gi="${gi}" data-ii="${ii}" data-field="received" ${it.received ? 'checked' : ''} onchange="toggleGraphicFlag(this)" style="width:18px;height:18px;cursor:pointer;"></td>
+                <td><input type="checkbox" data-gi="${gi}" data-ii="${ii}" data-field="checked" ${it.checked ? 'checked' : ''} onchange="toggleGraphicFlag(this)" style="width:18px;height:18px;cursor:pointer;"></td>
               </tr>
             `}).join('')}
           </tbody>
