@@ -110,7 +110,7 @@ const SPONSOR_TIERS = [
   { key:'p03', name:'P-03', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-03-0825', 'p03-layout'], drawings: D_8X8 },
   { key:'p04', name:'P-04', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-04-0825', 'p04-layout'], drawings: D_8X8 },
   { key:'p05', name:'P-05', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-05-0825', 'p05-layout'], drawings: D_8X8 },
-  { key:'p06', name:'P-06', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['p-06-layout'], drawings: D_8X8 },
+  { key:'p06', name:'P-06', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
   { key:'p07', name:'P-07', sqm:'10×15ft', count:1, req: SPONSOR_EXECUTIVE_REQ, renders: ['sponsor-p-07-0825', 'p07-layout'], drawings: D_10X15 },
   { key:'p08', name:'P-08', sqm:'10×20ft', count:1, req: SPONSOR_PREMIER_REQ, renders: ['sponsor-p-08-0825'], drawings: D_10X20 },
   { key:'p09', name:'P-09', sqm:'10×15ft', count:1, req: SPONSOR_EXECUTIVE_REQ, renders: ['sponsor-p-09-0825', 'p09-layout'], drawings: D_10X15 },
@@ -707,7 +707,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 155;
+const CONTENT_VERSION = 156;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
