@@ -129,7 +129,7 @@ const ZONE_A_TIER = [
   { key:'a02', name:'A-02', sqm:'8m²', count:1, renders: ['a-02-0829', 'a-02-0829-2'], req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','4x) 700 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','9x) 450 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','26x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture'] },
   { key:'a03', name:'A-03', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','4x) 700 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','7x) 450 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','26x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture'] },
   { key:'a04', name:'A-04', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','3x) 700 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','9x) 450 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','24x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture','2× Wire Grid 550×1100×50 (Youngs)'] },
-  { key:'a05', name:'A-05', sqm:'8m²', count:1, renders: ['a-05-0829'], req: ['Grey carpet'] },
+  { key:'a05', name:'A-05', sqm:'8m²', count:1, renders: ['a-05-0829', 'a-05-0829-2'], req: ['Grey carpet'] },
   { key:'a06', name:'A-06', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','4x) 700 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','10x) 450 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','28x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture'] },
   { key:'a07', name:'A-07', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','4x) 700 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','9x) 450 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','26x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture'] },
   { key:'a08', name:'A-08', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','4x) 700 (W)*18 (H)*400 (D), Shelf, Formica (WHT)','11x) 450 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','30x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture'] },
@@ -707,7 +707,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 152;
+const CONTENT_VERSION = 153;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -986,8 +986,9 @@ function renderProgressWidget(){
 }
 
 function zoneThumbHtml(z){
-  return z.img
-    ? `<img src="assets/zones/${z.img}.jpg${IMG_CACHE_BUST}" alt="${escapeHtml(z.name)} rendering" loading="lazy">`
+  const thumb = (z.renders && z.renders.length) ? z.renders[0] : z.img;
+  return thumb
+    ? `<img src="assets/zones/${thumb}.jpg${IMG_CACHE_BUST}" alt="${escapeHtml(z.name)} rendering" loading="lazy">`
     : (ZONE_ICONS[z.name] || '⬡');
 }
 
