@@ -136,13 +136,13 @@ const ZONE_A_TIER = [
   { key:'a09', name:'A-09', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','3x) 1500 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','9x) 450 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','27x) 10" Metal L-Bracket (WHT)','— YOUNGS —','Furniture'] },
 ];
 const ZONE_B_TIER = [
-  { key:'b01', name:'B-01', sqm:'8m²', count:1, renders: ['zone-b-render-13', 'zone-b-render-14'], req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
+  { key:'b01', name:'B-01', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
   { key:'b02', name:'B-02', sqm:'8m²', count:1, renders: ['b-02-0829', 'b-02-0829-2'], req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
   { key:'b03', name:'B-03', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
   { key:'b04', name:'B-04', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
   { key:'b05', name:'B-05', sqm:'16m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
   { key:'b06', name:'B-06', sqm:'12m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
-  { key:'b07', name:'B-07', sqm:'8m²', count:1, renders: ['zone-b-render-1', 'zone-b-render-2'], req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
+  { key:'b07', name:'B-07', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
 ];
 const ZONE_C_TIER = [
   { key:'c01', name:'C-01', sqm:'8m²', count:1, req: ['Wooden backdrop (4×2.5mH)','42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','— YOUNGS —','Furniture'] },
@@ -707,7 +707,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 153;
+const CONTENT_VERSION = 154;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
