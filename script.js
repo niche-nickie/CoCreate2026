@@ -4,7 +4,7 @@
 
 const TODAY = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
 const SHOW_START = new Date('2026-09-09');
-const IMG_CACHE_BUST = '?v=20260828';  // bump to bust image CDN cache
+const IMG_CACHE_BUST = '?v=20260829';  // bump to bust image CDN cache
 
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
@@ -106,20 +106,20 @@ const D_10X20 = ['sponsor-dwg-4'];
 
 const SPONSOR_TIERS = [
   { key:'p01', name:'P-01', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-01-0825'], drawings: D_8X8 },
-  { key:'p02', name:'P-02', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
-  { key:'p03', name:'P-03', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
-  { key:'p04', name:'P-04', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
+  { key:'p02', name:'P-02', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-02-0825'], drawings: D_8X8 },
+  { key:'p03', name:'P-03', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-03-0825'], drawings: D_8X8 },
+  { key:'p04', name:'P-04', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-04-0825'], drawings: D_8X8 },
   { key:'p05', name:'P-05', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-05-0825'], drawings: D_8X8 },
   { key:'p06', name:'P-06', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
   { key:'p07', name:'P-07', sqm:'10×15ft', count:1, req: SPONSOR_EXECUTIVE_REQ, renders: ['sponsor-p-07-0825'], drawings: D_10X15 },
   { key:'p08', name:'P-08', sqm:'10×20ft', count:1, req: SPONSOR_PREMIER_REQ, renders: ['sponsor-p-08-0825'], drawings: D_10X20 },
   { key:'p09', name:'P-09', sqm:'10×15ft', count:1, req: SPONSOR_EXECUTIVE_REQ, renders: ['sponsor-p-09-0825'], drawings: D_10X15 },
-  { key:'p10', name:'P-10', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
-  { key:'p11', name:'P-11', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: R_8X8, drawings: D_8X8 },
+  { key:'p10', name:'P-10', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-10-0825'], drawings: D_8X8 },
+  { key:'p11', name:'P-11', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-11-0825'], drawings: D_8X8 },
   { key:'p12', name:'P-12', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-12-0825'], drawings: D_8X8 },
   { key:'p13', name:'P-13', sqm:'8×8ft', count:1, req: SPONSOR_COMMUNITY_REQ, renders: ['sponsor-p-13-0825'], drawings: D_8X8 },
   { key:'p14', name:'P-14', sqm:'10×10ft', count:1, req: [], renders: ['sponsor-p-14-0825'] },
-  { key:'p15', name:'P-15', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ, renders: R_10X10, drawings: D_10X10 },
+  { key:'p15', name:'P-15', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ, renders: ['sponsor-p-15-0825'], drawings: D_10X10 },
   { key:'p16', name:'P-16', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ, renders: ['sponsor-p-16-0825'], drawings: D_10X10 },
   { key:'p17', name:'P-17', sqm:'10×10ft', count:1, req: SPONSOR_ASSOCIATE_REQ, renders: ['sponsor-p-17-0825'], drawings: D_10X10 },
 ];
@@ -700,7 +700,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 149;
+const CONTENT_VERSION = 150;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
