@@ -318,7 +318,7 @@ ZONES: [
     tiers: SPONSOR_TIERS,
     units: makeTieredUnits('sponsor', SPONSOR_TIERS) },
   { name: 'National Pavilion', owner: 'Iris', status: 'In Review', img: 'national-gb-map', renders: ['national-gb-map'], drawings: [], scope: 'GB-01 ~ GB-44 (42 booths, GB-25 & GB-29 withdrew). AMG provide carpet + LED arm light only. 3 groups: GB-US×19, GB-Pakistan×9, GB-Others×14.', flag: '42 booths · carpet + lights only',
-    req: ['42× Carpet (≈1890 sqft)', '84× LED arm light'], tiers: ZONE_GB_TIER, units: makeTieredUnits('gb', ZONE_GB_TIER, i => BOOTH_LABELS.gb[i-1], n => [`${BOOTH_LABELS.gb[n-1].split(' ')[0].toLowerCase()}-0829`, `${BOOTH_LABELS.gb[n-1].split(' ')[0].toLowerCase()}-layout`]) },
+    req: ['42× Carpet (≈1890 sqft)', '84× LED arm light'], tiers: ZONE_GB_TIER, units: makeTieredUnits('gb', ZONE_GB_TIER, i => BOOTH_LABELS.gb[i-1], n => [`${BOOTH_LABELS.gb[n-1].split(' ')[0].toLowerCase()}-0829`]) },
   { name: 'Sourcing Hub', owner: 'Iris', status: 'Approved', img: 'sourcing-hub-map', renders: ['sourcing-hub-0825-2', 'sourcing-hub-0825-3'], drawings: ['sourcing-hub-dwg-1', 'sourcing-hub-dwg-2', 'sourcing-hub-dwg-3'], scope: 'AMG shop drawings A.2–A.7 (JP, RENT). 64m² (8×8m). Display Sign 1000×2000mm. 42" TV + floor stand + Media Player. 4 centers: A Shantou (Stair Display), B Yongkang (Display Stand+Acrylic), C Zhengzhou (5× Display Stands), D Guangzhou (Curved Display Stand 2000×1300). PVC graphics + floor vinyl per booth.', flag: '4 sourcing centers (9m² each) inside 64m² space',
     req: ['1× Display Sign — 1000W×2000H×300D, Formica White, Paint Orange, LED Strip', '8× LED arm light', '1× 42" TV + floor stand + Media Player', 'Booth A Shantou: Three-Step Stair Display 1200W×900H×900D (WHT) + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth B Yongkang: Display Stand 1424W×1700H×412D (WHT+Wood+Acrylic) + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth C Zhengzhou: 5× Display Stands (1500×500 + 500×500 + 2× 500×800 + 500×1000) Formica WHT + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl', 'Booth D Guangzhou: Curved Display Stand 2000W×1300H×1000D Formica WHT + 2× Popup Bracket + PVC Graphic 2150×250 + Floor Vinyl'] },
   { name: 'Podcast', owner: 'Iris', status: 'Approved', img: 'podcast-render-1', renders: ['podcast-0825-2'], drawings: ['podcast-dwg-1'], scope: '5.4×3.4m. Octanorm structure + clear acrylic panels + carpet. Client provides angle tables, chairs, On Air lightbox.', flag: 'OP1 spec A.13 · Client display items',
@@ -707,7 +707,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 156;
+const CONTENT_VERSION = 157;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
