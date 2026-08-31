@@ -418,8 +418,8 @@ GRAPHICS: [
     { item: 'NG-R-WALL-1-BK', size: '3461×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-r-wall-1-bk.jpg' },
     { item: 'NG-R-WALL-2-FRT', size: '3461×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-r-wall-2-frt.jpg' },
     { item: 'NG-R-WALL-2-BK', size: '3461×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-r-wall-2-bk.jpg' },
-    { item: 'NG-COCREATE-BANNER', size: '1000×1900mm', material: '—', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-cocreate-banner.jpg' },
-    { item: 'NG-ACCIO-BANNER', size: '1000×1900mm', material: '—', qty: 1, status: 'pending', thumb: 'assets/graphics/ng-accio-banner.jpg' },
+    { item: 'NG-COCREATE-BANNER', size: '1000×1900mm', material: 'PVC', qty: 4, status: 'pending', thumb: 'assets/graphics/ng-cocreate-banner.jpg' },
+    { item: 'NG-ACCIO-BANNER', size: '1000×1900mm', material: 'PVC', qty: 4, status: 'pending', thumb: 'assets/graphics/ng-accio-banner.jpg' },
   ]},
   { zone: 'Unboxing Live', items: [
     { item: 'EZTube-20ft-Straight', size: '20ft × 7.5ft', material: 'Double Sided Pop Up', qty: 1, status: 'pending', thumb: 'assets/graphics/eztube-20ft-straight.jpg' },
@@ -706,7 +706,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 170;
+const CONTENT_VERSION = 171;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
