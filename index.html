@@ -188,18 +188,32 @@
       <div class="row"><button class="primary" id="email-continue">Continue</button></div>
     </div>
     <div id="modal-step-post" style="display:none;">
-      <h3>Post an update</h3>
       <div class="who" id="modal-who"></div>
-      <label for="post-type">Type</label>
-      <select id="post-type">
-        <option value="Report">Report status</option>
-        <option value="Ask">Ask a question</option>
-      </select>
-      <label for="post-text">Message</label>
-      <textarea id="post-text" placeholder="What's the update or question?"></textarea>
-      <div class="row">
-        <button id="post-cancel">Cancel</button>
-        <button class="primary" id="post-submit">Post</button>
+      <div class="row" style="margin:8px 0 12px;">
+        <button class="primary" id="tab-post">✎ Post</button>
+        <button id="tab-ask">💬 Ask</button>
+      </div>
+      <div id="post-form">
+        <h3>Post an update</h3>
+        <label for="post-type">Type</label>
+        <select id="post-type">
+          <option value="Report">Report status</option>
+          <option value="Ask">Ask a question</option>
+        </select>
+        <label for="post-text">Message</label>
+        <textarea id="post-text" placeholder="What's the update or question?"></textarea>
+        <div class="row">
+          <button id="post-cancel">Cancel</button>
+          <button class="primary" id="post-submit">Post</button>
+        </div>
+      </div>
+      <div id="ask-form" style="display:none;">
+        <h3>Ask the project assistant</h3>
+        <div id="ask-history" style="max-height:280px;overflow-y:auto;margin:4px 0 10px;padding:8px;border:1px solid #333;border-radius:8px;font-size:13px;line-height:1.5;text-align:left;"></div>
+        <div class="row">
+          <input type="text" id="ask-input" placeholder="問專案問題（例：哪些 zone 通過了？）" style="flex:1;">
+          <button class="primary" id="ask-send">Send</button>
+        </div>
       </div>
     </div>
   </div>
@@ -241,7 +255,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<script src="script.js?v=330&t=20260826"></script>
+<script src="script.js?v=331&t=20260826"></script>
 <script>
 var FP_PAGES = ['assets/floor-plan-zone.jpg', 'assets/floor-plan-detail.jpg', 'assets/sponsor-power-plan.jpg'];
 var FP_CAPTIONS = ['Full Floor Plan', 'Floor Plan Detail', 'Sponsor Power Plan'];

@@ -708,7 +708,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 173;
+const CONTENT_VERSION = 174;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -1611,6 +1611,91 @@ function renderSidebarUser(){
   }
 }
 
+// ---------- Project Q&A assistant ----------
+function answerProjectQuestion(q){
+  const s = (q || '').toLowerCase().trim();
+  if(!s) return '請輸入問題～';
+  const has = (...kws) => kws.some(k => s.includes(k));
+
+  const zones = DATA.ZONES || [];
+  const dead = DATA.HARD_DEADLINES || [];
+  const gantt = DATA.GANTT_ROWS || [];
+  const phases = DATA.PHASES || [];
+  const progress = DATA.PROGRESS || [];
+
+  // --- Delivery ---
+  if(has('delivery','送貨','到貨','貨運','shipping','arrive','tracking','快遞','物流')){
+    const dl = deliveryList || [];
+    if(!dl.length) return 'Delivery 資料還沒載入，稍等再試～';
+    const by = {};
+    dl.forEach(d => { by[d.status] = (by[d.status]||0)+1; });
+    const lines = [`📦 Delivery 現況（Youngs → AMG，共 ${dl.length} 筆）：`];
+    DELIVERY_STATUSES.forEach(st => { if(by[st]) lines.push(`· ${st}：${by[st]} 筆`); });
+    const notArrived = dl.filter(d => d.status !== 'Arrived' && d.status !== 'Delivered');
+    if(notArrived.length){
+      lines.push('', `尚未到貨 ${notArrived.length} 筆，前幾筆：`);
+      notArrived.slice(0,6).forEach(d => lines.push(`· ${d.client} — ${d.item||'—'}（${d.status}）`));
+    }
+    return lines.join('\n');
+  }
+
+  // --- Graphics / 美工 ---
+  if(has('美工','graphics','graphic','圖面','banner','design')){
+    const gl = graphicsList || [];
+    if(!gl.length) return '美工資料還沒載入，稍等再試～';
+    const lines = ['🖼 美工現況（approved / 總數）：'];
+    gl.forEach(g => {
+      const items = g.items || [];
+      const ok = items.filter(it => it.status === 'approved').length;
+      lines.push(`· ${g.zone}：${ok}/${items.length}`);
+    });
+    const notDone = gl.filter(g => (g.items||[]).some(it => it.status !== 'approved'));
+    if(notDone.length) lines.push('', '還沒全數 approved：' + notDone.map(g => g.zone).join('、'));
+    return lines.join('\n');
+  }
+
+  // --- Specific zone (name match) ---
+  for(const z of zones){
+    const name = z.name || '';
+    const nl = name.toLowerCase();
+    const words = nl.split(/[^a-z0-9]+/).filter(w => w.length > 3);
+    if(s.includes(nl) || words.some(w => s.includes(w))){
+      const lines = [`🏷 ${name}`, `狀態：${z.status}`, `負責：${z.owner || '—'}`];
+      if(z.flag) lines.push(`備註：${z.flag}`);
+      return lines.join('\n');
+    }
+  }
+
+  // --- Approved zones ---
+  if(has('approved','通過','approve','已確認','哪些 zone','哪些區')){
+    const approved = zones.filter(z => z.status === 'Approved');
+    const others = zones.filter(z => z.status !== 'Approved');
+    let r = `✅ 已通過的 zone（${approved.length} 個）：\n` + (approved.length ? approved.map(z=>`· ${z.name}`).join('\n') : '（無）');
+    if(others.length) r += '\n\n其他狀態：\n' + others.map(z=>`· ${z.name}（${z.status}）`).join('\n');
+    return r;
+  }
+
+  // --- Deadlines / schedule / next ---
+  if(has('deadline','截止','時程','schedule','due','when','日期','接下來','next','下一步')){
+    const lines = ['📅 時程 / 接下來的 deadline：'];
+    dead.forEach(d => lines.push(`· ${d.date} — ${d.title}`));
+    gantt.slice(0,8).forEach(g => lines.push(`· ${g.label}：${g.start} → ${g.end}`));
+    phases.forEach(p => lines.push(`· ${p.phase}：${p.dates}（${p.statusLabel || p.status}）`));
+    return lines.join('\n');
+  }
+
+  // --- Overall / progress ---
+  if(has('進度','progress','整體','overview','summary','狀態','總覽')){
+    const sc = {};
+    zones.forEach(z => { sc[z.status] = (sc[z.status]||0)+1; });
+    const lines = ['📊 專案總覽：', 'Zone 狀態：' + Object.entries(sc).map(([k,v])=>`${k} ${v}`).join('、')];
+    progress.forEach(p => lines.push(`· ${p.label}：${p.pct}%`));
+    return lines.join('\n');
+  }
+
+  return '我可以回答專案問題，例如：\n· 「哪些 zone 通過了？」\n· 「delivery 到哪了？」\n· 「美工進度？」\n· 「下一個 deadline？」\n· 「[zone 名] 的狀態？」\n\n（我是專案資料助理，只能回答網站上有紀錄的資訊～）';
+}
+
 // ---------- Report / Ask modal ----------
 function setupModal(){
   const overlay = document.getElementById('modal-overlay');
@@ -1661,6 +1746,7 @@ function setupModal(){
     modalWho.textContent = `Signed in as ${name}`;
     stepEmail.style.display = 'none';
     stepPost.style.display = 'block';
+    showPost();
     postText.value = '';
     postText.focus();
   });
@@ -1684,6 +1770,49 @@ function setupModal(){
     closeModal();
     window.location.hash = '#updates';
   });
+
+  // ---- Ask tab (project Q&A assistant) ----
+  const tabPost = document.getElementById('tab-post');
+  const tabAsk = document.getElementById('tab-ask');
+  const postForm = document.getElementById('post-form');
+  const askForm = document.getElementById('ask-form');
+  const askInput = document.getElementById('ask-input');
+  const askSend = document.getElementById('ask-send');
+  const askHistory = document.getElementById('ask-history');
+
+  function showPost(){
+    tabPost.classList.add('primary');
+    tabAsk.classList.remove('primary');
+    postForm.style.display = '';
+    askForm.style.display = 'none';
+  }
+  function showAsk(){
+    tabAsk.classList.add('primary');
+    tabPost.classList.remove('primary');
+    postForm.style.display = 'none';
+    askForm.style.display = '';
+    setTimeout(() => askInput.focus(), 0);
+  }
+  tabPost.addEventListener('click', showPost);
+  tabAsk.addEventListener('click', showAsk);
+
+  function appendAsk(who, text){
+    const div = document.createElement('div');
+    div.style.marginBottom = '8px';
+    const color = who === '你' ? '#8ab4ff' : '#7ee2a8';
+    div.innerHTML = `<div style="color:${color};font-weight:600;margin-bottom:2px;">${who}</div><div style="white-space:pre-wrap;">${escapeHtml(text)}</div>`;
+    askHistory.appendChild(div);
+    askHistory.scrollTop = askHistory.scrollHeight;
+  }
+  function sendAsk(){
+    const q = askInput.value.trim();
+    if(!q) return;
+    appendAsk('你', q);
+    askInput.value = '';
+    appendAsk('Caleb', answerProjectQuestion(q));
+  }
+  askSend.addEventListener('click', sendAsk);
+  askInput.addEventListener('keydown', e => { if(e.key === 'Enter') sendAsk(); });
 }
 
 // ---------- Zone gallery modal ----------
