@@ -708,7 +708,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 172;
+const CONTENT_VERSION = 173;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -1450,6 +1450,7 @@ const DELIVERIES = [
 ];
 
 const DELIVERY_STATUSES = ['Pending', 'Order Placed', 'Shipped', 'In Transit', 'Arrived', 'Delivered'];
+let deliveryList = [];
 
 function renderDelivery(){
   const el = document.getElementById('delivery-list');
@@ -1474,6 +1475,7 @@ function renderDelivery(){
 function renderDeliveryTable(list){
   const el = document.getElementById('delivery-list');
   if(!el) return;
+  deliveryList = list;
   const rows = list.map(d => {
     const opts = DELIVERY_STATUSES.map(s => `<option value="${s}"${s === d.status ? ' selected' : ''}>${s}</option>`).join('');
     return `<tr>
@@ -1496,6 +1498,7 @@ function renderDeliveryTable(list){
           <thead><tr><th>No.</th><th>Client</th><th>Item</th><th>Qty.</th><th>Tracking ID.</th><th>Est. Arrival</th><th>Status</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
+        ${deliveryAddForm()}
       </div>
     </details>`;
 }
@@ -1504,6 +1507,40 @@ function setDeliveryStatus(sel){
   const id = sel.dataset.id;
   const status = sel.value;
   FB_DB.collection('deliveries').doc(id).update({ status }).catch(e => console.warn('delivery status save fail', e));
+}
+
+function deliveryAddForm(){
+  const opts = DELIVERY_STATUSES.map(s => `<option value="${s}">${s}</option>`).join('');
+  const base = 'background:transparent;color:inherit;border:1px solid #444;border-radius:6px;padding:6px 8px;';
+  return `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:10px;border-top:1px solid #333;align-items:center;">
+    <input id="dlv-client" placeholder="Client" style="flex:1;min-width:130px;${base}">
+    <input id="dlv-item" placeholder="Item" style="flex:1;min-width:150px;${base}">
+    <input id="dlv-qty" placeholder="Qty" style="flex:0 0 55px;${base}">
+    <input id="dlv-tracking" placeholder="Tracking ID" style="flex:1;min-width:140px;${base}">
+    <input id="dlv-arrival" placeholder="Arrival" style="flex:0 0 85px;${base}">
+    <select id="dlv-status" style="${base}flex:0 0 auto;">${opts}</select>
+    <button onclick="addDelivery()" style="flex:0 0 auto;background:var(--accent,#4f8cff);color:#fff;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-weight:600;">＋ Add</button>
+  </div>`;
+}
+
+function addDelivery(){
+  const get = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  const client = get('dlv-client');
+  const item = get('dlv-item');
+  const qty = get('dlv-qty');
+  const tracking = get('dlv-tracking');
+  const arrival = get('dlv-arrival');
+  const statusSel = document.getElementById('dlv-status');
+  const status = statusSel ? statusSel.value : 'Pending';
+  if(!client && !item){ alert('Please fill Client or Item.'); return; }
+  const no = Math.max(...deliveryList.map(d => Number(d.no) || 0), 0) + 1;
+  const doc = { no: no, client: client, item: item, qty: qty, tracking: tracking, arrival: arrival, status: status };
+  if(FB_DB){
+    FB_DB.collection('deliveries').doc(String(no)).set(doc).then(() => renderDelivery()).catch(e => { console.warn('add delivery fail', e); alert('Add failed: ' + e.message); });
+  } else {
+    deliveryList.push(Object.assign({ id: String(no) }, doc));
+    renderDeliveryTable(deliveryList);
+  }
 }
 
 function renderAll(){
