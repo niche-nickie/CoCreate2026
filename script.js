@@ -226,6 +226,7 @@ const SUPPLIER_EN = {
   'C-01':'Ningbo Super','C-02':'Dongguan Yujie','C-03':'Charming','C-04':'Beijing Doorwin','C-05':'Masuma','C-06':'Xiamen Mingyuansheng','C-07':'Xiamen Hym','C-08':'Shenzhen Ejeas','C-09':'Foshan Fuson','C-10':'Zhangzhou Builder','C-11':'Guangdong Dejiyoupin','C-12':'SACA','C-13':'Qingdao Seahisun','C-14':'Shanghai Kenda',
   'D-01':'Biocaro','D-02':'Huion','D-03':'Quanzhou Binqi','D-04':'Xiamen Weiyou','D-05':'Gardensun','D-06':'Chiyang','D-07':'Superlaser','D-08':'South Intelligent Manufacturing','D-09':'Rundarongjia','D-10':'EMOKA',
   'E-01':'Healy','E-02':'Heniemo','E-03':'Funan Willow','E-04':'Bright Show','E-05':'YSTAR','E-06':'Allbright','E-07':'Yuze','E-08':'Sentron',
+  'F-01':'Guangzhou Colorful Bag','F-02':'Shijiazhuang Xiameng','F-03':'Henan Nuoou','F-04':'Xuchang Fuxin','F-05':'Shenzhen Minshunlong','F-06':'Henan Anhuilong','F-07':'Haining Jinhu','F-08':'Guangzhou Horae','F-09':'Hangzhou Bingzhi','F-10':'Qingdao Haohao','F-11':'Zhejiang Oron','F-12':'Zhejiang Zhengjia','F-13':'Shenzhen Hopestar','F-14':'Yongkang Bomo','F-15':'Dongguan Juli','F-16':'Huizhou Shiwang','F-17':'Suzhou Cleva (代展)','F-18':'Yangjiang Huirui (代展)','F-19':'Sy Electronic (代展)','F-20':'Shanghai Yuedong (代展)','F-21':'Guangzhou Xin Flying',
   'G-01':'Optor','G-02':'HMG','G-03':'JEWELUX','G-04':'VF Home','G-05':'Nongshim','G-06':'TAIDOC','G-07':'Gowinpc','G-08':'PACK EVER','G-09':'PACE SPORTS','G-10':'SNDZ','G-11':'GAME ON',
 };
 
@@ -703,7 +704,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 168;
+const CONTENT_VERSION = 169;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
