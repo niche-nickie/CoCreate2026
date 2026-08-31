@@ -708,7 +708,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 174;
+const CONTENT_VERSION = 175;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -1720,10 +1720,11 @@ function setupModal(){
     overlay.classList.add('open');
     const remembered = loadSignedInUser();
     emailInput.value = remembered ? remembered.email : '';
-    stepEmail.style.display = 'block';
-    stepPost.style.display = 'none';
     emailError.classList.remove('show');
-    emailInput.focus();
+    modalWho.textContent = currentUser ? `Signed in as ${currentUser.name}` : 'Guest';
+    stepEmail.style.display = 'none';
+    stepPost.style.display = 'block';
+    showAsk();
   }
   function closeModal(){ overlay.classList.remove('open'); }
 
@@ -1781,6 +1782,12 @@ function setupModal(){
   const askHistory = document.getElementById('ask-history');
 
   function showPost(){
+    if(!currentUser){
+      stepEmail.style.display = 'block';
+      stepPost.style.display = 'none';
+      emailInput.focus();
+      return;
+    }
     tabPost.classList.add('primary');
     tabAsk.classList.remove('primary');
     postForm.style.display = '';
