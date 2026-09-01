@@ -708,7 +708,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 181;
+const CONTENT_VERSION = 182;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -2047,12 +2047,23 @@ function setupZoneModal(){
     const rows = all.length ? all.map(it =>
       `<li class="${it.checked ? 'done' : ''}"><span class="box">${it.checked ? '☑' : '☐'}</span>${escapeHtml(it.text)}</li>`
     ).join('') : '<li class="empty">No itemized requirements.</li>';
+    const photos = currentPhotos();
+    const cur = photos[photoIndex];
+    let renderBlock = '';
+    if(cur){
+      const isRender = cur.type === 'render';
+      const label = isRender ? 'Client render' : 'AMG shop drawing';
+      renderBlock = `<div class="render"><img src="${imgEl.src}" alt="${escapeHtml(label)}"><div class="cap">${escapeHtml(label)} — ${escapeHtml(zone.name)}</div></div>`;
+    }
     const html = `<!doctype html><html><head><meta charset="utf-8"><title>${escapeHtml(zone.name)} — Checklist</title>
 <style>
   * { box-sizing: border-box; }
   body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 28px 32px; color: #1a1a1a; }
   h1 { font-size: 18px; margin: 0 0 2px; }
   .sub { color: #777; font-size: 12px; margin-bottom: 18px; }
+  .render { margin-bottom: 22px; }
+  .render img { max-width: 100%; border: 1px solid #ddd; border-radius: 4px; }
+  .render .cap { font-size: 11px; color: #777; margin-top: 5px; }
   ul { list-style: none; padding: 0; margin: 0; }
   li { display: flex; gap: 10px; align-items: baseline; padding: 7px 0; font-size: 13px; border-bottom: 1px solid #ececec; }
   li .box { width: 16px; text-align: center; flex: none; }
@@ -2061,6 +2072,7 @@ function setupZoneModal(){
 </style></head><body>
 <h1>${escapeHtml(zone.name)}</h1>
 <div class="sub">${escapeHtml(viewLabel)} · Checklist · ${dateStr}</div>
+${renderBlock}
 <ul>${rows}</ul>
 </body></html>`;
     const w = window.open('', '_blank');
@@ -2068,7 +2080,7 @@ function setupZoneModal(){
     w.document.write(html);
     w.document.close();
     w.focus();
-    setTimeout(() => { try { w.print(); } catch(e){} }, 300);
+    setTimeout(() => { try { w.print(); } catch(e){} }, 600);
   }
 
   checklistEl.addEventListener('click', (e) => {
