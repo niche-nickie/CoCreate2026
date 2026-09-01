@@ -708,7 +708,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 180;
+const CONTENT_VERSION = 181;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -1853,6 +1853,7 @@ function setupZoneModal(){
   const addItemBtn = document.getElementById('zone-modal-add-btn');
   const unitsEl = document.getElementById('zone-modal-units');
   const checklistLabelEl = document.getElementById('zone-modal-checklist-label');
+  const exportBtn = document.getElementById('zone-modal-export-btn');
 
   let currentUnit = null; // a reference into zone.units[i], or null = viewing the shared/category checklist
 
@@ -2033,6 +2034,43 @@ function setupZoneModal(){
     }
   }
 
+  function exportChecklistPDF(){
+    if(!zone) return;
+    const zs = loadZoneState(checklistKey());
+    const baseItems = (checklistBase() || [])
+      .map((text, i) => ({ text: zs.edits[i] !== undefined ? zs.edits[i] : text, checked: !!zs.checked[i], i }))
+      .filter(it => !zs.removed.includes(it.i));
+    const customItems = zs.custom.map(c => ({ text: c.text, checked: !!c.checked }));
+    const all = baseItems.concat(customItems);
+    const viewLabel = currentUnit ? currentUnit.label : (currentTier() ? currentTier().name : 'Category overview');
+    const dateStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    const rows = all.length ? all.map(it =>
+      `<li class="${it.checked ? 'done' : ''}"><span class="box">${it.checked ? '☑' : '☐'}</span>${escapeHtml(it.text)}</li>`
+    ).join('') : '<li class="empty">No itemized requirements.</li>';
+    const html = `<!doctype html><html><head><meta charset="utf-8"><title>${escapeHtml(zone.name)} — Checklist</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 28px 32px; color: #1a1a1a; }
+  h1 { font-size: 18px; margin: 0 0 2px; }
+  .sub { color: #777; font-size: 12px; margin-bottom: 18px; }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li { display: flex; gap: 10px; align-items: baseline; padding: 7px 0; font-size: 13px; border-bottom: 1px solid #ececec; }
+  li .box { width: 16px; text-align: center; flex: none; }
+  li.done { color: #999; text-decoration: line-through; }
+  li.empty { color: #999; }
+</style></head><body>
+<h1>${escapeHtml(zone.name)}</h1>
+<div class="sub">${escapeHtml(viewLabel)} · Checklist · ${dateStr}</div>
+<ul>${rows}</ul>
+</body></html>`;
+    const w = window.open('', '_blank');
+    if(!w){ alert('Popup blocked — please allow popups to export.'); return; }
+    w.document.write(html);
+    w.document.close();
+    w.focus();
+    setTimeout(() => { try { w.print(); } catch(e){} }, 300);
+  }
+
   checklistEl.addEventListener('click', (e) => {
     const item = e.target.closest('.zone-checklist-item');
     if(!item || !zone) return;
@@ -2075,6 +2113,7 @@ function setupZoneModal(){
     renderChecklist();
   }
   addItemBtn.addEventListener('click', addCustomItem);
+  exportBtn.addEventListener('click', exportChecklistPDF);
   newItemInput.addEventListener('keydown', (e) => { if(e.key === 'Enter') addCustomItem(); });
 
   function renderPhoto(){
