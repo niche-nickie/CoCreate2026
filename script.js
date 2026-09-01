@@ -708,7 +708,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 182;
+const CONTENT_VERSION = 183;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -2057,6 +2057,7 @@ function setupZoneModal(){
     }
     const html = `<!doctype html><html><head><meta charset="utf-8"><title>${escapeHtml(zone.name)} — Checklist</title>
 <style>
+  @page { size: portrait; margin: 12mm; }
   * { box-sizing: border-box; }
   body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 28px 32px; color: #1a1a1a; }
   h1 { font-size: 18px; margin: 0 0 2px; }
