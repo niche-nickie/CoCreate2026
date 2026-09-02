@@ -93,7 +93,7 @@ function makeTieredUnits(prefix, tiers, labelFn, renderFn){
 const SPONSOR_COMMUNITY_REQ = ['1× Std Counter — 990W×1000H×495D, Formica White', '2× LED arm light', 'Grey carpet'];
 const SPONSOR_ASSOCIATE_REQ = ['1× Std Counter — 990W×1000H×495D, Formica White', '1× 42" TV + floor stand + Media Player', '4× LED arm light', 'Grey carpet'];
 const SPONSOR_EXECUTIVE_REQ = ['1× Std Counter — 990W×1000H×495D, Formica White', '1× 42" TV + floor stand + Media Player', '6× LED arm light', 'Grey carpet'];
-const SPONSOR_PREMIER_REQ = ['1× Custom Counter — 1800W×500H×1000D, wooden joinery', '1× 42" TV wall mount + Media Player', '7× LED arm light', 'Grey carpet', '2× Full-height wall graphic, front only'];
+const SPONSOR_PREMIER_REQ = ['1× Custom Counter — 1800W×500H×1000D, wooden joinery', '1× 42" TV wall mount + Media Player', '7× LED arm light', 'Grey carpet'];
 
 const R_8X8 = ['sponsor-booths-2'];
 const R_10X10 = ['sponsor-booths-3'];
@@ -188,9 +188,9 @@ const ZONE_G_TIER = [
   { key:'lg', name:'Booth', sqm:'14m²', count:2, req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','4× LED arm light'] },
 ];
 const ZONE_CQ_TIER = [
-  { key:'cq1', name:'CQ-1', sqm:'9m²', count:1, renders: ['chongqing-0825-5', 'cq-01-layout'], req: ['1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
-  { key:'cq2', name:'CQ-2', sqm:'9m²', count:1, renders: ['chongqing-0825-6', 'cq-02-layout'], req: ['1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
-  { key:'cq3', name:'CQ-3', sqm:'9m²', count:1, renders: ['chongqing-0825-7', 'cq-03-layout'], req: ['1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','1× Fabric Graphic — 2966×2409mm, RX-101 Channel 9ft','Black+Orange Carpet'] },
+  { key:'cq1', name:'CQ-1', sqm:'9m²', count:1, renders: ['chongqing-0825-5', 'cq-01-layout'], req: ['1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','Black+Orange Carpet'] },
+  { key:'cq2', name:'CQ-2', sqm:'9m²', count:1, renders: ['chongqing-0825-6', 'cq-02-layout'], req: ['1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','Black+Orange Carpet'] },
+  { key:'cq3', name:'CQ-3', sqm:'9m²', count:1, renders: ['chongqing-0825-7', 'cq-03-layout'], req: ['1× Std Counter — 990W×1000H×495D, Formica Black','1× 42" TV wall mount + Media Player','2× LED arm light','Black+Orange Carpet'] },
 ];
 
 const ZONE_GB_TIER = [
@@ -309,9 +309,9 @@ ZONES: [
   { name: 'Supplier Non-A200 — Block G', owner: 'Siyu', status: 'Approved', img: 'zone-g-map-0825', renders: ['zone-g-map-0825'], drawings: ['block-g-dwg-1', 'block-g-dwg-2'], scope: 'G-01 ~ G-11. 9×8m² + 2×14m². YOUNGS Pop Up. AMG provide counter + TV + lighting + bracket.', flag: '11 booths · 11 std counters · 9/2',
     req: ['11× Std Counter — 990W×1000H×495D, Formica White, Lockable Door+Shelf', '11× 42" TV + Media Player + HDMI Cable + Floor Stand', '11× Grey carpet (≈1100 sqft)', '26× LED Arm Light', '22× Popup Bracket for PVC Graphic'], tiers: ZONE_G_TIER, units: makeTieredUnits('zone-g', ZONE_G_TIER, i => BOOTH_LABELS.g[i-1], n => [`g-${String(n).padStart(2,'0')}-0829`, `g-${String(n).padStart(2,'0')}-layout`]) },
   { name: 'Chongqing Pavilion', owner: 'Chris', status: 'Approved', img: 'chongqing-map', renders: ['chongqing-0825-2', 'chongqing-0825-3', 'chongqing-0825-4'], drawings: ['chongqing-dwg-1', 'chongqing-dwg-2', 'chongqing-dwg-3', 'chongqing-dwg-4', 'chongqing-dwg-5', 'chongqing-dwg-6'], scope: 'AMG shop drawings A.2–A.4 (JP, RENT). 27m² (3× 9sqm). Central: LED Lighting Structure 1200mm dia×3450mm H + 27× LED strips + 3× Display Stands (BLK Formica). Perimeter: 3× Std No Skin Panels 990×2413 + 42" TV wall mount + Media Player + Counter. Floor Trim 260ft.', flag: '3× 9sqm booths',
-    req: ['3× Std Counter — 990W×1000H×495D, Formica Black', '3× 42" TV wall mount + Media Player', '3× Fabric Graphic — 2966×2409mm', '6× LED arm light', '3× 9sqm Booths, Black+Orange Carpet'], tiers: ZONE_CQ_TIER, units: makeTieredUnits('cq', ZONE_CQ_TIER, i => BOOTH_LABELS.cq[i-1]) },
+    req: ['3× Std Counter — 990W×1000H×495D, Formica Black', '3× 42" TV wall mount + Media Player', '6× LED arm light', '3× 9sqm Booths, Black+Orange Carpet'], tiers: ZONE_CQ_TIER, units: makeTieredUnits('cq', ZONE_CQ_TIER, i => BOOTH_LABELS.cq[i-1]) },
   { name: 'Sponsor Booths 16+1', owner: 'Jin', status: 'Approved', img: 'sponsor-booths-map-0825', renders: ['sponsor-booths-map-0825'], drawings: ['sponsor-dwg-1', 'sponsor-dwg-2', 'sponsor-dwg-3', 'sponsor-dwg-4', 'sponsor-dwg-5', 'sponsor-dwg-6', 'sponsor-dwg-7', 'sponsor-dwg-8'], scope: 'AMG shop drawings A.2–A.5 (JP, RENT). 17 booths (P-01 ~ P-17): 8×8ft ×10, 10×10ft ×3, 10×15ft ×2, 10×20ft ×1 (P-14 empty lot, not provided by AMG).', flag: '16+1 booths · 1× empty lot',
-    req: ['15× Std Counter — 990W×1000H×495D, Formica White', '1× Custom Counter — 1800W×500H×1000D, wooden joinery (Premier)', '5× 42" TV + floor stand + Media Player', '1× 42" TV wall mount + Media Player (Premier)', '16× Grey carpet (≈1440 sqft)', '2× Full-height wall graphic, front only (Premier)', '51× LED arm light'],
+    req: ['15× Std Counter — 990W×1000H×495D, Formica White', '1× Custom Counter — 1800W×500H×1000D, wooden joinery (Premier)', '5× 42" TV + floor stand + Media Player', '1× 42" TV wall mount + Media Player (Premier)', '16× Grey carpet (≈1440 sqft)', '51× LED arm light'],
     tiers: SPONSOR_TIERS,
     units: makeTieredUnits('sponsor', SPONSOR_TIERS) },
   { name: 'National Pavilion', owner: 'Siyu', status: 'Approved', img: 'national-gb-map', renders: ['national-gb-map'], drawings: ['national-dwg-1', 'national-dwg-2'], scope: 'GB-01 ~ GB-44 (42 booths, GB-25 & GB-29 withdrew). AMG provide carpet + LED arm light only. 3 groups: GB-US×19, GB-Pakistan×9, GB-Others×14.', flag: '42 booths · carpet + lights only',
