@@ -708,7 +708,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 184;
+const CONTENT_VERSION = 185;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -729,6 +729,7 @@ const GRAPHIC_STATUS = [
   { value: 'done',      label: 'Done',      emoji: '🎉', color: '#15803d' },
 ];
 function graphicStatusMeta(v){ return GRAPHIC_STATUS.find(s => s.value === v) || GRAPHIC_STATUS[0]; }
+function graphicIsApproved(v){ const i = GRAPHIC_STATUS.findIndex(s => s.value === v); const a = GRAPHIC_STATUS.findIndex(s => s.value === 'approved'); return i >= a; }
 
 let FB_DB = null;
 function initFirebase(){
@@ -1287,7 +1288,7 @@ function renderGraphicsWith(list){
     <details class="card graphic-card" ${gi === 0 ? 'open' : ''} style="margin-bottom:12px;">
       <summary class="card-header graphic-summary" style="cursor:pointer;list-style:none;">
         <div class="card-title">🖼 ${escapeHtml(g.zone)}</div>
-        <span class="pill">${(g.items||[]).filter(it => it.status === 'approved').length}/${(g.items||[]).length} approved</span>
+        <span class="pill">${(g.items||[]).filter(it => graphicIsApproved(it.status)).length}/${(g.items||[]).length} approved</span>
       </summary>
       <div class="card-body" style="padding:0;overflow-x:auto;">
         <table class="phases">
@@ -1646,10 +1647,10 @@ function answerProjectQuestion(q){
     const lines = ['🖼 美工現況（approved / 總數）：'];
     gl.forEach(g => {
       const items = g.items || [];
-      const ok = items.filter(it => it.status === 'approved').length;
+      const ok = items.filter(it => graphicIsApproved(it.status)).length;
       lines.push(`· ${g.zone}：${ok}/${items.length}`);
     });
-    const notDone = gl.filter(g => (g.items||[]).some(it => it.status !== 'approved'));
+    const notDone = gl.filter(g => (g.items||[]).some(it => !graphicIsApproved(it.status)));
     if(notDone.length) lines.push('', '還沒全數 approved：' + notDone.map(g => g.zone).join('、'));
     return lines.join('\n');
   }
