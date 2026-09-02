@@ -1895,6 +1895,29 @@ function setupZoneModal(){
     const tier = currentTier();
     return tier ? tier.req : zone.req;
   }
+  function isOverview(){ return !currentUnit && !currentTier(); }
+  function checklistCustomItems(zs){
+    // Overview's own custom items (editable)
+    const own = (zs.custom || []).map((c, i) => ({ text: c.text, checked: !!c.checked, src: 'overview', srcIndex: i }));
+    if(!isOverview() || !zone.units){ return own; }
+    // Roll up custom items added in booth tags (read-only, dedup + count)
+    const ownTexts = new Set(own.map(x => x.text));
+    const counts = new Map();
+    zone.units.forEach(u => {
+      const us = loadZoneState(`${zone.name} :: ${u.id}`);
+      (us.custom || []).forEach(c => {
+        if(ownTexts.has(c.text)) return;
+        counts.set(c.text, (counts.get(c.text) || 0) + 1);
+      });
+    });
+    const rollup = [...counts.entries()].map(([text, n]) => ({
+      text: n > 1 ? `${n}× ${text}` : text,
+      checked: false,
+      src: 'rollup',
+      srcIndex: -1
+    }));
+    return own.concat(rollup);
+  }
 
   function loadAllState(){
     return CHECKLIST_CACHE;
@@ -1994,7 +2017,7 @@ function setupZoneModal(){
     const baseItems = (checklistBase() || [])
       .map((text, i) => ({ text: zs.edits[i] !== undefined ? zs.edits[i] : text, i, checked: !!zs.checked[i], type: 'base' }))
       .filter(it => !zs.removed.includes(it.i));
-    const customItems = zs.custom.map((c, i) => ({ text: c.text, i, checked: !!c.checked, type: 'custom' }));
+    const customItems = checklistCustomItems(zs).map((c, i) => ({ text: c.text, i, checked: !!c.checked, type: 'custom', src: c.src }));
     const all = baseItems.concat(customItems);
 
     if(all.length === 0){
@@ -2002,6 +2025,12 @@ function setupZoneModal(){
       return;
     }
     checklistEl.innerHTML = all.map(it => {
+      if(it.src === 'rollup'){
+        return `
+          <div class="zone-checklist-item readonly" data-type="${it.type}" data-i="${it.i}" data-src="rollup">
+            <span class="label">↳ ${escapeHtml(it.text)}</span>
+          </div>`;
+      }
       const isEditing = editingItem && editingItem.type === it.type && editingItem.i === it.i;
       if(isEditing){
         return `
@@ -2050,7 +2079,7 @@ function setupZoneModal(){
     const baseItems = (checklistBase() || [])
       .map((text, i) => ({ text: zs.edits[i] !== undefined ? zs.edits[i] : text, checked: !!zs.checked[i], i }))
       .filter(it => !zs.removed.includes(it.i));
-    const customItems = zs.custom.map(c => ({ text: c.text, checked: !!c.checked }));
+    const customItems = checklistCustomItems(zs).map(c => ({ text: c.text, checked: !!c.checked }));
     const all = baseItems.concat(customItems);
     const viewLabel = currentUnit ? currentUnit.label : (currentTier() ? currentTier().name : 'Category overview');
     const dateStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
@@ -2097,6 +2126,7 @@ ${renderBlock}
   checklistEl.addEventListener('click', (e) => {
     const item = e.target.closest('.zone-checklist-item');
     if(!item || !zone) return;
+    if(item.dataset.src === 'rollup') return; // read-only roll-up from booth tags
     const i = Number(item.dataset.i);
     const type = item.dataset.type;
 
