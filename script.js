@@ -1890,10 +1890,32 @@ function setupZoneModal(){
     const tier = currentTier();
     return tier ? `${zone.name} :: tier-${tier.key}` : zone.name;
   }
+  function isOverview(){ return !currentUnit && !currentTier(); }
   function checklistBase(){
     if(currentUnit) return currentUnit.req;
     const tier = currentTier();
-    return tier ? tier.req : zone.req;
+    if(tier) return tier.req;
+    // Category overview: include everything from every booth tag (zone items first, dedup by text)
+    const merged = [...(zone.req || [])];
+    (zone.units || []).forEach(u => (u.req || []).forEach(r => { if(!merged.includes(r)) merged.push(r); }));
+    return merged;
+  }
+  function checklistCustomItems(zs){
+    const items = (zs.custom || []).map((c, i) => ({ text: c.text, checked: c.checked, src: 'overview', srcIndex: i }));
+    if(isOverview() && zone.units){
+      zone.units.forEach(u => {
+        const us = loadZoneState(`${zone.name} :: ${u.id}`);
+        (us.custom || []).forEach((c, j) => {
+          if(!items.some(x => x.text === c.text)) items.push({ text: c.text, checked: c.checked, src: u.id, srcIndex: j });
+        });
+      });
+    }
+    return items;
+  }
+  function customTarget(src){
+    if(!src || src === 'overview'){ const k = checklistKey(); return { key: k, zs: loadZoneState(k) }; }
+    const k = `${zone.name} :: ${src}`;
+    return { key: k, zs: loadZoneState(k) };
   }
 
   function loadAllState(){
@@ -1994,7 +2016,7 @@ function setupZoneModal(){
     const baseItems = (checklistBase() || [])
       .map((text, i) => ({ text: zs.edits[i] !== undefined ? zs.edits[i] : text, i, checked: !!zs.checked[i], type: 'base' }))
       .filter(it => !zs.removed.includes(it.i));
-    const customItems = zs.custom.map((c, i) => ({ text: c.text, i, checked: !!c.checked, type: 'custom' }));
+    const customItems = checklistCustomItems(zs).map((c, i) => ({ text: c.text, i, checked: !!c.checked, type: 'custom', src: c.src, srcIndex: c.srcIndex }));
     const all = baseItems.concat(customItems);
 
     if(all.length === 0){
@@ -2011,7 +2033,7 @@ function setupZoneModal(){
           </div>`;
       }
       return `
-        <div class="zone-checklist-item ${it.checked ? 'checked' : ''}" data-type="${it.type}" data-i="${it.i}">
+        <div class="zone-checklist-item ${it.checked ? 'checked' : ''}" data-type="${it.type}" data-i="${it.i}" data-src="${it.src || ''}" data-srcindex="${it.srcIndex !== undefined ? it.srcIndex : ''}">
           <span class="check">${it.checked ? '✓' : ''}</span>
           <span class="label">${escapeHtml(it.text)}</span>
           <button class="item-edit" title="Edit">✎</button>
@@ -2025,12 +2047,12 @@ function setupZoneModal(){
         input.focus();
         input.setSelectionRange(input.value.length, input.value.length);
         const commit = () => {
-          const zs2 = loadZoneState(checklistKey());
+          const t = (editingItem.type === 'custom') ? customTarget(editingItem.src) : { key: checklistKey(), zs: loadZoneState(checklistKey()) };
           const newText = input.value.trim();
           if(newText){
-            if(editingItem.type === 'base') { zs2.edits[editingItem.i] = newText; }
-            else { zs2.custom[editingItem.i].text = newText; }
-            saveZoneState(checklistKey(), zs2);
+            if(editingItem.type === 'base') { t.zs.edits[editingItem.i] = newText; }
+            else { t.zs.custom[editingItem.srcIndex].text = newText; }
+            saveZoneState(t.key, t.zs);
           }
           editingItem = null;
           renderChecklist();
@@ -2050,7 +2072,7 @@ function setupZoneModal(){
     const baseItems = (checklistBase() || [])
       .map((text, i) => ({ text: zs.edits[i] !== undefined ? zs.edits[i] : text, checked: !!zs.checked[i], i }))
       .filter(it => !zs.removed.includes(it.i));
-    const customItems = zs.custom.map(c => ({ text: c.text, checked: !!c.checked }));
+    const customItems = checklistCustomItems(zs).map(c => ({ text: c.text, checked: !!c.checked }));
     const all = baseItems.concat(customItems);
     const viewLabel = currentUnit ? currentUnit.label : (currentTier() ? currentTier().name : 'Category overview');
     const dateStr = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
@@ -2099,30 +2121,31 @@ ${renderBlock}
     if(!item || !zone) return;
     const i = Number(item.dataset.i);
     const type = item.dataset.type;
+    const src = item.dataset.src || 'overview';
+    const srcIndex = item.dataset.srcindex !== '' ? Number(item.dataset.srcindex) : i;
 
     if(e.target.closest('.item-edit')){
-      editingItem = { type, i };
+      editingItem = { type, i, src, srcIndex };
       renderChecklist();
       return;
     }
+    const t = type === 'custom' ? customTarget(src) : { key: checklistKey(), zs: loadZoneState(checklistKey()) };
     if(e.target.closest('.item-remove')){
-      const zs = loadZoneState(checklistKey());
       if(type === 'base'){
-        if(!zs.removed.includes(i)) zs.removed.push(i);
+        if(!t.zs.removed.includes(i)) t.zs.removed.push(i);
       } else {
-        zs.custom.splice(i, 1);
+        t.zs.custom.splice(srcIndex, 1);
       }
-      saveZoneState(checklistKey(), zs);
+      saveZoneState(t.key, t.zs);
       renderChecklist();
       return;
     }
-    const zs = loadZoneState(checklistKey());
     if(type === 'base'){
-      zs.checked[i] = !zs.checked[i];
+      t.zs.checked[i] = !t.zs.checked[i];
     } else {
-      zs.custom[i].checked = !zs.custom[i].checked;
+      t.zs.custom[srcIndex].checked = !t.zs.custom[srcIndex].checked;
     }
-    saveZoneState(checklistKey(), zs);
+    saveZoneState(t.key, t.zs);
     renderChecklist();
   });
 
