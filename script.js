@@ -4,7 +4,7 @@
 
 const TODAY = (() => { const d = new Date(); d.setHours(0, 0, 0, 0); return d; })();
 const SHOW_START = new Date('2026-09-09');
-const IMG_CACHE_BUST = '?v=20260831';  // bump to bust image CDN cache
+const IMG_CACHE_BUST = '?v=20260903';  // bump to bust image CDN cache
 
 const ACCESS_LIST = {
   'nickie@nichemusa.com': 'Nickie Wang',
@@ -282,7 +282,7 @@ PHASES: [
 ZONES: [
   { name: 'Registration', owner: 'Ari', status: 'Approved', img: 'registration-v2-2', renders: ['registration-0825-2'], drawings: ['registration-dwg-3', 'registration-dwg-5', 'registration-dwg-6', 'registration-dwg-7', 'registration-dwg-8', 'registration-dwg-9', 'registration-dwg-10'], scope: 'AMG provide registration backdrop, front and back graphic.column graphics', flag: 'Lobby area',
     req: ['12× Std LED arm light', '1× BO fabric — back wall front (REG-BK-WALL-FRT, 9896×2409, 4/0)', '1× BO fabric — back wall back (REG-BK-WALL-BK, 9896×2409, 4/0)', '1× Curved PVC column cover w/ Velcro (COLUMN-COVER, 4/0)'] },
-  { name: 'Wayfinding System & Promotion Materials', owner: 'Ari', status: 'Approved', img: 'wayfinding-0825-1', renders: ['wayfinding-0825-1', 'wayfinding-render-2', 'wayfinding-render-3', 'wayfinding-floorplan-0830'], drawings: ['wayfinding-dwg-1', 'octanorm-dwg-3', 'octanorm-dwg-4', 'octanorm-dwg-5', 'octanorm-dwg-6', 'octanorm-dwg-7', 'octanorm-dwg-8'], scope: 'AMG provide. Stand ×5 (70×170cmH) + 100" TV ×2 w/ floor stand + Pop up ×3 (3×6.5ft).', flag: '', req: ['5× Stand — 70×170cmH', '2× 100" TV w/ floor stand', '3× Pop up — 3×6.5ft'] },
+  { name: 'Wayfinding System & Promotion Materials', owner: 'Ari', status: 'Approved', img: 'wayfinding-0825-1', renders: ['wayfinding-0825-1', 'wayfinding-render-2', 'wayfinding-render-3', 'wayfinding-floorplan-0903'], drawings: ['wayfinding-dwg-1', 'octanorm-dwg-3', 'octanorm-dwg-4', 'octanorm-dwg-5', 'octanorm-dwg-6', 'octanorm-dwg-7', 'octanorm-dwg-8'], scope: 'AMG provide. Stand ×5 (70×170cmH) + 100" TV ×2 w/ floor stand + Pop up ×3 (3×6.5ft).', flag: '', req: ['5× Stand — 70×170cmH', '2× 100" TV w/ floor stand', '3× Pop up — 3×6.5ft'] },
   { name: 'Keynote Hall', owner: 'Ari', status: 'Approved', img: 'keynote-dark', renders: ['keynote-dark', 'keynote-plan'], scope: 'Carpet removed. All by Youngs / Client.', flag: '⚠ Carpet removed', blocking: true, req: ['All other items — by Youngs / Client'] },
   { name: 'AMA / Influencer Hub', owner: 'Iris', status: 'Approved', img: 'ama-hub-render-1', renders: ['ama-hub-render-1'], scope: 'YOUNGS X JOHNATHAN — Banner ×6, Stage, Furniture by Youngs', flag: 'YOUNGS X JOHNATHAN', req: [] },
 
@@ -708,7 +708,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 186;
+const CONTENT_VERSION = 187;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
