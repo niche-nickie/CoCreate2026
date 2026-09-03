@@ -219,6 +219,9 @@ const BOOTH_LABELS = {
   gb: ['GB-01 (6m²)','GB-02 (4m²)','GB-03 (4m²)','GB-04 (4m²)','GB-05 (4m²)','GB-06 (6m²)','GB-07 (4m²)','GB-08 (4m²)','GB-09 (4m²)','GB-10 (4m²)','GB-11 (4m²)','GB-12 (4m²)','GB-13 (4m²)','GB-14 (4m²)','GB-15 (4m²)','GB-16 (4m²)','GB-17 (4m²)','GB-18 (4m²)','GB-19 (4m²)','GB-20 (4m²)','GB-21 (4m²)','GB-22 (4m²)','GB-23 (4m²)','GB-24 (4m²)','GB-26 (4m²)','GB-27 (4m²)','GB-28 (4m²)','GB-30 (4m²)','GB-31 (4m²)','GB-32 (4m²)','GB-33 (4m²)','GB-34 (4m²)','GB-35 (4m²)','GB-36 (4m²)','GB-37 (4m²)','GB-38 (4m²)','GB-39 (4m²)','GB-40 (4m²)','GB-41 (4m²)','GB-42 (4m²)','GB-43 (4m²)','GB-44 (4m²)'],
 };
 
+// National Pavilion booths whose clients withdrew (greyed out)
+const WITHDREW_GB = ['GB-20', 'GB-27', 'GB-31', 'GB-33', 'GB-35'];
+
 // Supplier English short names (0818 floor plan) — keyed by booth ID
 const SUPPLIER_EN = {
   'A-01':'Wenzhou Baoshijie','A-02':'Ningbo Youyi','A-03':'Choebe','A-04':'Zhejiang Minghui','A-06':'Sowin','A-07':'OPT','A-08':'Xiamen Xiefa','A-09':'Fuzhou Sencai',
@@ -708,7 +711,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 188;
+const CONTENT_VERSION = 189;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -1956,11 +1959,12 @@ function setupZoneModal(){
       ${zone.units.map((u, i) => {
         const boothId = (u.label || '').split(' ')[0];
         const supplier = SUPPLIER_EN[boothId];
+        const withdrew = WITHDREW_GB.includes(boothId);
         return `
-          <span class="unit-chip ${currentUnit === u ? 'active' : ''}" data-unit="${i}">
-            <span class="unit-dot" style="background:${statusColor(u.status)}"></span>
+          <span class="unit-chip ${currentUnit === u ? 'active' : ''} ${withdrew ? 'withdrew' : ''}" data-unit="${i}">
+            <span class="unit-dot" style="background:${withdrew ? '#777' : statusColor(u.status)}"></span>
             <span class="unit-chip-text">
-              <span class="unit-label">${escapeHtml(u.label)}</span>
+              <span class="unit-label">${escapeHtml(u.label)}${withdrew ? ' ✕' : ''}</span>
               ${supplier ? `<span class="unit-supplier">${escapeHtml(supplier)}</span>` : ''}
             </span>
           </span>
@@ -2172,6 +2176,7 @@ ${renderBlock}
   function renderPhoto(){
     const photos = currentPhotos();
     const contextLabel = currentUnit ? currentUnit.label : zone.name;
+    const withdrewPhoto = currentUnit && WITHDREW_GB.includes((currentUnit.label || '').split(' ')[0]);
     let existingEmpty = viewer.querySelector('.empty');
     if(existingEmpty) existingEmpty.remove();
 
@@ -2196,9 +2201,10 @@ ${renderBlock}
       imgEl.src = `assets/zones/${p.slug}.jpg${IMG_CACHE_BUST}`;
       imgEl.alt = `${contextLabel} ${isDwg ? 'shop drawing' : 'rendering'} ${photoIndex + 1}`;
       imgEl.classList.toggle('is-drawing', isDwg);
+      imgEl.classList.toggle('withdrew-img', withdrewPhoto);
       phototypeEl.style.display = '';
       phototypeEl.className = `zone-modal-phototype ${isDwg ? 'drawing' : 'render'}`;
-      phototypeEl.textContent = isDwg ? '📐 AMG shop drawing · tap to enlarge' : '🎨 Client render';
+      phototypeEl.textContent = withdrewPhoto ? '⚠ Client withdrew · no longer attending' : (isDwg ? '📐 AMG shop drawing · tap to enlarge' : '🎨 Client render');
       const multi = photos.length > 1;
       counterEl.style.display = multi ? '' : 'none';
       prevBtn.style.display = multi ? '' : 'none';
