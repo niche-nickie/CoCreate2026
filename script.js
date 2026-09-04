@@ -214,7 +214,7 @@ const BOOTH_LABELS = {
 };
 
 // National Pavilion booths whose clients withdrew (greyed out)
-const WITHDREW_GB = ['GB-20', 'GB-27', 'GB-31', 'GB-33', 'GB-35'];
+const WITHDREW_GB = ['GB-12', 'GB-20', 'GB-27', 'GB-31', 'GB-33', 'GB-35'];
 
 // Supplier English short names (0818 floor plan) — keyed by booth ID
 const SUPPLIER_EN = {
@@ -658,7 +658,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 197;
+const CONTENT_VERSION = 198;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
