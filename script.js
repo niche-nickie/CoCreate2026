@@ -711,7 +711,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 190;
+const CONTENT_VERSION = 191;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -1454,6 +1454,14 @@ const DELIVERIES = [
 ];
 
 const DELIVERY_STATUSES = ['Pending', 'Order Placed', 'Shipped', 'In Transit', 'Arrived', 'Delivered'];
+const DELIVERY_STATUS_META = {
+  'Pending': { emoji: '⏳', color: '#9e9e9e' },
+  'Order Placed': { emoji: '📝', color: '#4f8cff' },
+  'Shipped': { emoji: '📦', color: '#00bcd4' },
+  'In Transit': { emoji: '🚚', color: '#b07ff0' },
+  'Arrived': { emoji: '🏁', color: '#ff9800' },
+  'Delivered': { emoji: '✅', color: '#22c55e' },
+};
 let deliveryList = [];
 
 function renderDelivery(){
@@ -1481,7 +1489,8 @@ function renderDeliveryTable(list){
   if(!el) return;
   deliveryList = list;
   const rows = list.map(d => {
-    const opts = DELIVERY_STATUSES.map(s => `<option value="${s}"${s === d.status ? ' selected' : ''}>${s}</option>`).join('');
+    const meta = DELIVERY_STATUS_META[d.status] || {};
+    const opts = DELIVERY_STATUSES.map(s => { const m = DELIVERY_STATUS_META[s] || {}; return `<option value="${s}"${s === d.status ? ' selected' : ''}>${m.emoji || ''} ${s}</option>`; }).join('');
     return `<tr>
       <td>${d.no}</td>
       <td>${escapeHtml(d.client)}</td>
@@ -1489,7 +1498,7 @@ function renderDeliveryTable(list){
       <td>${d.qty}</td>
       <td>${escapeHtml(d.tracking || '—')}</td>
       <td>${escapeHtml(d.arrival || '—')}</td>
-      <td><select class="delivery-status" data-id="${d.id}" onchange="setDeliveryStatus(this)">${opts}</select></td>
+      <td><select class="delivery-status" data-id="${d.id}" onchange="setDeliveryStatus(this)" style="color:${meta.color || ''};border-color:${meta.color || ''}">${opts}</select></td>
       <td><input class="delivery-note" data-id="${d.id}" value="${escapeHtml(d.notes || '')}" onchange="setDeliveryNote(this)" placeholder="—"></td>
     </tr>`;
   }).join('');
@@ -1511,6 +1520,9 @@ function renderDeliveryTable(list){
 function setDeliveryStatus(sel){
   const id = sel.dataset.id;
   const status = sel.value;
+  const m = DELIVERY_STATUS_META[status] || {};
+  sel.style.color = m.color || '';
+  sel.style.borderColor = m.color || '';
   FB_DB.collection('deliveries').doc(id).update({ status }).catch(e => console.warn('delivery status save fail', e));
 }
 
@@ -1521,7 +1533,7 @@ function setDeliveryNote(input){
 }
 
 function deliveryAddForm(){
-  const opts = DELIVERY_STATUSES.map(s => `<option value="${s}">${s}</option>`).join('');
+  const opts = DELIVERY_STATUSES.map(s => { const m = DELIVERY_STATUS_META[s] || {}; return `<option value="${s}">${m.emoji || ''} ${s}</option>`; }).join('');
   const base = 'background:transparent;color:inherit;border:1px solid #444;border-radius:6px;padding:6px 8px;';
   return `<div style="display:flex;flex-wrap:wrap;gap:6px;padding:10px;border-top:1px solid #333;align-items:center;">
     <input id="dlv-client" placeholder="Client" style="flex:1;min-width:130px;${base}">
