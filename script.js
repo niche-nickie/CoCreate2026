@@ -658,7 +658,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 193;
+const CONTENT_VERSION = 194;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -1448,7 +1448,7 @@ function renderSidebarUser(){
 // ---------- Project Q&A assistant ----------
 function answerProjectQuestion(q){
   const s = (q || '').toLowerCase().trim();
-  if(!s) return '請輸入問題～';
+  if(!s) return 'Type a question to get started.';
   const has = (...kws) => kws.some(k => s.includes(k));
 
   const zones = DATA.ZONES || [];
@@ -1456,33 +1456,33 @@ function answerProjectQuestion(q){
   const gantt = DATA.GANTT_ROWS || [];
 
   // --- Delivery ---
-  if(has('delivery','送貨','到貨','貨運','shipping','arrive','tracking','快遞','物流')){
+  if(has('delivery','shipping','arrive','tracking')){
     const dl = deliveryList || [];
-    if(!dl.length) return 'Delivery 資料還沒載入，稍等再試～';
+    if(!dl.length) return 'Delivery data is still loading — try again in a moment.';
     const by = {};
     dl.forEach(d => { by[d.status] = (by[d.status]||0)+1; });
-    const lines = [`📦 Delivery 現況（Youngs → AMG，共 ${dl.length} 筆）：`];
-    DELIVERY_STATUSES.forEach(st => { if(by[st]) lines.push(`· ${st}：${by[st]} 筆`); });
+    const lines = [`📦 Delivery status (Youngs → AMG, ${dl.length} items):`];
+    DELIVERY_STATUSES.forEach(st => { if(by[st]) lines.push(`· ${st}: ${by[st]}`); });
     const notArrived = dl.filter(d => d.status !== 'Arrived' && d.status !== 'Delivered');
     if(notArrived.length){
-      lines.push('', `尚未到貨 ${notArrived.length} 筆，前幾筆：`);
-      notArrived.slice(0,6).forEach(d => lines.push(`· ${d.client} — ${d.item||'—'}（${d.status}）`));
+      lines.push('', `Not yet arrived — ${notArrived.length} items, top few:`);
+      notArrived.slice(0,6).forEach(d => lines.push(`· ${d.client} — ${d.item||'—'} (${d.status})`));
     }
     return lines.join('\n');
   }
 
-  // --- Graphics / 美工 ---
-  if(has('美工','graphics','graphic','圖面','banner','design')){
+  // --- Graphics ---
+  if(has('graphics','graphic','banner','design','artwork')){
     const gl = graphicsList || [];
-    if(!gl.length) return '美工資料還沒載入，稍等再試～';
-    const lines = ['🖼 美工現況（approved / 總數）：'];
+    if(!gl.length) return 'Graphics data is still loading — try again in a moment.';
+    const lines = ['🖼 Graphics status (approved / total):'];
     gl.forEach(g => {
       const items = g.items || [];
       const ok = items.filter(it => graphicIsApproved(it.status)).length;
-      lines.push(`· ${g.zone}：${ok}/${items.length}`);
+      lines.push(`· ${g.zone}: ${ok}/${items.length}`);
     });
     const notDone = gl.filter(g => (g.items||[]).some(it => !graphicIsApproved(it.status)));
-    if(notDone.length) lines.push('', '還沒全數 approved：' + notDone.map(g => g.zone).join('、'));
+    if(notDone.length) lines.push('', 'Not fully approved yet: ' + notDone.map(g => g.zone).join(', '));
     return lines.join('\n');
   }
 
@@ -1492,38 +1492,38 @@ function answerProjectQuestion(q){
     const nl = name.toLowerCase();
     const words = nl.split(/[^a-z0-9]+/).filter(w => w.length > 3);
     if(s.includes(nl) || words.some(w => s.includes(w))){
-      const lines = [`🏷 ${name}`, `狀態：${z.status}`, `負責：${z.owner || '—'}`];
-      if(z.flag) lines.push(`備註：${z.flag}`);
+      const lines = [`🏷 ${name}`, `Status: ${z.status}`, `Owner: ${z.owner || '—'}`];
+      if(z.flag) lines.push(`Note: ${z.flag}`);
       return lines.join('\n');
     }
   }
 
   // --- Approved zones ---
-  if(has('approved','通過','approve','已確認','哪些 zone','哪些區')){
+  if(has('approved','approve','confirmed','which zones')){
     const approved = zones.filter(z => z.status === 'Approved');
     const others = zones.filter(z => z.status !== 'Approved');
-    let r = `✅ 已通過的 zone（${approved.length} 個）：\n` + (approved.length ? approved.map(z=>`· ${z.name}`).join('\n') : '（無）');
-    if(others.length) r += '\n\n其他狀態：\n' + others.map(z=>`· ${z.name}（${z.status}）`).join('\n');
+    let r = `✅ Approved zones (${approved.length}):\n` + (approved.length ? approved.map(z=>`· ${z.name}`).join('\n') : '(none)');
+    if(others.length) r += '\n\nOther status:\n' + others.map(z=>`· ${z.name} (${z.status})`).join('\n');
     return r;
   }
 
   // --- Deadlines / schedule / next ---
-  if(has('deadline','截止','時程','schedule','due','when','日期','接下來','next','下一步')){
-    const lines = ['📅 時程 / 接下來的 deadline：'];
+  if(has('deadline','schedule','due','when','date','next','upcoming')){
+    const lines = ['📅 Schedule / upcoming deadlines:'];
     dead.forEach(d => lines.push(`· ${d.date} — ${d.title}`));
-    gantt.slice(0,8).forEach(g => lines.push(`· ${g.label}：${g.start} → ${g.end}`));
+    gantt.slice(0,8).forEach(g => lines.push(`· ${g.label}: ${g.start} → ${g.end}`));
     return lines.join('\n');
   }
 
   // --- Overall / progress ---
-  if(has('進度','progress','整體','overview','summary','狀態','總覽')){
+  if(has('progress','overview','summary','status')){
     const sc = {};
     zones.forEach(z => { sc[z.status] = (sc[z.status]||0)+1; });
-    const lines = ['📊 專案總覽：', 'Zone 狀態：' + Object.entries(sc).map(([k,v])=>`${k} ${v}`).join('、')];
+    const lines = ['📊 Project overview:', 'Zone status: ' + Object.entries(sc).map(([k,v])=>`${k} ${v}`).join(', ')];
     return lines.join('\n');
   }
 
-  return '我可以回答專案問題，例如：\n· 「哪些 zone 通過了？」\n· 「delivery 到哪了？」\n· 「美工進度？」\n· 「下一個 deadline？」\n· 「[zone 名] 的狀態？」\n\n（我是專案資料助理，只能回答網站上有紀錄的資訊～）';
+  return 'I can answer project questions, e.g.:\n· "Which zones are approved?"\n· "Where is my delivery?"\n· "Graphics progress?"\n· "Next deadline?"\n· "[zone name] status?"\n\n(I\'m the project data assistant — I can only answer from what\'s on the site.)';
 }
 
 // ---------- Report / Ask modal ----------
@@ -1589,7 +1589,7 @@ function setupModal(){
   function appendAsk(who, text){
     const div = document.createElement('div');
     div.style.marginBottom = '8px';
-    const color = who === '你' ? '#8ab4ff' : '#7ee2a8';
+    const color = who === 'You' ? '#8ab4ff' : '#7ee2a8';
     div.innerHTML = `<div style="color:${color};font-weight:600;margin-bottom:2px;">${who}</div><div style="white-space:pre-wrap;">${escapeHtml(text)}</div>`;
     askHistory.appendChild(div);
     askHistory.scrollTop = askHistory.scrollHeight;
@@ -1597,7 +1597,7 @@ function setupModal(){
   function sendAsk(){
     const q = askInput.value.trim();
     if(!q) return;
-    appendAsk('你', q);
+    appendAsk('You', q);
     askInput.value = '';
     appendAsk('Caleb', answerProjectQuestion(q));
   }
