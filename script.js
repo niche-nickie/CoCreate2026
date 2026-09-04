@@ -43,7 +43,7 @@ function colorForName(name){
   return AVATAR_PALETTE[h % AVATAR_PALETTE.length];
 }
 
-const ZONE_ICONS = { 'Registration': '🏛', 'Core Display': '🔤', 'Keynote Hall': '🎤', 'AMA / Influencer Hub': '📷', 'Match Meeting': '🤝', 'Mini Panel': '🎙', 'Buyer Story': '📖', 'Unboxing Live': '📦', 'Next-Gen Sourcing + AI': '🤖', 'Podcast': '🎧', 'Chongqing Pavilion': '🏮', 'National Pavilion': '🌐', 'Sourcing Hub': '🔎', 'Sponsor Booths 16+1': '🏷', 'Supplier A200 — Block A': '🅰️', 'Supplier A200 — Block B': '🅱️', 'Supplier A200 — Block C': '©️', 'Supplier A200 — Block D': '🅳', 'Supplier A200 — Block E': '🅴', 'Supplier Non-A200 — Block F': '🅵', 'Supplier Non-A200 — Block G': '🅶', 'Muse Booth': '🎨', 'UED Booth': '💻', 'Creator Market': '🧵', 'Agentic Robotics Arena': '🦾' };
+const ZONE_ICONS = { 'Registration': '🏛', 'Core Display': '🔤', 'Keynote Hall': '🎤', 'AMA / Influencer Hub': '📷', 'Match Meeting': '🤝', 'Mini Panel': '🎙', 'Buyer Story': '📖', 'Unboxing Live': '📦', 'Next-Gen Sourcing + AI': '🤖', 'Podcast': '🎧', 'Chongqing Pavilion': '🏮', 'National Pavilion': '🌐', 'Sourcing Hub': '🔎', 'Sponsor Booths 16+1': '🏷', 'Supplier A200 — Block A': '🅰️', 'Supplier A200 — Block B': '🅱️', 'Supplier A200 — Block C': '©️', 'Supplier A200 — Block D': '🅳', 'Supplier A200 — Block E': '🅴', 'Supplier Non-A200 — Block F': '🅵', 'Supplier Non-A200 — Block G': '🅶', 'Muse Booth': '🎨', 'UED Booth': '💻', 'Creator Market': '🧵', 'Agentic Robotics Arena': '🦾', 'GALA': '🥂' };
 
 function gallery(slug, count){
   return Array.from({ length: count }, (_, i) => `${slug}-${i + 1}`);
@@ -302,6 +302,7 @@ ZONES: [
   { name: 'UED Booth', owner: 'Ari', status: 'Approved', img: 'ued-0825-1', renders: ['ued-0825-1', 'ued-0825-2', 'ued-0825-3', 'ued-0825-4', 'ued-0825-5', 'ued-0825-6', 'ued-0825-7'], drawings: ['ued-dwg-1', 'ued-dwg-2', 'ued-dwg-3', 'ued-dwg-4', 'ued-dwg-5'], scope: '7×2.2m (15.4m²). Std Panel + Std Counter + 55" TV + LED + RX-101 channels. Flooring ≈169 sqft.', flag: 'Furniture and devices from Youngs',
     req: ['2× Graphic Bracket — 100W×250H×50D, Formica White', '4× Std Counter — 990W×1000H×495D, Formica White, Lockable Door+Shelf', '3× Std Counter — 495W×1000H×495D, Formica White, Lockable Door+Shelf', '1× 55" TV + Media Player, HDMI Cable, Floor Stand', '1× Grey carpet — 7000×2200mm, ≈169 sqft', '3× LED Arm Light'] },
   { name: 'Agentic Robotics Arena', owner: 'Iris', status: 'Approved', img: 'agentic-robotics-render-1', renders: ['agentic-robotics-render-1', 'agentic-robotics-render-2'], drawings: ['agentic-dwg-1'], scope: 'AMG only provide carpet and floor vinyl. All else by Youngs. Size TBD.', flag: '⚠ Size TBD — carpet + vinyl only', req: [], tiers: ZONE_I_TIER, units: makeTieredUnits('i', ZONE_I_TIER, i => BOOTH_LABELS.i[i-1]) },
+  { name: 'GALA', owner: '', status: 'TBD', img: '', renders: [], drawings: [], scope: '', flag: '', req: [] },
 ],
 
 HARD_DEADLINES: [
@@ -321,7 +322,6 @@ GRAPHICS: [
     { item: 'REG-WALL-FRT', size: '9896×2409mm', material: 'BO Fabric', qty: 1, status: 'pending', thumb: 'assets/graphics/reg-wall-frt.jpg' },
   ]},
   { zone: 'Wayfinding System & Promotion Materials', items: [
-    { item: 'COLUMN-COVER', size: '—', material: 'Curved PVC', qty: 1, status: 'pending', thumb: '' },
     { item: 'ASK-ME-ANYTHING', size: '—', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/ask-me-anything.jpg' },
     { item: 'VIP-LOUNGE', size: '—', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/vip-lounge.jpg' },
     { item: 'COCREATE-MATCH', size: '—', material: 'Vinyl', qty: 1, status: 'pending', thumb: 'assets/graphics/cocreate-match.jpg' },
@@ -658,7 +658,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 194;
+const CONTENT_VERSION = 195;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
