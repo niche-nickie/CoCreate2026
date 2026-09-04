@@ -658,7 +658,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 192;
+const CONTENT_VERSION = 193;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -866,8 +866,8 @@ function renderStatCards(){
     </div>
     <div class="stat-card">
       <div class="stat-label">GSC Application</div>
-      <div class="stat-value" style="color:var(--orange); font-size:16px; padding-top:5px;">Pending</div>
-      <div class="stat-sub">Awaiting venue license</div>
+      <div class="stat-value" style="color:var(--green); font-size:16px; padding-top:5px;">Approved</div>
+      <div class="stat-sub">✅ Venue license confirmed</div>
     </div>
   `;
 }
@@ -876,7 +876,7 @@ function renderTimelinePreview(){
   const items = [
     { date: 'Jul 19', color: 'var(--green)', title: 'Full design scope confirmed', sub: '20 zones, 100+ booths — Next-Gen zone still pending' },
     { date: 'Jun 8', color: 'var(--red)', title: 'Union labor documentation', hard: true, sub: 'Breached — venue license wasn\'t ready in time, escalate with LACC' },
-    { date: 'Now', color: 'var(--red)', title: 'Confirm venue license + COI', sub: 'Youngs owned — still unconfirmed, gates GSC application' },
+    { date: 'Done', color: 'var(--green)', title: 'Venue license + COI confirmed', sub: 'GSC application approved ✅' },
     { date: 'Jul 20–Aug 10', color: 'var(--blue)', title: 'AMG engineering + drawings (full scope)', sub: 'Compressed — starts now, not back in spring' },
     { date: 'Jul 21–Aug 7', color: 'var(--blue)', title: 'AMG quote → client approval', sub: '75% deposit from Youngs needed fast' },
     { date: 'Aug 8', color: 'var(--red)', title: 'Scaled floor diagrams to LACC', hard: true, sub: '30 days prior to move-in' },
