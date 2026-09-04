@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CoCreate 2026 — Project Hub</title>
-<link rel="stylesheet" href="styles.css?v=24">
+<link rel="stylesheet" href="styles.css?v=25">
 </head>
 <body>
 
@@ -18,7 +18,6 @@
   <div class="nav-section-label">Overview</div>
   <a class="nav-item" href="#dashboard"><span class="nav-icon">◈</span> Dashboard</a>
   <a class="nav-item" href="#schedule"><span class="nav-icon">◷</span> Schedule</a>
-  <a class="nav-item" href="#phases"><span class="nav-icon">▤</span> Phases</a>
 
   <div class="nav-section-label">Project</div>
   <a class="nav-item" href="#zones"><span class="nav-icon">⬡</span> Zones</a>
@@ -26,7 +25,6 @@
 
   <div class="nav-section-label">Log</div>
   <a class="nav-item" href="#delivery"><span class="nav-icon">📦</span> Delivery</a>
-  <a class="nav-item" href="#updates"><span class="nav-icon">🕓</span> Updates</a>
 
   <div class="sidebar-footer">
     <div class="user-chip" id="sidebar-user-chip">
@@ -53,7 +51,6 @@
     <div class="header-actions">
       <button class="btn btn-ghost edit-only" id="btn-reset-content" title="Reset all content back to defaults">↺ Reset</button>
       <button class="btn btn-ghost" id="btn-edit-toggle">✎ Edit Page</button>
-      <button class="btn btn-ghost" id="btn-add-update">+ Add Update</button>
     </div>
   </div>
 
@@ -68,21 +65,6 @@
         </div>
         <div class="card-body" id="timeline-preview"></div>
       </div>
-
-      <div class="col-stack">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">⚑ Upcoming Deadlines</div>
-            <a class="card-action" href="#schedule">View all</a>
-          </div>
-          <div class="card-body" id="deadlines-widget" style="padding-top:8px;padding-bottom:8px;"></div>
-        </div>
-
-        <div class="card">
-          <div class="card-header"><div class="card-title">Overall Progress</div></div>
-          <div class="card-body" id="progress-widget"></div>
-        </div>
-      </div>
     </div>
 
     <div class="three-col">
@@ -92,20 +74,6 @@
           <a class="card-action" href="#zones">View all →</a>
         </div>
         <div class="card-body"><div class="zone-grid" id="zones-preview"></div></div>
-      </div>
-
-      <div class="col-stack">
-        <div class="card">
-          <div class="card-header"><div class="card-title">◉ Team</div></div>
-          <div class="card-body" id="team-widget" style="padding-top:6px;padding-bottom:6px;"></div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">Recent Activity</div>
-            <a class="card-action" href="#updates">View log</a>
-          </div>
-          <div class="card-body" id="activity-preview" style="padding-top:4px;padding-bottom:4px;"></div>
-        </div>
       </div>
     </div>
   </section>
@@ -125,15 +93,6 @@
       </div>
     </div>
     <div id="gantt-add-row"></div>
-  </section>
-
-  <section id="phases">
-    <div class="section-heading">Phases</div>
-    <table class="phases">
-      <thead><tr><th>Phase</th><th>Dates</th><th>Duration</th><th>Status</th><th>Notes</th><th class="edit-only"></th></tr></thead>
-      <tbody id="phases-body"></tbody>
-    </table>
-    <div id="phases-add-row"></div>
   </section>
 
   <section id="zones">
@@ -167,12 +126,6 @@
     <div id="delivery-list"></div>
   </section>
 
-  <section id="updates">
-    <div class="section-heading">Updates</div>
-    <p class="section-sub">Live log · reverse chronological. Post via the ✎ Report / Ask button.</p>
-    <div class="card"><div class="card-body" id="updates-list"></div></div>
-  </section>
-
 </div>
 
 <button class="fab" id="fab-btn">✎ Report / Ask</button>
@@ -189,25 +142,7 @@
     </div>
     <div id="modal-step-post" style="display:none;">
       <div class="who" id="modal-who"></div>
-      <div class="row" style="margin:8px 0 12px;">
-        <button class="primary" id="tab-post">✎ Post</button>
-        <button id="tab-ask">💬 Ask</button>
-      </div>
-      <div id="post-form">
-        <h3>Post an update</h3>
-        <label for="post-type">Type</label>
-        <select id="post-type">
-          <option value="Report">Report status</option>
-          <option value="Ask">Ask a question</option>
-        </select>
-        <label for="post-text">Message</label>
-        <textarea id="post-text" placeholder="What's the update or question?"></textarea>
-        <div class="row">
-          <button id="post-cancel">Cancel</button>
-          <button class="primary" id="post-submit">Post</button>
-        </div>
-      </div>
-      <div id="ask-form" style="display:none;">
+      <div id="ask-form" style="display:block;">
         <h3>Ask the project assistant</h3>
         <div id="ask-history" style="max-height:280px;overflow-y:auto;margin:4px 0 10px;padding:8px;border:1px solid #333;border-radius:8px;font-size:13px;line-height:1.5;text-align:left;"></div>
         <div class="row">
@@ -258,7 +193,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<script src="script.js?v=349&t=20260826"></script>
+<script src="script.js?v=350&t=20260826"></script>
 <script>
 var FP_PAGES = ['assets/floor-plan-zone.jpg', 'assets/floor-plan-detail.jpg', 'assets/sponsor-power-plan.jpg'];
 var FP_CAPTIONS = ['Full Floor Plan', 'Floor Plan Detail', 'Sponsor Power Plan'];

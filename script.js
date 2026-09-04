@@ -43,12 +43,6 @@ function colorForName(name){
   return AVATAR_PALETTE[h % AVATAR_PALETTE.length];
 }
 
-const TAG_STYLES = {
-  Lead: { bg: 'rgba(176,154,106,0.18)', color: '#b09a6a' },
-  AMG: { bg: 'rgba(143,163,174,0.18)', color: '#8fa3ae' },
-  Client: { bg: 'rgba(189,93,76,0.18)', color: '#bd5d4c' },
-};
-
 const ZONE_ICONS = { 'Registration': '🏛', 'Core Display': '🔤', 'Keynote Hall': '🎤', 'AMA / Influencer Hub': '📷', 'Match Meeting': '🤝', 'Mini Panel': '🎙', 'Buyer Story': '📖', 'Unboxing Live': '📦', 'Next-Gen Sourcing + AI': '🤖', 'Podcast': '🎧', 'Chongqing Pavilion': '🏮', 'National Pavilion': '🌐', 'Sourcing Hub': '🔎', 'Sponsor Booths 16+1': '🏷', 'Supplier A200 — Block A': '🅰️', 'Supplier A200 — Block B': '🅱️', 'Supplier A200 — Block C': '©️', 'Supplier A200 — Block D': '🅳', 'Supplier A200 — Block E': '🅴', 'Supplier Non-A200 — Block F': '🅵', 'Supplier Non-A200 — Block G': '🅶', 'Muse Booth': '🎨', 'UED Booth': '💻', 'Creator Market': '🧵', 'Agentic Robotics Arena': '🦾' };
 
 function gallery(slug, count){
@@ -262,26 +256,6 @@ GANTT_ROWS: [
   { label: 'Dismantle', owner: 'AMG crew', start: '2026-09-11', end: '2026-09-11', color: 'green', note: '' },
 ],
 
-PHASES: [
-  { phase: 'Confirm dates + scope brief', dates: 'Jun–Jul 19, 2026', duration: '—', status: 'done', statusLabel: 'Done', notes: 'Show dates Sep 9–10 confirmed' },
-  { phase: 'Design brief received (V1)', dates: 'Jul 10, 2026', duration: '—', status: 'done', statusLabel: 'Done', notes: 'Initial proposal' },
-  { phase: 'Full scope confirmed (V1 complete)', dates: 'Jul 19, 2026', duration: '—', status: 'done', statusLabel: 'Done', notes: '20 zones, 100+ booths, 70+ TVs — Next-Gen zone still TBD' },
-  { phase: 'Venue license (Youngs → LACC)', dates: 'Aug 7, 2026', duration: '—', status: 'done', statusLabel: 'Received ✅', notes: 'Venue license received Aug 7. Event manager assigned.' },
-  { phase: 'Union labor documentation', dates: 'Was due Jun 8', duration: '—', status: 'hard', statusLabel: 'Breached', notes: '90-day rule missed — venue license/GSC application weren\'t ready in time. Needs LACC escalation.' },
-  { phase: 'GSC Application submitted', dates: 'Starting Aug 7', duration: '—', status: 'progress', statusLabel: 'In progress', notes: 'Venue license received — AMG now applying. Jose leading + Yang Si tracking LACC deadlines.' },
-  { phase: 'AMG engineering + production drawings (full scope)', dates: 'Jul 20 → Aug 10', duration: '~3 weeks', status: 'progress', statusLabel: 'In progress', notes: 'Compressed — full scope only confirmed Jul 19, ~10 weeks later than originally planned' },
-  { phase: 'AMG quote issued + approved', dates: 'First quote Aug 1', duration: '—', status: 'progress', statusLabel: 'First quote sent', notes: 'First quote sent Aug 1 for zones with designs received; Keynote/Match/Next-Gen + add-ons still to quote. Client approval + 75% deposit next.' },
-  { phase: 'Youngs design confirmations (gate fabrication)', dates: '80% Aug 7 · booths/graphics Aug 17 · pop-ups Aug 26', duration: '—', status: 'unconfirmed', statusLabel: 'Deadlines set', notes: 'Deadlines issued to Youngs — each confirm releases its fabrication tranche' },
-  { phase: 'Fabrication — staged by confirm gate', dates: 'Aug 8 → Sep 5', duration: '~4 weeks', status: 'notstarted', statusLabel: 'Not started', notes: 'Stage/backdrop+custom after Aug 7 · booths+graphics after Aug 17 · pop-ups after Aug 26 (⚠ tight vs freight Sep 4)' },
-  { phase: 'Scaled floor diagrams → LACC', dates: 'By Aug 8', duration: '—', status: 'hard', statusLabel: 'Hard deadline', notes: '30 days prior to move-in — now overlaps fabrication start' },
-  { phase: 'Fire permit → LAFD', dates: 'By Aug 19', duration: '—', status: 'watch', statusLabel: 'Watch', notes: '21 days prior' },
-  { phase: 'Next-Gen Sourcing + AI zone', dates: 'Received Aug 11', duration: '—', status: 'progress', statusLabel: 'Scope received', notes: '7-page scope received. AMG + JT + Youngs. Under review.' },
-  { phase: 'Freight dispatch to LACC', dates: 'Sep 4–6', duration: '3 days', status: 'notstarted', statusLabel: 'Not started', notes: 'La Puente → LACC' },
-  { phase: 'Installation (I&D)', dates: 'Sep 7–8', duration: '2 days', status: 'notstarted', statusLabel: 'Not started', notes: 'Union labor' },
-  { phase: 'Show days', dates: 'Sep 9–10', duration: '2 days', status: 'notstarted', statusLabel: 'Not started', notes: '' },
-  { phase: 'Dismantle', dates: 'Sep 11', duration: '1 day', status: 'notstarted', statusLabel: 'Not started', notes: '' },
-],
-
 ZONES: [
   { name: 'Registration', owner: 'Ari', status: 'Approved', img: 'registration-v2-2', renders: ['registration-0825-2'], drawings: ['registration-dwg-3', 'registration-dwg-5', 'registration-dwg-6', 'registration-dwg-7', 'registration-dwg-8', 'registration-dwg-9', 'registration-dwg-10'], scope: 'AMG provide registration backdrop, front and back graphic.column graphics', flag: 'Lobby area',
     req: ['12× Std LED arm light', '1× BO fabric — back wall front (REG-BK-WALL-FRT, 9896×2409, 4/0)', '1× BO fabric — back wall back (REG-BK-WALL-BK, 9896×2409, 4/0)', '1× Curved PVC column cover w/ Velcro (COLUMN-COVER, 4/0)'] },
@@ -328,22 +302,6 @@ ZONES: [
   { name: 'UED Booth', owner: 'Ari', status: 'Approved', img: 'ued-0825-1', renders: ['ued-0825-1', 'ued-0825-2', 'ued-0825-3', 'ued-0825-4', 'ued-0825-5', 'ued-0825-6', 'ued-0825-7'], drawings: ['ued-dwg-1', 'ued-dwg-2', 'ued-dwg-3', 'ued-dwg-4', 'ued-dwg-5'], scope: '7×2.2m (15.4m²). Std Panel + Std Counter + 55" TV + LED + RX-101 channels. Flooring ≈169 sqft.', flag: 'Furniture and devices from Youngs',
     req: ['2× Graphic Bracket — 100W×250H×50D, Formica White', '4× Std Counter — 990W×1000H×495D, Formica White, Lockable Door+Shelf', '3× Std Counter — 495W×1000H×495D, Formica White, Lockable Door+Shelf', '1× 55" TV + Media Player, HDMI Cable, Floor Stand', '1× Grey carpet — 7000×2200mm, ≈169 sqft', '3× LED Arm Light'] },
   { name: 'Agentic Robotics Arena', owner: 'Iris', status: 'Approved', img: 'agentic-robotics-render-1', renders: ['agentic-robotics-render-1', 'agentic-robotics-render-2'], drawings: ['agentic-dwg-1'], scope: 'AMG only provide carpet and floor vinyl. All else by Youngs. Size TBD.', flag: '⚠ Size TBD — carpet + vinyl only', req: [], tiers: ZONE_I_TIER, units: makeTieredUnits('i', ZONE_I_TIER, i => BOOTH_LABELS.i[i-1]) },
-],
-
-TEAM: [
-  { name: 'Nickie Wang', role: 'Niche Exhibit · Client Liaison', tag: 'Lead' },
-  { name: 'Calvin Yee', role: 'AMG · Quote / COI', tag: 'AMG' },
-  { name: 'Ariana', role: 'AMG', tag: 'AMG' },
-  { name: 'Iris', role: 'AMG', tag: 'AMG' },
-  { name: 'Jose', role: 'AMG', tag: 'AMG' },
-  { name: 'Marshal Zhu', role: 'Youngs · Client', tag: 'Client' },
-],
-
-PROGRESS: [
-  { label: 'GSC Application', pct: 5, color: 'var(--orange)' },
-  { label: 'Design Brief', pct: 90, color: 'var(--blue)' },
-  { label: 'Quote / Cost Control', pct: 40, color: 'var(--green)' },
-  { label: 'Production', pct: 0, color: 'var(--accent)' },
 ],
 
 HARD_DEADLINES: [
@@ -692,17 +650,6 @@ GRAPHICS: [
   ]},
 ],
 
-SEED_UPDATES: [
-  { date: 'Aug 1, 2026', author: 'Nickie Wang', text: 'First quote sent out — covers the zones with designs already received. Keynote, Match Meeting, and Next-Gen (plus any Youngs add-ons like pop-ups / extra counters) will be quoted once their designs/quantities land.' },
-  { date: 'Aug 1, 2026', author: 'Nickie Wang', text: 'Deadlines issued to Youngs: 80% design confirm by Aug 7 (priority: AMA/Breakout/Match stage+backdrop, Creator Market + Next-Gen custom, and std counter qty — AMG only has ~30); merchant booths + graphics + hanging signs by Aug 17; any add-on pop-ups by Aug 26.' },
-  { date: 'Jul 20, 2026', author: 'Nickie Wang', text: 'Full 3-part design deck (73 pages) reviewed and implanted into the hub. Zone specs refined across 17 of 20 zones with renderings; Keynote Hall, Match Meeting, and Next-Gen Sourcing + AI still have no design received.' },
-  { date: 'Jul 19, 2026', author: 'Nickie Wang', text: 'Full design brief (V1) received from Youngs. All 3 parts reviewed. Scope confirmed: 20 zones, 100+ individual booths, 70+ TVs. Next-Gen zone pending — Calvin notified.' },
-  { date: 'Jul 17, 2026', author: 'Nickie Wang', text: 'Delta Showroom Timeline Rev 5 updated (AMG crew blackout Sep 9–11 confirmed for CoCreate).' },
-  { date: 'Jul 10, 2026', author: 'Marshal Zhu', text: 'Design Proposal V1 issued. Date: 2026/07/10.' },
-  { date: 'Mar 27, 2026', author: 'Calvin Yee', text: 'Internal AMG strategy meeting held. Decision: proceed with CoCreate 2026 GSC application.' },
-  { date: 'Mar 2026', author: 'Nickie Wang', text: 'Project opened. Venue LACC confirmed. Show dates Sep 9–10 tentative.' },
-],
-
 };
 
 // ---------- Persistence: DATA is DEFAULT_DATA, overridden by any saved edits ----------
@@ -711,7 +658,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 191;
+const CONTENT_VERSION = 192;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
@@ -898,11 +845,6 @@ function addBtn(label, onclick){
 
 // ---------- Small render helpers ----------
 
-function avatarHtml(name, size){
-  const cls = size === 'sm' ? 'activity-avatar' : 'avatar';
-  return `<div class="${cls}" style="background:${colorForName(name)}">${initials(name)}</div>`;
-}
-
 function priorityDot(urgent){ return `<span class="priority-dot" style="background:${urgent ? 'var(--red)' : 'var(--orange)'}"></span>`; }
 
 // ---------- Dashboard widgets ----------
@@ -956,40 +898,6 @@ function renderTimelinePreview(){
   `).join('');
 }
 
-function renderDeadlinesWidget(){
-  const el = document.getElementById('deadlines-widget');
-  el.innerHTML = DATA.HARD_DEADLINES.map((d, i) => {
-    const days = daysBetween(TODAY, new Date(d.date));
-    const overdue = days < 0;
-    const cls = overdue ? 'countdown-red' : (days <= 30 ? 'countdown-orange' : 'countdown-yellow');
-    const dateColor = overdue ? 'var(--red)' : (days <= 30 ? 'var(--orange)' : 'var(--yellow)');
-    return `<div class="deadline-item">
-      <div class="d-left">
-        <div class="d-title"${editAttrs('HARD_DEADLINES', i, 'title')}>${escapeHtml(d.title)}</div>
-        <div class="d-sub"${editAttrs('HARD_DEADLINES', i, 'sub')}>${escapeHtml(d.sub)}</div>
-      </div>
-      <div class="d-right">
-        ${EDIT_MODE ? `<input type="date" class="edit-date-input" value="${d.date}" onchange="saveFieldAndRender('HARD_DEADLINES',${i},'date',this)">` : `<div class="d-date" style="color:${dateColor}">${fmtDate(new Date(d.date))}</div>`}
-        <div class="d-countdown ${cls}">${overdue ? 'OVERDUE ' + Math.abs(days) + 'd' : days + ' days'}</div>
-      </div>
-      ${editBtns('HARD_DEADLINES', i)}
-    </div>`;
-  }).join('') + addBtn('Deadline', `addRow('HARD_DEADLINES',{title:'New deadline',sub:'',date:'${TODAY.toISOString().slice(0,10)}'})`);
-}
-
-function renderProgressWidget(){
-  document.getElementById('progress-widget').innerHTML = DATA.PROGRESS.map((p, i) => `
-    <div class="progress-wrap">
-      <div class="progress-label">
-        <span${editAttrs('PROGRESS', i, 'label')}>${escapeHtml(p.label)}</span>
-        <span>${EDIT_MODE ? `<input type="number" class="edit-pct-input" min="0" max="100" value="${p.pct}" onchange="saveFieldAndRender('PROGRESS',${i},'pct',this)">` : p.pct + '%'}</span>
-        ${editBtns('PROGRESS', i)}
-      </div>
-      <div class="progress-bar"><div class="progress-fill" style="width:${p.pct}%;background:${p.color}"></div></div>
-    </div>
-  `).join('') + addBtn('Progress row', `addRow('PROGRESS',{label:'New row',pct:0,color:'var(--accent)'})`);
-}
-
 function zoneThumbHtml(z){
   const thumb = (z.renders && z.renders.length) ? z.renders[0] : z.img;
   return thumb
@@ -1004,37 +912,6 @@ function renderZonesPreview(){
       <div class="zone-thumb">${zoneThumbHtml(z)}</div>
       <div class="zone-name">${escapeHtml(z.name)}</div>
       <div class="zone-status" style="color:${z.status === 'TBD' ? 'var(--text-dim)' : 'var(--yellow)'}">${escapeHtml(z.status)}</div>
-    </div>
-  `).join('');
-}
-
-function renderTeamWidget(){
-  document.getElementById('team-widget').innerHTML = DATA.TEAM.map((m, i) => {
-    const ts = TAG_STYLES[m.tag] || TAG_STYLES.AMG;
-    const tagSelect = EDIT_MODE
-      ? `<select class="edit-tag-select" onchange="saveFieldAndRender('TEAM',${i},'tag',this)">${['Lead','AMG','Client'].map(t => `<option value="${t}" ${t === m.tag ? 'selected' : ''}>${t}</option>`).join('')}</select>`
-      : `<span class="member-tag" style="background:${ts.bg};color:${ts.color}">${escapeHtml(m.tag)}</span>`;
-    return `
-    <div class="team-member">
-      <div class="member-avatar" style="background:${colorForName(m.name)}">${initials(m.name)}</div>
-      <div>
-        <div class="member-name"${editAttrs('TEAM', i, 'name')}>${escapeHtml(m.name)}</div>
-        <div class="member-role"${editAttrs('TEAM', i, 'role')}>${escapeHtml(m.role)}</div>
-      </div>
-      ${tagSelect}
-      ${editBtns('TEAM', i)}
-    </div>`;
-  }).join('') + addBtn('Team Member', `addRow('TEAM',{name:'New Member',role:'Role',tag:'AMG'})`);
-}
-
-function renderActivityPreview(all){
-  document.getElementById('activity-preview').innerHTML = all.slice(0, 3).map(u => `
-    <div class="activity-item">
-      ${avatarHtml(u.author, 'sm')}
-      <div>
-        <div class="activity-text"><strong>${escapeHtml(u.author.split(' ')[0])}</strong> ${escapeHtml(u.text)}</div>
-        <div class="activity-time">${escapeHtml(u.date)}</div>
-      </div>
     </div>
   `).join('');
 }
@@ -1107,25 +984,6 @@ function renderGantt(){
     </div>
   `;
   document.getElementById('gantt-add-row').innerHTML = addBtn('Schedule Row', `addRow('GANTT_ROWS',{label:'New item',owner:'',start:'${TODAY.toISOString().slice(0,10)}',end:'${TODAY.toISOString().slice(0,10)}',color:'blue',note:''})`);
-}
-
-const STATUS_OPTIONS = ['done','progress','watch','hard','unconfirmed','notstarted'];
-const STATUS_LABELS = { done: 'Done', progress: 'In progress', watch: 'Watch', hard: 'Hard deadline', unconfirmed: 'Unconfirmed', notstarted: 'Not started' };
-
-function renderPhases(){
-  document.getElementById('phases-body').innerHTML = DATA.PHASES.map((p, i) => `
-    <tr>
-      <td${editAttrs('PHASES', i, 'phase')}>${escapeHtml(p.phase)}</td>
-      <td class="dates"${editAttrs('PHASES', i, 'dates')}>${escapeHtml(p.dates)}</td>
-      <td class="dates"${editAttrs('PHASES', i, 'duration')}>${escapeHtml(p.duration)}</td>
-      <td>${EDIT_MODE
-        ? `<select onchange="const v=this.value; saveField('PHASES',${i},'status',{value:v}); saveField('PHASES',${i},'statusLabel',{value:STATUS_LABELS[v]}); renderAll();">${STATUS_OPTIONS.map(s => `<option value="${s}" ${s === p.status ? 'selected' : ''}>${STATUS_LABELS[s]}</option>`).join('')}</select>`
-        : `<span class="pill ${p.status}">${escapeHtml(p.statusLabel)}</span>`}</td>
-      <td class="notes"${editAttrs('PHASES', i, 'notes')}>${escapeHtml(p.notes)}</td>
-      <td>${editBtns('PHASES', i)}</td>
-    </tr>
-  `).join('');
-  document.getElementById('phases-add-row').innerHTML = addBtn('Phase', `addRow('PHASES',{phase:'New phase',dates:'TBD',duration:'—',status:'notstarted',statusLabel:'Not started',notes:''})`);
 }
 
 const ZONE_STATUS_OPTIONS = ['TBD', 'In Review', 'Quoted', 'Approved', 'In Production', 'Complete', 'No quote needed'];
@@ -1370,47 +1228,6 @@ function toggleGraphicFlag(cb){
   }
 }
 
-function loadPostedUpdates(){
-  try{ return JSON.parse(localStorage.getItem('cocreate2026_updates') || '[]'); }
-  catch(e){ return []; }
-}
-function savePostedUpdates(list){
-  localStorage.setItem('cocreate2026_updates', JSON.stringify(list));
-}
-
-function getAllUpdates(){
-  return loadPostedUpdates().map((u, i) => ({ ...u, isNew: true, source: 'posted', idx: i }))
-    .concat(DATA.SEED_UPDATES.map((u, i) => ({ ...u, source: 'seed', idx: i })));
-}
-
-function removeUpdate(source, idx){
-  if(!confirm('Remove this update?')) return;
-  if(source === 'posted'){
-    const posted = loadPostedUpdates();
-    posted.splice(idx, 1);
-    savePostedUpdates(posted);
-  } else {
-    DATA.SEED_UPDATES.splice(idx, 1);
-    saveSiteData();
-  }
-  const allUpdates = getAllUpdates();
-  renderActivityPreview(allUpdates);
-  renderUpdatesFull(allUpdates);
-}
-
-function renderUpdatesFull(all){
-  document.getElementById('updates-list').innerHTML = all.map(u => `
-    <div class="activity-item ${u.isNew ? 'new' : ''}">
-      ${avatarHtml(u.author, 'sm')}
-      <div>
-        <div class="activity-text"><strong>${escapeHtml(u.author)}</strong>${u.type ? ' · ' + escapeHtml(u.type) : ''} — ${escapeHtml(u.text)}</div>
-        <div class="activity-time">${escapeHtml(u.date)}</div>
-      </div>
-      ${EDIT_MODE ? `<button class="edit-remove-btn" onclick="removeUpdate('${u.source}',${u.idx})" title="Remove">&times;</button>` : ''}
-    </div>
-  `).join('');
-}
-
 // ---------- Youngs -> AMG Delivery ----------
 const DELIVERIES = [
   { no: '1', client: 'UED', item: 'Printer', qty: '2', tracking: 'TBA333785388391', arrival: '8/22', status: 'Arrived' },
@@ -1571,19 +1388,11 @@ function addDelivery(){
 function renderAll(){
   renderStatCards();
   renderTimelinePreview();
-  renderDeadlinesWidget();
-  renderProgressWidget();
   renderZonesPreview();
-  renderTeamWidget();
   renderGantt();
-  renderPhases();
   renderZonesFull();
   renderGraphics();
   renderDelivery();
-
-  const allUpdates = getAllUpdates();
-  renderActivityPreview(allUpdates);
-  renderUpdatesFull(allUpdates);
 }
 
 // generic save-on-blur for contenteditable fields (quiet — no re-render, so focus isn't disturbed)
@@ -1645,8 +1454,6 @@ function answerProjectQuestion(q){
   const zones = DATA.ZONES || [];
   const dead = DATA.HARD_DEADLINES || [];
   const gantt = DATA.GANTT_ROWS || [];
-  const phases = DATA.PHASES || [];
-  const progress = DATA.PROGRESS || [];
 
   // --- Delivery ---
   if(has('delivery','送貨','到貨','貨運','shipping','arrive','tracking','快遞','物流')){
@@ -1705,7 +1512,6 @@ function answerProjectQuestion(q){
     const lines = ['📅 時程 / 接下來的 deadline：'];
     dead.forEach(d => lines.push(`· ${d.date} — ${d.title}`));
     gantt.slice(0,8).forEach(g => lines.push(`· ${g.label}：${g.start} → ${g.end}`));
-    phases.forEach(p => lines.push(`· ${p.phase}：${p.dates}（${p.statusLabel || p.status}）`));
     return lines.join('\n');
   }
 
@@ -1714,7 +1520,6 @@ function answerProjectQuestion(q){
     const sc = {};
     zones.forEach(z => { sc[z.status] = (sc[z.status]||0)+1; });
     const lines = ['📊 專案總覽：', 'Zone 狀態：' + Object.entries(sc).map(([k,v])=>`${k} ${v}`).join('、')];
-    progress.forEach(p => lines.push(`· ${p.label}：${p.pct}%`));
     return lines.join('\n');
   }
 
@@ -1725,7 +1530,6 @@ function answerProjectQuestion(q){
 function setupModal(){
   const overlay = document.getElementById('modal-overlay');
   const fab = document.getElementById('fab-btn');
-  const addUpdateBtn = document.getElementById('btn-add-update');
   const closeX = document.getElementById('modal-close');
   const stepEmail = document.getElementById('modal-step-email');
   const stepPost = document.getElementById('modal-step-post');
@@ -1733,10 +1537,6 @@ function setupModal(){
   const emailError = document.getElementById('email-error');
   const emailContinue = document.getElementById('email-continue');
   const modalWho = document.getElementById('modal-who');
-  const postType = document.getElementById('post-type');
-  const postText = document.getElementById('post-text');
-  const postCancel = document.getElementById('post-cancel');
-  const postSubmit = document.getElementById('post-submit');
   const sidebarChip = document.getElementById('sidebar-user-chip');
 
   let currentUser = loadSignedInUser();
@@ -1754,7 +1554,6 @@ function setupModal(){
   function closeModal(){ overlay.classList.remove('open'); }
 
   fab.addEventListener('click', openModal);
-  addUpdateBtn.addEventListener('click', openModal);
   sidebarChip.addEventListener('click', openModal);
   closeX.addEventListener('click', closeModal);
   overlay.addEventListener('click', (e) => { if(e.target === overlay) closeModal(); });
@@ -1772,61 +1571,20 @@ function setupModal(){
     modalWho.textContent = `Signed in as ${name}`;
     stepEmail.style.display = 'none';
     stepPost.style.display = 'block';
-    showPost();
-    postText.value = '';
-    postText.focus();
+    showAsk();
   });
   emailInput.addEventListener('keydown', (e) => { if(e.key === 'Enter') emailContinue.click(); });
 
-  postCancel.addEventListener('click', closeModal);
-  postSubmit.addEventListener('click', () => {
-    const text = postText.value.trim();
-    if(!text || !currentUser) return;
-    const posted = loadPostedUpdates();
-    posted.unshift({
-      date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-      author: currentUser.name,
-      type: postType.value,
-      text,
-    });
-    savePostedUpdates(posted);
-    const allUpdates = getAllUpdates();
-    renderActivityPreview(allUpdates);
-    renderUpdatesFull(allUpdates);
-    closeModal();
-    window.location.hash = '#updates';
-  });
-
-  // ---- Ask tab (project Q&A assistant) ----
-  const tabPost = document.getElementById('tab-post');
-  const tabAsk = document.getElementById('tab-ask');
-  const postForm = document.getElementById('post-form');
+  // ---- Ask (project Q&A assistant) ----
   const askForm = document.getElementById('ask-form');
   const askInput = document.getElementById('ask-input');
   const askSend = document.getElementById('ask-send');
   const askHistory = document.getElementById('ask-history');
 
-  function showPost(){
-    if(!currentUser){
-      stepEmail.style.display = 'block';
-      stepPost.style.display = 'none';
-      emailInput.focus();
-      return;
-    }
-    tabPost.classList.add('primary');
-    tabAsk.classList.remove('primary');
-    postForm.style.display = '';
-    askForm.style.display = 'none';
-  }
   function showAsk(){
-    tabAsk.classList.add('primary');
-    tabPost.classList.remove('primary');
-    postForm.style.display = 'none';
-    askForm.style.display = '';
+    askForm.style.display = 'block';
     setTimeout(() => askInput.focus(), 0);
   }
-  tabPost.addEventListener('click', showPost);
-  tabAsk.addEventListener('click', showAsk);
 
   function appendAsk(who, text){
     const div = document.createElement('div');
