@@ -126,13 +126,13 @@ const ZONE_A_TIER = [
   { key:'a09', name:'A-09', sqm:'8m²', count:1, renders: ['a-09-0903'], drawings: ['block-a-dwg-16'], req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light','3x) 1500 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','9x) 450 (W)*18 (H)*300 (D), Shelf, Formica (WHT)','27x) 10" Metal L-Bracket (WHT)'] },
 ];
 const ZONE_B_TIER = [
-  { key:'b01', name:'B-01', sqm:'8m²', count:1, drawings: ['block-b-dwg-11'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
-  { key:'b02', name:'B-02', sqm:'8m²', count:1, drawings: ['block-b-dwg-9'],  renders: ['b-02-0829', 'b-02-0829-2', 'b-02-layout'], req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
-  { key:'b03', name:'B-03', sqm:'8m²', count:1, drawings: ['block-b-dwg-9'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
-  { key:'b04', name:'B-04', sqm:'8m²', count:1, drawings: ['block-b-dwg-10'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
-  { key:'b05', name:'B-05', sqm:'16m²', count:1, drawings: ['block-b-dwg-10'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
-  { key:'b06', name:'B-06', sqm:'12m²', count:1, drawings: ['block-b-dwg-11'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
-  { key:'b07', name:'B-07', sqm:'8m²', count:1, drawings: ['block-b-dwg-9'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
+  { key:'b01', name:'B-01', sqm:'8m²', count:1, renders: ['b-01-0903'], drawings: ['block-b-dwg-11'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
+  { key:'b02', name:'B-02', sqm:'8m²', count:1, drawings: ['block-b-dwg-9'],  renders: ['b-02-0903', 'b-02-0903-2', 'b-02-layout'], req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
+  { key:'b03', name:'B-03', sqm:'8m²', count:1, renders: ['b-03-0903'], drawings: ['block-b-dwg-9'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
+  { key:'b04', name:'B-04', sqm:'8m²', count:1, renders: ['b-04-0903'], drawings: ['block-b-dwg-10'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
+  { key:'b05', name:'B-05', sqm:'16m²', count:1, renders: ['b-05-0903'], drawings: ['block-b-dwg-10'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
+  { key:'b06', name:'B-06', sqm:'12m²', count:1, renders: ['b-06-0903'], drawings: ['block-b-dwg-11'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
+  { key:'b07', name:'B-07', sqm:'8m²', count:1, renders: ['b-07-0903'], drawings: ['block-b-dwg-9'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
 ];
 const ZONE_C_TIER = [
   { key:'c01', name:'C-01', sqm:'8m²', count:1, drawings: ['block-c-dwg-9'],  req: ['42" TV + floor stand + Media Player','Std Counter — 990W×1000H×495D, Formica White','Grey carpet','2× LED arm light'] },
@@ -658,7 +658,7 @@ const CONTENT_KEY = 'cocreate2026_content';
 const CONTENT_VER_KEY = 'cocreate2026_content_ver';
 // Bump this whenever DEFAULT_DATA is updated in a way that must reach viewers.
 // A saved snapshot from an older version is discarded so the new defaults show through.
-const CONTENT_VERSION = 199;
+const CONTENT_VERSION = 200;
 
 // ---------- Firebase (graphics multi-user sync) ----------
 const FB_CONFIG = {
